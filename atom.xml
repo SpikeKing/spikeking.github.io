@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Mystra</title>
+  <subtitle>Love it for itself!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-03-09T06:42:08.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>C.L.Wang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/03/09/hello-world/"/>
+    <id>http://yoursite.com/2016/03/09/hello-world/</id>
+    <published>2016-03-09T06:42:08.000Z</published>
+    <updated>2016-03-09T06:42:08.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是文章标题</title>
+    <link href="http://yoursite.com/2016/02/28/first/"/>
+    <id>http://yoursite.com/2016/02/28/first/</id>
+    <published>2016-02-28T09:58:27.000Z</published>
+    <updated>2016-03-10T06:58:59.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;欢迎Follow我的&lt;a href=&quot;https://github.com/SpikeKing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;, 关注我的&lt;a href=&quot;http://www.jianshu.com/users/e2b4dd6d3eb4/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;简书&lt;/a&gt;. 其余参考&lt;a href=&quot;http://www.jianshu.com/p/780658b79227&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android目录&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Android应用在使用第三方的库时, 可能需要&lt;strong&gt;申请密钥&lt;/strong&gt;, 表明应用身份, 如高德定位SDK等. &lt;strong&gt;应用签名(printcert)&lt;/strong&gt;是公开的, 只要下载到Apk包, 就可以公开提取. 签名中包含&lt;strong&gt;MD5&lt;/strong&gt;, &lt;strong&gt;SHA1&lt;/strong&gt;, &lt;strong&gt;SHA256&lt;/strong&gt;. &lt;strong&gt;应用唯一性&lt;/strong&gt;就是表现为&lt;strong&gt;签名+包名&lt;/strong&gt;, 就像人的指纹一样重要, 是确定应用属性的重要信息, 也是&lt;strong&gt;应用商店&lt;/strong&gt;检测盗版应用的途径.&lt;/p&gt;
+&lt;p&gt;本文讲解如何提取应用的&lt;strong&gt;签名和包名&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/749674-c84ff043c4eec7f7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;fingerprint&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;1-签名&quot;&gt;&lt;a href=&quot;#1-签名&quot; class=&quot;headerlink&quot; title=&quot;1. 签名&quot;&gt;&lt;/a&gt;1. 签名&lt;/h2&gt;&lt;p&gt;获取签名包含两种方式:&lt;br&gt;&lt;strong&gt;(1) Keystore&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;系统默认签名&lt;/strong&gt;: 存放位置: &lt;code&gt;~/.android/debug.keystore&lt;/code&gt;.&lt;br&gt;日常测试应用的签名, 均来自于此, 提取密钥.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;keytool -list -v -keystore debug.keystore&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;输入默认密钥库口令: &lt;strong&gt;android&lt;/strong&gt;&lt;br&gt;即可显示&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;证书指纹:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 MD5: 97:0B:1C:...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 SHA1: 47:DF:70:...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 SHA256: 83:F9:04:...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 签名算法名称: SHA256withRSA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 版本: 3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;自定义签名&lt;/strong&gt;: 进入到存放keystore的文件夹，使用命令:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;keytool -list -v -keystore [xxx] -keypass [xxx]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;显示默认签名类似的效果.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(2) RSA&lt;/strong&gt;&lt;br&gt;已经编译成Apk的包, 我们无法获取Keystore, 但是可以在RSA中获取签名.&lt;br&gt;修改Apk包的后缀名, 从”.apk”变为”&lt;strong&gt;.zip&lt;/strong&gt;“, 解压缩.&lt;br&gt;进入&lt;strong&gt;META-INF&lt;/strong&gt;文件夹, 即&lt;code&gt;cd META-INF&lt;/code&gt;.&lt;br&gt;使用命令&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;keytool -printcert -file CERT.RSA&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;即可, 显示&lt;strong&gt;Apk的签名&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;获取&lt;strong&gt;MD5&lt;/strong&gt;, &lt;strong&gt;SHA1&lt;/strong&gt;, &lt;strong&gt;SHA256&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;2-包名&quot;&gt;&lt;a href=&quot;#2-包名&quot; class=&quot;headerlink&quot; title=&quot;2. 包名&quot;&gt;&lt;/a&gt;2. 包名&lt;/h2&gt;&lt;p&gt;查看包名就一行命令, 显示Apk的信息.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;aapt dump badging [xxx.apk]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;输出, &lt;strong&gt;package: name&lt;/strong&gt;, 即包名.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;package: name=&amp;apos;xxx.xxx.xxxxx&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注:&lt;/strong&gt; 也可以修改本地包名, 匹配已经存在的密匙.&lt;br&gt;修改应用&lt;strong&gt;包名&lt;/strong&gt;的方法, 在&lt;strong&gt;build.gradle&lt;/strong&gt;中, 添加&lt;strong&gt;applicationId&lt;/strong&gt;, 即&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;android &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    defaultConfig &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        applicationId &amp;quot;com.amap.location.demo&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;修改包名为&lt;strong&gt;com.amap.location.demo&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;未添加gradle的参数, 默认位置是&lt;strong&gt;AndroidManifest.xml&lt;/strong&gt;,&lt;br&gt;其中manifest的package属性, 表示包名, 即&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;manifest package=&amp;quot;wangchenlong.chunyu.me.wcl_amap_demo&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;build.gradle&lt;/strong&gt;的包名属性优先级高于&lt;strong&gt;manifest&lt;/strong&gt;, 其他属性也是一样.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;在第三方库的开发者平台输入签名和包名, 就可以生成唯一密钥, 放到程序中, 就可以使用库了.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;签名+包名&lt;/strong&gt;, 表明Apk的唯一身份, 防止盗版仿冒的Apk出现, 是Android的安全机制.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;PS:&lt;/strong&gt; 公司经常使用第三方库, 需要申请唯一的账号, 统一管理; 作为开发者, 在测试时, 也需要申请一些测试Key, 加快开发速度.&lt;/p&gt;
+&lt;p&gt;OK, that’s all! Enjoy it.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;欢迎Follow我的&lt;a href=&quot;https://github.com/SpikeKing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;, 关注我的&lt;a href=&quot;http://www.jianshu.
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+    
+      <category term="IntelliJ IDEA" scheme="http://yoursite.com/categories/Hexo/IntelliJ-IDEA/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="IntelliJ IDEA" scheme="http://yoursite.com/tags/IntelliJ-IDEA/"/>
+    
+      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
+    
+      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
+    
+      <category term="Node.js" scheme="http://yoursite.com/tags/Node-js/"/>
+    
+  </entry>
+  
+</feed>
