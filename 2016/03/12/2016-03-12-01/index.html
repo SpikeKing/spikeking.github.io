@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android App 应用 私钥 签名 MD5 SHA1 SHA256 包名," />
+  <meta name="keywords" content="Android,应用,私钥,签名,MD5,SHA1,SHA256,包名," />
 
 
 
@@ -65,10 +65,12 @@
 <meta property="og:url" content="http://yoursite.com/2016/03/12/2016-03-12-01/index.html">
 <meta property="og:site_name" content="Mystra">
 <meta property="og:description" content="Android&amp;#x5E94;&amp;#x7528;&amp;#x5728;&amp;#x4F7F;&amp;#x7528;&amp;#x7B2C;&amp;#x4E09;&amp;#x65B9;&amp;#x7684;&amp;#x5E93;&amp;#x65F6;, &amp;#x53EF;&amp;#x80FD;&amp;#x9700;&amp;#x8981;&amp;#x7533;&amp;#x8BF7;&amp;#x5BC6;&amp;#x94A5;, &amp;#x8868;&amp;#x660E;&amp;#x5E94;&amp;#x7528;&amp;#x8E">
-<meta property="og:updated_time" content="2016-03-12T10:22:55.000Z">
+<meta property="og:image" content="http://yoursite.com/2016/03/12/2016-03-12-01/fingerprint.jpg">
+<meta property="og:updated_time" content="2016-03-12T10:30:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在注册私钥时, 获取应用签名(SHA1)和包名">
 <meta name="twitter:description" content="Android&amp;#x5E94;&amp;#x7528;&amp;#x5728;&amp;#x4F7F;&amp;#x7528;&amp;#x7B2C;&amp;#x4E09;&amp;#x65B9;&amp;#x7684;&amp;#x5E93;&amp;#x65F6;, &amp;#x53EF;&amp;#x80FD;&amp;#x9700;&amp;#x8981;&amp;#x7533;&amp;#x8BF7;&amp;#x5BC6;&amp;#x94A5;, &amp;#x8868;&amp;#x660E;&amp;#x5E94;&amp;#x7528;&amp;#x8E">
+<meta name="twitter:image" content="http://yoursite.com/2016/03/12/2016-03-12-01/fingerprint.jpg">
 
 
 
@@ -335,6 +337,7 @@
 <p>&#x672C;&#x6587;&#x8BB2;&#x89E3;&#x5982;&#x4F55;&#x63D0;&#x53D6;&#x5E94;&#x7528;&#x7684;<strong>&#x7B7E;&#x540D;&#x548C;&#x5305;&#x540D;</strong>.</p>
 <a id="more"></a>
 <hr>
+<p><img src="/2016/03/12/2016-03-12-01/fingerprint.jpg" alt="Maven"></p>
 <h2 id="1-&#x7B7E;&#x540D;"><a href="#1-&#x7B7E;&#x540D;" class="headerlink" title="1. &#x7B7E;&#x540D;"></a>1. &#x7B7E;&#x540D;</h2><p>&#x83B7;&#x53D6;&#x7B7E;&#x540D;&#x5305;&#x542B;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;:<br><strong>(1) Keystore</strong><br><strong>&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x7B7E;&#x540D;</strong>: &#x5B58;&#x653E;&#x4F4D;&#x7F6E;: <code>~/.android/debug.keystore</code>.<br>&#x65E5;&#x5E38;&#x6D4B;&#x8BD5;&#x5E94;&#x7528;&#x7684;&#x7B7E;&#x540D;, &#x5747;&#x6765;&#x81EA;&#x4E8E;&#x6B64;, &#x63D0;&#x53D6;&#x5BC6;&#x94A5;.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -list -v -keystore debug.keystore</span><br></pre></td></tr></table></figure></p>
 <p>&#x8F93;&#x5165;&#x9ED8;&#x8BA4;&#x5BC6;&#x94A5;&#x5E93;&#x53E3;&#x4EE4;: <strong>android</strong><br>&#x5373;&#x53EF;&#x663E;&#x793A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x8BC1;&#x4E66;&#x6307;&#x7EB9;:</span><br><span class="line">	 MD5: 97:0B:1C:...</span><br><span class="line">	 SHA1: 47:DF:70:...</span><br><span class="line">	 SHA256: 83:F9:04:...</span><br><span class="line">	 &#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#x540D;&#x79F0;: SHA256withRSA</span><br><span class="line">	 &#x7248;&#x672C;: 3</span><br></pre></td></tr></table></figure></p>
 <p><strong>&#x81EA;&#x5B9A;&#x4E49;&#x7B7E;&#x540D;</strong>: &#x8FDB;&#x5165;&#x5230;&#x5B58;&#x653E;keystore&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x4F7F;&#x7528;&#x547D;&#x4EE4;:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -list -v -keystore [xxx] -keypass [xxx]</span><br></pre></td></tr></table></figure></p>
@@ -373,7 +376,21 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android-App-应用-私钥-签名-MD5-SHA1-SHA256-包名/" rel="tag">#Android App 应用 私钥 签名 MD5 SHA1 SHA256 包名</a>
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/应用/" rel="tag">#应用</a>
+          
+            <a href="/tags/私钥/" rel="tag">#私钥</a>
+          
+            <a href="/tags/签名/" rel="tag">#签名</a>
+          
+            <a href="/tags/MD5/" rel="tag">#MD5</a>
+          
+            <a href="/tags/SHA1/" rel="tag">#SHA1</a>
+          
+            <a href="/tags/SHA256/" rel="tag">#SHA256</a>
+          
+            <a href="/tags/包名/" rel="tag">#包名</a>
           
         </div>
       
@@ -486,7 +503,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
