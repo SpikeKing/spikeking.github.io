@@ -4,9 +4,9 @@
   <subtitle>Love magic for itself!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://www.wangchenlong.org/"/>
   <updated>2016-03-12T11:38:14.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://www.wangchenlong.org/</id>
   
   <author>
     <name>王辰龙</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>在注册私钥时, 获取应用签名(SHA1)和包名</title>
-    <link href="http://yoursite.com/2016/03/12/2016-03-12-01/"/>
-    <id>http://yoursite.com/2016/03/12/2016-03-12-01/</id>
+    <link href="http://www.wangchenlong.org/2016/03/12/2016-03-12-01/"/>
+    <id>http://www.wangchenlong.org/2016/03/12/2016-03-12-01/</id>
     <published>2016-03-12T10:20:07.000Z</published>
     <updated>2016-03-12T11:38:14.000Z</updated>
     
@@ -60,24 +60,24 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="http://www.wangchenlong.org/categories/Android/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
     
-      <category term="应用" scheme="http://yoursite.com/tags/%E5%BA%94%E7%94%A8/"/>
+      <category term="应用" scheme="http://www.wangchenlong.org/tags/%E5%BA%94%E7%94%A8/"/>
     
-      <category term="私钥" scheme="http://yoursite.com/tags/%E7%A7%81%E9%92%A5/"/>
+      <category term="私钥" scheme="http://www.wangchenlong.org/tags/%E7%A7%81%E9%92%A5/"/>
     
-      <category term="签名" scheme="http://yoursite.com/tags/%E7%AD%BE%E5%90%8D/"/>
+      <category term="签名" scheme="http://www.wangchenlong.org/tags/%E7%AD%BE%E5%90%8D/"/>
     
-      <category term="MD5" scheme="http://yoursite.com/tags/MD5/"/>
+      <category term="MD5" scheme="http://www.wangchenlong.org/tags/MD5/"/>
     
-      <category term="SHA1" scheme="http://yoursite.com/tags/SHA1/"/>
+      <category term="SHA1" scheme="http://www.wangchenlong.org/tags/SHA1/"/>
     
-      <category term="SHA256" scheme="http://yoursite.com/tags/SHA256/"/>
+      <category term="SHA256" scheme="http://www.wangchenlong.org/tags/SHA256/"/>
     
-      <category term="包名" scheme="http://yoursite.com/tags/%E5%8C%85%E5%90%8D/"/>
+      <category term="包名" scheme="http://www.wangchenlong.org/tags/%E5%8C%85%E5%90%8D/"/>
     
   </entry>
   
