@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-13T05:10:49.000Z</updated>
+  <updated>2016-03-13T05:13:02.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.wangchenlong.org/2016/03/12/apply-flux-architecture/"/>
     <id>http://www.wangchenlong.org/2016/03/12/apply-flux-architecture/</id>
     <published>2016-03-12T14:56:08.000Z</published>
-    <updated>2016-03-13T05:10:49.000Z</updated>
+    <updated>2016-03-13T05:13:02.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;em&gt;&amp;#x4EFB;&amp;#x4F55;&amp;#x67B6;&amp;#x6784;&amp;#x6700;&amp;#x7EC8;&amp;#x76EE;&amp;#x7684;&amp;#x90FD;&amp;#x662F;&amp;#x8BA9;&amp;#x7A0B;&amp;#x5E8F;&amp;#x66F4;&amp;#x52A0;&amp;#x6709;&amp;#x5E8F;, &amp;#x529F;&amp;#x80FD;&amp;#x4FBF;&amp;#x4E8E;&amp;#x6269;&amp;#x5C55;, Bug&amp;#x5BB9;&amp;#x6613;&amp;#x8FFD;&amp;#x8E2A;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Facebook&amp;#x4F7F;&amp;#x7528;Flux&amp;#x67B6;&amp;#x6784;&amp;#x6765;&amp;#x6784;&amp;#x5EFA;&amp;#x5BA2;&amp;#x6237;&amp;#x7AEF;&amp;#x7684;Web&amp;#x5E94;&amp;#x7528;. Flux&amp;#x67B6;&amp;#x6784;&amp;#x5E76;&amp;#x4E0D;&amp;#x662F;&amp;#x4E3A;&amp;#x79FB;&amp;#x52A8;&amp;#x7AEF;&amp;#x8BBE;&amp;#x8BA1;&amp;#x7684;, &amp;#x4F46;&amp;#x662F;&amp;#x6211;&amp;#x4EEC;&amp;#x4ECD;&amp;#x7136;&amp;#x53EF;&amp;#x4EE5;&amp;#x91C7;&amp;#x7528;&amp;#x8FD9;&amp;#x4E2A;&amp;#x601D;&amp;#x60F3;&amp;#x5728;Android&amp;#x7AEF;&amp;#x4F7F;&amp;#x7528;. Flux&amp;#x662F;&amp;#x6570;&amp;#x636E;&amp;#x9A71;&amp;#x52A8;&amp;#x578B;&amp;#x67B6;&amp;#x6784;, &amp;#x5728;&amp;#x4EE5;&amp;#x6570;&amp;#x636E;&amp;#x4E3A;&amp;#x6838;&amp;#x5FC3;&amp;#x7684;&amp;#x573A;&amp;#x666F;&amp;#x4E2D;&amp;#x4F7F;&amp;#x7528;&amp;#x975E;&amp;#x5E38;&amp;#x5408;&amp;#x9002;, &amp;#x4E0D;&amp;#x8FC7;Facebook&amp;#x597D;&amp;#x50CF;&amp;#x628A;&lt;strong&gt;Flux&amp;#x67B6;&amp;#x6784;&lt;/strong&gt;&amp;#x5E94;&amp;#x7528;&amp;#x4E8E;&amp;#x6240;&amp;#x6709;&amp;#x4EA7;&amp;#x54C1;, &lt;strong&gt;&amp;#x65E0;&amp;#x8BBA;&amp;#x662F;&amp;#x524D;&amp;#x7AEF;&amp;#x8FD8;&amp;#x662F;&amp;#x79FB;&amp;#x52A8;&amp;#x7AEF;&lt;/strong&gt;. &amp;#x6700;&amp;#x65B0;Facebook&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&lt;a href=&quot;https://github.com/facebook/react-native&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ReactNative&lt;/a&gt;&amp;#x4E2D;, &amp;#x5C31;&amp;#x662F;&amp;#x4F7F;&amp;#x7528;Flux&amp;#x67B6;&amp;#x6784;&amp;#x4E3A;&amp;#x6838;&amp;#x5FC3;, &amp;#x4E5F;&amp;#x662F;&amp;#x5F00;&amp;#x6E90;&amp;#x7684;, &amp;#x53EF;&amp;#x4EE5;&amp;#x9605;&amp;#x8BFB;RN&amp;#x7684;&amp;#x4EE3;&amp;#x7801;&amp;#x4E86;&amp;#x89E3;&amp;#x6240;&amp;#x6709;&amp;#x5185;&amp;#x5BB9;.&lt;/p&gt;
@@ -69,8 +69,9 @@
 &lt;/blockquote&gt;
 &lt;p&gt;&amp;#x60F3;&amp;#x66F4;&amp;#x591A;&amp;#x7684;&amp;#x4E86;&amp;#x89E3;Flux&amp;#x67B6;&amp;#x6784;, &lt;a href=&quot;https://facebook.github.io/flux/docs/overview.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Facebook&lt;/a&gt;&amp;#x548C;&lt;a href=&quot;http://lgvalle.xyz/2015/08/04/flux-architecture/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;OK, that&amp;#x2019;s all! Enjoy it!&lt;/p&gt;
+&lt;p&gt;&amp;#x672C;&amp;#x6587;&amp;#x539F;&amp;#x59CB;&amp;#x5730;&amp;#x5740;: &lt;a href=&quot;http://www.wangchenlong.org/2016/03/12/apply-flux-architecture/&quot;&gt;http://www.wangchenlong.org/2016/03/12/apply-flux-architecture/&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&amp;#x6B22;&amp;#x8FCE;Follow&amp;#x6211;&amp;#x7684;&lt;a href=&quot;https://github.com/SpikeKing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;, &amp;#x6536;&amp;#x85CF;&amp;#x6211;&amp;#x7684;&lt;a href=&quot;http://www.wangchenlong.org&quot;&gt;&amp;#x535A;&amp;#x5BA2;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;#x6B22;&amp;#x8FCE;Follow&amp;#x6211;&amp;#x7684;&lt;a href=&quot;https://github.com/SpikeKing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;, &amp;#x6536;&amp;#x85CF;&amp;#x6211;&amp;#x7684;&lt;a href=&quot;http://www.wangchenlong.org&quot;&gt;&amp;#x535A;&amp;#x5BA2;&lt;/a&gt;. &amp;#x672A;&amp;#x7ECF;&amp;#x6388;&amp;#x6743;, &amp;#x7981;&amp;#x6B62;&amp;#x8F6C;&amp;#x8F7D;.&lt;/p&gt;
 &lt;/blockquote&gt;</content>
     
     <summary type="html">
