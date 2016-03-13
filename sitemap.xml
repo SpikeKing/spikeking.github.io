@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
+    
+    <lastmod>2016-03-13T05:23:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/12/apply-flux-architecture/</loc>
     
-    <lastmod>2016-03-13T05:17:27.000Z</lastmod>
+    <lastmod>2016-03-13T05:22:43.000Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>http://www.wangchenlong.org/about/index.html</loc>
     
     <lastmod>2016-03-13T02:16:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
-    
-    <lastmod>2016-03-13T02:08:40.000Z</lastmod>
     
   </url>
   
