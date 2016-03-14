@@ -1,0 +1,1028 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="HM6XdT4pJXR7fFksvo3DvFAKVgeFg4ZUwh3iOGW8LHU" />
+
+
+
+  <meta name="baidu-site-verification" content="MPhG1F0aKe" />
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mystra" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web-icon.png?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x968F;&amp;#x7740;Android&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x6210;&amp;#x719F;, &amp;#x6A21;&amp;#x5757;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x591A;, &amp;#x5F15;&amp;#x5165;&amp;#x5E93;&amp;#x4E5F;&amp;#x968F;&amp;#x4E4B;&amp;#x589E;&amp;#x52A0;, &amp;#x9700;&amp;#x8981;&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大型项目 Gradle 的常用库和版本管理">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/index.html">
+<meta property="og:site_name" content="Mystra">
+<meta property="og:description" content="&amp;#x968F;&amp;#x7740;Android&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x6210;&amp;#x719F;, &amp;#x6A21;&amp;#x5757;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x591A;, &amp;#x5F15;&amp;#x5165;&amp;#x5E93;&amp;#x4E5F;&amp;#x968F;&amp;#x4E4B;&amp;#x589E;&amp;#x52A0;, &amp;#x9700;&amp;#x8981;&amp;#x">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/manage-gradle.png">
+<meta property="og:updated_time" content="2016-03-14T22:54:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大型项目 Gradle 的常用库和版本管理">
+<meta name="twitter:description" content="&amp;#x968F;&amp;#x7740;Android&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x6210;&amp;#x719F;, &amp;#x6A21;&amp;#x5757;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x591A;, &amp;#x5F15;&amp;#x5165;&amp;#x5E93;&amp;#x4E5F;&amp;#x968F;&amp;#x4E4B;&amp;#x589E;&amp;#x52A0;, &amp;#x9700;&amp;#x8981;&amp;#x">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/manage-gradle.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6261011353935283000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 大型项目 Gradle 的常用库和版本管理 | Mystra </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--浮动广告: 250*250 - 暂时取消 -->
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-75037561-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f66791a2795ca9e84e2dc2c4d23fd05e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s6.cnzz.com/stat.php?id=1257956872&web_id=1257956872" type="text/javascript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mystra</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Love magic for itself!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'iv4HMbTagDPHwpSnKxxR','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                大型项目 Gradle 的常用库和版本管理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-15T06:44:00+08:00" content="2016-03-15">
+              2016-03-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/15/manage-gradle-lib-version/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/15/manage-gradle-lib-version/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/03/15/manage-gradle-lib-version/" class="leancloud_visitors" data-flag-title="大型项目 Gradle 的常用库和版本管理">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x968F;&#x7740;Android&#x5F00;&#x53D1;&#x7684;&#x6210;&#x719F;, &#x6A21;&#x5757;&#x8D8A;&#x6765;&#x8D8A;&#x591A;, &#x5F15;&#x5165;&#x5E93;&#x4E5F;&#x968F;&#x4E4B;&#x589E;&#x52A0;, &#x9700;&#x8981;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x8FD9;&#x4E9B;&#x5E93;&#x548C;&#x7248;&#x672C;&#x53F7;. &#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x5F00;&#x53D1;&#x7ECF;&#x9A8C;, &#x672C;&#x6587;&#x4ECB;&#x7ECD;&#x4F7F;&#x7528;Gradle&#x53C2;&#x6570;&#x914D;&#x7F6E;&#x5B9E;&#x73B0;&#x5E93;&#x7684;&#x89C4;&#x8303;&#x7BA1;&#x7406;.</p>
+<a id="more"></a>
+<p><img src="/2016/03/15/manage-gradle-lib-version/manage-gradle.png" alt="Gradle"></p>
+<p>&#x4E3B;&#x8981;<br>(1) &#x5E38;&#x7528;&#x5E93;&#x7684;&#x5C55;&#x793A;&#x4E0E;&#x914D;&#x7F6E;.<br>(2) &#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x9879;&#x76EE;&#x548C;&#x5E93;&#x7684;&#x7248;&#x672C;.<br>(3) &#x8BBE;&#x7F6E;&#x9879;&#x76EE;&#x7684;&#x79C1;&#x6709;&#x53C2;&#x6570;.</p>
+<hr>
+<h1 id="&#x5E38;&#x7528;&#x5E93;"><a href="#&#x5E38;&#x7528;&#x5E93;" class="headerlink" title="&#x5E38;&#x7528;&#x5E93;"></a>&#x5E38;&#x7528;&#x5E93;</h1><p>&#x7F16;&#x7A0B;&#x4E09;&#x5251;&#x5BA2;, RxJava+Retrofit+Dagger.<br>&#x5E38;&#x7528;: ButterKnife&#x4F9D;&#x8D56;&#x6CE8;&#x89E3;, Glide/Picasso&#x56FE;&#x7247;&#x5904;&#x7406;.<br>&#x4F7F;&#x7528;&#x6839;&#x9879;&#x76EE;(rootProject)&#x7684;&#x53C2;&#x6570;&#x7BA1;&#x7406;&#x5B50;&#x9879;&#x76EE;&#x7684;&#x7248;&#x672C;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">&apos;me.tatarka.retrolambda&apos;</span>      <span class="comment">// Lambda&#x8868;&#x8FBE;&#x5F0F;</span></span><br><span class="line">apply plugin: <span class="string">&apos;com.android.application&apos;</span>     <span class="comment">// Android&#x5E94;&#x7528;</span></span><br><span class="line">apply plugin: <span class="string">&apos;com.neenbedankt.android-apt&apos;</span> <span class="comment">// &#x7F16;&#x8BD1;&#x65F6;&#x7C7B;</span></span><br><span class="line">apply plugin: <span class="string">&apos;com.android.databinding&apos;</span>     <span class="comment">// &#x6570;&#x636E;&#x7ED1;&#x5B9A;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> cfg = rootProject.ext.configuration <span class="comment">// &#x914D;&#x7F6E;</span></span><br><span class="line"><span class="keyword">def</span> libs = rootProject.ext.libraries <span class="comment">// &#x5E93;</span></span><br><span class="line"></span><br><span class="line">android {</span><br><span class="line">    compileSdkVersion cfg.compileVersion</span><br><span class="line">    buildToolsVersion cfg.buildToolsVersion</span><br><span class="line"></span><br><span class="line">    defaultConfig {</span><br><span class="line">        applicationId cfg.<span class="keyword">package</span></span><br><span class="line">        minSdkVersion cfg.minSdk</span><br><span class="line">        targetSdkVersion cfg.targetSdk</span><br><span class="line">        versionCode cfg.version_code</span><br><span class="line">        versionName cfg.version_name</span><br><span class="line"></span><br><span class="line">        buildConfigField <span class="string">&quot;String&quot;</span>, <span class="string">&quot;MARVEL_PUBLIC_KEY&quot;</span>, <span class="string">&quot;\&quot;${marvel_public_key}\&quot;&quot;</span></span><br><span class="line">        buildConfigField <span class="string">&quot;String&quot;</span>, <span class="string">&quot;MARVEL_PRIVATE_KEY&quot;</span>, <span class="string">&quot;\&quot;${marvel_private_key}\&quot;&quot;</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    buildTypes {</span><br><span class="line">        release {</span><br><span class="line">            minifyEnabled <span class="keyword">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">&apos;proguard-android.txt&apos;</span>), <span class="string">&apos;proguard-rules.pro&apos;</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    compileOptions {</span><br><span class="line">        <span class="keyword">sourceCompatibility</span> JavaVersion.VERSION_1_8</span><br><span class="line">        <span class="keyword">targetCompatibility</span> JavaVersion.VERSION_1_8</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x6CE8;&#x91CA;&#x51B2;&#x7A81;</span></span><br><span class="line">    packagingOptions {</span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">&apos;META-INF/services/javax.annotation.processing.Processor&apos;</span></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> {</span><br><span class="line">    <span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">&apos;libs&apos;</span>, <span class="keyword">include</span>: [<span class="string">&apos;*.jar&apos;</span>])</span><br><span class="line">    testCompile <span class="string">&apos;junit:junit:4.12&apos;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Android</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.android.support:design:${libs.supportVersion}&quot;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.android.support:appcompat-v7:${libs.supportVersion}&quot;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.android.support:cardview-v7:${libs.supportVersion}&quot;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.android.support:recyclerview-v7:${libs.supportVersion}&quot;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.android.support:palette-v7:${libs.supportVersion}&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Retrofit</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.squareup.retrofit:retrofit:${libs.retrofit}&quot;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.squareup.retrofit:converter-gson:${libs.retrofit}&quot;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.squareup.retrofit:adapter-rxjava:${libs.retrofit}&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ReactiveX</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;io.reactivex:rxjava:${libs.rxandroid}&quot;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;io.reactivex:rxandroid:${libs.rxandroid}&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Dagger</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.google.dagger:dagger:${libs.dagger}&quot;</span></span><br><span class="line">    apt <span class="string">&quot;com.google.dagger:dagger-compiler:${libs.dagger}&quot;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;org.glassfish:javax.annotation:${libs.javax_annotation}&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Others</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.jakewharton:butterknife:${libs.butterknife}&quot;</span> <span class="comment">// &#x8D44;&#x6E90;&#x6CE8;&#x5165;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;com.github.bumptech.glide:glide:${libs.glide}&quot;</span> <span class="comment">// &#x56FE;&#x7247;&#x5904;&#x7406;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;jp.wasabeef:recyclerview-animators:${libs.recycler_animators}&quot;</span> <span class="comment">// Recycler&#x52A8;&#x753B;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;de.hdodenhof:circleimageview:${libs.circleimageview}&quot;</span> <span class="comment">// &#x5934;&#x50CF;&#x89C6;&#x56FE;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>&#x9879;&#x76EE;&#x7248;&#x672C;:<br>def cfg = rootProject.ext.configuration<br>cfg.compileVersion<br>&#x5E93;&#x7248;&#x672C;:<br>def libs = rootProject.ext.libraries<br>${libs.retrofit}</p>
+</blockquote>
+<hr>
+<h1 id="&#x53C2;&#x6570;&#x7BA1;&#x7406;"><a href="#&#x53C2;&#x6570;&#x7BA1;&#x7406;" class="headerlink" title="&#x53C2;&#x6570;&#x7BA1;&#x7406;"></a>&#x53C2;&#x6570;&#x7BA1;&#x7406;</h1><p>buildConfigField&#x7BA1;&#x7406;&#x79C1;&#x6709;&#x53C2;&#x6570;, &#x914D;&#x7F6E;&#x5728;gradle.properties&#x91CC;&#x9762;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">android {</span><br><span class="line">    defaultConfig {</span><br><span class="line">        buildConfigField <span class="string">&quot;String&quot;</span>, <span class="string">&quot;MARVEL_PUBLIC_KEY&quot;</span>, <span class="string">&quot;\&quot;${marvel_public_key}\&quot;&quot;</span></span><br><span class="line">        buildConfigField <span class="string">&quot;String&quot;</span>, <span class="string">&quot;MARVEL_PRIVATE_KEY&quot;</span>, <span class="string">&quot;\&quot;${marvel_private_key}\&quot;&quot;</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x7684;<strong>&#x7C7B;&#x578B;\&#x53D8;&#x91CF;&#x540D;\&#x4F4D;&#x7F6E;</strong>&#x4E09;&#x4E2A;&#x90E8;&#x5206;.</p>
+</blockquote>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">marvel_public_key   = <span class="number">74129</span>ef99c9fd5f7692608f17abb88f9</span><br><span class="line">marvel_private_key  = <span class="number">281</span>eb4f077e191f7863a11620fa1865f2940ebeb</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>&#x672A;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;, &#x9ED8;&#x8BA4;&#x662F;&#x914D;&#x7F6E;&#x5728;<strong>gradle.properties</strong>&#x4E2D;.<br>&#x4E24;&#x4E2A;&#x5730;&#x65B9;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x53C2;&#x6570;, &#x4E00;&#x4E2A;&#x662F;&#x9879;&#x76EE;&#x7684;build.gradle, &#x4E00;&#x4E2A;&#x662F;gradle.properties.</p>
+</blockquote>
+<p>&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;<strong>BuildConfig.xxx</strong>&#x5F15;&#x5165;&#x53C2;&#x6570;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MarvelSigningIterceptor signingIterceptor = <span class="keyword">new</span> MarvelSigningIterceptor(</span><br><span class="line">        BuildConfig.MARVEL_PUBLIC_KEY, BuildConfig.MARVEL_PRIVATE_KEY);</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="&#x7248;&#x672C;&#x7BA1;&#x7406;"><a href="#&#x7248;&#x672C;&#x7BA1;&#x7406;" class="headerlink" title="&#x7248;&#x672C;&#x7BA1;&#x7406;"></a>&#x7248;&#x672C;&#x7BA1;&#x7406;</h1><p>&#x7248;&#x672C;&#x7BA1;&#x7406;&#x914D;&#x7F6E;&#x5728;&#x9879;&#x76EE;&#x7684;build.gradle&#x4E2D;, &#x5305;&#x542B;&#x4E24;&#x4E2A;&#x90E8;&#x5206;, &#x4E00;&#x4E2A;&#x662F;&#x9879;&#x76EE;&#x7684;&#x7248;&#x672C;, &#x4E00;&#x4E2A;&#x662F;&#x5E93;&#x7684;&#x7248;&#x672C;. &#x628A;&#x5E38;&#x7528;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x6210;&#x4E3A;&#x53D8;&#x91CF;. &#x5B50;&#x9879;&#x76EE;&#x4F7F;&#x7528;<strong>rootProject.ext.xxx</strong>&#x7684;&#x5F62;&#x5F0F;&#x5F15;&#x5165;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">ext {</span><br><span class="line">    configuration = [</span><br><span class="line">            <span class="keyword">package</span>          : <span class="string">&quot;me.chunyu.spike.springrainnews&quot;</span>,</span><br><span class="line">            buildToolsVersion: <span class="string">&quot;23.0.1&quot;</span>,</span><br><span class="line">            compileVersion   : <span class="number">23</span>,</span><br><span class="line">            minSdk           : <span class="number">14</span>,</span><br><span class="line">            targetSdk        : <span class="number">23</span>,</span><br><span class="line">            version_code     : <span class="number">1</span>,</span><br><span class="line">            version_name     : <span class="string">&quot;0.0.1&quot;</span>,</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    libraries = [</span><br><span class="line">            supportVersion    : <span class="string">&quot;23.1.1&quot;</span>,</span><br><span class="line">            retrofit          : <span class="string">&quot;2.0.0-beta2&quot;</span>,</span><br><span class="line">            rxandroid         : <span class="string">&quot;1.1.0&quot;</span>,</span><br><span class="line">            dagger            : <span class="string">&quot;2.0&quot;</span>,</span><br><span class="line">            javax_annotation  : <span class="string">&quot;10.0-b28&quot;</span>,</span><br><span class="line">            butterknife       : <span class="string">&quot;7.0.1&quot;</span>,</span><br><span class="line">            glide             : <span class="string">&quot;3.6.1&quot;</span>,</span><br><span class="line">            recycler_animators: <span class="string">&quot;2.1.0&quot;</span>,</span><br><span class="line">            circleimageview   : <span class="string">&quot;2.0.0&quot;</span></span><br><span class="line">    ]</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">buildscript</span> {</span><br><span class="line">    <span class="keyword">repositories</span> {</span><br><span class="line">        jcenter()</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">dependencies</span> {</span><br><span class="line">        <span class="keyword">classpath</span> <span class="string">&apos;com.android.tools.build:gradle:2.0.0-alpha5&apos;</span></span><br><span class="line">        <span class="keyword">classpath</span> <span class="string">&apos;com.neenbedankt.gradle.plugins:android-apt:1.8&apos;</span></span><br><span class="line">        <span class="keyword">classpath</span> <span class="string">&apos;me.tatarka:gradle-retrolambda:3.2.4&apos;</span></span><br><span class="line">        <span class="keyword">classpath</span> <span class="string">&apos;com.android.databinding:dataBinder:1.0-rc4&apos;</span></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">allprojects</span> {</span><br><span class="line">    <span class="keyword">repositories</span> {</span><br><span class="line">        jcenter()</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">task</span> clean(type: <span class="keyword">Delete</span>) {</span><br><span class="line">    <span class="keyword">delete</span> rootProject.buildDir</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="&#x8865;&#x5145;"><a href="#&#x8865;&#x5145;" class="headerlink" title="&#x8865;&#x5145;"></a>&#x8865;&#x5145;</h1><p>Retrolambda&#x7684;&#x6700;&#x65B0;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">plugins {</span><br><span class="line">  id <span class="string">&quot;me.tatarka.retrolambda&quot;</span> version <span class="string">&quot;3.2.5&quot;</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">android {</span><br><span class="line">  compileOptions {</span><br><span class="line">    <span class="keyword">sourceCompatibility</span> JavaVersion.VERSION_1_8</span><br><span class="line">    <span class="keyword">targetCompatibility</span> JavaVersion.VERSION_1_8</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>&#x901A;&#x8FC7;&#x8FD9;&#x4E9B;&#x65B9;&#x5F0F;&#x8BBE;&#x7F6E;Android&#x9879;&#x76EE;&#x7684;Gradle&#x914D;&#x7F6E;, &#x53EF;&#x4EE5;&#x4FBF;&#x6377;&#x5730;&#x4FEE;&#x6539;&#x5E93;&#x7684;&#x7248;&#x672C;&#x53F7;, &#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x5E76;&#x63A7;&#x5236;&#x98CE;&#x9669;.</p>
+<p>OK, that&#x2019;s all! Enjoy it!</p>
+<blockquote>
+<p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/">http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/</a><br>&#x6B22;&#x8FCE;&#x6536;&#x85CF;&#x6211;&#x7684;<a href="http://www.wangchenlong.org">&#x535A;&#x5BA2;</a>, Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;.</p>
+</blockquote>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/14/improve-gradle-speed/" rel="next" title="加速 Gradle 构建大型 Android 项目的方法">
+                <i class="fa fa-chevron-left"></i> 加速 Gradle 构建大型 Android 项目的方法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/15/manage-gradle-lib-version/"
+     data-title="大型项目 Gradle 的常用库和版本管理"
+     data-content=""
+     data-url="http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+            <!--底部广告: 300*250-->
+            <div align="center" style="margin: 20px 0px 0px 0px">
+              <script charset="gbk" src="http://p.tanx.com/ex?i=mm_114555302_13074422_51598653"></script>
+            </div>
+          </div>
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/15/manage-gradle-lib-version/"
+           data-title="大型项目 Gradle 的常用库和版本管理" data-url="http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="王辰龙" />
+          <p class="site-author-name" itemprop="name">王辰龙</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/SpikeKing" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 简书
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2852941392" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> 微博
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/caroline_wendy" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> CSDN
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 稀土
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.chunyuyisheng.com/" target="_blank">春雨医生</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.chunyuyisheng.com/pedometer" target="_blank">计步器</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用库"><span class="nav-number">1.</span> <span class="nav-text">常用库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参数管理"><span class="nav-number">2.</span> <span class="nav-text">参数管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本管理"><span class="nav-number">3.</span> <span class="nav-text">版本管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#补充"><span class="nav-number">4.</span> <span class="nav-text">补充</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+      <div align="center">
+        <!--侧栏广告-->
+        <script charset="gbk" src="http://p.tanx.com/ex?i=mm_114555302_13074422_51596752"></script>
+      </div>
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王辰龙</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"spikeking"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("24qpuQFXa0w8ead8gg6Rxxhc-gzGzoHsz", "O8vfKJtVanuyjh9NabH91ig7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>
