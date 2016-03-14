@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
-    
-    <lastmod>2016-03-14T03:12:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/about/index.html</loc>
     
-    <lastmod>2016-03-14T01:21:32.000Z</lastmod>
+    <lastmod>2016-03-14T05:57:30.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
     
-    <lastmod>2016-03-13T06:29:31.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
-    
-    <lastmod>2016-03-13T05:23:42.000Z</lastmod>
+    <lastmod>2016-03-14T05:57:10.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/12/apply-flux-architecture/</loc>
     
-    <lastmod>2016-03-13T05:22:43.000Z</lastmod>
+    <lastmod>2016-03-14T05:57:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
+    
+    <lastmod>2016-03-14T05:57:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/14/use-dagger-espresso-test-network/</loc>
+    
+    <lastmod>2016-03-14T05:57:10.000Z</lastmod>
     
   </url>
   
