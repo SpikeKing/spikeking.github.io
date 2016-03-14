@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</loc>
+    
+    <lastmod>2016-03-14T12:07:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/about/index.html</loc>
     
     <lastmod>2016-03-14T08:06:38.000Z</lastmod>
@@ -16,14 +23,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</loc>
     
     <lastmod>2016-03-14T06:42:05.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
     
     <lastmod>2016-03-14T06:42:05.000Z</lastmod>
     

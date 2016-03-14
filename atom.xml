@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-14T06:42:05.000Z</updated>
+  <updated>2016-03-14T12:07:41.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -14,6 +14,75 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 MAT 分析应用的内存信息</title>
+    <link href="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/"/>
+    <id>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</id>
+    <published>2016-03-14T11:57:00.000Z</published>
+    <updated>2016-03-14T12:07:41.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.eclipse.org/mat/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;MAT(Memory Analyzer Tool)&lt;/strong&gt;&lt;/a&gt;, &amp;#x662F;&amp;#x8457;&amp;#x540D;&amp;#x7684;Android&amp;#x5185;&amp;#x5B58;&amp;#x5206;&amp;#x6790;&amp;#x5DE5;&amp;#x5177;, &amp;#x867D;&amp;#x7136;&lt;a href=&quot;http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/&quot;&gt;LeakCanary&lt;/a&gt;&amp;#x66F4;&amp;#x52A0;&amp;#x4FBF;&amp;#x6377;, &amp;#x4F46;&amp;#x662F;MAT&amp;#x53EF;&amp;#x4EE5;&amp;#x6E05;&amp;#x695A;&amp;#x5730;&amp;#x83B7;&amp;#x77E5;&amp;#x6574;&amp;#x4F53;&amp;#x5185;&amp;#x5B58;&amp;#x4F7F;&amp;#x7528;&amp;#x60C5;&amp;#x51B5;, &amp;#x8FD8;&amp;#x662F;&amp;#x5FC5;&amp;#x987B;&amp;#x8981;&amp;#x638C;&amp;#x63E1;&amp;#x7684;. &amp;#x6211;&amp;#x6765;&amp;#x8BB2;&amp;#x89E3;&amp;#x4E00;&amp;#x4E0B;&amp;#x5982;&amp;#x4F55;&amp;#x4F7F;&amp;#x7528;.&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;&amp;#x5185;&amp;#x5B58;&amp;#x6587;&amp;#x4EF6;&quot;&gt;&lt;a href=&quot;#&amp;#x5185;&amp;#x5B58;&amp;#x6587;&amp;#x4EF6;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x5185;&amp;#x5B58;&amp;#x6587;&amp;#x4EF6;&quot;&gt;&lt;/a&gt;&amp;#x5185;&amp;#x5B58;&amp;#x6587;&amp;#x4EF6;&lt;/h1&gt;&lt;p&gt;&amp;#x4F7F;&amp;#x7528;Android Studio&amp;#x5E95;&amp;#x90E8;&amp;#x7684;AndroidMonitor, &amp;#x83B7;&amp;#x53D6;&amp;#x5185;&amp;#x5B58;&amp;#x7247;&amp;#x6BB5;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x70B9;&amp;#x51FB;&lt;strong&gt;Initial GC&lt;/strong&gt;&amp;#x56DE;&amp;#x6536;&amp;#x5185;&amp;#x5B58;, &amp;#x4F7F;&amp;#x7528;&amp;#x5E94;&amp;#x7528;, &lt;strong&gt;Dump Java Heap&lt;/strong&gt;, &amp;#x518D;&amp;#x6B21;&amp;#x70B9;&amp;#x51FB;&amp;#x505C;&amp;#x6B62;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/03/14/use-mat-analyze-memory/mat-leak.png&quot; alt=&quot;&amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x5728;Android&amp;#x7684;SDK&amp;#x4E2D;&amp;#x7684;platform-tools&amp;#x6587;&amp;#x4EF6;&amp;#x5939;&amp;#x5185;, &lt;strong&gt;hprof-conv&lt;/strong&gt;&amp;#x811A;&amp;#x672C;&amp;#x628A;AS&amp;#x7684;&amp;#x5185;&amp;#x5B58;&amp;#x683C;&amp;#x5F0F;&amp;#x8F6C;&amp;#x6362;&amp;#x4E3A;MAT&amp;#x7684;&amp;#x5185;&amp;#x5B58;&amp;#x683C;&amp;#x5F0F;. &amp;#x4E4B;&amp;#x540E;, &amp;#x4F7F;&amp;#x7528;MAT&amp;#x6253;&amp;#x5F00;&amp;#x6587;&amp;#x4EF6;.&lt;/p&gt;
+&lt;p&gt;&amp;#x4F7F;&amp;#x7528;&amp;#x547D;&amp;#x4EE4;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;./hprof-conv path/file.hprof exitPath/heap-converted.hprof&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;&amp;#x5206;&amp;#x6790;&amp;#x5185;&amp;#x5B58;&quot;&gt;&lt;a href=&quot;#&amp;#x5206;&amp;#x6790;&amp;#x5185;&amp;#x5B58;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x5206;&amp;#x6790;&amp;#x5185;&amp;#x5B58;&quot;&gt;&lt;/a&gt;&amp;#x5206;&amp;#x6790;&amp;#x5185;&amp;#x5B58;&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.eclipse.org/mat/downloads.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x4E0B;&amp;#x8F7D;&lt;/a&gt;Eclipse&amp;#x7684;MAT&amp;#x5DE5;&amp;#x5177;. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x867D;&amp;#x7136;&amp;#x662F;Eclipse&amp;#x7684;&amp;#x5DE5;&amp;#x5177;, &amp;#x4F46;&amp;#x662F;&amp;#x53EF;&amp;#x4EE5;&amp;#x5355;&amp;#x72EC;&amp;#x8FD0;&amp;#x884C;, &amp;#x5E76;&amp;#x4E0D;&amp;#x9700;&amp;#x8981;&amp;#x5B89;&amp;#x88C5;Eclipse.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;#x6253;&amp;#x5F00;&amp;#x5185;&amp;#x5B58;&amp;#x7247;&amp;#x6BB5;, &amp;#x9009;&amp;#x62E9;&amp;#x5185;&amp;#x5B58;&amp;#x62A5;&amp;#x544A;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/03/14/use-mat-analyze-memory/mat-report.png&quot; alt=&quot;&amp;#x5185;&amp;#x5B58;&amp;#x62A5;&amp;#x544A;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x5185;&amp;#x5B58;&amp;#x6574;&amp;#x4F53;&amp;#x60C5;&amp;#x51B5;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/03/14/use-mat-analyze-memory/mat-total.png&quot; alt=&quot;&amp;#x5185;&amp;#x5B58;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x9009;&amp;#x62E9;&amp;#x76F4;&amp;#x65B9;&amp;#x56FE;&amp;#x6837;&amp;#x5F0F;, &amp;#x6DFB;&amp;#x52A0;&amp;#x5305;&amp;#x540D;&amp;#x8FC7;&amp;#x6EE4;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/03/14/use-mat-analyze-memory/mat-memory-1.png&quot; alt=&quot;&amp;#x5F15;&amp;#x7528;&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;&amp;#x5224;&amp;#x65AD;&amp;#x6CC4;&amp;#x9732;&quot;&gt;&lt;a href=&quot;#&amp;#x5224;&amp;#x65AD;&amp;#x6CC4;&amp;#x9732;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x5224;&amp;#x65AD;&amp;#x6CC4;&amp;#x9732;&quot;&gt;&lt;/a&gt;&amp;#x5224;&amp;#x65AD;&amp;#x6CC4;&amp;#x9732;&lt;/h1&gt;&lt;p&gt;Activity&amp;#x6216;View&amp;#x5927;&amp;#x4E8E;1&amp;#x4E2A;&amp;#x5BF9;&amp;#x8C61;, &amp;#x90FD;&amp;#x6709;&amp;#x53EF;&amp;#x80FD;&amp;#x53D1;&amp;#x751F;&amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;.&lt;/p&gt;
+&lt;p&gt;&amp;#x663E;&amp;#x793A;&amp;#x5185;&amp;#x5B58;&amp;#x7684;&amp;#x6240;&amp;#x6709;&amp;#x5F15;&amp;#x7528;&amp;#x60C5;&amp;#x51B5;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/03/14/use-mat-analyze-memory/mat-memory-2.png&quot; alt=&quot;&amp;#x5F15;&amp;#x7528;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x9010;&amp;#x4E2A;&amp;#x5224;&amp;#x65AD;&amp;#x5373;&amp;#x53EF;, &amp;#x6709;&amp;#x4E9B;&amp;#x5BF9;&amp;#x8C61;&amp;#x7684;&amp;#x5F15;&amp;#x7528;&amp;#x8F83;&amp;#x591A;, &amp;#x53EF;&amp;#x80FD;&amp;#x662F;&amp;#x4F7F;&amp;#x7528;&amp;#x4E86;&amp;#x6570;&amp;#x7EC4;, &amp;#x5E76;&amp;#x4E0D;&amp;#x4E00;&amp;#x5B9A;&amp;#x662F;&amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;#x663E;&amp;#x793A;&amp;#x5355;&amp;#x4E2A;&amp;#x7C7B;&amp;#x7684;&amp;#x5185;&amp;#x5B58;&amp;#x60C5;&amp;#x51B5;&lt;br&gt;&lt;img src=&quot;/2016/03/14/use-mat-analyze-memory/mat-memory-3.png&quot; alt=&quot;&amp;#x5185;&amp;#x5B58;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x4F7F;&amp;#x7528;&amp;#x641C;&amp;#x7D22;&amp;#x529F;&amp;#x80FD;, &amp;#x8F93;&amp;#x5165;SQL&amp;#x8BED;&amp;#x53E5;, &amp;#x5E76;&amp;#x6267;&amp;#x884C;. &amp;#x7EA2;&amp;#x8272;&amp;#x53F9;&amp;#x53F7;&amp;#x6267;&amp;#x884C;&amp;#x641C;&amp;#x7D22;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;#x901A;&amp;#x8FC7;&amp;#x89C2;&amp;#x5BDF;, &amp;#x6211;&amp;#x4EEC;&amp;#x53D1;&amp;#x73B0;&amp;#x5FAE;&amp;#x4FE1;mWXApi&amp;#x4F20;&amp;#x5165;&amp;#x4E86;&amp;#x9519;&amp;#x8BEF;&amp;#x7684;Context, &amp;#x5BFC;&amp;#x81F4;&amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/03/14/use-mat-analyze-memory/mat-memory-4.png&quot; alt=&quot;&amp;#x6CC4;&amp;#x9732;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x4EE3;&amp;#x7801;&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mFriendsPlatform = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; WXSharePlatform(mActivity, title, content,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        bitmap, pageUrl, SendMessageToWX.Req.WXSceneTimeline);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x76F4;&amp;#x63A5;&amp;#x4F20;&amp;#x5165;Activity&amp;#x5BFC;&amp;#x81F4;&amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;, &amp;#x4FEE;&amp;#x6539;&amp;#x4E3A;getApplicationContext&amp;#x5373;&amp;#x53EF;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&amp;#x5176;&amp;#x5B9E;&amp;#x8FD8;&amp;#x6BD4;&amp;#x8F83;&amp;#x590D;&amp;#x6742;, &amp;#x7B80;&amp;#x5355;&amp;#x7684;&amp;#x65B9;&amp;#x6CD5;&amp;#x662F;&amp;#x4F7F;&amp;#x7528;LeakCanary, &lt;a href=&quot;http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;OK, that&amp;#x2019;s all! Enjoy it!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x539F;&amp;#x59CB;&amp;#x5730;&amp;#x5740;:&lt;br&gt;&lt;a href=&quot;http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/&quot;&gt;http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/&lt;/a&gt;&lt;br&gt;&amp;#x6B22;&amp;#x8FCE;&amp;#x6536;&amp;#x85CF;&amp;#x6211;&amp;#x7684;&lt;a href=&quot;http://www.wangchenlong.org&quot;&gt;&amp;#x535A;&amp;#x5BA2;&lt;/a&gt;, Follow&amp;#x6211;&amp;#x7684;&lt;a href=&quot;https://github.com/SpikeKing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;, &amp;#x5173;&amp;#x6CE8;&amp;#x6211;&amp;#x7684;&lt;a href=&quot;http://weibo.com/u/2852941392&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x5FAE;&amp;#x535A;&lt;/a&gt;. &amp;#x672A;&amp;#x7ECF;&amp;#x6388;&amp;#x6743;, &amp;#x7981;&amp;#x6B62;&amp;#x8F6C;&amp;#x8F7D;.&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.eclipse.org/mat/&quot;&gt;&lt;strong&gt;MAT(Memory Analyzer Tool)&lt;/strong&gt;&lt;/a&gt;, &amp;#x662F;&amp;#x8457;&amp;#x540D;&amp;#x7684;Android&amp;#x5185;&amp;#x5B58;&amp;#x5206;&amp;#x6790;&amp;#x5DE5;&amp;#x5177;, &amp;#x867D;&amp;#x7136;&lt;a href=&quot;http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/&quot;&gt;LeakCanary&lt;/a&gt;&amp;#x66F4;&amp;#x52A0;&amp;#x4FBF;&amp;#x6377;, &amp;#x4F46;&amp;#x662F;MAT&amp;#x53EF;&amp;#x4EE5;&amp;#x6E05;&amp;#x695A;&amp;#x5730;&amp;#x83B7;&amp;#x77E5;&amp;#x6574;&amp;#x4F53;&amp;#x5185;&amp;#x5B58;&amp;#x4F7F;&amp;#x7528;&amp;#x60C5;&amp;#x51B5;, &amp;#x8FD8;&amp;#x662F;&amp;#x5FC5;&amp;#x987B;&amp;#x8981;&amp;#x638C;&amp;#x63E1;&amp;#x7684;. &amp;#x6211;&amp;#x6765;&amp;#x8BB2;&amp;#x89E3;&amp;#x4E00;&amp;#x4E0B;&amp;#x5982;&amp;#x4F55;&amp;#x4F7F;&amp;#x7528;.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.wangchenlong.org/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
+    
+      <category term="应用" scheme="http://www.wangchenlong.org/tags/%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="MAT" scheme="http://www.wangchenlong.org/tags/MAT/"/>
+    
+      <category term="内存" scheme="http://www.wangchenlong.org/tags/%E5%86%85%E5%AD%98/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 Leak Canary 检测应用的内存泄露</title>
@@ -82,9 +151,9 @@
     
       <category term="测试" scheme="http://www.wangchenlong.org/tags/%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="LeakCanary" scheme="http://www.wangchenlong.org/tags/LeakCanary/"/>
-    
       <category term="内存" scheme="http://www.wangchenlong.org/tags/%E5%86%85%E5%AD%98/"/>
+    
+      <category term="LeakCanary" scheme="http://www.wangchenlong.org/tags/LeakCanary/"/>
     
   </entry>
   
