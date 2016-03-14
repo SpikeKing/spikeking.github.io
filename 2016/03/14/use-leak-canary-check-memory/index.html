@@ -43,7 +43,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Mystra, Spike" />
+  <meta name="keywords" content="Android,应用,测试,LeakCanary,内存," />
 
 
 
@@ -61,15 +61,26 @@
 
 
 
-<meta name="description" content="分享与感悟">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mystra">
-<meta property="og:url" content="http://www.wangchenlong.org/index.html">
+<meta name="description" content="&amp;#x6B22;&amp;#x8FCE;Follow&amp;#x6211;&amp;#x7684;GitHub, &amp;#x5173;&amp;#x6CE8;&amp;#x6211;&amp;#x7684;&amp;#x7B80;&amp;#x4E66;.
+
+LeakCanary&amp;#x662F;&amp;#x68C0;&amp;#x6D4B;App&amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;&amp;#x7684;&amp;#x5DE5;&amp;#x5177;, &amp;#x5185">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Leak Canary 检测应用的内存泄露">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/index.html">
 <meta property="og:site_name" content="Mystra">
-<meta property="og:description" content="分享与感悟">
+<meta property="og:description" content="&amp;#x6B22;&amp;#x8FCE;Follow&amp;#x6211;&amp;#x7684;GitHub, &amp;#x5173;&amp;#x6CE8;&amp;#x6211;&amp;#x7684;&amp;#x7B80;&amp;#x4E66;.
+
+LeakCanary&amp;#x662F;&amp;#x68C0;&amp;#x6D4B;App&amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;&amp;#x7684;&amp;#x5DE5;&amp;#x5177;, &amp;#x5185">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/leak_memory.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/position.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/position-2.png">
+<meta property="og:updated_time" content="2016-03-14T06:31:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mystra">
-<meta name="twitter:description" content="分享与感悟">
+<meta name="twitter:title" content="使用 Leak Canary 检测应用的内存泄露">
+<meta name="twitter:description" content="&amp;#x6B22;&amp;#x8FCE;Follow&amp;#x6211;&amp;#x7684;GitHub, &amp;#x5173;&amp;#x6CE8;&amp;#x6211;&amp;#x7684;&amp;#x7B80;&amp;#x4E66;.
+
+LeakCanary&amp;#x662F;&amp;#x68C0;&amp;#x6D4B;App&amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;&amp;#x7684;&amp;#x5DE5;&amp;#x5177;, &amp;#x5185">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/leak_memory.png">
 
 
 
@@ -87,7 +98,7 @@
   };
 </script>
 
-  <title> Mystra </title>
+  <title> 使用 Leak Canary 检测应用的内存泄露 | Mystra </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -146,9 +157,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -275,9 +284,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -297,136 +306,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/03/14/analyze-app-battery/" itemprop="url">
-                  使用 Battery Historian 分析和优化应用的电量
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-14T14:31:36+08:00" content="2016-03-14">
-              2016-03-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/14/analyze-app-battery/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/14/analyze-app-battery/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/03/14/analyze-app-battery/" class="leancloud_visitors" data-flag-title="使用 Battery Historian 分析和优化应用的电量">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&#x5728;Android&#x9879;&#x76EE;&#x4E2D;, &#x8F83;&#x96BE;&#x76D1;&#x63A7;&#x5E94;&#x7528;&#x7684;&#x7535;&#x91CF;&#x6D88;&#x8017;, &#x4F46;&#x662F;&#x7528;&#x6237;&#x5374;&#x975E;&#x5E38;&#x5173;&#x5FC3;&#x624B;&#x673A;&#x7684;&#x5F85;&#x673A;&#x65F6;&#x95F4;. &#x8FC7;&#x5EA6;&#x8017;&#x7535;&#x7684;&#x5E94;&#x7528;, &#x4F1A;&#x906D;&#x5230;&#x7528;&#x6237;&#x65E0;&#x60C5;&#x7684;&#x5378;&#x8F7D;, &#x4E0D;&#x8981;&#x5B58;&#x5728;&#x4FA5;&#x5E78;&#x5FC3;&#x7406;, &#x7ED9;&#x7ADE;&#x54C1;&#x5E26;&#x6765;&#x673A;&#x4F1A;. &#x56E0;&#x6B64;, &#x6211;&#x4EEC;&#x9700;&#x8981;&#x7814;&#x7A76;&#x5E94;&#x7528;&#x7684;&#x8017;&#x7535;&#x91CF;, &#x5E76;&#x8FDB;&#x884C;&#x4F18;&#x5316;. &#x672C;&#x6587;&#x8BB2;&#x89E3;&#x4E00;&#x4E0B;<a href="https://github.com/google/battery-historian">Battery Historian</a>, &#x662F;&#x4E00;&#x6B3E;&#x7531;Google&#x63D0;&#x4F9B;&#x7684;Android&#x7CFB;&#x7EDF;&#x7535;&#x91CF;&#x5206;&#x6790;&#x5DE5;&#x5177;. &#x5728;&#x7F51;&#x9875;&#x4E2D;&#x5C55;&#x793A;&#x624B;&#x673A;&#x7684;&#x7535;&#x91CF;&#x6D88;&#x8017;&#x8FC7;&#x7A0B;, &#x8F93;&#x5165;&#x7535;&#x91CF;&#x5206;&#x6790;&#x6587;&#x4EF6;, &#x663E;&#x793A;&#x6D88;&#x8017;&#x60C5;&#x51B5;. &#x6700;&#x540E;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x7535;&#x91CF;&#x4F18;&#x5316;&#x7684;&#x65B9;&#x6CD5;, &#x53EF;&#x4F9B;&#x53C2;&#x8003;.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/14/analyze-app-battery/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/14/use-leak-canary-check-memory/" itemprop="url">
-                  使用 Leak Canary 检测应用的内存泄露
-                </a>
+                使用 Leak Canary 检测应用的内存泄露
               
             
           </h1>
@@ -500,9 +380,7 @@
       
 
       
-        
-          
-            <blockquote>
+        <blockquote>
 <p>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/" target="_blank" rel="external">&#x7B80;&#x4E66;</a>.</p>
 </blockquote>
 <p><a href="https://github.com/square/leakcanary" target="_blank" rel="external">LeakCanary</a>&#x662F;&#x68C0;&#x6D4B;App&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x7684;&#x5DE5;&#x5177;, &#x5185;&#x5B58;&#x6CC4;&#x9732;&#x662F;Android&#x5F00;&#x53D1;&#x4E2D;&#x5E38;&#x89C1;&#x7684;&#x95EE;&#x9898;, &#x4F7F;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x7A33;&#x5B9A;&#x6027;&#x4E0B;&#x964D;.</p>
@@ -547,416 +425,82 @@
 <blockquote>
 <p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/">http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</a><br>&#x6B22;&#x8FCE;&#x6536;&#x85CF;&#x6211;&#x7684;<a href="http://www.wangchenlong.org">&#x535A;&#x5BA2;</a>, Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://weibo.com/u/2852941392" target="_blank" rel="external">&#x5FAE;&#x535A;</a>. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;.</p>
 </blockquote>
-          
-        
       
     </div>
 
     <div>
       
+        
+      
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/14/use-dagger-espresso-test-network/" itemprop="url">
-                  使用Espresso和Dagger测试网络服务
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-14T13:57:10+08:00" content="2016-03-14">
-              2016-03-14
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
-
+            <a href="/tags/应用/" rel="tag">#应用</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/14/use-dagger-espresso-test-network/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/14/use-dagger-espresso-test-network/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/测试/" rel="tag">#测试</a>
           
-
+            <a href="/tags/LeakCanary/" rel="tag">#LeakCanary</a>
           
-
+            <a href="/tags/内存/" rel="tag">#内存</a>
           
-          
-             <span id="/2016/03/14/use-dagger-espresso-test-network/" class="leancloud_visitors" data-flag-title="使用Espresso和Dagger测试网络服务">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>&#x53EF;&#x9760;&#x7684;&#x529F;&#x80FD;&#x6D4B;&#x8BD5;, &#x610F;&#x5473;&#x7740;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;, &#x83B7;&#x53D6;&#x7684;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;&#x5747;&#x76F8;&#x540C;, &#x8FD9;&#x5C31;&#x9700;&#x8981;&#x6A21;&#x62DF;(Mock)&#x6570;&#x636E;. &#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Android&#x63A8;&#x8350;&#x7684;<a href="https://google.github.io/android-testing-support-library/docs/espresso/">Espresso</a>. &#x6A21;&#x62DF;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<a href="http://google.github.io/dagger/">Dagger2</a>, &#x4E00;&#x79CD;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x6846;&#x67B6;.</p>
-<p>&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x901A;&#x5E38;&#x4F1A;&#x6A21;&#x62DF;&#x6240;&#x6709;&#x4F9D;&#x8D56;, &#x907F;&#x514D;&#x51FA;&#x73B0;&#x4E0D;&#x53EF;&#x9760;&#x7684;&#x60C5;&#x51B5;, &#x800C;&#x529F;&#x80FD;&#x6D4B;&#x8BD5;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;. &#x4E00;&#x4E2A;&#x7ECF;&#x5178;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x5982;&#x4F55;&#x6A21;&#x62DF;&#x7A33;&#x5B9A;&#x7684;&#x7F51;&#x7EDC;&#x6570;&#x636E;, &#x53EF;&#x4EE5;&#x4F7F;&#x7528;Dagger2&#x5904;&#x7406;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/14/use-dagger-espresso-test-network/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/14/use-dagger-espresso-test-network/" rel="next" title="使用Espresso和Dagger测试网络服务">
+                <i class="fa fa-chevron-left"></i> 使用Espresso和Dagger测试网络服务
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/03/14/analyze-app-battery/" rel="prev" title="使用 Battery Historian 分析和优化应用的电量">
+                使用 Battery Historian 分析和优化应用的电量 <i class="fa fa-chevron-right"></i>
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/03/12/apply-flux-architecture/" itemprop="url">
-                  实践移动端的Flux架构
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-12T22:56:08+08:00" content="2016-03-12">
-              2016-03-12
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/12/apply-flux-architecture/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/12/apply-flux-architecture/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/03/12/apply-flux-architecture/" class="leancloud_visitors" data-flag-title="实践移动端的Flux架构">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p><em>&#x4EFB;&#x4F55;&#x67B6;&#x6784;&#x6700;&#x7EC8;&#x76EE;&#x7684;&#x90FD;&#x662F;&#x8BA9;&#x7A0B;&#x5E8F;&#x66F4;&#x52A0;&#x6709;&#x5E8F;, &#x529F;&#x80FD;&#x4FBF;&#x4E8E;&#x6269;&#x5C55;, Bug&#x5BB9;&#x6613;&#x8FFD;&#x8E2A;.</em></p>
-<p>Facebook&#x4F7F;&#x7528;Flux&#x67B6;&#x6784;&#x6765;&#x6784;&#x5EFA;&#x5BA2;&#x6237;&#x7AEF;&#x7684;Web&#x5E94;&#x7528;. Flux&#x67B6;&#x6784;&#x5E76;&#x4E0D;&#x662F;&#x4E3A;&#x79FB;&#x52A8;&#x7AEF;&#x8BBE;&#x8BA1;&#x7684;, &#x4F46;&#x662F;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x8FD9;&#x4E2A;&#x601D;&#x60F3;&#x5728;Android&#x7AEF;&#x4F7F;&#x7528;. Flux&#x662F;&#x6570;&#x636E;&#x9A71;&#x52A8;&#x578B;&#x67B6;&#x6784;, &#x5728;&#x4EE5;&#x6570;&#x636E;&#x4E3A;&#x6838;&#x5FC3;&#x7684;&#x573A;&#x666F;&#x4E2D;&#x4F7F;&#x7528;&#x975E;&#x5E38;&#x5408;&#x9002;, &#x4E0D;&#x8FC7;Facebook&#x597D;&#x50CF;&#x628A;<strong>Flux&#x67B6;&#x6784;</strong>&#x5E94;&#x7528;&#x4E8E;&#x6240;&#x6709;&#x4EA7;&#x54C1;, <strong>&#x65E0;&#x8BBA;&#x662F;&#x524D;&#x7AEF;&#x8FD8;&#x662F;&#x79FB;&#x52A8;&#x7AEF;</strong>. &#x6700;&#x65B0;Facebook&#x5F00;&#x53D1;&#x7684;<a href="https://github.com/facebook/react-native">ReactNative</a>&#x4E2D;, &#x5C31;&#x662F;&#x4F7F;&#x7528;Flux&#x67B6;&#x6784;&#x4E3A;&#x6838;&#x5FC3;, &#x4E5F;&#x662F;&#x5F00;&#x6E90;&#x7684;, &#x53EF;&#x4EE5;&#x9605;&#x8BFB;RN&#x7684;&#x4EE3;&#x7801;&#x4E86;&#x89E3;&#x6240;&#x6709;&#x5185;&#x5BB9;.</p>
-<blockquote>
-<p>Flux&#x67B6;&#x6784;, &#x987E;&#x540D;&#x601D;&#x4E49;&#x8868;&#x793A;<em>&#x6D41;</em>, &#x662F;&#x4EE5;&#x6570;&#x636E;&#x6D41;&#x4E3A;&#x57FA;&#x7840;. </p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/12/apply-flux-architecture/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/03/14/use-leak-canary-check-memory/"
+     data-title="使用 Leak Canary 检测应用的内存泄露"
+     data-content=""
+     data-url="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  
-  
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/12/get-app-cert-and-package/" itemprop="url">
-                  提取应用的签名和包名
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-12T18:20:07+08:00" content="2016-03-12">
-              2016-03-12
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/12/get-app-cert-and-package/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/12/get-app-cert-and-package/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/03/12/get-app-cert-and-package/" class="leancloud_visitors" data-flag-title="提取应用的签名和包名">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Android&#x5E94;&#x7528;&#x5728;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x5E93;&#x65F6;, &#x53EF;&#x80FD;&#x9700;&#x8981;<strong>&#x7533;&#x8BF7;&#x5BC6;&#x94A5;</strong>, &#x8868;&#x660E;&#x5E94;&#x7528;&#x8EAB;&#x4EFD;, &#x5982;&#x9AD8;&#x5FB7;&#x5B9A;&#x4F4D;SDK&#x7B49;. <strong>&#x5E94;&#x7528;&#x7B7E;&#x540D;(printcert)</strong>&#x662F;&#x516C;&#x5F00;&#x7684;, &#x53EA;&#x8981;&#x4E0B;&#x8F7D;&#x5230;Apk&#x5305;, &#x5C31;&#x53EF;&#x4EE5;&#x516C;&#x5F00;&#x63D0;&#x53D6;. &#x7B7E;&#x540D;&#x4E2D;&#x5305;&#x542B;<strong>MD5</strong>, <strong>SHA1</strong>, <strong>SHA256</strong>. <strong>&#x5E94;&#x7528;&#x552F;&#x4E00;&#x6027;</strong>&#x5C31;&#x662F;&#x8868;&#x73B0;&#x4E3A;<strong>&#x7B7E;&#x540D;+&#x5305;&#x540D;</strong>, &#x5C31;&#x50CF;&#x4EBA;&#x7684;&#x6307;&#x7EB9;&#x4E00;&#x6837;&#x91CD;&#x8981;, &#x662F;&#x786E;&#x5B9A;&#x5E94;&#x7528;&#x5C5E;&#x6027;&#x7684;&#x91CD;&#x8981;&#x4FE1;&#x606F;, &#x4E5F;&#x662F;<strong>&#x5E94;&#x7528;&#x5546;&#x5E97;</strong>&#x68C0;&#x6D4B;&#x76D7;&#x7248;&#x5E94;&#x7528;&#x7684;&#x9014;&#x5F84;. </p>
-<p>&#x672C;&#x6587;&#x8BB2;&#x89E3;&#x5982;&#x4F55;&#x63D0;&#x53D6;&#x5E94;&#x7528;&#x7684;<strong>&#x7B7E;&#x540D;&#x548C;&#x5305;&#x540D;</strong>.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/12/get-app-cert-and-package/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
             <!--底部广告: 300*250-->
@@ -969,6 +513,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/14/use-leak-canary-check-memory/"
+           data-title="使用 Leak Canary 检测应用的内存泄露" data-url="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -988,8 +540,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -1101,6 +662,23 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖和引入"><span class="nav-number">1.</span> <span class="nav-text">依赖和引入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#泄露单例"><span class="nav-number">2.</span> <span class="nav-text">泄露单例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#泄露内存"><span class="nav-number">3.</span> <span class="nav-text">泄露内存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解析泄露位置"><span class="nav-number">4.</span> <span class="nav-text">解析泄露位置</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
 
       <div align="center">
         <!--侧栏广告-->
@@ -1197,6 +775,167 @@
 
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 

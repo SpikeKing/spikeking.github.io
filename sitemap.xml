@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.wangchenlong.org/about/index.html</loc>
+    <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
     
-    <lastmod>2016-03-14T05:57:30.000Z</lastmod>
+    <lastmod>2016-03-14T06:31:36.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</loc>
     
-    <lastmod>2016-03-14T05:57:10.000Z</lastmod>
+    <lastmod>2016-03-14T06:31:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/about/index.html</loc>
+    
+    <lastmod>2016-03-14T05:57:30.000Z</lastmod>
     
   </url>
   
