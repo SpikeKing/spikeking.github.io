@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-14T22:54:47.000Z</updated>
+  <updated>2016-03-14T23:15:37.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -16,11 +16,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vectors时代(1) - SVG 格式缩减应用图像</title>
+    <link href="http://www.wangchenlong.org/2016/03/15/replace-svg-image/"/>
+    <id>http://www.wangchenlong.org/2016/03/15/replace-svg-image/</id>
+    <published>2016-03-14T23:01:00.000Z</published>
+    <updated>2016-03-14T23:15:37.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&amp;#x65F6;&amp;#x4EE3;&amp;#x5728;&amp;#x53D1;&amp;#x5C55;, &amp;#x6280;&amp;#x672F;&amp;#x5728;&amp;#x8FDB;&amp;#x6B65;, Android&amp;#x7684;Vector&amp;#x56FE;&amp;#x50CF;&amp;#x7684;&amp;#x65F6;&amp;#x4EE3;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5230;&amp;#x6765;. &amp;#x5728;Google&amp;#x7684;&amp;#x6700;&amp;#x65B0;&amp;#x652F;&amp;#x6301;&amp;#x5E93;v23.2&amp;#x4E2D;, AppCompat&amp;#x7C7B;&amp;#x5DF2;&amp;#x7ECF;&amp;#x4F7F;&amp;#x7528;Vector&amp;#x56FE;&amp;#x50CF;, &amp;#x4F7F;&amp;#x5F97;AAR&amp;#x5305;&amp;#x51CF;&amp;#x5C11;9%, &amp;#x5927;&amp;#x7EA6;70KB, &amp;#x60E0;&amp;#x53CA;&amp;#x6240;&amp;#x6709;&amp;#x9AD8;&amp;#x7248;&amp;#x672C;&amp;#x7684;&amp;#x5E94;&amp;#x7528;. &amp;#x5F53;&amp;#x7136;&amp;#x6211;&amp;#x4EEC;&amp;#x4E5F;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;Vector, &amp;#x7626;&amp;#x8EAB;&amp;#x5E94;&amp;#x7528;. Vector&amp;#x56FE;&amp;#x50CF;&amp;#x662F;SVG&amp;#x683C;&amp;#x5F0F;&amp;#x5728;Android&amp;#x7684;&amp;#x8868;&amp;#x73B0;&amp;#x5F62;&amp;#x5F0F;. SVG&amp;#x56FE;&amp;#x50CF;&amp;#x9002;&amp;#x5E94;&amp;#x5C4F;&amp;#x5E55;, &amp;#x56FE;&amp;#x7247;&amp;#x8F83;&amp;#x5C0F;, &amp;#x4F18;&amp;#x70B9;&amp;#x5F88;&amp;#x591A;, &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%8F%AF%E7%B8%AE%E6%94%BE%E5%90%91%E9%87%8F%E5%9C%96%E5%BD%A2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;.&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&amp;#x5173;&amp;#x4E8E;&lt;em&gt;Vectors&amp;#x65F6;&amp;#x4EE3;&lt;/em&gt;, &amp;#x4E3B;&amp;#x8981;&amp;#x5206;&amp;#x4E3A;&amp;#x4E24;&amp;#x8282;:&lt;br&gt;(1) &amp;#x4F7F;&amp;#x7528;SVG&amp;#x683C;&amp;#x5F0F;&amp;#x56FE;&amp;#x7247;&amp;#x751F;&amp;#x6210;Vector&amp;#x56FE;&amp;#x50CF;, &amp;#x66FF;&amp;#x6362;PNG, &amp;#x7F29;&amp;#x51CF;&amp;#x5E94;&amp;#x7528;&amp;#x4F53;&amp;#x79EF;.&lt;br&gt;(2) &amp;#x7ED8;&amp;#x5236;Vector&amp;#x56FE;&amp;#x50CF;&amp;#x7684;&amp;#x8DEF;&amp;#x5F84;&amp;#x52A8;&amp;#x753B;, &amp;#x5728;Android 5.0(21)&amp;#x4EE5;&amp;#x4E0A;&amp;#x7CFB;&amp;#x7EDF;&amp;#x4F7F;&amp;#x7528;, &lt;a href=&quot;http://www.jianshu.com/p/89879989895a&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;#x672C;&amp;#x6587;&amp;#x662F;&amp;#x7B2C;&amp;#x4E00;&amp;#x8282;, &amp;#x5173;&amp;#x4E8E;Vector&amp;#x56FE;&amp;#x50CF;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SVG: Scalable Vector Graphics, &amp;#x53EF;&amp;#x7F29;&amp;#x653E;&amp;#x77E2;&amp;#x91CF;&amp;#x56FE;&amp;#x5F62;.&lt;br&gt;IRI: Internationalized Resource Identifiers, &amp;#x56FD;&amp;#x9645;&amp;#x5316;&amp;#x8D44;&amp;#x6E90;&amp;#x6807;&amp;#x8BC6;&amp;#x7B26;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;#x672C;&amp;#x6587;&amp;#x793A;&amp;#x4F8B;&amp;#x7684;Github&lt;a href=&quot;https://github.com/SpikeKing/TestSVG&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x4E0B;&amp;#x8F7D;&amp;#x5730;&amp;#x5740;&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&amp;#x4E0B;&amp;#x8F7D;SVG&amp;#x683C;&amp;#x5F0F;&amp;#x7684;&amp;#x56FE;&amp;#x7247;.&lt;/p&gt;
+&lt;p&gt;&amp;#x65B0;&amp;#x5EFA;&amp;#x9879;&amp;#x76EE;, &amp;#x7A7A;&amp;#x767D;&amp;#x9879;&amp;#x76EE;&amp;#x663E;&amp;#x793A;&amp;#x56FE;&amp;#x7247;.&lt;/p&gt;
+&lt;p&gt;Android Studio 2.0&lt;br&gt;&amp;#x8DEF;&amp;#x5F84;: File -&amp;gt; New -&amp;gt; Vector Asset -&amp;gt; Local SVG file&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/03/15/replace-svg-image/svg-as.png&quot; alt=&quot;Load SVG&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x52FE;&amp;#x9009;&lt;strong&gt;&amp;#x91CD;&amp;#x7F6E;&amp;#x56FE;&amp;#x7247;&amp;#x5927;&amp;#x5C0F;&lt;/strong&gt;&amp;#x548C;&lt;strong&gt;&amp;#x5DE6;&amp;#x53F3;&amp;#x5E03;&amp;#x5C40;&amp;#x9002;&amp;#x914D;&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;#x5728;&lt;code&gt;drawable&lt;/code&gt;&amp;#x6587;&amp;#x4EF6;&amp;#x5939;&amp;#x4E2D;, &amp;#x5C31;&amp;#x4F1A;&amp;#x53D1;&amp;#x73B0;&lt;code&gt;.xml&lt;/code&gt;&amp;#x683C;&amp;#x5F0F;&amp;#x7684;&amp;#x56FE;&amp;#x7247;.&lt;/p&gt;
+&lt;p&gt;&amp;#x4EE3;&amp;#x7801;&amp;#x4E2D;&amp;#x5BFC;&amp;#x5165;&amp;#x56FE;&amp;#x7247;.&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ImageView&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;android:layout_width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;match_parent&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;android:layout_height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;match_parent&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;android:contentDescription&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;@null&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;android:src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;@drawable/homer_simpson&amp;quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x663E;&amp;#x793A;&lt;br&gt;&lt;img src=&quot;/2016/03/15/replace-svg-image/svg-app.png&quot; alt=&quot;&amp;#x663E;&amp;#x793A;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x5982;&amp;#x679C;&amp;#x662F;&lt;code&gt;&amp;#x975E;AS2.0&lt;/code&gt;&amp;#x7248;&amp;#x672C;, &amp;#x6211;&amp;#x4EEC;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;&amp;#x5728;&amp;#x7EBF;&amp;#x7F51;&amp;#x7AD9;&amp;#x8F6C;&amp;#x6362;.&lt;br&gt;&amp;#x7F51;&amp;#x5740;: &lt;a href=&quot;http://inloop.github.io/svg2android/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://inloop.github.io/svg2android/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x4E0A;&amp;#x4F20;SVG&amp;#x56FE;&amp;#x7247;, &amp;#x751F;&amp;#x6210;&amp;#x4EE3;&amp;#x7801;.&lt;br&gt;&lt;img src=&quot;/2016/03/15/replace-svg-image/svg-online.png&quot; alt=&quot;Online&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x52FE;&amp;#x9009;&lt;strong&gt;&amp;#x5220;&amp;#x9664;&amp;#x7A7A;&amp;#x7EC4;&lt;/strong&gt;&amp;#x548C;&lt;strong&gt;&amp;#x6DFB;&amp;#x52A0;&amp;#x53D8;&amp;#x6362;&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;#x53EF;&amp;#x4EE5;&amp;#x4E0B;&amp;#x8F7D;&amp;#x5728;&amp;#x7EBF;&amp;#x56FE;&amp;#x7247;, &amp;#x4E5F;&amp;#x53EF;&amp;#x4EE5;&amp;#x5728;&lt;code&gt;drawable&lt;/code&gt;&amp;#x6587;&amp;#x4EF6;&amp;#x5939;&amp;#x4E2D;, &amp;#x521B;&amp;#x5EFA;&lt;code&gt;.xml&lt;/code&gt;&amp;#x6587;&amp;#x4EF6;, &amp;#x7C98;&amp;#x8D34;&amp;#x4EE3;&amp;#x7801;.&lt;br&gt;&amp;#x4F7F;&amp;#x7528;&amp;#x65B9;&amp;#x5F0F;&amp;#x4E0E;&amp;#x81EA;&amp;#x52A8;&amp;#x751F;&amp;#x6210;&amp;#x7684;&amp;#x7C7B;&amp;#x4F3C;, &amp;#x76F4;&amp;#x63A5;&amp;#x6DFB;&amp;#x52A0;&amp;#x5373;&amp;#x53EF;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&amp;#x901A;&amp;#x8FC7;&amp;#x89C2;&amp;#x5BDF;&amp;#x53D1;&amp;#x73B0;, &amp;#x5747;&amp;#x662F;500x500&amp;#x7684;&amp;#x56FE;&amp;#x7247;:&lt;br&gt;&amp;#x81EA;&amp;#x52A8;&amp;#x751F;&amp;#x6210;&amp;#x7684;SVG&amp;#x56FE;&amp;#x7247;&amp;#x662F;20KB, &amp;#x5728;&amp;#x7EBF;&amp;#x751F;&amp;#x6210;&amp;#x7684;SVG&amp;#x56FE;&amp;#x7247;&amp;#x662F;29KB.&lt;br&gt;&amp;#x800C;PNG(&amp;#x653E;&amp;#x5927;&amp;#x7684;&amp;#x7CFB;&amp;#x7EDF;&amp;#x56FE;&amp;#x7247;)&amp;#x8981;732KB, &amp;#x7531;&amp;#x6B64;&amp;#x5F97;&amp;#x77E5;SVG&amp;#x56FE;&amp;#x7247;&amp;#x8FD8;&amp;#x662F;&amp;#x975E;&amp;#x5E38;&amp;#x8282;&amp;#x7701;&amp;#x5185;&amp;#x5B58;&amp;#x7684;.&lt;br&gt;&amp;#x5BF9;&amp;#x4E8E;&amp;#x4E00;&amp;#x4E9B;&amp;#x8F83;&amp;#x5927;&amp;#x7684;App, &amp;#x4F7F;&amp;#x7528;SVG&amp;#x56FE;&amp;#x7247;&amp;#x6709;&amp;#x5F88;&amp;#x5927;&amp;#x7684;&amp;#x5438;&amp;#x5F15;&amp;#x529B;.&lt;/p&gt;
+&lt;p&gt;OK, that&amp;#x2019;s all! Enjoy it.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x539F;&amp;#x59CB;&amp;#x5730;&amp;#x5740;:&lt;br&gt;&lt;a href=&quot;http://www.wangchenlong.org/2016/03/15/replace-svg-image/&quot;&gt;http://www.wangchenlong.org/2016/03/15/replace-svg-image/&lt;/a&gt;&lt;br&gt;&amp;#x6B22;&amp;#x8FCE;Follow&amp;#x6211;&amp;#x7684;&lt;a href=&quot;https://github.com/SpikeKing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;, &amp;#x5173;&amp;#x6CE8;&amp;#x6211;&amp;#x7684;&lt;a href=&quot;http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x7B80;&amp;#x4E66;&lt;/a&gt;, &lt;a href=&quot;http://weibo.com/u/2852941392&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x5FAE;&amp;#x535A;&lt;/a&gt;, &lt;a href=&quot;http://blog.csdn.net/caroline_wendy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSDN&lt;/a&gt;, &lt;a href=&quot;http://gold.xitu.io/#/user/56de98c2f3609a005442ec58&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x6398;&amp;#x91D1;&lt;/a&gt;, &lt;a href=&quot;https://slides.com/spikeking&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Slides&lt;/a&gt;.&lt;br&gt;&amp;#x6211;&amp;#x5DF2;&amp;#x59D4;&amp;#x6258;&amp;#x201C;&amp;#x7EF4;&amp;#x6743;&amp;#x9A91;&amp;#x58EB;&amp;#x201D;&amp;#x4E3A;&amp;#x6211;&amp;#x7684;&amp;#x6587;&amp;#x7AE0;&amp;#x8FDB;&amp;#x884C;&amp;#x7EF4;&amp;#x6743;&amp;#x884C;&amp;#x52A8;, &amp;#x672A;&amp;#x7ECF;&amp;#x6388;&amp;#x6743;, &amp;#x7981;&amp;#x6B62;&amp;#x8F6C;&amp;#x8F7D;.&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x65F6;&amp;#x4EE3;&amp;#x5728;&amp;#x53D1;&amp;#x5C55;, &amp;#x6280;&amp;#x672F;&amp;#x5728;&amp;#x8FDB;&amp;#x6B65;, Android&amp;#x7684;Vector&amp;#x56FE;&amp;#x50CF;&amp;#x7684;&amp;#x65F6;&amp;#x4EE3;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5230;&amp;#x6765;. &amp;#x5728;Google&amp;#x7684;&amp;#x6700;&amp;#x65B0;&amp;#x652F;&amp;#x6301;&amp;#x5E93;v23.2&amp;#x4E2D;, AppCompat&amp;#x7C7B;&amp;#x5DF2;&amp;#x7ECF;&amp;#x4F7F;&amp;#x7528;Vector&amp;#x56FE;&amp;#x50CF;, &amp;#x4F7F;&amp;#x5F97;AAR&amp;#x5305;&amp;#x51CF;&amp;#x5C11;9%, &amp;#x5927;&amp;#x7EA6;70KB, &amp;#x60E0;&amp;#x53CA;&amp;#x6240;&amp;#x6709;&amp;#x9AD8;&amp;#x7248;&amp;#x672C;&amp;#x7684;&amp;#x5E94;&amp;#x7528;. &amp;#x5F53;&amp;#x7136;&amp;#x6211;&amp;#x4EEC;&amp;#x4E5F;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;Vector, &amp;#x7626;&amp;#x8EAB;&amp;#x5E94;&amp;#x7528;. Vector&amp;#x56FE;&amp;#x50CF;&amp;#x662F;SVG&amp;#x683C;&amp;#x5F0F;&amp;#x5728;Android&amp;#x7684;&amp;#x8868;&amp;#x73B0;&amp;#x5F62;&amp;#x5F0F;. SVG&amp;#x56FE;&amp;#x50CF;&amp;#x9002;&amp;#x5E94;&amp;#x5C4F;&amp;#x5E55;, &amp;#x56FE;&amp;#x7247;&amp;#x8F83;&amp;#x5C0F;, &amp;#x4F18;&amp;#x70B9;&amp;#x5F88;&amp;#x591A;, &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%8F%AF%E7%B8%AE%E6%94%BE%E5%90%91%E9%87%8F%E5%9C%96%E5%BD%A2&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.wangchenlong.org/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
+    
+      <category term="应用" scheme="http://www.wangchenlong.org/tags/%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="SVG" scheme="http://www.wangchenlong.org/tags/SVG/"/>
+    
+      <category term="Vector" scheme="http://www.wangchenlong.org/tags/Vector/"/>
+    
+      <category term="图像" scheme="http://www.wangchenlong.org/tags/%E5%9B%BE%E5%83%8F/"/>
+    
+      <category term="优化" scheme="http://www.wangchenlong.org/tags/%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>大型项目 Gradle 的常用库和版本管理</title>
     <link href="http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/"/>
     <id>http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/</id>
     <published>2016-03-14T22:44:00.000Z</published>
-    <updated>2016-03-14T22:54:47.000Z</updated>
+    <updated>2016-03-14T23:09:51.000Z</updated>
     
     <content type="html">&lt;p&gt;&amp;#x968F;&amp;#x7740;Android&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x6210;&amp;#x719F;, &amp;#x6A21;&amp;#x5757;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x591A;, &amp;#x5F15;&amp;#x5165;&amp;#x5E93;&amp;#x4E5F;&amp;#x968F;&amp;#x4E4B;&amp;#x589E;&amp;#x52A0;, &amp;#x9700;&amp;#x8981;&amp;#x7EDF;&amp;#x4E00;&amp;#x7BA1;&amp;#x7406;&amp;#x8FD9;&amp;#x4E9B;&amp;#x5E93;&amp;#x548C;&amp;#x7248;&amp;#x672C;&amp;#x53F7;. &amp;#x6839;&amp;#x636E;&amp;#x81EA;&amp;#x5DF1;&amp;#x7684;&amp;#x5F00;&amp;#x53D1;&amp;#x7ECF;&amp;#x9A8C;, &amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4F7F;&amp;#x7528;Gradle&amp;#x53C2;&amp;#x6570;&amp;#x914D;&amp;#x7F6E;&amp;#x5B9E;&amp;#x73B0;&amp;#x5E93;&amp;#x7684;&amp;#x89C4;&amp;#x8303;&amp;#x7BA1;&amp;#x7406;.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -49,7 +111,7 @@
 &lt;p&gt;&amp;#x901A;&amp;#x8FC7;&amp;#x8FD9;&amp;#x4E9B;&amp;#x65B9;&amp;#x5F0F;&amp;#x8BBE;&amp;#x7F6E;Android&amp;#x9879;&amp;#x76EE;&amp;#x7684;Gradle&amp;#x914D;&amp;#x7F6E;, &amp;#x53EF;&amp;#x4EE5;&amp;#x4FBF;&amp;#x6377;&amp;#x5730;&amp;#x4FEE;&amp;#x6539;&amp;#x5E93;&amp;#x7684;&amp;#x7248;&amp;#x672C;&amp;#x53F7;, &amp;#x7EDF;&amp;#x4E00;&amp;#x7BA1;&amp;#x7406;&amp;#x5E76;&amp;#x63A7;&amp;#x5236;&amp;#x98CE;&amp;#x9669;.&lt;/p&gt;
 &lt;p&gt;OK, that&amp;#x2019;s all! Enjoy it!&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&amp;#x539F;&amp;#x59CB;&amp;#x5730;&amp;#x5740;:&lt;br&gt;&lt;a href=&quot;http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/&quot;&gt;http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/&lt;/a&gt;&lt;br&gt;&amp;#x6B22;&amp;#x8FCE;&amp;#x6536;&amp;#x85CF;&amp;#x6211;&amp;#x7684;&lt;a href=&quot;http://www.wangchenlong.org&quot;&gt;&amp;#x535A;&amp;#x5BA2;&lt;/a&gt;, Follow&amp;#x6211;&amp;#x7684;&lt;a href=&quot;https://github.com/SpikeKing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;. &amp;#x672A;&amp;#x7ECF;&amp;#x6388;&amp;#x6743;, &amp;#x7981;&amp;#x6B62;&amp;#x8F6C;&amp;#x8F7D;.&lt;/p&gt;
+&lt;p&gt;&amp;#x539F;&amp;#x59CB;&amp;#x5730;&amp;#x5740;:&lt;br&gt;&lt;a href=&quot;http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/&quot;&gt;http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/&lt;/a&gt;&lt;br&gt;&amp;#x6B22;&amp;#x8FCE;Follow&amp;#x6211;&amp;#x7684;&lt;a href=&quot;https://github.com/SpikeKing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;, &amp;#x5173;&amp;#x6CE8;&amp;#x6211;&amp;#x7684;&lt;a href=&quot;http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x7B80;&amp;#x4E66;&lt;/a&gt;, &lt;a href=&quot;http://weibo.com/u/2852941392&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x5FAE;&amp;#x535A;&lt;/a&gt;, &lt;a href=&quot;http://blog.csdn.net/caroline_wendy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSDN&lt;/a&gt;, &lt;a href=&quot;http://gold.xitu.io/#/user/56de98c2f3609a005442ec58&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x6398;&amp;#x91D1;&lt;/a&gt;, &lt;a href=&quot;https://slides.com/spikeking&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Slides&lt;/a&gt;.&lt;br&gt;&amp;#x6211;&amp;#x5DF2;&amp;#x59D4;&amp;#x6258;&amp;#x201C;&amp;#x7EF4;&amp;#x6743;&amp;#x9A91;&amp;#x58EB;&amp;#x201D;&amp;#x4E3A;&amp;#x6211;&amp;#x7684;&amp;#x6587;&amp;#x7AE0;&amp;#x8FDB;&amp;#x884C;&amp;#x7EF4;&amp;#x6743;&amp;#x884C;&amp;#x52A8;, &amp;#x672A;&amp;#x7ECF;&amp;#x6388;&amp;#x6743;, &amp;#x7981;&amp;#x6B62;&amp;#x8F6C;&amp;#x8F7D;.&lt;/p&gt;
 &lt;/blockquote&gt;</content>
     
     <summary type="html">
@@ -62,6 +124,12 @@
     
     
       <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
+    
+      <category term="项目" scheme="http://www.wangchenlong.org/tags/%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="Gradle" scheme="http://www.wangchenlong.org/tags/Gradle/"/>
+    
+      <category term="库" scheme="http://www.wangchenlong.org/tags/%E5%BA%93/"/>
     
   </entry>
   

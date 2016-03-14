@@ -43,7 +43,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,应用,内存,MAT," />
+  <meta name="keywords" content="Android,应用,SVG,Vector,图像,优化," />
 
 
 
@@ -61,24 +61,20 @@
 
 
 
-<meta name="description" content="MAT(Memory Analyzer Tool), &amp;#x662F;&amp;#x8457;&amp;#x540D;&amp;#x7684;Android&amp;#x5185;&amp;#x5B58;&amp;#x5206;&amp;#x6790;&amp;#x5DE5;&amp;#x5177;, &amp;#x867D;&amp;#x7136;LeakCanary&amp;#x66F4;&amp;#x52A0;&amp;#x4FBF;&amp;#x6377;, &amp;#x4F46;&amp;#x662F;MAT&amp;#x53">
+<meta name="description" content="&amp;#x65F6;&amp;#x4EE3;&amp;#x5728;&amp;#x53D1;&amp;#x5C55;, &amp;#x6280;&amp;#x672F;&amp;#x5728;&amp;#x8FDB;&amp;#x6B65;, Android&amp;#x7684;Vector&amp;#x56FE;&amp;#x50CF;&amp;#x7684;&amp;#x65F6;&amp;#x4EE3;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5230;&amp;#x6765;. &amp;#x5728;Google&amp;#x7684">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 MAT 分析应用的内存信息">
-<meta property="og:url" content="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/index.html">
+<meta property="og:title" content="Vectors时代(1) - SVG 格式缩减应用图像">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/03/15/replace-svg-image/index.html">
 <meta property="og:site_name" content="Mystra">
-<meta property="og:description" content="MAT(Memory Analyzer Tool), &amp;#x662F;&amp;#x8457;&amp;#x540D;&amp;#x7684;Android&amp;#x5185;&amp;#x5B58;&amp;#x5206;&amp;#x6790;&amp;#x5DE5;&amp;#x5177;, &amp;#x867D;&amp;#x7136;LeakCanary&amp;#x66F4;&amp;#x52A0;&amp;#x4FBF;&amp;#x6377;, &amp;#x4F46;&amp;#x662F;MAT&amp;#x53">
-<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/mat-leak.png">
-<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/mat-report.png">
-<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/mat-total.png">
-<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/mat-memory-1.png">
-<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/mat-memory-2.png">
-<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/mat-memory-3.png">
-<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/mat-memory-4.png">
-<meta property="og:updated_time" content="2016-03-14T12:07:41.000Z">
+<meta property="og:description" content="&amp;#x65F6;&amp;#x4EE3;&amp;#x5728;&amp;#x53D1;&amp;#x5C55;, &amp;#x6280;&amp;#x672F;&amp;#x5728;&amp;#x8FDB;&amp;#x6B65;, Android&amp;#x7684;Vector&amp;#x56FE;&amp;#x50CF;&amp;#x7684;&amp;#x65F6;&amp;#x4EE3;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5230;&amp;#x6765;. &amp;#x5728;Google&amp;#x7684">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/15/replace-svg-image/svg-as.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/15/replace-svg-image/svg-app.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/15/replace-svg-image/svg-online.png">
+<meta property="og:updated_time" content="2016-03-14T23:15:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 MAT 分析应用的内存信息">
-<meta name="twitter:description" content="MAT(Memory Analyzer Tool), &amp;#x662F;&amp;#x8457;&amp;#x540D;&amp;#x7684;Android&amp;#x5185;&amp;#x5B58;&amp;#x5206;&amp;#x6790;&amp;#x5DE5;&amp;#x5177;, &amp;#x867D;&amp;#x7136;LeakCanary&amp;#x66F4;&amp;#x52A0;&amp;#x4FBF;&amp;#x6377;, &amp;#x4F46;&amp;#x662F;MAT&amp;#x53">
-<meta name="twitter:image" content="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/mat-leak.png">
+<meta name="twitter:title" content="Vectors时代(1) - SVG 格式缩减应用图像">
+<meta name="twitter:description" content="&amp;#x65F6;&amp;#x4EE3;&amp;#x5728;&amp;#x53D1;&amp;#x5C55;, &amp;#x6280;&amp;#x672F;&amp;#x5728;&amp;#x8FDB;&amp;#x6B65;, Android&amp;#x7684;Vector&amp;#x56FE;&amp;#x50CF;&amp;#x7684;&amp;#x65F6;&amp;#x4EE3;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5230;&amp;#x6765;. &amp;#x5728;Google&amp;#x7684">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/03/15/replace-svg-image/svg-as.png">
 
 
 
@@ -96,7 +92,7 @@
   };
 </script>
 
-  <title> 使用 MAT 分析应用的内存信息 | Mystra </title>
+  <title> Vectors时代(1) - SVG 格式缩减应用图像 | Mystra </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -293,7 +289,7 @@
             
             
               
-                使用 MAT 分析应用的内存信息
+                Vectors时代(1) - SVG 格式缩减应用图像
               
             
           </h1>
@@ -305,8 +301,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-14T19:57:00+08:00" content="2016-03-14">
-              2016-03-14
+            <time itemprop="dateCreated" datetime="2016-03-15T07:01:00+08:00" content="2016-03-15">
+              2016-03-15
             </time>
           </span>
 
@@ -335,8 +331,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/14/use-mat-analyze-memory/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/14/use-mat-analyze-memory/" itemprop="commentsCount"></span>
+                <a href="/2016/03/15/replace-svg-image/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/15/replace-svg-image/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -346,7 +342,7 @@
 
           
           
-             <span id="/2016/03/14/use-mat-analyze-memory/" class="leancloud_visitors" data-flag-title="使用 MAT 分析应用的内存信息">
+             <span id="/2016/03/15/replace-svg-image/" class="leancloud_visitors" data-flag-title="Vectors时代(1) - SVG 格式缩减应用图像">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -367,47 +363,36 @@
       
 
       
-        <p><a href="http://www.eclipse.org/mat/" target="_blank" rel="external"><strong>MAT(Memory Analyzer Tool)</strong></a>, &#x662F;&#x8457;&#x540D;&#x7684;Android&#x5185;&#x5B58;&#x5206;&#x6790;&#x5DE5;&#x5177;, &#x867D;&#x7136;<a href="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/">LeakCanary</a>&#x66F4;&#x52A0;&#x4FBF;&#x6377;, &#x4F46;&#x662F;MAT&#x53EF;&#x4EE5;&#x6E05;&#x695A;&#x5730;&#x83B7;&#x77E5;&#x6574;&#x4F53;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x51B5;, &#x8FD8;&#x662F;&#x5FC5;&#x987B;&#x8981;&#x638C;&#x63E1;&#x7684;. &#x6211;&#x6765;&#x8BB2;&#x89E3;&#x4E00;&#x4E0B;&#x5982;&#x4F55;&#x4F7F;&#x7528;.</p>
+        <p>&#x65F6;&#x4EE3;&#x5728;&#x53D1;&#x5C55;, &#x6280;&#x672F;&#x5728;&#x8FDB;&#x6B65;, Android&#x7684;Vector&#x56FE;&#x50CF;&#x7684;&#x65F6;&#x4EE3;&#x5DF2;&#x7ECF;&#x5230;&#x6765;. &#x5728;Google&#x7684;&#x6700;&#x65B0;&#x652F;&#x6301;&#x5E93;v23.2&#x4E2D;, AppCompat&#x7C7B;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;Vector&#x56FE;&#x50CF;, &#x4F7F;&#x5F97;AAR&#x5305;&#x51CF;&#x5C11;9%, &#x5927;&#x7EA6;70KB, &#x60E0;&#x53CA;&#x6240;&#x6709;&#x9AD8;&#x7248;&#x672C;&#x7684;&#x5E94;&#x7528;. &#x5F53;&#x7136;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Vector, &#x7626;&#x8EAB;&#x5E94;&#x7528;. Vector&#x56FE;&#x50CF;&#x662F;SVG&#x683C;&#x5F0F;&#x5728;Android&#x7684;&#x8868;&#x73B0;&#x5F62;&#x5F0F;. SVG&#x56FE;&#x50CF;&#x9002;&#x5E94;&#x5C4F;&#x5E55;, &#x56FE;&#x7247;&#x8F83;&#x5C0F;, &#x4F18;&#x70B9;&#x5F88;&#x591A;, <a href="https://zh.wikipedia.org/wiki/%E5%8F%AF%E7%B8%AE%E6%94%BE%E5%90%91%E9%87%8F%E5%9C%96%E5%BD%A2" target="_blank" rel="external">&#x53C2;&#x8003;</a>.</p>
 <a id="more"></a>
-<hr>
-<h1 id="&#x5185;&#x5B58;&#x6587;&#x4EF6;"><a href="#&#x5185;&#x5B58;&#x6587;&#x4EF6;" class="headerlink" title="&#x5185;&#x5B58;&#x6587;&#x4EF6;"></a>&#x5185;&#x5B58;&#x6587;&#x4EF6;</h1><p>&#x4F7F;&#x7528;Android Studio&#x5E95;&#x90E8;&#x7684;AndroidMonitor, &#x83B7;&#x53D6;&#x5185;&#x5B58;&#x7247;&#x6BB5;.</p>
+<p>&#x5173;&#x4E8E;<em>Vectors&#x65F6;&#x4EE3;</em>, &#x4E3B;&#x8981;&#x5206;&#x4E3A;&#x4E24;&#x8282;:<br>(1) &#x4F7F;&#x7528;SVG&#x683C;&#x5F0F;&#x56FE;&#x7247;&#x751F;&#x6210;Vector&#x56FE;&#x50CF;, &#x66FF;&#x6362;PNG, &#x7F29;&#x51CF;&#x5E94;&#x7528;&#x4F53;&#x79EF;.<br>(2) &#x7ED8;&#x5236;Vector&#x56FE;&#x50CF;&#x7684;&#x8DEF;&#x5F84;&#x52A8;&#x753B;, &#x5728;Android 5.0(21)&#x4EE5;&#x4E0A;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;, <a href="http://www.jianshu.com/p/89879989895a" target="_blank" rel="external">&#x53C2;&#x8003;</a>.</p>
+<p>&#x672C;&#x6587;&#x662F;&#x7B2C;&#x4E00;&#x8282;, &#x5173;&#x4E8E;Vector&#x56FE;&#x50CF;.</p>
 <blockquote>
-<p>&#x70B9;&#x51FB;<strong>Initial GC</strong>&#x56DE;&#x6536;&#x5185;&#x5B58;, &#x4F7F;&#x7528;&#x5E94;&#x7528;, <strong>Dump Java Heap</strong>, &#x518D;&#x6B21;&#x70B9;&#x51FB;&#x505C;&#x6B62;.</p>
+<p>SVG: Scalable Vector Graphics, &#x53EF;&#x7F29;&#x653E;&#x77E2;&#x91CF;&#x56FE;&#x5F62;.<br>IRI: Internationalized Resource Identifiers, &#x56FD;&#x9645;&#x5316;&#x8D44;&#x6E90;&#x6807;&#x8BC6;&#x7B26;.</p>
 </blockquote>
-<p><img src="/2016/03/14/use-mat-analyze-memory/mat-leak.png" alt="&#x5185;&#x5B58;&#x6CC4;&#x9732;"></p>
-<p>&#x5728;Android&#x7684;SDK&#x4E2D;&#x7684;platform-tools&#x6587;&#x4EF6;&#x5939;&#x5185;, <strong>hprof-conv</strong>&#x811A;&#x672C;&#x628A;AS&#x7684;&#x5185;&#x5B58;&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#x4E3A;MAT&#x7684;&#x5185;&#x5B58;&#x683C;&#x5F0F;. &#x4E4B;&#x540E;, &#x4F7F;&#x7528;MAT&#x6253;&#x5F00;&#x6587;&#x4EF6;.</p>
-<p>&#x4F7F;&#x7528;&#x547D;&#x4EE4;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./hprof-conv path/file.hprof exitPath/heap-converted.hprof</span><br></pre></td></tr></table></figure></p>
+<p>&#x672C;&#x6587;&#x793A;&#x4F8B;&#x7684;Github<a href="https://github.com/SpikeKing/TestSVG" target="_blank" rel="external">&#x4E0B;&#x8F7D;&#x5730;&#x5740;</a>.</p>
 <hr>
-<h1 id="&#x5206;&#x6790;&#x5185;&#x5B58;"><a href="#&#x5206;&#x6790;&#x5185;&#x5B58;" class="headerlink" title="&#x5206;&#x6790;&#x5185;&#x5B58;"></a>&#x5206;&#x6790;&#x5185;&#x5B58;</h1><p><a href="http://www.eclipse.org/mat/downloads.php" target="_blank" rel="external">&#x4E0B;&#x8F7D;</a>Eclipse&#x7684;MAT&#x5DE5;&#x5177;. </p>
+<p>&#x4E0B;&#x8F7D;SVG&#x683C;&#x5F0F;&#x7684;&#x56FE;&#x7247;.</p>
+<p>&#x65B0;&#x5EFA;&#x9879;&#x76EE;, &#x7A7A;&#x767D;&#x9879;&#x76EE;&#x663E;&#x793A;&#x56FE;&#x7247;.</p>
+<p>Android Studio 2.0<br>&#x8DEF;&#x5F84;: File -&gt; New -&gt; Vector Asset -&gt; Local SVG file</p>
+<p><img src="/2016/03/15/replace-svg-image/svg-as.png" alt="Load SVG"></p>
 <blockquote>
-<p>&#x867D;&#x7136;&#x662F;Eclipse&#x7684;&#x5DE5;&#x5177;, &#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x8FD0;&#x884C;, &#x5E76;&#x4E0D;&#x9700;&#x8981;&#x5B89;&#x88C5;Eclipse.</p>
+<p>&#x52FE;&#x9009;<strong>&#x91CD;&#x7F6E;&#x56FE;&#x7247;&#x5927;&#x5C0F;</strong>&#x548C;<strong>&#x5DE6;&#x53F3;&#x5E03;&#x5C40;&#x9002;&#x914D;</strong>.</p>
 </blockquote>
-<p>&#x6253;&#x5F00;&#x5185;&#x5B58;&#x7247;&#x6BB5;, &#x9009;&#x62E9;&#x5185;&#x5B58;&#x62A5;&#x544A;.</p>
-<p><img src="/2016/03/14/use-mat-analyze-memory/mat-report.png" alt="&#x5185;&#x5B58;&#x62A5;&#x544A;"></p>
-<p>&#x5185;&#x5B58;&#x6574;&#x4F53;&#x60C5;&#x51B5;.</p>
-<p><img src="/2016/03/14/use-mat-analyze-memory/mat-total.png" alt="&#x5185;&#x5B58;"></p>
-<p>&#x9009;&#x62E9;&#x76F4;&#x65B9;&#x56FE;&#x6837;&#x5F0F;, &#x6DFB;&#x52A0;&#x5305;&#x540D;&#x8FC7;&#x6EE4;.</p>
-<p><img src="/2016/03/14/use-mat-analyze-memory/mat-memory-1.png" alt="&#x5F15;&#x7528;"></p>
+<p>&#x5728;<code>drawable</code>&#x6587;&#x4EF6;&#x5939;&#x4E2D;, &#x5C31;&#x4F1A;&#x53D1;&#x73B0;<code>.xml</code>&#x683C;&#x5F0F;&#x7684;&#x56FE;&#x7247;.</p>
+<p>&#x4EE3;&#x7801;&#x4E2D;&#x5BFC;&#x5165;&#x56FE;&#x7247;.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    <span class="attr">android:contentDescription</span>=<span class="string">&quot;@null&quot;</span></span><br><span class="line">    <span class="attr">android:src</span>=<span class="string">&quot;@drawable/homer_simpson&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>&#x663E;&#x793A;<br><img src="/2016/03/15/replace-svg-image/svg-app.png" alt="&#x663E;&#x793A;"></p>
+<p>&#x5982;&#x679C;&#x662F;<code>&#x975E;AS2.0</code>&#x7248;&#x672C;, &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5728;&#x7EBF;&#x7F51;&#x7AD9;&#x8F6C;&#x6362;.<br>&#x7F51;&#x5740;: <a href="http://inloop.github.io/svg2android/" target="_blank" rel="external">http://inloop.github.io/svg2android/</a></p>
+<p>&#x4E0A;&#x4F20;SVG&#x56FE;&#x7247;, &#x751F;&#x6210;&#x4EE3;&#x7801;.<br><img src="/2016/03/15/replace-svg-image/svg-online.png" alt="Online"></p>
+<blockquote>
+<p>&#x52FE;&#x9009;<strong>&#x5220;&#x9664;&#x7A7A;&#x7EC4;</strong>&#x548C;<strong>&#x6DFB;&#x52A0;&#x53D8;&#x6362;</strong>.</p>
+</blockquote>
+<p>&#x53EF;&#x4EE5;&#x4E0B;&#x8F7D;&#x5728;&#x7EBF;&#x56FE;&#x7247;, &#x4E5F;&#x53EF;&#x4EE5;&#x5728;<code>drawable</code>&#x6587;&#x4EF6;&#x5939;&#x4E2D;, &#x521B;&#x5EFA;<code>.xml</code>&#x6587;&#x4EF6;, &#x7C98;&#x8D34;&#x4EE3;&#x7801;.<br>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x4E0E;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x7C7B;&#x4F3C;, &#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x5373;&#x53EF;.</p>
 <hr>
-<h1 id="&#x5224;&#x65AD;&#x6CC4;&#x9732;"><a href="#&#x5224;&#x65AD;&#x6CC4;&#x9732;" class="headerlink" title="&#x5224;&#x65AD;&#x6CC4;&#x9732;"></a>&#x5224;&#x65AD;&#x6CC4;&#x9732;</h1><p>Activity&#x6216;View&#x5927;&#x4E8E;1&#x4E2A;&#x5BF9;&#x8C61;, &#x90FD;&#x6709;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x5185;&#x5B58;&#x6CC4;&#x9732;.</p>
-<p>&#x663E;&#x793A;&#x5185;&#x5B58;&#x7684;&#x6240;&#x6709;&#x5F15;&#x7528;&#x60C5;&#x51B5;</p>
-<p><img src="/2016/03/14/use-mat-analyze-memory/mat-memory-2.png" alt="&#x5F15;&#x7528;"></p>
+<p>&#x901A;&#x8FC7;&#x89C2;&#x5BDF;&#x53D1;&#x73B0;, &#x5747;&#x662F;500x500&#x7684;&#x56FE;&#x7247;:<br>&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;SVG&#x56FE;&#x7247;&#x662F;20KB, &#x5728;&#x7EBF;&#x751F;&#x6210;&#x7684;SVG&#x56FE;&#x7247;&#x662F;29KB.<br>&#x800C;PNG(&#x653E;&#x5927;&#x7684;&#x7CFB;&#x7EDF;&#x56FE;&#x7247;)&#x8981;732KB, &#x7531;&#x6B64;&#x5F97;&#x77E5;SVG&#x56FE;&#x7247;&#x8FD8;&#x662F;&#x975E;&#x5E38;&#x8282;&#x7701;&#x5185;&#x5B58;&#x7684;.<br>&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x8F83;&#x5927;&#x7684;App, &#x4F7F;&#x7528;SVG&#x56FE;&#x7247;&#x6709;&#x5F88;&#x5927;&#x7684;&#x5438;&#x5F15;&#x529B;.</p>
+<p>OK, that&#x2019;s all! Enjoy it.</p>
 <blockquote>
-<p>&#x9010;&#x4E2A;&#x5224;&#x65AD;&#x5373;&#x53EF;, &#x6709;&#x4E9B;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x8F83;&#x591A;, &#x53EF;&#x80FD;&#x662F;&#x4F7F;&#x7528;&#x4E86;&#x6570;&#x7EC4;, &#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x5185;&#x5B58;&#x6CC4;&#x9732;.</p>
-</blockquote>
-<p>&#x663E;&#x793A;&#x5355;&#x4E2A;&#x7C7B;&#x7684;&#x5185;&#x5B58;&#x60C5;&#x51B5;<br><img src="/2016/03/14/use-mat-analyze-memory/mat-memory-3.png" alt="&#x5185;&#x5B58;"></p>
-<blockquote>
-<p>&#x4F7F;&#x7528;&#x641C;&#x7D22;&#x529F;&#x80FD;, &#x8F93;&#x5165;SQL&#x8BED;&#x53E5;, &#x5E76;&#x6267;&#x884C;. &#x7EA2;&#x8272;&#x53F9;&#x53F7;&#x6267;&#x884C;&#x641C;&#x7D22;.</p>
-</blockquote>
-<p>&#x901A;&#x8FC7;&#x89C2;&#x5BDF;, &#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x5FAE;&#x4FE1;mWXApi&#x4F20;&#x5165;&#x4E86;&#x9519;&#x8BEF;&#x7684;Context, &#x5BFC;&#x81F4;&#x5185;&#x5B58;&#x6CC4;&#x9732;.</p>
-<p><img src="/2016/03/14/use-mat-analyze-memory/mat-memory-4.png" alt="&#x6CC4;&#x9732;"></p>
-<p>&#x4EE3;&#x7801;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mFriendsPlatform = <span class="keyword">new</span> WXSharePlatform(mActivity, title, content,</span><br><span class="line">        bitmap, pageUrl, SendMessageToWX.Req.WXSceneTimeline);</span><br></pre></td></tr></table></figure></p>
-<p>&#x76F4;&#x63A5;&#x4F20;&#x5165;Activity&#x5BFC;&#x81F4;&#x5185;&#x5B58;&#x6CC4;&#x9732;, &#x4FEE;&#x6539;&#x4E3A;getApplicationContext&#x5373;&#x53EF;.</p>
-<hr>
-<p>&#x5176;&#x5B9E;&#x8FD8;&#x6BD4;&#x8F83;&#x590D;&#x6742;, &#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;LeakCanary, <a href="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/">&#x53C2;&#x8003;</a>. </p>
-<p>OK, that&#x2019;s all! Enjoy it!</p>
-<blockquote>
-<p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/">http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</a><br>&#x6B22;&#x8FCE;&#x6536;&#x85CF;&#x6211;&#x7684;<a href="http://www.wangchenlong.org">&#x535A;&#x5BA2;</a>, Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://weibo.com/u/2852941392" target="_blank" rel="external">&#x5FAE;&#x535A;</a>. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;.</p>
+<p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/03/15/replace-svg-image/">http://www.wangchenlong.org/2016/03/15/replace-svg-image/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://weibo.com/u/2852941392" target="_blank" rel="external">&#x5FAE;&#x535A;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>, <a href="https://slides.com/spikeking" target="_blank" rel="external">Slides</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;, &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;.</p>
 </blockquote>
       
     </div>
@@ -426,9 +411,13 @@
           
             <a href="/tags/应用/" rel="tag">#应用</a>
           
-            <a href="/tags/内存/" rel="tag">#内存</a>
+            <a href="/tags/SVG/" rel="tag">#SVG</a>
           
-            <a href="/tags/MAT/" rel="tag">#MAT</a>
+            <a href="/tags/Vector/" rel="tag">#Vector</a>
+          
+            <a href="/tags/图像/" rel="tag">#图像</a>
+          
+            <a href="/tags/优化/" rel="tag">#优化</a>
           
         </div>
       
@@ -437,17 +426,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/14/use-leak-canary-check-memory/" rel="next" title="使用 Leak Canary 检测应用的内存泄露">
-                <i class="fa fa-chevron-left"></i> 使用 Leak Canary 检测应用的内存泄露
+              <a href="/2016/03/15/manage-gradle-lib-version/" rel="next" title="大型项目 Gradle 的常用库和版本管理">
+                <i class="fa fa-chevron-left"></i> 大型项目 Gradle 的常用库和版本管理
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/14/improve-gradle-speed/" rel="prev" title="加速 Gradle 构建大型 Android 项目的方法">
-                加速 Gradle 构建大型 Android 项目的方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -462,10 +447,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/14/use-mat-analyze-memory/"
-     data-title="使用 MAT 分析应用的内存信息"
+        <div class="ds-share flat" data-thread-key="2016/03/15/replace-svg-image/"
+     data-title="Vectors时代(1) - SVG 格式缩减应用图像"
      data-content=""
-     data-url="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/">
+     data-url="http://www.wangchenlong.org/2016/03/15/replace-svg-image/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -497,8 +482,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/14/use-mat-analyze-memory/"
-           data-title="使用 MAT 分析应用的内存信息" data-url="http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/">
+      <div class="ds-thread" data-thread-key="2016/03/15/replace-svg-image/"
+           data-title="Vectors时代(1) - SVG 格式缩减应用图像" data-url="http://www.wangchenlong.org/2016/03/15/replace-svg-image/">
       </div>
     
   </div>
@@ -661,7 +646,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#内存文件"><span class="nav-number">1.</span> <span class="nav-text">内存文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析内存"><span class="nav-number">2.</span> <span class="nav-text">分析内存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断泄露"><span class="nav-number">3.</span> <span class="nav-text">判断泄露</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
