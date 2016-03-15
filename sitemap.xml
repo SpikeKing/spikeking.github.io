@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/kotlin-extends-point/</loc>
+    
+    <lastmod>2016-03-15T13:42:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
     
     <lastmod>2016-03-15T08:05:59.000Z</lastmod>
@@ -30,13 +37,6 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
@@ -51,6 +51,13 @@
   </url>
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
+    
+    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
@@ -58,14 +65,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/svg-path-animation/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/replace-svg-image/</loc>
     
     <lastmod>2016-03-15T01:29:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/replace-svg-image/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/svg-path-animation/</loc>
     
     <lastmod>2016-03-15T01:29:35.000Z</lastmod>
     
