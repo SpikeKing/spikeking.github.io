@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-15T23:39:30.000Z</updated>
+  <updated>2016-03-15T23:44:16.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.wangchenlong.org/2016/03/16/use-dagger-first/"/>
     <id>http://www.wangchenlong.org/2016/03/16/use-dagger-first/</id>
     <published>2016-03-15T23:32:00.000Z</published>
-    <updated>2016-03-15T23:39:30.000Z</updated>
+    <updated>2016-03-15T23:44:16.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://google.github.io/dagger/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dagger&lt;/a&gt;&amp;#x5DF2;&amp;#x7ECF;&amp;#x52A0;&amp;#x5165;Google I/O, &amp;#x662F;&lt;a href=&quot;https://github.com/square/dagger/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Square&lt;/a&gt;&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x4F9D;&amp;#x8D56;&amp;#x6CE8;&amp;#x5165;&amp;#x5E93;, &amp;#x53D1;&amp;#x5E03;2.0&amp;#x7248;&amp;#x672C;. Dagger&amp;#x8868;&amp;#x793A;&lt;strong&gt;&amp;#x6709;&amp;#x5411;&amp;#x975E;&amp;#x5FAA;&amp;#x73AF;&amp;#x56FE;(Directed Acyclic Graph, DAGger)&lt;/strong&gt;. &amp;#x597D;&amp;#x5904;&amp;#x548C;&amp;#x4F18;&amp;#x70B9;&amp;#x6709;&amp;#x5F88;&amp;#x591A;, &lt;a href=&quot;https://github.com/codepath/android_guides/wiki/Dependency-Injection-with-Dagger-2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;, &amp;#x6240;&amp;#x6709;&amp;#x4F18;&amp;#x79C0;&amp;#x7684;&amp;#x5F00;&amp;#x6E90;&amp;#x5E93;, &amp;#x672C;&amp;#x8D28;&amp;#x4E0A;&amp;#x90FD;&amp;#x662F;&amp;#x8BA9;&amp;#x7A0B;&amp;#x5E8F;&amp;#x66F4;&amp;#x52A0;&amp;#x6E05;&amp;#x6670;, &amp;#x7F16;&amp;#x5199;&amp;#x66F4;&amp;#x52A0;&amp;#x5BB9;&amp;#x6613;. &amp;#x8BA9;&amp;#x6211;&amp;#x4EEC;&amp;#x6765;&amp;#x770B;&amp;#x770B;&amp;#x600E;&amp;#x4E48;&amp;#x4F7F;&amp;#x7528;?&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -80,6 +80,8 @@
     
     
       <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
+    
+      <category term="架构" scheme="http://www.wangchenlong.org/tags/%E6%9E%B6%E6%9E%84/"/>
     
       <category term="Dagger" scheme="http://www.wangchenlong.org/tags/Dagger/"/>
     
