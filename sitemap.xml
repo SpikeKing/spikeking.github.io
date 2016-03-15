@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/kotlin-first/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
     
-    <lastmod>2016-03-15T01:45:24.000Z</lastmod>
+    <lastmod>2016-03-15T08:03:17.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/kotlin-first/</loc>
     
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
+    <lastmod>2016-03-15T01:45:24.000Z</lastmod>
     
   </url>
   
@@ -30,7 +30,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     
