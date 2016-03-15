@@ -1,0 +1,1076 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="HM6XdT4pJXR7fFksvo3DvFAKVgeFg4ZUwh3iOGW8LHU" />
+
+
+
+
+  <meta name="baidu-site-verification" content="MPhG1F0aKe" />
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,Dagger," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mystra" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web-icon.png?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="Dagger&amp;#x5DF2;&amp;#x7ECF;&amp;#x52A0;&amp;#x5165;Google I/O, &amp;#x662F;Square&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x4F9D;&amp;#x8D56;&amp;#x6CE8;&amp;#x5165;&amp;#x5E93;, &amp;#x53D1;&amp;#x5E03;2.0&amp;#x7248;&amp;#x672C;. Dagger&amp;#x8868;&amp;#x793A;&amp;#x6709;&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="依赖注入库 Dagger2 的使用方法">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/03/16/use-dagger-first/index.html">
+<meta property="og:site_name" content="Mystra">
+<meta property="og:description" content="Dagger&amp;#x5DF2;&amp;#x7ECF;&amp;#x52A0;&amp;#x5165;Google I/O, &amp;#x662F;Square&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x4F9D;&amp;#x8D56;&amp;#x6CE8;&amp;#x5165;&amp;#x5E93;, &amp;#x53D1;&amp;#x5E03;2.0&amp;#x7248;&amp;#x672C;. Dagger&amp;#x8868;&amp;#x793A;&amp;#x6709;&amp;#x">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/16/use-dagger-first/dagger-first.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/16/use-dagger-first/dagger-show.gif">
+<meta property="og:updated_time" content="2016-03-15T23:39:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="依赖注入库 Dagger2 的使用方法">
+<meta name="twitter:description" content="Dagger&amp;#x5DF2;&amp;#x7ECF;&amp;#x52A0;&amp;#x5165;Google I/O, &amp;#x662F;Square&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x4F9D;&amp;#x8D56;&amp;#x6CE8;&amp;#x5165;&amp;#x5E93;, &amp;#x53D1;&amp;#x5E03;2.0&amp;#x7248;&amp;#x672C;. Dagger&amp;#x8868;&amp;#x793A;&amp;#x6709;&amp;#x">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/03/16/use-dagger-first/dagger-first.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6261011353935283000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 依赖注入库 Dagger2 的使用方法 | Mystra </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-75037561-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f66791a2795ca9e84e2dc2c4d23fd05e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s6.cnzz.com/stat.php?id=1257956872&web_id=1257956872" type="text/javascript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <!--底部弹窗(阿里妈妈)-->
+
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mystra</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Love magic for itself!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'iv4HMbTagDPHwpSnKxxR','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                依赖注入库 Dagger2 的使用方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-16T07:32:00+08:00" content="2016-03-16">
+              2016-03-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/16/use-dagger-first/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/16/use-dagger-first/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/03/16/use-dagger-first/" class="leancloud_visitors" data-flag-title="依赖注入库 Dagger2 的使用方法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://google.github.io/dagger/" target="_blank" rel="external">Dagger</a>&#x5DF2;&#x7ECF;&#x52A0;&#x5165;Google I/O, &#x662F;<a href="https://github.com/square/dagger/" target="_blank" rel="external">Square</a>&#x5F00;&#x53D1;&#x7684;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x5E93;, &#x53D1;&#x5E03;2.0&#x7248;&#x672C;. Dagger&#x8868;&#x793A;<strong>&#x6709;&#x5411;&#x975E;&#x5FAA;&#x73AF;&#x56FE;(Directed Acyclic Graph, DAGger)</strong>. &#x597D;&#x5904;&#x548C;&#x4F18;&#x70B9;&#x6709;&#x5F88;&#x591A;, <a href="https://github.com/codepath/android_guides/wiki/Dependency-Injection-with-Dagger-2/" target="_blank" rel="external">&#x53C2;&#x8003;</a>, &#x6240;&#x6709;&#x4F18;&#x79C0;&#x7684;&#x5F00;&#x6E90;&#x5E93;, &#x672C;&#x8D28;&#x4E0A;&#x90FD;&#x662F;&#x8BA9;&#x7A0B;&#x5E8F;&#x66F4;&#x52A0;&#x6E05;&#x6670;, &#x7F16;&#x5199;&#x66F4;&#x52A0;&#x5BB9;&#x6613;. &#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x600E;&#x4E48;&#x4F7F;&#x7528;?</p>
+<a id="more"></a>
+<p>&#x4E3B;&#x8981;&#x5185;&#x5BB9;:<br>(1) &#x9879;&#x76EE;&#x7684;&#x914D;&#x7F6E;&#x73AF;&#x5883;.<br>(2) Inject\Module\Component&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;.<br>(3) &#x7ED3;&#x5408;Retrofit&#x548C;RxAndroid.</p>
+<p>&#x672C;&#x6587;&#x6E90;&#x7801;&#x7684;GitHub<a href="https://github.com/SpikeKing/wcl-dagger-demo" target="_blank" rel="external">&#x4E0B;&#x8F7D;&#x5730;&#x5740;</a></p>
+<p><img src="/2016/03/16/use-dagger-first/dagger-first.png" alt="Dagger2"></p>
+<hr>
+<h1 id="&#x914D;&#x7F6E;"><a href="#&#x914D;&#x7F6E;" class="headerlink" title="&#x914D;&#x7F6E;"></a>&#x914D;&#x7F6E;</h1><p>&#x4ECE;&#x4E00;&#x4E2A;&#x6700;&#x7B80;&#x5355;&#x7684;HelloWorld&#x5F00;&#x59CB;, &#x8BBE;&#x7F6E;<code>build.gradle</code>, &#x5E76;&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#x5E93;.</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">buildscript</span> {</span><br><span class="line">    <span class="keyword">repositories</span> {</span><br><span class="line">        jcenter()</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">dependencies</span> {</span><br><span class="line">        <span class="keyword">classpath</span> <span class="string">&apos;com.neenbedankt.gradle.plugins:android-apt:1.8&apos;</span></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// Lambda&#x8868;&#x8FBE;&#x5F0F;</span></span><br><span class="line">plugins {</span><br><span class="line">    id <span class="string">&quot;me.tatarka.retrolambda&quot;</span> version <span class="string">&quot;3.2.4&quot;</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">apply plugin: <span class="string">&apos;com.android.application&apos;</span></span><br><span class="line">apply plugin: <span class="string">&apos;com.neenbedankt.android-apt&apos;</span> <span class="comment">// &#x6CE8;&#x91CA;&#x5904;&#x7406;</span></span><br><span class="line"></span><br><span class="line">android {</span><br><span class="line">    compileSdkVersion <span class="number">23</span></span><br><span class="line">    buildToolsVersion <span class="string">&quot;23.0.2&quot;</span></span><br><span class="line"></span><br><span class="line">    defaultConfig {</span><br><span class="line">        applicationId <span class="string">&quot;clwang.chunyu.me.wcl_dagger_demo&quot;</span></span><br><span class="line">        minSdkVersion <span class="number">17</span></span><br><span class="line">        targetSdkVersion <span class="number">23</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">&quot;1.0&quot;</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    buildTypes {</span><br><span class="line">        release {</span><br><span class="line">            minifyEnabled <span class="keyword">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">&apos;proguard-android.txt&apos;</span>), <span class="string">&apos;proguard-rules.pro&apos;</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x6CE8;&#x91CA;&#x51B2;&#x7A81;</span></span><br><span class="line">    packagingOptions {</span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">&apos;META-INF/services/javax.annotation.processing.Processor&apos;</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x4F7F;&#x7528;Java1.8</span></span><br><span class="line">    compileOptions {</span><br><span class="line">        <span class="keyword">sourceCompatibility</span> JavaVersion.VERSION_1_8</span><br><span class="line">        <span class="keyword">targetCompatibility</span> JavaVersion.VERSION_1_8</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> {</span><br><span class="line">    <span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">&apos;libs&apos;</span>, <span class="keyword">include</span>: [<span class="string">&apos;*.jar&apos;</span>])</span><br><span class="line">    testCompile <span class="string">&apos;junit:junit:4.12&apos;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&apos;com.android.support:appcompat-v7:23.1.1&apos;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&apos;com.android.support:recyclerview-v7:23.1.1&apos;</span> <span class="comment">// RecyclerView</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&apos;com.jakewharton:butterknife:7.0.1&apos;</span> <span class="comment">// &#x6807;&#x6CE8;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&apos;com.google.dagger:dagger:2.0.2&apos;</span> <span class="comment">// dagger2</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&apos;com.google.dagger:dagger-compiler:2.0.2&apos;</span> <span class="comment">// dagger2</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&apos;io.reactivex:rxandroid:1.1.0&apos;</span> <span class="comment">// RxAndroid</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&apos;io.reactivex:rxjava:1.1.0&apos;</span> <span class="comment">// &#x63A8;&#x8350;&#x540C;&#x65F6;&#x52A0;&#x8F7D;RxJava</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&apos;com.squareup.retrofit:retrofit:2.0.0-beta2&apos;</span> <span class="comment">// Retrofit&#x7F51;&#x7EDC;&#x5904;&#x7406;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&apos;com.squareup.retrofit:adapter-rxjava:2.0.0-beta2&apos;</span> <span class="comment">// Retrofit&#x7684;rx&#x89E3;&#x6790;&#x5E93;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&apos;com.squareup.retrofit:converter-gson:2.0.0-beta2&apos;</span> <span class="comment">// Retrofit&#x7684;gson&#x5E93;</span></span><br><span class="line"></span><br><span class="line">    provided <span class="string">&apos;javax.annotation:jsr250-api:1.0&apos;</span> <span class="comment">// Java&#x6807;&#x6CE8;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>Gradle&#x7684;&#x914D;&#x7F6E;&#x4E0E;&#x529F;&#x80FD;.<br><code>android-apt</code>, &#x63D0;&#x4F9B;<strong>dagger2&#x4F7F;&#x7528;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x7C7B;</strong>&#x7684;&#x529F;&#x80FD;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">buildscript</span> {</span><br><span class="line">    <span class="keyword">repositories</span> {</span><br><span class="line">        jcenter()</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">dependencies</span> {</span><br><span class="line">        <span class="keyword">classpath</span> <span class="string">&apos;com.neenbedankt.gradle.plugins:android-apt:1.8&apos;</span></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">apply plugin: <span class="string">&apos;com.neenbedankt.android-apt&apos;</span> <span class="comment">// &#x6CE8;&#x91CA;&#x5904;&#x7406;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>retrolambda</code>, &#x63D0;&#x4F9B;<strong>Lambda&#x8868;&#x8FBE;&#x5F0F;&#x652F;&#x6301;</strong>&#x7684;&#x529F;&#x80FD;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Lambda&#x8868;&#x8FBE;&#x5F0F;</span></span><br><span class="line">plugins {</span><br><span class="line">    id <span class="string">&quot;me.tatarka.retrolambda&quot;</span> version <span class="string">&quot;3.2.4&quot;</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">android{</span><br><span class="line">    ...</span><br><span class="line">    <span class="comment">// &#x4F7F;&#x7528;Java1.8</span></span><br><span class="line">    compileOptions {</span><br><span class="line">        <span class="keyword">sourceCompatibility</span> JavaVersion.VERSION_1_8</span><br><span class="line">        <span class="keyword">targetCompatibility</span> JavaVersion.VERSION_1_8</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p><code>recyclerview</code>, &#x63D0;&#x4F9B;<strong>RecyclerView&#x63A7;&#x4EF6;</strong>&#x7684;&#x529F;&#x80FD;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">&apos;com.android.support:recyclerview-v7:23.1.1&apos;</span> <span class="comment">// RecyclerView</span></span><br></pre></td></tr></table></figure></p>
+<p><code>butterknife</code>, &#x63D0;&#x4F9B;<strong>xml&#x81F3;java&#x7684;id&#x6620;&#x5C04;</strong>&#x7684;&#x529F;&#x80FD;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">&apos;com.jakewharton:butterknife:7.0.1&apos;</span> <span class="comment">// &#x6807;&#x6CE8;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>dagger2</code>, &#x63D0;&#x4F9B;<strong>dagger2&#x652F;&#x6301;</strong>&#x7684;&#x529F;&#x80FD;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">&apos;com.google.dagger:dagger:2.0.2&apos;</span> <span class="comment">// dagger2</span></span><br><span class="line"><span class="keyword">compile</span> <span class="string">&apos;com.google.dagger:dagger-compiler:2.0.2&apos;</span> <span class="comment">// dagger2</span></span><br></pre></td></tr></table></figure></p>
+<p><code>rx</code>, &#x63D0;&#x4F9B;<strong>rxandroid&#x548C;rxjava&#x652F;&#x6301;</strong>&#x7684;&#x529F;&#x80FD;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">&apos;io.reactivex:rxandroid:1.1.0&apos;</span> <span class="comment">// RxAndroid</span></span><br><span class="line"><span class="keyword">compile</span> <span class="string">&apos;io.reactivex:rxjava:1.1.0&apos;</span> <span class="comment">// &#x63A8;&#x8350;&#x540C;&#x65F6;&#x52A0;&#x8F7D;RxJava</span></span><br></pre></td></tr></table></figure></p>
+<p><code>retrofit</code>, &#x63D0;&#x4F9B;<strong>&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7684;&#x652F;&#x6301;</strong>&#x7684;&#x529F;&#x80FD;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">&apos;com.squareup.retrofit:retrofit:2.0.0-beta2&apos;</span> <span class="comment">// Retrofit&#x7F51;&#x7EDC;&#x5904;&#x7406;</span></span><br><span class="line"><span class="keyword">compile</span> <span class="string">&apos;com.squareup.retrofit:adapter-rxjava:2.0.0-beta2&apos;</span> <span class="comment">// Retrofit&#x7684;rx&#x89E3;&#x6790;&#x5E93;</span></span><br><span class="line"><span class="keyword">compile</span> <span class="string">&apos;com.squareup.retrofit:converter-gson:2.0.0-beta2&apos;</span> <span class="comment">// Retrofit&#x7684;gson&#x5E93;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>annotation</code>, &#x63D0;&#x4F9B;<strong>java&#x6CE8;&#x91CA;&#x89E3;&#x6790;</strong>&#x7684;&#x529F;&#x80FD;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">provided <span class="string">&apos;javax.annotation:jsr250-api:1.0&apos;</span> <span class="comment">// Java&#x6807;&#x6CE8;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="&#x4E3B;&#x6D3B;&#x52A8;"><a href="#&#x4E3B;&#x6D3B;&#x52A8;" class="headerlink" title="&#x4E3B;&#x6D3B;&#x52A8;"></a>&#x4E3B;&#x6D3B;&#x52A8;</h1><p>&#x4F7F;&#x7528;&#x4E3B;&#x9875;&#x8DF3;&#x8F6C;&#x9875;&#x9762;&#x5C55;&#x793A;dagger2.</p>
+<p><code>dagger2</code>&#x4E3B;&#x8981;&#x5305;&#x542B;<code>inject</code>, <code>module</code>, <code>component</code>&#x4E09;&#x4E2A;&#x90E8;&#x5206;, &#x5373;:<br><code>Inject</code>, &#x4F9D;&#x8D56;&#x6CE8;&#x5165;<code>dependency injection</code>, &#x628A;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x6CE8;&#x5165;&#x58F0;&#x660E;.<br><code>Module</code>, &#x6A21;&#x5757;, &#x63D0;&#x4F9B;&#x82E5;&#x5E72;&#x7C7B;, &#x5728;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x4E2D;&#x4F7F;&#x7528;.<br><code>Component</code>, &#x7EC4;&#x4EF6;, &#x6CE8;&#x518C;&#x82E5;&#x5E72;&#x6A21;&#x5757;&#x81F3;&#x9879;&#x76EE;&#x4E2D;.</p>
+<p>&#x63D0;&#x4F9B;&#x56FE;&#x63A5;&#x53E3;, &#x5728;&#x9879;&#x76EE;&#x4E2D;, <strong>&#x4F7F;&#x7528;&#x6CE8;&#x5165;</strong>&#x7684;&#x7C7B;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Dagger2&#x7684;&#x56FE;&#x63A5;&#x53E3;</span><br><span class="line"> * &lt;p/&gt;</span><br><span class="line"> * Created by wangchenlong on 16/1/2.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">DemoGraph</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">inject</span><span class="params">(MainActivity mainActivity)</span></span>; <span class="comment">// &#x6CE8;&#x5165;MainActivity</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">inject</span><span class="params">(ReposListActivity reposListActivity)</span></span>; <span class="comment">// &#x6CE8;&#x5165;&#x5217;&#x8868;Activity</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x7EC4;&#x4EF6;, &#x6CE8;&#x518C;Module, &#x6DFB;&#x52A0;&#x4E3B;Module.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * &#x7EC4;&#x4EF6;</span><br><span class="line"> * Created by wangchenlong on 16/1/2.</span><br><span class="line"> */</span></span><br><span class="line"><span class="meta">@Singleton</span></span><br><span class="line"><span class="meta">@Component</span>(modules = {MainModule.class, ApiModule.class})</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">DemoComponent</span> <span class="keyword">extends</span> <span class="title">DemoGraph</span> </span>{</span><br><span class="line">    <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Initializer</span> </span>{</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">Initializer</span><span class="params">()</span> </span>{</span><br><span class="line">        } <span class="comment">// No instances.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// &#x521D;&#x59CB;&#x5316;&#x7EC4;&#x4EF6;</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> DemoComponent <span class="title">init</span><span class="params">(DemoApplication app)</span> </span>{</span><br><span class="line">            <span class="keyword">return</span> DaggerDemoComponent.builder()</span><br><span class="line">                    .mainModule(<span class="keyword">new</span> MainModule(app))</span><br><span class="line">                    .build();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;Module&#x53EF;&#x4EE5;&#x6682;&#x65F6;&#x4E0D;&#x6DFB;&#x52A0;, &#x4F46;&#x662F;&#x8981;&#x63D0;&#x4F9B;&#x7C7B;, &#x9879;&#x76EE;&#x6CE8;&#x518C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4E2D;&#x95F4;&#x7C7B;.<br><code>DaggerDemoComponent</code>&#x662F;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x7C7B;, Dagger+&#x7C7B;&#x540D;.</p>
+</blockquote>
+<p>&#x9879;&#x76EE;&#x7684;&#x5E94;&#x7528;, &#x628A;<code>Application</code>&#x6DFB;&#x52A0;&#x81F3;&#x7EC4;&#x4EF6;, &#x5E76;&#x63D0;&#x4F9B;<strong>&#x6CE8;&#x518C;&#x7C7B;&#x7684;&#x56FE;&#x63A5;&#x53E3;</strong>.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * &#x5E94;&#x7528;&#x4FE1;&#x606F;</span><br><span class="line"> * &lt;p/&gt;</span><br><span class="line"> * Created by wangchenlong on 16/1/2.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> DemoGraph sDemoGraph;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> DemoApplication sInstance;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onCreate();</span><br><span class="line">        sInstance = <span class="keyword">this</span>;</span><br><span class="line">        buildComponentAndInject();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> DemoGraph <span class="title">component</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> sDemoGraph;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buildComponentAndInject</span><span class="params">()</span> </span>{</span><br><span class="line">        sDemoGraph = DemoComponent.Initializer.init(sInstance);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x4E3B;&#x6D3B;&#x52A8;, &#x6CE8;&#x518C;&#x5165;&#x56FE;, &#x5E76;&#x6DFB;&#x52A0;&#x8DF3;&#x8F6C;&#x4E0B;&#x4E00;&#x9875;&#x529F;&#x80FD;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * &#x4E3B;&#x6D3B;&#x52A8;, &#x6CE8;&#x518C;&#x7C7B;.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        DemoApplication.component().inject(<span class="keyword">this</span>); <span class="comment">// &#x5E94;&#x7528;&#x6CE8;&#x5165;</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x8DF3;&#x8F6C;&#x5217;&#x8868;&#x89C6;&#x56FE;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">gotoReposList</span><span class="params">(View view)</span> </span>{</span><br><span class="line">        startActivity(<span class="keyword">new</span> Intent(<span class="keyword">this</span>, ReposListActivity.class));</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x4E3B;&#x6A21;&#x5757;, &#x63D0;&#x4F9B;Application&#x548C;Resources.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * &#x4E3B;&#x8981;&#x6A21;&#x5757;, &#x63D0;&#x4F9B;Application&#x548C;resources.</span><br><span class="line"> * &lt;p/&gt;</span><br><span class="line"> * Created by wangchenlong on 16/1/2.</span><br><span class="line"> */</span></span><br><span class="line"><span class="meta">@Module</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainModule</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> DemoApplication mApp;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MainModule</span><span class="params">(DemoApplication application)</span> </span>{</span><br><span class="line">        mApp = application;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Provides</span></span><br><span class="line">    <span class="meta">@Singleton</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Application <span class="title">provideApplication</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> mApp;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Provides</span></span><br><span class="line">    <span class="meta">@Singleton</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Resources <span class="title">provideResources</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> mApp.getResources();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>&#x65B9;&#x6CD5;&#x540D;&#x6DFB;&#x52A0;<code>@Provides</code>&#x548C;<code>@Singleton</code>, &#x4F7F;&#x7528;&#x65F6;, &#x6DFB;&#x52A0;<code>@Inject</code>&#x5373;&#x53EF;. &#x8868;&#x793A;&#x5728;<code>Module</code>&#x4E2D;&#x521B;&#x5EFA;, &#x5728;&#x5176;&#x4ED6;&#x7C7B;&#x4E2D;, &#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x6CE8;&#x5165;&#x4F7F;&#x7528;.<br>&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;, &#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x7684;&#x8FC7;&#x7A0B;, &#x6240;&#x4EE5;&#x9700;&#x8981;&#x6A21;&#x5757;(Module)&#x63D0;&#x4F9B;.</p>
+</blockquote>
+<hr>
+<h1 id="&#x5176;&#x4ED6;&#x6D3B;&#x52A8;"><a href="#&#x5176;&#x4ED6;&#x6D3B;&#x52A8;" class="headerlink" title="&#x5176;&#x4ED6;&#x6D3B;&#x52A8;"></a>&#x5176;&#x4ED6;&#x6D3B;&#x52A8;</h1><p>&#x4E3B;&#x8981;&#x662F;&#x5217;&#x8868;&#x5C55;&#x793A;<strong>GitHub&#x7528;&#x6237;&#x7684;&#x5E93;&#x4FE1;&#x606F;</strong>, &#x4F7F;&#x7528;Retrofit&#x548C;RxAndroid&#x7684;&#x65B9;&#x6CD5;.</p>
+<p>&#x4F7F;&#x7528;<code>RecyclerView</code>&#x5C55;&#x793A;&#x5E93;&#x4FE1;&#x606F;, &#x6CE8;&#x5165;&#x7C7B;&#x5230;&#x56FE;&#x4E2D;, &#x5E76;&#x6CE8;&#x5165;<code>Github&#x670D;&#x52A1;</code>, <code>Rx</code>&#x5206;&#x53D1;&#x4FE1;&#x606F;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * &#x4EE3;&#x7801;&#x5E93;&#x5217;&#x8868;</span><br><span class="line"> * &lt;p&gt;</span><br><span class="line"> * Created by wangchenlong on 16/1/2.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReposListActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>{</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.repos_rv_list) RecyclerView mRvList;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Inject</span></span><br><span class="line">    GitHubService mGitHubService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_repos_list);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        DemoApplication.component().inject(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        LinearLayoutManager manager = <span class="keyword">new</span> LinearLayoutManager(<span class="keyword">this</span>);</span><br><span class="line">        manager.setOrientation(LinearLayoutManager.VERTICAL);</span><br><span class="line">        mRvList.setLayoutManager(manager);</span><br><span class="line"></span><br><span class="line">        ListAdapter adapter = <span class="keyword">new</span> ListAdapter();</span><br><span class="line">        mRvList.setAdapter(adapter);</span><br><span class="line">        loadData(adapter);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x52A0;&#x8F7D;&#x6570;&#x636E;</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">loadData</span><span class="params">(ListAdapter adapter)</span> </span>{</span><br><span class="line">        mGitHubService.getRepoData(<span class="string">&quot;SpikeKing&quot;</span>)</span><br><span class="line">                .subscribeOn(Schedulers.newThread())</span><br><span class="line">                .observeOn(AndroidSchedulers.mainThread())</span><br><span class="line">                .subscribe(adapter::setRepos);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x9002;&#x914D;&#x5668;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * RecyclerView&#x7684;Adapter</span><br><span class="line"> * &lt;p&gt;</span><br><span class="line"> * Created by wangchenlong on 16/1/2.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListAdapter</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">Adapter</span>&lt;<span class="title">ListAdapter</span>.<span class="title">RepoViewHolder</span>&gt; </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;Repo&gt; mRepos; <span class="comment">// &#x5E93;&#x4FE1;&#x606F;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ListAdapter</span><span class="params">()</span> </span>{</span><br><span class="line">        mRepos = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRepos</span><span class="params">(ArrayList&lt;Repo&gt; repos)</span> </span>{</span><br><span class="line">        mRepos = repos;</span><br><span class="line">        notifyItemInserted(mRepos.size() - <span class="number">1</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RepoViewHolder <span class="title">onCreateViewHolder</span><span class="params">(ViewGroup parent, <span class="keyword">int</span> viewType)</span> </span>{</span><br><span class="line">        View view = LayoutInflater.from(parent.getContext())</span><br><span class="line">                .inflate(R.layout.item_repo, parent, <span class="keyword">false</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> RepoViewHolder(view);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBindViewHolder</span><span class="params">(RepoViewHolder holder, <span class="keyword">int</span> position)</span> </span>{</span><br><span class="line">        holder.bindTo(mRepos.get(position));</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getItemCount</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> mRepos.size();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">RepoViewHolder</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">ViewHolder</span> </span>{</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Bind</span>(R.id.item_iv_repo_name) TextView mIvRepoName;</span><br><span class="line">        <span class="meta">@Bind</span>(R.id.item_iv_repo_detail) TextView mIvRepoDetail;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">RepoViewHolder</span><span class="params">(View itemView)</span> </span>{</span><br><span class="line">            <span class="keyword">super</span>(itemView);</span><br><span class="line">            ButterKnife.bind(<span class="keyword">this</span>, itemView);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bindTo</span><span class="params">(Repo repo)</span> </span>{</span><br><span class="line">            mIvRepoName.setText(repo.name);</span><br><span class="line">            mIvRepoDetail.setText(String.valueOf(repo.description + <span class="string">&quot;(&quot;</span> + repo.language + <span class="string">&quot;)&quot;</span>));</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Repo</span> </span>{</span><br><span class="line">        <span class="keyword">public</span> String name; <span class="comment">// &#x5E93;&#x7684;&#x540D;&#x5B57;</span></span><br><span class="line">        <span class="keyword">public</span> String description; <span class="comment">// &#x63CF;&#x8FF0;</span></span><br><span class="line">        <span class="keyword">public</span> String language; <span class="comment">// &#x8BED;&#x8A00;</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>GitHub&#x8BF7;&#x6C42;&#x63A5;&#x53E3;, &#x8FD4;&#x56DE;Rx&#x7684;&#x89C2;&#x5BDF;&#x8005;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * GitHub&#x670D;&#x52A1;</span><br><span class="line"> * &lt;p&gt;</span><br><span class="line"> * Created by wangchenlong on 16/1/2.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">GitHubService</span> </span>{</span><br><span class="line">    String ENDPOINT = <span class="string">&quot;https://api.github.com&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x83B7;&#x53D6;&#x5E93;, &#x83B7;&#x53D6;&#x7684;&#x662F;&#x6570;&#x7EC4;</span></span><br><span class="line">    <span class="meta">@GET</span>(<span class="string">&quot;/users/{user}/repos&quot;</span>)</span><br><span class="line">    Observable&lt;ArrayList&lt;ListAdapter.Repo&gt;&gt; getRepoData(<span class="meta">@Path</span>(<span class="string">&quot;user&quot;</span>) String user);</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>Api&#x6A21;&#x5757;, &#x4F7F;&#x7528;&#x8BF7;&#x6C42;&#x63A5;&#x53E3;&#x521B;&#x5EFA;GitHub&#x670D;&#x52A1;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * &#x63A5;&#x53E3;&#x6A21;&#x5757;</span><br><span class="line"> * &lt;p&gt;</span><br><span class="line"> * Created by wangchenlong on 16/1/2.</span><br><span class="line"> */</span></span><br><span class="line"><span class="meta">@Module</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApiModule</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Provides</span></span><br><span class="line">    <span class="meta">@Singleton</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> GitHubService <span class="title">provideGitHubService</span><span class="params">()</span> </span>{</span><br><span class="line">        Retrofit retrofit = <span class="keyword">new</span> Retrofit.Builder()</span><br><span class="line">                .baseUrl(GitHubService.ENDPOINT)</span><br><span class="line">                .addCallAdapterFactory(RxJavaCallAdapterFactory.create()) <span class="comment">// &#x6DFB;&#x52A0;Rx&#x9002;&#x914D;&#x5668;</span></span><br><span class="line">                .addConverterFactory(GsonConverterFactory.create()) <span class="comment">// &#x6DFB;&#x52A0;Gson&#x8F6C;&#x6362;&#x5668;</span></span><br><span class="line">                .build();</span><br><span class="line">        <span class="keyword">return</span> retrofit.create(GitHubService.class);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;, &#x6CE8;&#x518C;&#x6A21;&#x5757;(Module)&#x5230;&#x7EC4;&#x4EF6;(Component). &#x7EC4;&#x4EF6;&#x7EC4;&#x6210;&#x5230;&#x5E94;&#x7528;, &#x6A21;&#x5757;&#x6CE8;&#x518C;&#x5230;&#x7EC4;&#x4EF6;.</p>
+</blockquote>
+<hr>
+<p>Dagger2&#x7684;&#x91CD;&#x8981;&#x4F18;&#x52BF;&#x5C31;&#x662F;&#x7701;&#x7565;&#x4E86;&#x5F88;&#x591A;&#x91CD;&#x590D;&#x7684;&#x521B;&#x5EFA;, &#x76F4;&#x63A5;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x975E;&#x5E38;&#x7B80;&#x5355;.</p>
+<p>&#x6548;&#x679C;<br><img src="/2016/03/16/use-dagger-first/dagger-show.gif" alt="&#x52A8;&#x753B;"></p>
+<p>OK, that&#x2019;s all! Enjoy It!</p>
+<hr>
+<blockquote>
+<p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/03/16/use-dagger-first/">http://www.wangchenlong.org/2016/03/16/use-dagger-first/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://weibo.com/u/2852941392" target="_blank" rel="external">&#x5FAE;&#x535A;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>, <a href="https://slides.com/spikeking" target="_blank" rel="external">Slides</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
+</blockquote>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/Dagger/" rel="tag">#Dagger</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/15/kotlin-extends-point/" rel="next" title="Kotlin(2) - 优雅地扩展类的方法和属性">
+                <i class="fa fa-chevron-left"></i> Kotlin(2) - 优雅地扩展类的方法和属性
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/16/use-dagger-first/"
+     data-title="依赖注入库 Dagger2 的使用方法"
+     data-content=""
+     data-url="http://www.wangchenlong.org/2016/03/16/use-dagger-first/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+            <!--底部广告-->
+            <div align="center" style="margin: 20px 0px 0px 0px">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- 文章底部 -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:336px;height:280px"
+                     data-ad-client="ca-pub-9201665894952799"
+                     data-ad-slot="7302087069"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+          </div>
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/16/use-dagger-first/"
+           data-title="依赖注入库 Dagger2 的使用方法" data-url="http://www.wangchenlong.org/2016/03/16/use-dagger-first/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="王辰龙" />
+          <p class="site-author-name" itemprop="name">王辰龙</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/SpikeKing" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 简书
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2852941392" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> 微博
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/caroline_wendy" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> CSDN
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 掘金
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://slides.com/spikeking" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Slides
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.chunyuyisheng.com/" target="_blank">春雨医生</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.chunyuyisheng.com/pedometer" target="_blank">计步器</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主活动"><span class="nav-number">2.</span> <span class="nav-text">主活动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他活动"><span class="nav-number">3.</span> <span class="nav-text">其他活动</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+      <!-- 侧栏广告 -->
+      <div align="center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- 侧栏底部 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:160px;height:600px"
+             data-ad-client="ca-pub-9201665894952799"
+             data-ad-slot="8220417066"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王辰龙</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"spikeking"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("24qpuQFXa0w8ead8gg6Rxxhc-gzGzoHsz", "O8vfKJtVanuyjh9NabH91ig7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>
