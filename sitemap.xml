@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/svg-path-animation/</loc>
     
-    <lastmod>2016-03-14T23:31:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
-    
-    <lastmod>2016-03-14T23:31:39.000Z</lastmod>
+    <lastmod>2016-03-15T01:25:57.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/replace-svg-image/</loc>
+    
+    <lastmod>2016-03-15T01:24:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
     
     <lastmod>2016-03-14T23:31:39.000Z</lastmod>
     
@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/replace-svg-image/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
     
     <lastmod>2016-03-14T23:31:39.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
     
     <lastmod>2016-03-14T23:31:39.000Z</lastmod>
     
@@ -52,6 +52,13 @@
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/12/apply-flux-architecture/</loc>
+    
+    <lastmod>2016-03-14T23:31:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</loc>
     
     <lastmod>2016-03-14T23:31:39.000Z</lastmod>
     
