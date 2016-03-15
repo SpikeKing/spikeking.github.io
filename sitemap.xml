@@ -30,13 +30,6 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
@@ -44,7 +37,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     
@@ -52,6 +45,13 @@
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</loc>
+    
+    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     
