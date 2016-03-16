@@ -775,9 +775,9 @@
     
       <category term="测试" scheme="http://www.wangchenlong.org/tags/%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="Espresso" scheme="http://www.wangchenlong.org/tags/Espresso/"/>
-    
       <category term="Dagger" scheme="http://www.wangchenlong.org/tags/Dagger/"/>
+    
+      <category term="Espresso" scheme="http://www.wangchenlong.org/tags/Espresso/"/>
     
   </entry>
   
