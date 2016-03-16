@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-16T01:43:54.000Z</updated>
+  <updated>2016-03-16T01:47:13.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>网络服务库 Retrofit 的使用方式</title>
+    <title>网络服务库 Retrofit2 的使用方式</title>
     <link href="http://www.wangchenlong.org/2016/03/16/use-retrofit-first/"/>
     <id>http://www.wangchenlong.org/2016/03/16/use-retrofit-first/</id>
     <published>2016-03-16T01:22:00.000Z</published>
-    <updated>2016-03-16T01:43:54.000Z</updated>
+    <updated>2016-03-16T01:47:13.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://square.github.io/retrofit/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Retrofit&lt;/a&gt;&amp;#x662F;Square&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x7F51;&amp;#x7EDC;&amp;#x670D;&amp;#x52A1;&amp;#x5E93;, &amp;#x7B80;&amp;#x5316;Get/Post&amp;#x7F51;&amp;#x7EDC;&amp;#x670D;&amp;#x52A1;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;, &amp;#x914D;&amp;#x5408;Rx&amp;#x548C;Dagger&amp;#x6709;&amp;#x66F4;&amp;#x597D;&amp;#x7684;&amp;#x6548;&amp;#x679C;. &amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E00;&amp;#x4E9B;&amp;#x5E38;&amp;#x89C1;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x65B9;&amp;#x5F0F;.&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://square.github.io/retrofit/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Retrofit&lt;/a&gt;&amp;#x662F;Square&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x7F51;&amp;#x7EDC;&amp;#x670D;&amp;#x52A1;&amp;#x5E93;, &amp;#x7B80;&amp;#x5316;Get/Post&amp;#x7F51;&amp;#x7EDC;&amp;#x670D;&amp;#x52A1;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;, &amp;#x914D;&amp;#x5408;Rx&amp;#x548C;Dagger&amp;#x6709;&amp;#x66F4;&amp;#x597D;&amp;#x7684;&amp;#x6548;&amp;#x679C;. Retrofit&amp;#x5DF2;&amp;#x7ECF;&amp;#x66F4;&amp;#x65B0;&amp;#x5230;&amp;#x7B2C;2.0&amp;#x7248;, &amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E00;&amp;#x4E9B;&amp;#x5E38;&amp;#x89C1;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x65B9;&amp;#x5F0F;.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;(&amp;#x539F;&amp;#x6587;: &lt;a href=&quot;http://www.wangchenlong.org/2016/03/16/use-retrofit-first/&quot;&gt;http://www.wangchenlong.org/2016/03/16/use-retrofit-first/&lt;/a&gt;)&lt;/p&gt;
 &lt;blockquote&gt;
@@ -54,7 +54,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;http://square.github.io/retrofit/&quot;&gt;Retrofit&lt;/a&gt;&amp;#x662F;Square&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x7F51;&amp;#x7EDC;&amp;#x670D;&amp;#x52A1;&amp;#x5E93;, &amp;#x7B80;&amp;#x5316;Get/Post&amp;#x7F51;&amp;#x7EDC;&amp;#x670D;&amp;#x52A1;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;, &amp;#x914D;&amp;#x5408;Rx&amp;#x548C;Dagger&amp;#x6709;&amp;#x66F4;&amp;#x597D;&amp;#x7684;&amp;#x6548;&amp;#x679C;. &amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E00;&amp;#x4E9B;&amp;#x5E38;&amp;#x89C1;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x65B9;&amp;#x5F0F;.&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://square.github.io/retrofit/&quot;&gt;Retrofit&lt;/a&gt;&amp;#x662F;Square&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#x7F51;&amp;#x7EDC;&amp;#x670D;&amp;#x52A1;&amp;#x5E93;, &amp;#x7B80;&amp;#x5316;Get/Post&amp;#x7F51;&amp;#x7EDC;&amp;#x670D;&amp;#x52A1;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;, &amp;#x914D;&amp;#x5408;Rx&amp;#x548C;Dagger&amp;#x6709;&amp;#x66F4;&amp;#x597D;&amp;#x7684;&amp;#x6548;&amp;#x679C;. Retrofit&amp;#x5DF2;&amp;#x7ECF;&amp;#x66F4;&amp;#x65B0;&amp;#x5230;&amp;#x7B2C;2.0&amp;#x7248;, &amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E00;&amp;#x4E9B;&amp;#x5E38;&amp;#x89C1;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x65B9;&amp;#x5F0F;.&lt;/p&gt;
     
     </summary>
     
@@ -775,9 +775,9 @@
     
       <category term="测试" scheme="http://www.wangchenlong.org/tags/%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="Espresso" scheme="http://www.wangchenlong.org/tags/Espresso/"/>
-    
       <category term="Dagger" scheme="http://www.wangchenlong.org/tags/Dagger/"/>
+    
+      <category term="Espresso" scheme="http://www.wangchenlong.org/tags/Espresso/"/>
     
   </entry>
   
