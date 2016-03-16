@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/f371aa4f032e4227a41f8c894b0b3542.html</loc>
+    
+    <lastmod>2016-03-16T10:13:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/16/use-retrofit-first/</loc>
     
     <lastmod>2016-03-16T01:47:13.000Z</lastmod>
@@ -37,7 +44,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/14/improve-gradle-speed/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     
@@ -51,7 +58,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/improve-gradle-speed/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
+    
+    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     
@@ -72,21 +86,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/svg-path-animation/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/replace-svg-image/</loc>
     
     <lastmod>2016-03-15T01:29:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/replace-svg-image/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/svg-path-animation/</loc>
     
     <lastmod>2016-03-15T01:29:35.000Z</lastmod>
     
