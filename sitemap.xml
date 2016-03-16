@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/16/use-retrofit-first/</loc>
+    
+    <lastmod>2016-03-16T01:33:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/16/use-dagger-first/</loc>
     
     <lastmod>2016-03-15T23:44:16.000Z</lastmod>
@@ -9,14 +16,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/kotlin-extends-point/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/kotlin-first/</loc>
     
     <lastmod>2016-03-15T13:51:05.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/kotlin-first/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/kotlin-extends-point/</loc>
     
     <lastmod>2016-03-15T13:51:05.000Z</lastmod>
     
@@ -30,21 +37,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     
@@ -58,7 +51,21 @@
   </url>
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</loc>
+    
+    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/14/improve-gradle-speed/</loc>
+    
+    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     
