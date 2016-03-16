@@ -58,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
@@ -73,6 +66,13 @@
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</loc>
+    
+    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     
