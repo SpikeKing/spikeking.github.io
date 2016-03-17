@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-16T13:55:54.000Z</updated>
+  <updated>2016-03-17T15:06:17.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://www.wangchenlong.org/2016/03/17/analyze-app-framework/"/>
+    <id>http://www.wangchenlong.org/2016/03/17/analyze-app-framework/</id>
+    <published>2016-03-17T15:05:00.000Z</published>
+    <updated>2016-03-17T15:06:17.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x539F;&amp;#x59CB;&amp;#x5730;&amp;#x5740;:&lt;br&gt;&lt;a href=&quot;http://www.wangchenlong.org/2016/03/17/analyze-app-framework/&quot;&gt;http://www.wangchenlong.org/2016/03/17/analyze-app-framework/&lt;/a&gt;&lt;br&gt;&amp;#x6B22;&amp;#x8FCE;Follow&amp;#x6211;&amp;#x7684;&lt;a href=&quot;https://github.com/SpikeKing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;, &amp;#x5173;&amp;#x6CE8;&amp;#x6211;&amp;#x7684;&lt;a href=&quot;http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x7B80;&amp;#x4E66;&lt;/a&gt;, &lt;a href=&quot;http://weibo.com/u/2852941392&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x5FAE;&amp;#x535A;&lt;/a&gt;, &lt;a href=&quot;http://blog.csdn.net/caroline_wendy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSDN&lt;/a&gt;, &lt;a href=&quot;http://gold.xitu.io/#/user/56de98c2f3609a005442ec58&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x6398;&amp;#x91D1;&lt;/a&gt;, &lt;a href=&quot;https://slides.com/spikeking&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Slides&lt;/a&gt;.&lt;br&gt;&amp;#x6211;&amp;#x5DF2;&amp;#x59D4;&amp;#x6258;&amp;#x201C;&amp;#x7EF4;&amp;#x6743;&amp;#x9A91;&amp;#x58EB;&amp;#x201D;&amp;#x4E3A;&amp;#x6211;&amp;#x7684;&amp;#x6587;&amp;#x7AE0;&amp;#x8FDB;&amp;#x884C;&amp;#x7EF4;&amp;#x6743;&amp;#x884C;&amp;#x52A8;. &amp;#x672A;&amp;#x7ECF;&amp;#x6388;&amp;#x6743;, &amp;#x7981;&amp;#x6B62;&amp;#x8F6C;&amp;#x8F7D;, &amp;#x6388;&amp;#x6743;&amp;#x6216;&amp;#x5408;&amp;#x4F5C;&amp;#x8BF7;&amp;#x7559;&amp;#x8A00;.&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x539F;&amp;#x59CB;&amp;#x5730;&amp;#x5740;:&lt;br&gt;&lt;a href=&quot;http://www.wangchenlong.org/2016/03/17/analyze-app-fram
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.wangchenlong.org/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
+    
+      <category term="ClassyShark" scheme="http://www.wangchenlong.org/tags/ClassyShark/"/>
+    
+  </entry>
   
   <entry>
     <title>网络服务库 Retrofit2 的使用方式</title>
