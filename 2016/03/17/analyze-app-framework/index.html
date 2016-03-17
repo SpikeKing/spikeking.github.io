@@ -45,7 +45,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,测试,LeakCanary,内存," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -63,20 +63,21 @@
 
 
 
-<meta name="description" content="LeakCanary&amp;#x662F;&amp;#x68C0;&amp;#x6D4B;&amp;#x5E94;&amp;#x7528;&amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;&amp;#x7684;&amp;#x5DE5;&amp;#x5177;, &amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;&amp;#x662F;Android&amp;#x5F00;&amp;#x53D1;&amp;#x4E2D;&amp;#x5E38;&amp;#x89C1;&amp;#x76">
+<meta name="description" content="App&amp;#x5E94;&amp;#x7528;&amp;#x672C;&amp;#x8D28;&amp;#x4E0A;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;apk&amp;#x5305;, &amp;#x5373;&amp;#x4E00;&amp;#x4E2A;zip&amp;#x5305;, &amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;#x63A5;&amp;#x663E;&amp;#x793A;&amp;#x5176;&amp;#x4E2D;&amp;#x7684;&amp;#x5185;&amp;#x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 Leak Canary 检测应用的内存泄露">
-<meta property="og:url" content="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/index.html">
+<meta property="og:title" content="分析应用使用的技术框架和开源库">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/03/17/analyze-app-framework/index.html">
 <meta property="og:site_name" content="Mystra">
-<meta property="og:description" content="LeakCanary&amp;#x662F;&amp;#x68C0;&amp;#x6D4B;&amp;#x5E94;&amp;#x7528;&amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;&amp;#x7684;&amp;#x5DE5;&amp;#x5177;, &amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;&amp;#x662F;Android&amp;#x5F00;&amp;#x53D1;&amp;#x4E2D;&amp;#x5E38;&amp;#x89C1;&amp;#x76">
-<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/leak_memory.png">
-<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/position.png">
-<meta property="og:image" content="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/position-2.png">
-<meta property="og:updated_time" content="2016-03-15T01:31:10.000Z">
+<meta property="og:description" content="App&amp;#x5E94;&amp;#x7528;&amp;#x672C;&amp;#x8D28;&amp;#x4E0A;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;apk&amp;#x5305;, &amp;#x5373;&amp;#x4E00;&amp;#x4E2A;zip&amp;#x5305;, &amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;#x63A5;&amp;#x663E;&amp;#x793A;&amp;#x5176;&amp;#x4E2D;&amp;#x7684;&amp;#x5185;&amp;#x">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/17/analyze-app-framework/logo.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/17/analyze-app-framework/shark-framework.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/17/analyze-app-framework/shark-method.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/17/analyze-app-framework/shark-other.png">
+<meta property="og:updated_time" content="2016-03-17T00:06:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 Leak Canary 检测应用的内存泄露">
-<meta name="twitter:description" content="LeakCanary&amp;#x662F;&amp;#x68C0;&amp;#x6D4B;&amp;#x5E94;&amp;#x7528;&amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;&amp;#x7684;&amp;#x5DE5;&amp;#x5177;, &amp;#x5185;&amp;#x5B58;&amp;#x6CC4;&amp;#x9732;&amp;#x662F;Android&amp;#x5F00;&amp;#x53D1;&amp;#x4E2D;&amp;#x5E38;&amp;#x89C1;&amp;#x76">
-<meta name="twitter:image" content="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/leak_memory.png">
+<meta name="twitter:title" content="分析应用使用的技术框架和开源库">
+<meta name="twitter:description" content="App&amp;#x5E94;&amp;#x7528;&amp;#x672C;&amp;#x8D28;&amp;#x4E0A;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;apk&amp;#x5305;, &amp;#x5373;&amp;#x4E00;&amp;#x4E2A;zip&amp;#x5305;, &amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;#x63A5;&amp;#x663E;&amp;#x793A;&amp;#x5176;&amp;#x4E2D;&amp;#x7684;&amp;#x5185;&amp;#x">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/03/17/analyze-app-framework/logo.png">
 
 
 
@@ -94,7 +95,7 @@
   };
 </script>
 
-  <title> 使用 Leak Canary 检测应用的内存泄露 | Mystra </title>
+  <title> 分析应用使用的技术框架和开源库 | Mystra </title>
 
   <meta name="domain_verify" content="pmrgi33nmfuw4ir2ej3wc3thmnugk3tmn5xgoltpojtselbcm52wszbchirgmmzxgfqwcndggaztezjugizdoyjugftdqyzyhe2gemdcgm2timrcfqrhi2lnmvjwc5tfei5dcnbvhaytemztguydsnbypu">
 
@@ -293,7 +294,7 @@
             
             
               
-                使用 Leak Canary 检测应用的内存泄露
+                分析应用使用的技术框架和开源库
               
             
           </h1>
@@ -305,8 +306,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-14T14:23:00+08:00" content="2016-03-14">
-              2016-03-14
+            <time itemprop="dateCreated" datetime="2016-03-17T07:59:00+08:00" content="2016-03-17">
+              2016-03-17
             </time>
           </span>
 
@@ -335,8 +336,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/14/use-leak-canary-check-memory/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/14/use-leak-canary-check-memory/" itemprop="commentsCount"></span>
+                <a href="/2016/03/17/analyze-app-framework/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/17/analyze-app-framework/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -346,7 +347,7 @@
 
           
           
-             <span id="/2016/03/14/use-leak-canary-check-memory/" class="leancloud_visitors" data-flag-title="使用 Leak Canary 检测应用的内存泄露">
+             <span id="/2016/03/17/analyze-app-framework/" class="leancloud_visitors" data-flag-title="分析应用使用的技术框架和开源库">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -367,49 +368,31 @@
       
 
       
-        <p><a href="https://github.com/square/leakcanary" target="_blank" rel="external">LeakCanary</a>&#x662F;&#x68C0;&#x6D4B;&#x5E94;&#x7528;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x7684;&#x5DE5;&#x5177;, &#x5185;&#x5B58;&#x6CC4;&#x9732;&#x662F;Android&#x5F00;&#x53D1;&#x4E2D;&#x5E38;&#x89C1;&#x7684;&#x95EE;&#x9898;, &#x4F1A;&#x5BFC;&#x81F4;&#x5E94;&#x7528;&#x7684;&#x7A33;&#x5B9A;&#x6027;&#x4E0B;&#x964D;. &#x672C;&#x6587;&#x4ECB;&#x7ECD;LeakCanary&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;.</p>
+        <p>App&#x5E94;&#x7528;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;apk&#x5305;, &#x5373;&#x4E00;&#x4E2A;zip&#x5305;, &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x663E;&#x793A;&#x5176;&#x4E2D;&#x7684;&#x5185;&#x5BB9;. &#x901A;&#x8FC7;apk&#x6587;&#x4EF6;, &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x83B7;&#x77E5;apk&#x7684;&#x7248;&#x672C;&#x4FE1;&#x606F;, so&#x5E93;&#x548C;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;, &#x5E76;&#x4E86;&#x89E3;&#x4E00;&#x4E9B;&#x4E3B;&#x6D41;&#x516C;&#x53F8;&#x7684;&#x5E94;&#x7528;&#x6846;&#x67B6;. &#x5206;&#x6790;&#x5DE5;&#x5177;&#x4E3B;&#x8981;&#x662F;ApkTool&#x548C;<a href="https://github.com/google/android-classyshark" target="_blank" rel="external">ClassyShark</a>, &#x672C;&#x4EBA;&#x6BD4;&#x8F83;&#x559C;&#x6B22;Shark&#x5DE5;&#x5177;. &#x6211;&#x4F7F;&#x7528;ClassyShark&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x7F8E;&#x56E2;&#x7684;&#x6846;&#x67B6;, &#x4E5F;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x539F;&#x7406;, &#x5206;&#x6790;&#x5176;&#x4ED6;App&#x7684;&#x57FA;&#x672C;&#x67B6;&#x6784;.</p>
 <a id="more"></a>
-<blockquote>
-<p>&#x6CE8;&#x610F;: &#x96C6;&#x6210;&#x5230;&#x4F4E;&#x7248;&#x672C;&#x5E94;&#x7528;, &#x4F1A;&#x62A5;&#x51FA;Bug.<br>Error:(2) Error retrieving parent for item: No resource found that matches the given name &#x2018;android:Theme.Material&#x2019;.<br>&#x4FEE;&#x6539;&#x7F16;&#x8BD1;&#x7248;&#x672C;: <strong>compileSdkVersion 21</strong> &#x5373;&#x53EF;.</p>
-</blockquote>
-<p>&#x672C;&#x6587;&#x793A;&#x4F8B;&#x7684;Github<a href="https://github.com/SpikeKing/wcl-leakcanary-demo" target="_blank" rel="external">&#x4E0B;&#x8F7D;&#x5730;&#x5740;</a>.</p>
-<p><img src="/2016/03/14/use-leak-canary-check-memory/leak_memory.png" alt="&#x5185;&#x5B58;&#x6CC4;&#x9732;"></p>
-<p>&#x4E3B;&#x8981;&#x539F;&#x56E0;:<br>&#x751F;&#x547D;&#x5468;&#x671F;&#x8F83;&#x957F;&#x7684;&#x7C7B;&#x4F7F;&#x7528;Activity&#x7684;Context, &#x5BFC;&#x81F4;Activity&#x88AB;&#x5F15;&#x7528;, &#x65E0;&#x6CD5;&#x88AB;&#x53CA;&#x65F6;&#x56DE;&#x6536;. &#x9664;&#x4E86;&#x9700;&#x8981;Activity&#x9875;&#x9762;&#x652F;&#x6301;&#x7684;&#x63A7;&#x4EF6;&#x7C7B;, &#x5982;Dialog&#x7B49;, &#x5176;&#x4ED6;&#x5168;&#x90E8;&#x4F7F;&#x7528;&#x5E94;&#x7528;&#x7684;Context&#x66FF;&#x6362;Activity&#x7684;Context, &#x5373;Context.getApplicationContext(). &#x8FD8;&#x6709;&#x5C31;&#x662F;&#x5355;&#x4F8B;&#x4E0D;&#x8981;&#x6301;&#x6709;&#x9875;&#x9762;&#x7684;&#x63A7;&#x4EF6;, &#x5355;&#x4F8B;&#x6301;&#x6709;&#x63A7;&#x4EF6;, &#x63A7;&#x4EF6;&#x9644;&#x5C5E;&#x9875;&#x9762;, &#x6700;&#x7EC8;&#x9875;&#x9762;&#x5F97;&#x4E0D;&#x5230;&#x91CA;&#x653E;, &#x5355;&#x4F8B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x56DE;&#x8C03;&#x4FEE;&#x6539;&#x9875;&#x9762;, &#x5185;&#x90E8;&#x4EC5;&#x4EC5;&#x4FDD;&#x7559;&#x5904;&#x7406;&#x6570;&#x636E;&#x90E8;&#x5206;.</p>
-<p>LeakCanary&#x53EF;&#x4EE5;&#x68C0;&#x67E5;&#x51FA;&#x9875;&#x9762;&#x7684;&#x6CC4;&#x9732;&#x95EE;&#x9898;, &#x5E76;&#x63D0;&#x4F9B;&#x5177;&#x4F53;&#x4F4D;&#x7F6E;.</p>
-<p><img src="/2016/03/14/use-leak-canary-check-memory/position.png" alt="&#x6CC4;&#x9732;"></p>
-<blockquote>
-<p>&#x8868;&#x660E;: LeakSingle&#x7684;<strong>&#x9759;&#x6001;&#x5355;&#x4F8B;sInstance</strong>&#x5F15;&#x7528;LeakSingle&#x7684;<strong>mContext</strong>, &#x4ECE;&#x800C;&#x5BFC;&#x81F4;MainActivity&#x7684;<strong>instance</strong>&#x6CC4;&#x9732;.</p>
-</blockquote>
-<p>&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x7684;&#x539F;&#x56E0;&#x5DF2;&#x7ECF;&#x7406;&#x89E3;&#x4E86;, &#x90A3;&#x4E48;&#x6211;&#x6765;&#x8BB2;&#x89E3;&#x4E00;&#x4E0B;&#x5982;&#x4F55;&#x68C0;&#x6D4B;&#x5E94;&#x7528;&#x5427;.</p>
+<p><img src="/2016/03/17/analyze-app-framework/logo.png" alt="Shark"></p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;, &#x6709;&#x4EC0;&#x4E48;&#x597D;&#x73A9;&#x4E14;&#x6709;&#x7528;&#x7684;&#x67B6;&#x6784;&#x4FE1;&#x606F;?</p>
 <hr>
-<h1 id="&#x4F9D;&#x8D56;&#x548C;&#x5F15;&#x5165;"><a href="#&#x4F9D;&#x8D56;&#x548C;&#x5F15;&#x5165;" class="headerlink" title="&#x4F9D;&#x8D56;&#x548C;&#x5F15;&#x5165;"></a>&#x4F9D;&#x8D56;&#x548C;&#x5F15;&#x5165;</h1><p>build.gradle&#x7684;&#x4F9D;&#x8D56;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">debugCompile <span class="string">&apos;com.squareup.leakcanary:leakcanary-android:1.3.1&apos;</span> <span class="comment">// or 1.4-beta1</span></span><br><span class="line">releaseCompile <span class="string">&apos;com.squareup.leakcanary:leakcanary-android-no-op:1.3.1&apos;</span> <span class="comment">// or 1.4-beta1</span></span><br><span class="line">testCompile <span class="string">&apos;com.squareup.leakcanary:leakcanary-android-no-op:1.3.1&apos;</span> <span class="comment">// or 1.4-beta1</span></span><br></pre></td></tr></table></figure></p>
-<p>&#x5F15;&#x5165;&#x5E94;&#x7528;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>{</span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onCreate();</span><br><span class="line">        LeakCanary.install(<span class="keyword">this</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>&#x914D;&#x7F6E;&#x975E;&#x5E38;&#x7B80;&#x5355;, &#x4F1A;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x9644;&#x5C5E;&#x5E94;&#x7528;, &#x53BB;&#x6389;Application&#x7684;&#x5F15;&#x7528;, &#x5C31;&#x53EF;&#x4EE5;&#x79FB;&#x9664;LeakCanary.</p>
-</blockquote>
+<h1 id="&#x6846;&#x67B6;"><a href="#&#x6846;&#x67B6;" class="headerlink" title="&#x6846;&#x67B6;"></a>&#x6846;&#x67B6;</h1><p><img src="/2016/03/17/analyze-app-framework/shark-framework.png" alt="&#x6846;&#x67B6;"></p>
+<p>&#x7F8E;&#x56E2;&#x7684;&#x7F16;&#x8BD1;&#x7248;&#x672C;&#x975E;&#x5E38;&#x65B0;, &#x7D27;&#x8DDF;&#x65F6;&#x4EE3;, 23&#x7248;&#x672C;(Android 6.0).<br>&#x4F46;&#x662F;TargetSdkVersion&#x4ECD;&#x7136;&#x662F;22&#x7248;&#x672C;(Android 5.1), &#x63A8;&#x8350;&#x4F7F;&#x7528;5.1.<br>&#x6700;&#x4F4E;&#x7248;&#x672C;&#x662F;16(Android 4.1), 4.1&#x4EE5;&#x4E0B;&#x7684;&#x624B;&#x673A;&#x65E0;&#x6CD5;&#x8FD0;&#x884C;.</p>
+<p>&#x4F7F;&#x7528;MultiDex, &#x800C;&#x4E14;&#x7ADF;&#x7136;&#x6709;&#x4E09;&#x4E2A;, &#x8BF4;&#x660E;&#x65B9;&#x6CD5;&#x975E;&#x5E38;&#x4E4B;&#x591A;, &#x53EF;&#x80FD;&#x5F15;&#x5165;&#x4E86;&#x5927;&#x91CF;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;.</p>
 <hr>
-<h1 id="&#x6CC4;&#x9732;&#x5355;&#x4F8B;"><a href="#&#x6CC4;&#x9732;&#x5355;&#x4F8B;" class="headerlink" title="&#x6CC4;&#x9732;&#x5355;&#x4F8B;"></a>&#x6CC4;&#x9732;&#x5355;&#x4F8B;</h1><p>&#x6CC4;&#x9732;&#x5355;&#x4F8B;, &#x5F15;&#x5165;&#x9875;&#x9762;&#x7684;TextView, &#x5F3A;&#x5236;&#x4FDD;&#x7559;&#x7684;&#x7236;Activity, &#x4F1A;&#x5BFC;&#x81F4;&#x5185;&#x5B58;&#x6CC4;&#x9732;, &#x53EF;&#x4EE5;&#x5728;onDestroy&#x65F6;, &#x89E3;&#x5F15;&#x7528;&#x907F;&#x514D;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * &#x6CC4;&#x9732;&#x5355;&#x4F8B;, &#x8BBE;&#x8BA1;&#x6DF7;&#x4E71;, &#x5355;&#x4F8B;&#x53EA;&#x5E94;&#x8BE5;&#x505A;&#x4E8B;&#x52A1;&#x6027;&#x7684;&#x5DE5;&#x4F5C;, &#x9875;&#x9762;&#x64CD;&#x4F5C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x56DE;&#x8C03;.</span><br><span class="line"> * &#x672C;&#x793A;&#x4F8B;&#x4EC5;&#x505A;&#x4E3A;&#x53CD;&#x9762;&#x793A;&#x4F8B;, &#x5207;&#x52FF;&#x5B66;&#x4E60;.</span><br><span class="line"> * &lt;p/&gt;</span><br><span class="line"> * Created by wangchenlong on 16/1/25.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LeakSingle</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> Context mContext;</span><br><span class="line">    <span class="keyword">private</span> TextView mTextView;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> LeakSingle sInstance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">LeakSingle</span><span class="params">(Context context)</span> </span>{</span><br><span class="line">        mContext = context;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> LeakSingle <span class="title">getInstance</span><span class="params">(Context context)</span> </span>{</span><br><span class="line">        <span class="keyword">if</span> (sInstance == <span class="keyword">null</span>) {</span><br><span class="line">            sInstance = <span class="keyword">new</span> LeakSingle(context);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> sInstance;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x5185;&#x5B58;&#x6CC4;&#x9732;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRetainedTextView</span><span class="params">(TextView tv)</span> </span>{</span><br><span class="line">        mTextView = tv;</span><br><span class="line">        mTextView.setText(mContext.getString(R.string.app_name));</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x5220;&#x9664;&#x5F15;&#x7528;, &#x9632;&#x6B62;&#x6CC4;&#x9732;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeRetainedTextView</span><span class="params">()</span> </span>{</span><br><span class="line">        mTextView = <span class="keyword">null</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<h1 id="&#x65B9;&#x6CD5;"><a href="#&#x65B9;&#x6CD5;" class="headerlink" title="&#x65B9;&#x6CD5;"></a>&#x65B9;&#x6CD5;</h1><p><img src="/2016/03/17/analyze-app-framework/shark-method.png" alt="&#x65B9;&#x6CD5;"></p>
+<p>&#x6587;&#x4EF6;&#x975E;&#x5E38;&#x4E4B;&#x591A;, &#x5171;&#x6709;9&#x4E07;&#x591A;&#x4E2A;, &#x4F7F;&#x7528;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x4E3B;&#x6D41;&#x5F00;&#x6E90;&#x5E93;, &#x975E;&#x5E38;&#x6613;&#x4E8E;&#x7BA1;&#x7406;.<br>&#x6211;&#x6765;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x8FD9;&#x4E9B;&#x5E93;, &#x4E0D;&#x8BA4;&#x8BC6;&#x7684;&#x670B;&#x53CB;&#x6700;&#x597D;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;, &#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x975E;&#x5E38;&#x6D41;&#x884C;&#x7684;&#x5F00;&#x6E90;&#x5E93;.</p>
+<h2 id="com"><a href="#com" class="headerlink" title="com"></a>com</h2><p>sankuai, &#x7F8E;&#x56E2;&#x7684;&#x6838;&#x5FC3;&#x7C7B;;<br>xiaomi, &#x5C0F;&#x7C73;&#x63A8;&#x9001;(xiaomi);<br>squareup, Squareup&#x7684;EventBus(otto), okhttp, picasso;<br>readystatesoftware, &#x72B6;&#x6001;&#x680F;&#x6C89;&#x6D78;&#x6548;&#x679C;&#x5E93;;<br>dianping, &#x5927;&#x4F17;&#x70B9;&#x8BC4;, &#x5DF2;&#x7ECF;&#x5408;&#x5E76;&#x4E00;&#x5BB6;, &#x4E1C;&#x897F;&#x4E5F;&#x5F97;&#x7528;;<br>baidu, &#x767E;&#x5EA6;&#x5730;&#x56FE;;<br>viewpagerindicator, viewpager&#x7684;&#x6EDA;&#x52A8;&#x6548;&#x679C;, &#x65E9;&#x671F;&#x5B9E;&#x73B0;toolbar&#x6548;&#x679C;&#x7684;&#x65B9;&#x5F0F;;<br>weibo, &#x65B0;&#x6D6A;&#x5FAE;&#x535A;;<br>fasterxml, &#x5373;jackson, json&#x89E3;&#x6790;&#x5E93;;<br>iflytek, &#x79D1;&#x5927;&#x8BAF;&#x98DE;&#x7684;&#x8BED;&#x97F3;&#x96C6;&#x6210;;<br>flurry, &#x7EDF;&#x8BA1;&#x5E93;;<br>actionbarsherlock, actionBar&#x7684;Tab&#x6548;&#x679C;, &#x548C;viewpagerindicator&#x4E00;&#x8D77;&#x7528;.<br>meituan, &#x7F8E;&#x56E2;&#x7684;&#x6838;&#x5FC3;&#x7C7B;;<br>alipay, &#x652F;&#x4ED8;&#x5B9D;;<br>handmark, &#x4E0B;&#x62C9;&#x5237;&#x65B0;;<br>ms, Square&#x7684;TextView&#x6587;&#x5B57;&#x6269;&#x5C55;&#x5E93;, ExpandableTextView;<br>facebook, &#x56FE;&#x7247;&#x5904;&#x7406;&#x5E93;, &#x7F8E;&#x56E2;&#x6709;&#x5927;&#x91CF;&#x7684;&#x56FE;&#x7247;&#x9700;&#x6C42;;<br>google, Gson&#x89E3;&#x6790;&#x5E93;, ZXing&#x4E8C;&#x7EF4;&#x7801;&#x8BC6;&#x522B;&#x5E93;, Dagger&#x4F9D;&#x8D56;&#x6CE8;&#x5165;;<br>unionpay, &#x94F6;&#x8054;&#x652F;&#x4ED8;;<br>tencent, &#x817E;&#x8BAF;&#x7684;QQ&#x548C;&#x5FAE;&#x4FE1;;<br>ta, utdid2, &#x6D88;&#x606F;&#x63A8;&#x9001;;<br>huawei, &#x534E;&#x4E3A;&#x624B;&#x673A;&#x7684;&#x63A8;&#x9001;&#x673A;&#x5236;;<br>umpay, &#x8054;&#x52A8;&#x4F18;&#x52BF;&#x652F;&#x4ED8;;<br>amap, &#x9AD8;&#x5FB7;&#x5730;&#x56FE;;<br>nineoldandroids, ListView&#x9879;&#x7684;&#x5DE6;&#x53F3;&#x5220;&#x9664;;<br>sina, &#x65B0;&#x6D6A;&#x767B;&#x5F55;;</p>
+<h2 id="&#x5176;&#x4ED6;"><a href="#&#x5176;&#x4ED6;" class="headerlink" title="&#x5176;&#x4ED6;"></a>&#x5176;&#x4ED6;</h2><p><img src="/2016/03/17/analyze-app-framework/shark-other.png" alt="&#x5176;&#x4ED6;"></p>
+<p>de.greenrobot, EventBus, &#x53C8;&#x4E00;&#x4E2A;, &#x770B;&#x6765;&#x4EE3;&#x7801;&#x5F00;&#x53D1;&#x8FD8;&#x5F88;&#x6DF7;&#x4E71;, &#x6CA1;&#x6709;&#x7EDF;&#x4E00;;<br>retrofit, &#x7F51;&#x7EDC;&#x5E93;, 2.x&#x7248;&#x672C;, &#x5347;&#x7EA7;&#x5F88;&#x53CA;&#x65F6;;<br>javax, java&#x6CE8;&#x91CA;, &#x914D;&#x5408;dagger2&#x4F7F;&#x7528;;<br>org, apache&#x7684;&#x4E00;&#x4E9B;&#x5E93;;<br>rx, rxjava&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x5904;&#x7406;;<br>okio, square&#x7684;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x8BFB;&#x5199;&#x5E93;;<br>uk, photoview&#x5B9E;&#x73B0;&#x56FE;&#x7247;&#x653E;&#x5927;&#x7F29;&#x5C0F;&#x529F;&#x80FD;;<br>android, &#x8FD9;&#x4E2A;&#x624D;&#x662F;android&#x63D0;&#x4F9B;&#x7684;&#x652F;&#x6301;&#x5E93;;<br>bolts, &#x5F02;&#x6B65;task&#x5173;&#x8054;&#x5E93;.<br>roboguice, Google Guice, Google&#x7684;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x5E93;, &#x548C;Dagger2&#x91CD;&#x590D;;<br>net, lingala, &#x5904;&#x7406;zip&#x538B;&#x7F29;&#x7684;&#x5E93;.</p>
+<hr>
+<h1 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h1><p>&#x7F8E;&#x56E2;&#x662F;&#x4E00;&#x4E2A;&#x6280;&#x672F;&#x975E;&#x5E38;Open&#x7684;&#x516C;&#x53F8;, &#x4F7F;&#x7528;&#x4E3B;&#x6D41;&#x7684;&#x5F00;&#x6E90;&#x6846;&#x67B6;, &#x51CF;&#x5C11;&#x5F00;&#x53D1;&#x6210;&#x672C;.<br>&#x8FD9;&#x4E9B;&#x5F00;&#x6E90;&#x5E93;, &#x6211;&#x4E5F;&#x5747;&#x6709;&#x6D89;&#x730E;, &#x90FD;&#x662F;&#x975E;&#x5E38;&#x4F18;&#x79C0;&#x7684;&#x5E93;, &#x4E0D;&#x4E86;&#x89E3;&#x7684;&#x670B;&#x53CB;&#x53EF;&#x4EE5;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;.<br>&#x867D;&#x7136;&#x65B9;&#x6CD5;&#x5F88;&#x591A;, &#x4F46;&#x662F;&#x4F7F;&#x7528;&#x5F00;&#x6E90;&#x5E93;, &#x4F1A;&#x5927;&#x5927;&#x51CF;&#x5C11;&#x5F00;&#x53D1;&#x6210;&#x672C;, &#x589E;&#x5F3A;&#x5E94;&#x7528;&#x7A33;&#x5B9A;&#x6027;.<br><a href="http://www.wangchenlong.org/2016/03/16/use-dagger-first/">Dagger</a>+<a href="http://www.wangchenlong.org/2016/03/16/use-retrofit-first/">Retrofit</a>+RxJava&#x7684;&#x4E1A;&#x5185;&#x6807;&#x914D;, &#x7F8E;&#x56E2;&#x4E5F;&#x6709;&#x6240;&#x6D89;&#x730E;, &#x975E;&#x5E38;&#x4E0D;&#x9519;.</p>
 <blockquote>
-<p>&#x5355;&#x4F8B;&#x53EA;&#x5E94;&#x8BE5;&#x505A;&#x4E8B;&#x52A1;&#x6027;&#x7684;&#x5DE5;&#x4F5C;, &#x9875;&#x9762;&#x64CD;&#x4F5C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x56DE;&#x8C03;, &#x4E0D;&#x662F;&#x5F15;&#x5165;&#x63A7;&#x4EF6;. &#x672C;&#x793A;&#x4F8B;&#x4EC5;&#x505A;&#x4E3A;&#x53CD;&#x9762;&#x793A;&#x4F8B;, &#x5207;&#x52FF;&#x5B66;&#x4E60;.</p>
+<p>&#x5907;&#x6CE8;:<br><a href="https://github.com/google/android-classyshark" target="_blank" rel="external">ClassyShark</a>&#x662F;&#x67E5;&#x770B;Apk&#x4FE1;&#x606F;&#x7684;&#x8F6F;&#x4EF6;, &#x529F;&#x80FD;&#x975E;&#x5E38;&#x5F3A;&#x5927;, &#x7701;&#x53BB;&#x53CD;&#x7F16;&#x8BD1;&#x7684;&#x6B65;&#x9AA4;. &#x4E3B;&#x8981;&#x529F;&#x80FD;: &#x67E5;&#x770B;MultiDex&#x7684;dex&#x4FE1;&#x606F;, &#x4F7F;&#x7528;&#x7684;NativeLibrary, &#x7C7B;&#x548C;&#x65B9;&#x6CD5;&#x7684;&#x6570;&#x91CF;&#x7EDF;&#x8BA1;.</p>
 </blockquote>
 <hr>
-<h1 id="&#x6CC4;&#x9732;&#x5185;&#x5B58;"><a href="#&#x6CC4;&#x9732;&#x5185;&#x5B58;" class="headerlink" title="&#x6CC4;&#x9732;&#x5185;&#x5B58;"></a>&#x6CC4;&#x9732;&#x5185;&#x5B58;</h1><p>&#x8C03;&#x7528;&#x5355;&#x4F8B;, &#x4E24;&#x79CD;&#x5F15;&#x7528;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;&#x5185;&#x5B58;&#x6CC4;&#x9732;, &#x7B2C;&#x4E00;&#x79CD;&#x662F;Context&#x5F15;&#x7528;&#x6CC4;&#x9732;, &#x7B2C;&#x4E8C;&#x79CD;&#x662F;&#x5B50;&#x63A7;&#x4EF6;&#x5F15;&#x7528;&#x6CC4;&#x9732;. &#x907F;&#x514D;&#x65B9;&#x5F0F;&#x662F;&#x5728;onDestroy&#x4E2D;, &#x6E05;&#x9664;&#x5F15;&#x7528;. </p>
-<blockquote>
-<p><strong>&#x6700;&#x4F18;&#x65B9;&#x5F0F;</strong>:<br>&#x5728;&#x5355;&#x4F8B;&#x4E2D;&#x53EA;&#x6267;&#x884C;&#x4E8B;&#x52A1;&#x6027;&#x5DE5;&#x4F5C;, &#x4E0D;&#x6267;&#x884C;&#x5177;&#x4F53;&#x9875;&#x9762;&#x64CD;&#x4F5C;, &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x63A5;&#x53E3;&#x56DE;&#x8C03;, &#x5F02;&#x6B65;&#x5904;&#x7406;.</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bind</span>(R.id.main_tv_text) TextView mTvText;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span><br><span class="line">         * me.chunyu.spike.wcl_leakcanary_demo.MainActivity has leaked:</span><br><span class="line">         * GC ROOT static me.chunyu.spike.wcl_leakcanary_demo.LeakSingle.sInstance</span><br><span class="line">         * references me.chunyu.spike.wcl_leakcanary_demo.LeakSingle.mContext</span><br><span class="line">         * leaks me.chunyu.spike.wcl_leakcanary_demo.MainActivity instance</span><br><span class="line">         */</span></span><br><span class="line"><span class="comment">//        LeakSingle.getInstance(this).setRetainedTextView(mTvText);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span><br><span class="line">         * me.chunyu.spike.wcl_leakcanary_demo.MainActivity has leaked:</span><br><span class="line">         * GC ROOT static me.chunyu.spike.wcl_leakcanary_demo.LeakSingle.sInstance</span><br><span class="line">         * references me.chunyu.spike.wcl_leakcanary_demo.LeakSingle.mTextView</span><br><span class="line">         * references android.support.v7.widget.AppCompatTextView.mContext</span><br><span class="line">         * leaks me.chunyu.spike.wcl_leakcanary_demo.MainActivity instance</span><br><span class="line">         */</span></span><br><span class="line">        LeakSingle.getInstance(<span class="keyword">this</span>.getApplication()).setRetainedTextView(mTvText);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onDestroy();</span><br><span class="line">        <span class="comment">// &#x9632;&#x6B62;&#x5185;&#x6CC4;&#x9732;</span></span><br><span class="line">        LeakSingle.getInstance(<span class="keyword">this</span>.getApplication()).removeRetainedTextView();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p>&#x6839;&#x636E;LeakCanary&#x4E2D;&#x7684;&#x68C0;&#x6D4B;&#x7ED3;&#x679C;, &#x4FEE;&#x6539;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x7684;&#x5730;&#x65B9;, &#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x7F8E;&#x7684;&#x89E3;&#x51B3;&#x95EE;&#x9898;.</p>
+<p>&#x901A;&#x8FC7;&#x5206;&#x6790;App&#x7684;&#x5F00;&#x6E90;&#x5E93;, &#x662F;&#x4E0D;&#x662F;&#x611F;&#x89C9;&#x67B6;&#x6784;&#x5176;&#x5B9E;&#x4E5F;&#x4E0D;&#x662F;&#x90A3;&#x4E48;&#x96BE;, &#x591A;&#x6D89;&#x730E;&#x4E9B;&#x4E1C;&#x897F;, &#x4F7F;&#x7528;&#x8D77;&#x6765;&#x624D;&#x4F1A;&#x5F97;&#x5FC3;&#x5E94;&#x624B;. &#x6B66;&#x5668;&#x5E93;&#x91CC;&#x591A;&#x4E9B;&#x8D81;&#x624B;&#x7684;&#x6B66;&#x5668;, &#x6253;&#x4ED7;&#x624D;&#x4F1A;&#x65E0;&#x5F80;&#x4E0D;&#x80DC;.</p>
+<p>OK, that&#x2019;s all! Enjoy it.</p>
 <hr>
-<h1 id="&#x89E3;&#x6790;&#x6CC4;&#x9732;&#x4F4D;&#x7F6E;"><a href="#&#x89E3;&#x6790;&#x6CC4;&#x9732;&#x4F4D;&#x7F6E;" class="headerlink" title="&#x89E3;&#x6790;&#x6CC4;&#x9732;&#x4F4D;&#x7F6E;"></a>&#x89E3;&#x6790;&#x6CC4;&#x9732;&#x4F4D;&#x7F6E;</h1><p>&#x65B0;&#x624B;&#x7A0B;&#x5E8F;&#x5458;&#x7ECF;&#x5E38;&#x4F1A;&#x95EE;&#x6211;, &#x5982;&#x4F55;&#x7406;&#x89E3;LeakCanary&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;, &#x6211;&#x6765;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#x8BB2;&#x89E3;&#x4E00;&#x4E9B;.<br>&#x5982;&#x56FE;:</p>
-<p><img src="/2016/03/14/use-leak-canary-check-memory/position-2.png" alt="&#x6CC4;&#x9732;"></p>
-<p>LeakCanary&#x7684;&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x63D0;&#x793A;&#x4E00;&#x822C;&#x4F1A;&#x5305;&#x542B;&#x4E09;&#x4E2A;&#x90E8;&#x5206;:<br><strong>&#x7B2C;&#x4E00;&#x90E8;&#x5206;</strong>(LeakSingle&#x7C7B;&#x7684;sInstance&#x53D8;&#x91CF;)&#x5F15;&#x7528;<strong>&#x7B2C;&#x4E8C;&#x90E8;&#x5206;</strong>(LeakSingle&#x7C7B;&#x7684;mContext&#x53D8;&#x91CF;), &#x5BFC;&#x81F4;<strong>&#x7B2C;&#x4E09;&#x90E8;&#x5206;</strong>(MainActivity&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;instance)&#x6CC4;&#x9732;.</p>
-<p>&#x5E94;&#x7528;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x6CC4;&#x9732;&#x4F4D;&#x7F6E;&#x5C31;&#x662F;<strong>Activity</strong>&#x7684;&#x5B9E;&#x4F8B;, &#x8981;&#x624B;&#x52A8;&#x6216;&#x4F7F;&#x7528;shell&#x547D;&#x4EE4;, &#x542F;&#x52A8;&#x6240;&#x6709;&#x7684;Activity. LeakCanary&#x5224;&#x65AD;&#x65F6;&#x673A;&#x662F;<strong>Activity&#x542F;&#x52A8;&#x5230;&#x7ED3;&#x675F;</strong>, &#x68C0;&#x6D4B;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#x662F;&#x5426;&#x4F1A;&#x53D1;&#x751F;&#x5185;&#x5B58;&#x6CC4;&#x9732;.</p>
-<p>&#x542F;&#x52A8;Activity&#x7684;shell&#x547D;&#x4EE4;&#x662F;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am start  -n [&#x5305;&#x540D;]/[Activity&#x540D;]</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p>&#x5185;&#x5B58;&#x6CC4;&#x9732;&#x7684;&#x95EE;&#x9898;&#x5BF9;&#x4E8E;&#x5E94;&#x7528;&#x7684;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x81F3;&#x5173;&#x91CD;&#x8981;, &#x611F;&#x8C22;Square&#x7684;&#x4EA7;&#x54C1;, &#x8BA9;&#x8FD9;&#x4EF6;&#x4E8B;&#x53D8;&#x5F97;&#x5982;&#x6B64;&#x7B80;&#x5355;. </p>
-<p>OK, that&#x2019;s all! Enjoy it!</p>
 <blockquote>
-<p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/">http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://weibo.com/u/2852941392" target="_blank" rel="external">&#x5FAE;&#x535A;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>, <a href="https://slides.com/spikeking" target="_blank" rel="external">Slides</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
+<p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/03/17/analyze-app-framework/">http://www.wangchenlong.org/2016/03/17/analyze-app-framework/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://weibo.com/u/2852941392" target="_blank" rel="external">&#x5FAE;&#x535A;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>, <a href="https://slides.com/spikeking" target="_blank" rel="external">Slides</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
 </blockquote>
       
     </div>
@@ -426,12 +409,6 @@
           
             <a href="/tags/Android/" rel="tag">#Android</a>
           
-            <a href="/tags/测试/" rel="tag">#测试</a>
-          
-            <a href="/tags/LeakCanary/" rel="tag">#LeakCanary</a>
-          
-            <a href="/tags/内存/" rel="tag">#内存</a>
-          
         </div>
       
 
@@ -439,17 +416,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/14/analyze-app-battery/" rel="next" title="使用 Battery Historian 分析和优化应用的电量">
-                <i class="fa fa-chevron-left"></i> 使用 Battery Historian 分析和优化应用的电量
+              <a href="/2016/03/16/use-retrofit-first/" rel="next" title="网络服务库 Retrofit2 的使用方式">
+                <i class="fa fa-chevron-left"></i> 网络服务库 Retrofit2 的使用方式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/14/use-mat-analyze-memory/" rel="prev" title="使用 MAT 分析应用的内存信息">
-                使用 MAT 分析应用的内存信息 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -464,10 +437,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/14/use-leak-canary-check-memory/"
-     data-title="使用 Leak Canary 检测应用的内存泄露"
+        <div class="ds-share flat" data-thread-key="2016/03/17/analyze-app-framework/"
+     data-title="分析应用使用的技术框架和开源库"
      data-content=""
-     data-url="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/">
+     data-url="http://www.wangchenlong.org/2016/03/17/analyze-app-framework/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -499,8 +472,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/14/use-leak-canary-check-memory/"
-           data-title="使用 Leak Canary 检测应用的内存泄露" data-url="http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/">
+      <div class="ds-thread" data-thread-key="2016/03/17/analyze-app-framework/"
+           data-title="分析应用使用的技术框架和开源库" data-url="http://www.wangchenlong.org/2016/03/17/analyze-app-framework/">
       </div>
     
   </div>
@@ -663,7 +636,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖和引入"><span class="nav-number">1.</span> <span class="nav-text">依赖和引入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#泄露单例"><span class="nav-number">2.</span> <span class="nav-text">泄露单例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#泄露内存"><span class="nav-number">3.</span> <span class="nav-text">泄露内存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解析泄露位置"><span class="nav-number">4.</span> <span class="nav-text">解析泄露位置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#框架"><span class="nav-number">1.</span> <span class="nav-text">框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#com"><span class="nav-number">2.1.</span> <span class="nav-text">com</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">2.2.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
