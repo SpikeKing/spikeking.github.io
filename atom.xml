@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-17T00:06:02.000Z</updated>
+  <updated>2016-03-17T00:20:11.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>分析应用使用的技术框架和开源库</title>
+    <title>分析应用的技术框架和开源库</title>
     <link href="http://www.wangchenlong.org/2016/03/17/analyze-app-framework/"/>
     <id>http://www.wangchenlong.org/2016/03/17/analyze-app-framework/</id>
     <published>2016-03-16T23:59:00.000Z</published>
-    <updated>2016-03-17T00:06:02.000Z</updated>
+    <updated>2016-03-17T00:20:11.000Z</updated>
     
     <content type="html">&lt;p&gt;App&amp;#x5E94;&amp;#x7528;&amp;#x672C;&amp;#x8D28;&amp;#x4E0A;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;apk&amp;#x5305;, &amp;#x5373;&amp;#x4E00;&amp;#x4E2A;zip&amp;#x5305;, &amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;#x63A5;&amp;#x663E;&amp;#x793A;&amp;#x5176;&amp;#x4E2D;&amp;#x7684;&amp;#x5185;&amp;#x5BB9;. &amp;#x901A;&amp;#x8FC7;apk&amp;#x6587;&amp;#x4EF6;, &amp;#x6211;&amp;#x4EEC;&amp;#x53EF;&amp;#x4EE5;&amp;#x83B7;&amp;#x77E5;apk&amp;#x7684;&amp;#x7248;&amp;#x672C;&amp;#x4FE1;&amp;#x606F;, so&amp;#x5E93;&amp;#x548C;&amp;#x7B2C;&amp;#x4E09;&amp;#x65B9;&amp;#x5E93;, &amp;#x5E76;&amp;#x4E86;&amp;#x89E3;&amp;#x4E00;&amp;#x4E9B;&amp;#x4E3B;&amp;#x6D41;&amp;#x516C;&amp;#x53F8;&amp;#x7684;&amp;#x5E94;&amp;#x7528;&amp;#x6846;&amp;#x67B6;. &amp;#x5206;&amp;#x6790;&amp;#x5DE5;&amp;#x5177;&amp;#x4E3B;&amp;#x8981;&amp;#x662F;ApkTool&amp;#x548C;&lt;a href=&quot;https://github.com/google/android-classyshark&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ClassyShark&lt;/a&gt;, &amp;#x672C;&amp;#x4EBA;&amp;#x6BD4;&amp;#x8F83;&amp;#x559C;&amp;#x6B22;Shark&amp;#x5DE5;&amp;#x5177;. &amp;#x6211;&amp;#x4F7F;&amp;#x7528;ClassyShark&amp;#x5206;&amp;#x6790;&amp;#x4E00;&amp;#x4E0B;&amp;#x7F8E;&amp;#x56E2;&amp;#x7684;&amp;#x6846;&amp;#x67B6;, &amp;#x4E5F;&amp;#x53EF;&amp;#x4EE5;&amp;#x6309;&amp;#x7167;&amp;#x8FD9;&amp;#x4E2A;&amp;#x539F;&amp;#x7406;, &amp;#x5206;&amp;#x6790;&amp;#x5176;&amp;#x4ED6;App&amp;#x7684;&amp;#x57FA;&amp;#x672C;&amp;#x67B6;&amp;#x6784;.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -59,6 +59,10 @@
     
     
       <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
+    
+      <category term="架构" scheme="http://www.wangchenlong.org/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="ClassyShark" scheme="http://www.wangchenlong.org/tags/ClassyShark/"/>
     
   </entry>
   
@@ -900,9 +904,9 @@
     
       <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
     
-      <category term="Flux" scheme="http://www.wangchenlong.org/tags/Flux/"/>
-    
       <category term="架构" scheme="http://www.wangchenlong.org/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="Flux" scheme="http://www.wangchenlong.org/tags/Flux/"/>
     
   </entry>
   
