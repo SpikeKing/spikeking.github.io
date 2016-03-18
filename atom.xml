@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-18T08:21:48.000Z</updated>
+  <updated>2016-03-18T14:26:57.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>使用DroidPlugin实践插件化的应用</title>
+    <title>使用 DroidPlugin 实践插件化的应用</title>
     <link href="http://www.wangchenlong.org/2016/03/18/apply-droid-plugin/"/>
     <id>http://www.wangchenlong.org/2016/03/18/apply-droid-plugin/</id>
     <published>2016-03-18T08:16:00.000Z</published>
-    <updated>2016-03-18T08:21:48.000Z</updated>
+    <updated>2016-03-18T14:26:57.000Z</updated>
     
     <content type="html">&lt;p&gt;&amp;#x968F;&amp;#x7740;&amp;#x5E94;&amp;#x7528;&amp;#x7684;&amp;#x4F53;&amp;#x79EF;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x5927;, &amp;#x63D2;&amp;#x4EF6;&amp;#x5316;&amp;#x4E5F;&amp;#x9010;&amp;#x6E10;&amp;#x53D7;&amp;#x5230;&amp;#x5173;&amp;#x6CE8;, &lt;a href=&quot;http://geek.csdn.net/news/detail/49303&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;. &amp;#x5E94;&amp;#x7528;&amp;#x63D2;&amp;#x4EF6;&amp;#x5316;&amp;#x628A;&amp;#x6A21;&amp;#x5757;&amp;#x5B8C;&amp;#x5168;&amp;#x89E3;&amp;#x8026;, &amp;#x4F7F;&amp;#x7528;&amp;#x4E0B;&amp;#x8F7D;&amp;#x66F4;&amp;#x65B0;&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;, &amp;#x6269;&amp;#x5C55;&amp;#x5E94;&amp;#x7528;, &amp;#x662F;&amp;#x5E73;&amp;#x53F0;&amp;#x5316;&amp;#x7C7B;&amp;#x5E94;&amp;#x7528;&amp;#x7684;&amp;#x5FC5;&amp;#x7136;&amp;#x9009;&amp;#x62E9;. &amp;#x56FD;&amp;#x5185;&amp;#x5F88;&amp;#x591A;&amp;#x516C;&amp;#x53F8;&amp;#x5B9E;&amp;#x73B0;&amp;#x4E86;&amp;#x5404;&amp;#x5F0F;&amp;#x5404;&amp;#x6837;&amp;#x7684;&amp;#x65B9;&amp;#x6CD5;, 360&amp;#x7684;DroidPlugin&amp;#x662F;&amp;#x6BD4;&amp;#x8F83;&amp;#x6709;&amp;#x610F;&amp;#x601D;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;, &amp;#x4F7F;&amp;#x7528;&amp;#x9884;&amp;#x5360;&amp;#x4F4D;&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;&amp;#x6CE8;&amp;#x518C;&amp;#x56DB;&amp;#x5927;&amp;#x7EC4;&amp;#x4EF6;, &amp;#x5B9E;&amp;#x73B0;&amp;#x70ED;&amp;#x66F4;&amp;#x65B0;, &lt;a href=&quot;http://blog.csdn.net/yzzst/article/details/48093567&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;, &amp;#x4E5F;&amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;#x63A5;&amp;#x8BFB;&amp;#x6E90;&amp;#x7801;&amp;#x7406;&amp;#x89E3;&amp;#x5B9E;&amp;#x73B0;&amp;#x903B;&amp;#x8F91;.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -677,9 +677,9 @@
     
       <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
     
-      <category term="内存" scheme="http://www.wangchenlong.org/tags/%E5%86%85%E5%AD%98/"/>
-    
       <category term="MAT" scheme="http://www.wangchenlong.org/tags/MAT/"/>
+    
+      <category term="内存" scheme="http://www.wangchenlong.org/tags/%E5%86%85%E5%AD%98/"/>
     
   </entry>
   
@@ -748,9 +748,9 @@
     
       <category term="测试" scheme="http://www.wangchenlong.org/tags/%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="LeakCanary" scheme="http://www.wangchenlong.org/tags/LeakCanary/"/>
-    
       <category term="内存" scheme="http://www.wangchenlong.org/tags/%E5%86%85%E5%AD%98/"/>
+    
+      <category term="LeakCanary" scheme="http://www.wangchenlong.org/tags/LeakCanary/"/>
     
   </entry>
   
@@ -824,11 +824,11 @@
   </entry>
   
   <entry>
-    <title>使用Espresso和Dagger测试网络服务</title>
+    <title>使用 Espresso 和 Dagger 测试网络服务</title>
     <link href="http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/"/>
     <id>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</id>
     <published>2016-03-13T06:14:00.000Z</published>
-    <updated>2016-03-15T01:31:10.000Z</updated>
+    <updated>2016-03-18T14:27:23.000Z</updated>
     
     <content type="html">&lt;p&gt;&amp;#x53EF;&amp;#x9760;&amp;#x7684;&amp;#x529F;&amp;#x80FD;&amp;#x6D4B;&amp;#x8BD5;, &amp;#x610F;&amp;#x5473;&amp;#x7740;&amp;#x5728;&amp;#x4EFB;&amp;#x4F55;&amp;#x65F6;&amp;#x5019;, &amp;#x83B7;&amp;#x53D6;&amp;#x7684;&amp;#x6D4B;&amp;#x8BD5;&amp;#x7ED3;&amp;#x679C;&amp;#x5747;&amp;#x76F8;&amp;#x540C;, &amp;#x8FD9;&amp;#x5C31;&amp;#x9700;&amp;#x8981;&amp;#x6A21;&amp;#x62DF;(Mock)&amp;#x6570;&amp;#x636E;. &amp;#x6D4B;&amp;#x8BD5;&amp;#x6846;&amp;#x67B6;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;Android&amp;#x63A8;&amp;#x8350;&amp;#x7684;&lt;a href=&quot;https://google.github.io/android-testing-support-library/docs/espresso/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Espresso&lt;/a&gt;. &amp;#x6A21;&amp;#x62DF;&amp;#x6570;&amp;#x636E;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;&lt;a href=&quot;http://google.github.io/dagger/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dagger2&lt;/a&gt;, &amp;#x4E00;&amp;#x79CD;&amp;#x4F9D;&amp;#x8D56;&amp;#x6CE8;&amp;#x5165;&amp;#x6846;&amp;#x67B6;.&lt;/p&gt;
 &lt;p&gt;&amp;#x5355;&amp;#x5143;&amp;#x6D4B;&amp;#x8BD5;&amp;#x901A;&amp;#x5E38;&amp;#x4F1A;&amp;#x6A21;&amp;#x62DF;&amp;#x6240;&amp;#x6709;&amp;#x4F9D;&amp;#x8D56;, &amp;#x907F;&amp;#x514D;&amp;#x51FA;&amp;#x73B0;&amp;#x4E0D;&amp;#x53EF;&amp;#x9760;&amp;#x7684;&amp;#x60C5;&amp;#x51B5;, &amp;#x800C;&amp;#x529F;&amp;#x80FD;&amp;#x6D4B;&amp;#x8BD5;&amp;#x4E5F;&amp;#x53EF;&amp;#x4EE5;&amp;#x8FD9;&amp;#x6837;&amp;#x505A;. &amp;#x4E00;&amp;#x4E2A;&amp;#x7ECF;&amp;#x5178;&amp;#x7684;&amp;#x4F8B;&amp;#x5B50;&amp;#x662F;&amp;#x5982;&amp;#x4F55;&amp;#x6A21;&amp;#x62DF;&amp;#x7A33;&amp;#x5B9A;&amp;#x7684;&amp;#x7F51;&amp;#x7EDC;&amp;#x6570;&amp;#x636E;, &amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;Dagger2&amp;#x5904;&amp;#x7406;&amp;#x8FD9;&amp;#x79CD;&amp;#x60C5;&amp;#x51B5;.&lt;/p&gt;
@@ -893,11 +893,11 @@
   </entry>
   
   <entry>
-    <title>实践移动端的Flux架构</title>
+    <title>实践移动端的 Flux 架构</title>
     <link href="http://www.wangchenlong.org/2016/03/12/apply-flux-architecture/"/>
     <id>http://www.wangchenlong.org/2016/03/12/apply-flux-architecture/</id>
     <published>2016-03-12T14:56:08.000Z</published>
-    <updated>2016-03-14T23:31:39.000Z</updated>
+    <updated>2016-03-18T14:27:14.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;em&gt;&amp;#x4EFB;&amp;#x4F55;&amp;#x67B6;&amp;#x6784;&amp;#x6700;&amp;#x7EC8;&amp;#x76EE;&amp;#x7684;&amp;#x90FD;&amp;#x662F;&amp;#x8BA9;&amp;#x7A0B;&amp;#x5E8F;&amp;#x66F4;&amp;#x52A0;&amp;#x6709;&amp;#x5E8F;, &amp;#x529F;&amp;#x80FD;&amp;#x4FBF;&amp;#x4E8E;&amp;#x6269;&amp;#x5C55;, Bug&amp;#x5BB9;&amp;#x6613;&amp;#x8FFD;&amp;#x8E2A;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Facebook&amp;#x4F7F;&amp;#x7528;Flux&amp;#x67B6;&amp;#x6784;&amp;#x6765;&amp;#x6784;&amp;#x5EFA;&amp;#x5BA2;&amp;#x6237;&amp;#x7AEF;&amp;#x7684;Web&amp;#x5E94;&amp;#x7528;. Flux&amp;#x67B6;&amp;#x6784;&amp;#x5E76;&amp;#x4E0D;&amp;#x662F;&amp;#x4E3A;&amp;#x79FB;&amp;#x52A8;&amp;#x7AEF;&amp;#x8BBE;&amp;#x8BA1;&amp;#x7684;, &amp;#x4F46;&amp;#x662F;&amp;#x6211;&amp;#x4EEC;&amp;#x4ECD;&amp;#x7136;&amp;#x53EF;&amp;#x4EE5;&amp;#x91C7;&amp;#x7528;&amp;#x8FD9;&amp;#x4E2A;&amp;#x601D;&amp;#x60F3;&amp;#x5728;Android&amp;#x7AEF;&amp;#x4F7F;&amp;#x7528;. Flux&amp;#x662F;&amp;#x6570;&amp;#x636E;&amp;#x9A71;&amp;#x52A8;&amp;#x578B;&amp;#x67B6;&amp;#x6784;, &amp;#x5728;&amp;#x4EE5;&amp;#x6570;&amp;#x636E;&amp;#x4E3A;&amp;#x6838;&amp;#x5FC3;&amp;#x7684;&amp;#x573A;&amp;#x666F;&amp;#x4E2D;&amp;#x4F7F;&amp;#x7528;&amp;#x975E;&amp;#x5E38;&amp;#x5408;&amp;#x9002;, &amp;#x4E0D;&amp;#x8FC7;Facebook&amp;#x597D;&amp;#x50CF;&amp;#x628A;&lt;strong&gt;Flux&amp;#x67B6;&amp;#x6784;&lt;/strong&gt;&amp;#x5E94;&amp;#x7528;&amp;#x4E8E;&amp;#x6240;&amp;#x6709;&amp;#x4EA7;&amp;#x54C1;, &lt;strong&gt;&amp;#x65E0;&amp;#x8BBA;&amp;#x662F;&amp;#x524D;&amp;#x7AEF;&amp;#x8FD8;&amp;#x662F;&amp;#x79FB;&amp;#x52A8;&amp;#x7AEF;&lt;/strong&gt;. &amp;#x6700;&amp;#x65B0;Facebook&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&lt;a href=&quot;https://github.com/facebook/react-native&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ReactNative&lt;/a&gt;&amp;#x4E2D;, &amp;#x5C31;&amp;#x662F;&amp;#x4F7F;&amp;#x7528;Flux&amp;#x67B6;&amp;#x6784;&amp;#x4E3A;&amp;#x6838;&amp;#x5FC3;, &amp;#x4E5F;&amp;#x662F;&amp;#x5F00;&amp;#x6E90;&amp;#x7684;, &amp;#x53EF;&amp;#x4EE5;&amp;#x9605;&amp;#x8BFB;RN&amp;#x7684;&amp;#x4EE3;&amp;#x7801;&amp;#x4E86;&amp;#x89E3;&amp;#x6240;&amp;#x6709;&amp;#x5185;&amp;#x5BB9;.&lt;/p&gt;
