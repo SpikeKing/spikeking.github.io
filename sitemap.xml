@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/18/apply-droid-plugin/</loc>
+    
+    <lastmod>2016-03-18T08:21:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/17/analyze-app-framework/</loc>
     
     <lastmod>2016-03-17T15:38:56.000Z</lastmod>
@@ -51,7 +58,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     
@@ -65,21 +72,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     
@@ -93,14 +86,28 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/svg-path-animation/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</loc>
+    
+    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/</loc>
+    
+    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/replace-svg-image/</loc>
     
     <lastmod>2016-03-15T01:29:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/replace-svg-image/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/svg-path-animation/</loc>
     
     <lastmod>2016-03-15T01:29:35.000Z</lastmod>
     
