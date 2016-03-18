@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/18/apply-droid-plugin/</loc>
+    
+    <lastmod>2016-03-18T23:42:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
     
     <lastmod>2016-03-18T14:27:23.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://www.wangchenlong.org/2016/03/12/apply-flux-architecture/</loc>
     
     <lastmod>2016-03-18T14:27:14.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/18/apply-droid-plugin/</loc>
-    
-    <lastmod>2016-03-18T08:21:48.000Z</lastmod>
     
   </url>
   
@@ -79,14 +79,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     

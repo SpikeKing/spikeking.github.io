@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-18T08:21:48.000Z</updated>
+  <updated>2016-03-18T23:42:42.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -16,17 +16,17 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>使用DroidPlugin实践插件化的应用</title>
+    <title>使用 DroidPlugin 实践应用的插件化</title>
     <link href="http://www.wangchenlong.org/2016/03/18/apply-droid-plugin/"/>
     <id>http://www.wangchenlong.org/2016/03/18/apply-droid-plugin/</id>
     <published>2016-03-18T08:16:00.000Z</published>
-    <updated>2016-03-18T08:21:48.000Z</updated>
+    <updated>2016-03-18T23:42:42.000Z</updated>
     
-    <content type="html">&lt;p&gt;&amp;#x968F;&amp;#x7740;&amp;#x5E94;&amp;#x7528;&amp;#x7684;&amp;#x4F53;&amp;#x79EF;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x5927;, &amp;#x63D2;&amp;#x4EF6;&amp;#x5316;&amp;#x4E5F;&amp;#x9010;&amp;#x6E10;&amp;#x53D7;&amp;#x5230;&amp;#x5173;&amp;#x6CE8;, &lt;a href=&quot;http://geek.csdn.net/news/detail/49303&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;. &amp;#x5E94;&amp;#x7528;&amp;#x63D2;&amp;#x4EF6;&amp;#x5316;&amp;#x628A;&amp;#x6A21;&amp;#x5757;&amp;#x5B8C;&amp;#x5168;&amp;#x89E3;&amp;#x8026;, &amp;#x4F7F;&amp;#x7528;&amp;#x4E0B;&amp;#x8F7D;&amp;#x66F4;&amp;#x65B0;&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;, &amp;#x6269;&amp;#x5C55;&amp;#x5E94;&amp;#x7528;, &amp;#x662F;&amp;#x5E73;&amp;#x53F0;&amp;#x5316;&amp;#x7C7B;&amp;#x5E94;&amp;#x7528;&amp;#x7684;&amp;#x5FC5;&amp;#x7136;&amp;#x9009;&amp;#x62E9;. &amp;#x56FD;&amp;#x5185;&amp;#x5F88;&amp;#x591A;&amp;#x516C;&amp;#x53F8;&amp;#x5B9E;&amp;#x73B0;&amp;#x4E86;&amp;#x5404;&amp;#x5F0F;&amp;#x5404;&amp;#x6837;&amp;#x7684;&amp;#x65B9;&amp;#x6CD5;, 360&amp;#x7684;DroidPlugin&amp;#x662F;&amp;#x6BD4;&amp;#x8F83;&amp;#x6709;&amp;#x610F;&amp;#x601D;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;, &amp;#x4F7F;&amp;#x7528;&amp;#x9884;&amp;#x5360;&amp;#x4F4D;&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;&amp;#x6CE8;&amp;#x518C;&amp;#x56DB;&amp;#x5927;&amp;#x7EC4;&amp;#x4EF6;, &amp;#x5B9E;&amp;#x73B0;&amp;#x70ED;&amp;#x66F4;&amp;#x65B0;, &lt;a href=&quot;http://blog.csdn.net/yzzst/article/details/48093567&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;, &amp;#x4E5F;&amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;#x63A5;&amp;#x8BFB;&amp;#x6E90;&amp;#x7801;&amp;#x7406;&amp;#x89E3;&amp;#x5B9E;&amp;#x73B0;&amp;#x903B;&amp;#x8F91;.&lt;/p&gt;
+    <content type="html">&lt;p&gt;&amp;#x968F;&amp;#x7740;&amp;#x5E94;&amp;#x7528;&amp;#x7684;&amp;#x4F53;&amp;#x79EF;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x5927;, &amp;#x63D2;&amp;#x4EF6;&amp;#x5316;&amp;#x4E5F;&amp;#x9010;&amp;#x6E10;&amp;#x53D7;&amp;#x5230;&amp;#x5173;&amp;#x6CE8;, &lt;a href=&quot;http://geek.csdn.net/news/detail/49303&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;. &amp;#x5E94;&amp;#x7528;&amp;#x63D2;&amp;#x4EF6;&amp;#x5316;&amp;#x628A;&amp;#x6A21;&amp;#x5757;&amp;#x5B8C;&amp;#x5168;&amp;#x89E3;&amp;#x8026;, &amp;#x4F7F;&amp;#x7528;&amp;#x4E0B;&amp;#x8F7D;&amp;#x66F4;&amp;#x65B0;&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;, &amp;#x6269;&amp;#x5C55;&amp;#x5E94;&amp;#x7528;, &amp;#x662F;&amp;#x5E73;&amp;#x53F0;&amp;#x5316;&amp;#x7C7B;&amp;#x5E94;&amp;#x7528;&amp;#x7684;&amp;#x5FC5;&amp;#x7136;&amp;#x9009;&amp;#x62E9;. &amp;#x56FD;&amp;#x5185;&amp;#x5F88;&amp;#x591A;&amp;#x516C;&amp;#x53F8;&amp;#x5B9E;&amp;#x73B0;&amp;#x4E86;&amp;#x5404;&amp;#x5F0F;&amp;#x5404;&amp;#x6837;&amp;#x7684;&amp;#x65B9;&amp;#x6CD5;, &amp;#x5947;&amp;#x864E;360&amp;#x7684;DroidPlugin&amp;#x662F;&amp;#x6BD4;&amp;#x8F83;&amp;#x6709;&amp;#x610F;&amp;#x601D;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;, &amp;#x4F7F;&amp;#x7528;&amp;#x9884;&amp;#x5360;&amp;#x4F4D;&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;&amp;#x6CE8;&amp;#x518C;&amp;#x56DB;&amp;#x5927;&amp;#x7EC4;&amp;#x4EF6;, &amp;#x5B9E;&amp;#x73B0;&amp;#x70ED;&amp;#x66F4;&amp;#x65B0;, &lt;a href=&quot;http://blog.csdn.net/yzzst/article/details/48093567&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;, &amp;#x4E5F;&amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;#x63A5;&amp;#x8BFB;&amp;#x6E90;&amp;#x7801;&amp;#x7406;&amp;#x89E3;&amp;#x5B9E;&amp;#x73B0;&amp;#x903B;&amp;#x8F91;.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;img src=&quot;/2016/03/18/apply-droid-plugin/preview.png&quot; alt=&quot;Droid Plugin&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Talk is cheap, show you the code! &amp;#x5982;&amp;#x4F55;&amp;#x628A;DroidPlugin&amp;#x7528;&amp;#x8D77;&amp;#x6765;&amp;#x5462;? &amp;#x8FD9;&amp;#x662F;&amp;#x6211;&amp;#x6BD4;&amp;#x8F83;&amp;#x5173;&amp;#x6CE8;&amp;#x7684;&amp;#x4E8B;&amp;#x60C5;, &amp;#x5F00;&amp;#x6E90;&amp;#x7684;Demo&amp;#x5199;&amp;#x7684;&amp;#x5982;&amp;#x6B64;&amp;#x60B2;&amp;#x4F24;, &amp;#x6211;&amp;#x6765;&amp;#x91CD;&amp;#x65B0;&amp;#x68B3;&amp;#x7406;&amp;#x4E00;&amp;#x4E0B;, &amp;#x53C8;&amp;#x6DFB;&amp;#x52A0;&amp;#x4E86;&amp;#x51E0;&amp;#x4E2A;&amp;#x529F;&amp;#x80FD;&amp;#x6D4B;&amp;#x8BD5;. &amp;#x5F15;&amp;#x5165;DroidPlugin&amp;#x4F5C;&amp;#x4E3A;Submodule&amp;#x7684;&amp;#x4F9D;&amp;#x8D56;.&lt;/p&gt;
-&lt;p&gt;Github&lt;a href=&quot;https://github.com/SpikeKing/wcl-droid-plugin-demo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x4E0B;&amp;#x8F7D;&amp;#x5730;&amp;#x5740;&lt;/a&gt; &amp;#x548C; &lt;a href=&quot;https://github.com/SpikeKing/wcl-plugin-test-app&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x6D4B;&amp;#x8BD5;Apk&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;#x672C;&amp;#x6587;&amp;#x6E90;&amp;#x7801;&amp;#x7684;Github&lt;a href=&quot;https://github.com/SpikeKing/wcl-droid-plugin-demo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x4E0B;&amp;#x8F7D;&amp;#x5730;&amp;#x5740;&lt;/a&gt; &amp;#x548C; &lt;a href=&quot;https://github.com/SpikeKing/wcl-plugin-test-app&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x6D4B;&amp;#x8BD5;Apk&lt;/a&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;#x4F7F;&amp;#x7528;&amp;#x65B9;&amp;#x6CD5;, &amp;#x751F;&amp;#x6210;&amp;#x6D4B;&amp;#x8BD5;apk, &amp;#x548C;&amp;#x5176;&amp;#x4ED6;&amp;#x82E5;&amp;#x5E72;apk, &amp;#x653E;&amp;#x5165;Download&amp;#x6587;&amp;#x4EF6;&amp;#x5939;&amp;#x4E0B;.&lt;br&gt;adb&amp;#x547D;&amp;#x4EE4;: &lt;code&gt;adb push app-debug.apk /sdcard/Download/app-debug.apk&lt;/code&gt;&lt;br&gt;&amp;#x786E;&amp;#x4FDD;Download&amp;#x6587;&amp;#x4EF6;&amp;#x5939;&amp;#x4E0B;, &amp;#x6709;&lt;code&gt;.apk&lt;/code&gt;&amp;#x540E;&amp;#x7F00;&amp;#x540D;&amp;#x7684;&amp;#x6587;&amp;#x4EF6;.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -60,7 +60,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&amp;#x968F;&amp;#x7740;&amp;#x5E94;&amp;#x7528;&amp;#x7684;&amp;#x4F53;&amp;#x79EF;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x5927;, &amp;#x63D2;&amp;#x4EF6;&amp;#x5316;&amp;#x4E5F;&amp;#x9010;&amp;#x6E10;&amp;#x53D7;&amp;#x5230;&amp;#x5173;&amp;#x6CE8;, &lt;a href=&quot;http://geek.csdn.net/news/detail/49303&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;. &amp;#x5E94;&amp;#x7528;&amp;#x63D2;&amp;#x4EF6;&amp;#x5316;&amp;#x628A;&amp;#x6A21;&amp;#x5757;&amp;#x5B8C;&amp;#x5168;&amp;#x89E3;&amp;#x8026;, &amp;#x4F7F;&amp;#x7528;&amp;#x4E0B;&amp;#x8F7D;&amp;#x66F4;&amp;#x65B0;&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;, &amp;#x6269;&amp;#x5C55;&amp;#x5E94;&amp;#x7528;, &amp;#x662F;&amp;#x5E73;&amp;#x53F0;&amp;#x5316;&amp;#x7C7B;&amp;#x5E94;&amp;#x7528;&amp;#x7684;&amp;#x5FC5;&amp;#x7136;&amp;#x9009;&amp;#x62E9;. &amp;#x56FD;&amp;#x5185;&amp;#x5F88;&amp;#x591A;&amp;#x516C;&amp;#x53F8;&amp;#x5B9E;&amp;#x73B0;&amp;#x4E86;&amp;#x5404;&amp;#x5F0F;&amp;#x5404;&amp;#x6837;&amp;#x7684;&amp;#x65B9;&amp;#x6CD5;, 360&amp;#x7684;DroidPlugin&amp;#x662F;&amp;#x6BD4;&amp;#x8F83;&amp;#x6709;&amp;#x610F;&amp;#x601D;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;, &amp;#x4F7F;&amp;#x7528;&amp;#x9884;&amp;#x5360;&amp;#x4F4D;&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;&amp;#x6CE8;&amp;#x518C;&amp;#x56DB;&amp;#x5927;&amp;#x7EC4;&amp;#x4EF6;, &amp;#x5B9E;&amp;#x73B0;&amp;#x70ED;&amp;#x66F4;&amp;#x65B0;, &lt;a href=&quot;http://blog.csdn.net/yzzst/article/details/48093567&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;, &amp;#x4E5F;&amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;#x63A5;&amp;#x8BFB;&amp;#x6E90;&amp;#x7801;&amp;#x7406;&amp;#x89E3;&amp;#x5B9E;&amp;#x73B0;&amp;#x903B;&amp;#x8F91;.&lt;/p&gt;
+      &lt;p&gt;&amp;#x968F;&amp;#x7740;&amp;#x5E94;&amp;#x7528;&amp;#x7684;&amp;#x4F53;&amp;#x79EF;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x5927;, &amp;#x63D2;&amp;#x4EF6;&amp;#x5316;&amp;#x4E5F;&amp;#x9010;&amp;#x6E10;&amp;#x53D7;&amp;#x5230;&amp;#x5173;&amp;#x6CE8;, &lt;a href=&quot;http://geek.csdn.net/news/detail/49303&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;. &amp;#x5E94;&amp;#x7528;&amp;#x63D2;&amp;#x4EF6;&amp;#x5316;&amp;#x628A;&amp;#x6A21;&amp;#x5757;&amp;#x5B8C;&amp;#x5168;&amp;#x89E3;&amp;#x8026;, &amp;#x4F7F;&amp;#x7528;&amp;#x4E0B;&amp;#x8F7D;&amp;#x66F4;&amp;#x65B0;&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;, &amp;#x6269;&amp;#x5C55;&amp;#x5E94;&amp;#x7528;, &amp;#x662F;&amp;#x5E73;&amp;#x53F0;&amp;#x5316;&amp;#x7C7B;&amp;#x5E94;&amp;#x7528;&amp;#x7684;&amp;#x5FC5;&amp;#x7136;&amp;#x9009;&amp;#x62E9;. &amp;#x56FD;&amp;#x5185;&amp;#x5F88;&amp;#x591A;&amp;#x516C;&amp;#x53F8;&amp;#x5B9E;&amp;#x73B0;&amp;#x4E86;&amp;#x5404;&amp;#x5F0F;&amp;#x5404;&amp;#x6837;&amp;#x7684;&amp;#x65B9;&amp;#x6CD5;, &amp;#x5947;&amp;#x864E;360&amp;#x7684;DroidPlugin&amp;#x662F;&amp;#x6BD4;&amp;#x8F83;&amp;#x6709;&amp;#x610F;&amp;#x601D;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;, &amp;#x4F7F;&amp;#x7528;&amp;#x9884;&amp;#x5360;&amp;#x4F4D;&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;&amp;#x6CE8;&amp;#x518C;&amp;#x56DB;&amp;#x5927;&amp;#x7EC4;&amp;#x4EF6;, &amp;#x5B9E;&amp;#x73B0;&amp;#x70ED;&amp;#x66F4;&amp;#x65B0;, &lt;a href=&quot;http://blog.csdn.net/yzzst/article/details/48093567&quot;&gt;&amp;#x53C2;&amp;#x8003;&lt;/a&gt;, &amp;#x4E5F;&amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;#x63A5;&amp;#x8BFB;&amp;#x6E90;&amp;#x7801;&amp;#x7406;&amp;#x89E3;&amp;#x5B9E;&amp;#x73B0;&amp;#x903B;&amp;#x8F91;.&lt;/p&gt;
     
     </summary>
     
@@ -677,9 +677,9 @@
     
       <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
     
-      <category term="内存" scheme="http://www.wangchenlong.org/tags/%E5%86%85%E5%AD%98/"/>
-    
       <category term="MAT" scheme="http://www.wangchenlong.org/tags/MAT/"/>
+    
+      <category term="内存" scheme="http://www.wangchenlong.org/tags/%E5%86%85%E5%AD%98/"/>
     
   </entry>
   
@@ -748,9 +748,9 @@
     
       <category term="测试" scheme="http://www.wangchenlong.org/tags/%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="LeakCanary" scheme="http://www.wangchenlong.org/tags/LeakCanary/"/>
-    
       <category term="内存" scheme="http://www.wangchenlong.org/tags/%E5%86%85%E5%AD%98/"/>
+    
+      <category term="LeakCanary" scheme="http://www.wangchenlong.org/tags/LeakCanary/"/>
     
   </entry>
   
