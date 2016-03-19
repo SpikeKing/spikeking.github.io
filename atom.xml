@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-19T00:25:41.000Z</updated>
+  <updated>2016-03-19T00:32:38.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.wangchenlong.org/2016/03/19/reverse-analyze-apk/"/>
     <id>http://www.wangchenlong.org/2016/03/19/reverse-analyze-apk/</id>
     <published>2016-03-19T00:08:00.000Z</published>
-    <updated>2016-03-19T00:25:41.000Z</updated>
+    <updated>2016-03-19T00:32:38.000Z</updated>
     
     <content type="html">&lt;p&gt;&amp;#x53CD;&amp;#x7F16;&amp;#x8BD1;&amp;#x5C31;&amp;#x662F;&amp;#x9006;&amp;#x5411;&amp;#x5DE5;&amp;#x7A0B;(Reverse Engineering), &amp;#x901A;&amp;#x8FC7;&amp;#x89E3;&amp;#x6790;Apk&amp;#x7684;&amp;#x5185;&amp;#x5BB9;, &amp;#x53EF;&amp;#x4EE5;&amp;#x9A8C;&amp;#x8BC1;&amp;#x7279;&amp;#x6027;&amp;#x548C;&amp;#x66FF;&amp;#x6362;&amp;#x8D44;&amp;#x6E90;. &amp;#x5728;&amp;#x6279;&amp;#x91CF;&amp;#x751F;&amp;#x6210;&amp;#x5E94;&amp;#x7528;&amp;#x65F6;, &amp;#x4F7F;&amp;#x7528;&amp;#x670D;&amp;#x52A1;&amp;#x5668;&amp;#x811A;&amp;#x672C;&amp;#x6279;&amp;#x91CF;&amp;#x4FEE;&amp;#x6539;Apk, &amp;#x53EF;&amp;#x4EE5;&amp;#x8282;&amp;#x7EA6;&amp;#x4EBA;&amp;#x529B;&amp;#x548C;&amp;#x65F6;&amp;#x95F4;. &amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;&amp;#x9006;&amp;#x5411;&amp;#x5DE5;&amp;#x7A0B;&amp;#x7684;&amp;#x5E38;&amp;#x7528;&amp;#x5DE5;&amp;#x5177;&amp;#x548C;&amp;#x4F7F;&amp;#x7528;&amp;#x65B9;&amp;#x6CD5;. &amp;#x6700;&amp;#x65B0;&amp;#x7684;&amp;#x5DE5;&amp;#x5177;&amp;#x662F;&lt;a href=&quot;http://www.wangchenlong.org/2016/03/17/analyze-app-framework/&quot;&gt;ClassyShark&lt;/a&gt;.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -97,7 +97,6 @@
 &lt;p&gt;&amp;#x8FD9;&amp;#x4E2A;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x547D;&amp;#x4EE4;&amp;#x884C;&amp;#x5904;&amp;#x7406;&amp;#x5E93;, &amp;#x5F00;&amp;#x53D1;&amp;#x65F6;&amp;#x95F4;&amp;#x5F88;&amp;#x65E9;&amp;#x4E86;, &amp;#x5C31;&amp;#x4E0D;&amp;#x505A;&amp;#x6DF1;&amp;#x5165;&amp;#x8BB2;&amp;#x89E3;&amp;#x4E86;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&amp;#x9006;&amp;#x5411;&amp;#x5DE5;&amp;#x7A0B;&amp;#x7684;&amp;#x57FA;&amp;#x672C;&amp;#x5DE5;&amp;#x5177;, aapt\dex2jar\apktool\androguard&amp;#x90FD;&amp;#x719F;&amp;#x7EC3;&amp;#x4F7F;&amp;#x7528;&amp;#x5C31;&amp;#x53EF;&amp;#x4EE5;&amp;#x4E86;.&lt;br&gt;OK, that&amp;#x2019;s all. Enjoy it!&lt;/p&gt;
-&lt;hr&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;#x539F;&amp;#x59CB;&amp;#x5730;&amp;#x5740;:&lt;br&gt;&lt;a href=&quot;http://www.wangchenlong.org/2016/03/19/reverse-analyze-apk/&quot;&gt;http://www.wangchenlong.org/2016/03/19/reverse-analyze-apk/&lt;/a&gt;&lt;br&gt;&amp;#x6B22;&amp;#x8FCE;Follow&amp;#x6211;&amp;#x7684;&lt;a href=&quot;https://github.com/SpikeKing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;, &amp;#x5173;&amp;#x6CE8;&amp;#x6211;&amp;#x7684;&lt;a href=&quot;http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x7B80;&amp;#x4E66;&lt;/a&gt;, &lt;a href=&quot;http://weibo.com/u/2852941392&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x5FAE;&amp;#x535A;&lt;/a&gt;, &lt;a href=&quot;http://blog.csdn.net/caroline_wendy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSDN&lt;/a&gt;, &lt;a href=&quot;http://gold.xitu.io/#/user/56de98c2f3609a005442ec58&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&amp;#x6398;&amp;#x91D1;&lt;/a&gt;, &lt;a href=&quot;https://slides.com/spikeking&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Slides&lt;/a&gt;.&lt;br&gt;&amp;#x6211;&amp;#x5DF2;&amp;#x59D4;&amp;#x6258;&amp;#x201C;&amp;#x7EF4;&amp;#x6743;&amp;#x9A91;&amp;#x58EB;&amp;#x201D;&amp;#x4E3A;&amp;#x6211;&amp;#x7684;&amp;#x6587;&amp;#x7AE0;&amp;#x8FDB;&amp;#x884C;&amp;#x7EF4;&amp;#x6743;&amp;#x884C;&amp;#x52A8;. &amp;#x672A;&amp;#x7ECF;&amp;#x6388;&amp;#x6743;, &amp;#x7981;&amp;#x6B62;&amp;#x8F6C;&amp;#x8F7D;, &amp;#x6388;&amp;#x6743;&amp;#x6216;&amp;#x5408;&amp;#x4F5C;&amp;#x8BF7;&amp;#x7559;&amp;#x8A00;.&lt;/p&gt;
 &lt;/blockquote&gt;</content>
