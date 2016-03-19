@@ -2,44 +2,107 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/18/apply-droid-plugin/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/16/use-retrofit-first/</loc>
     
-    <lastmod>2016-03-18T23:58:26.000Z</lastmod>
+    <lastmod>2016-03-19T00:00:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</loc>
+    
+    <lastmod>2016-03-19T00:00:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/16/use-dagger-first/</loc>
+    
+    <lastmod>2016-03-19T00:00:33.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/13/use-dagger-espresso-test-network/</loc>
     
-    <lastmod>2016-03-18T14:27:23.000Z</lastmod>
+    <lastmod>2016-03-19T00:00:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/svg-path-animation/</loc>
+    
+    <lastmod>2016-03-19T00:00:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/replace-svg-image/</loc>
+    
+    <lastmod>2016-03-19T00:00:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/</loc>
+    
+    <lastmod>2016-03-19T00:00:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/kotlin-first/</loc>
+    
+    <lastmod>2016-03-19T00:00:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/kotlin-extends-point/</loc>
+    
+    <lastmod>2016-03-19T00:00:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/14/improve-gradle-speed/</loc>
+    
+    <lastmod>2016-03-19T00:00:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
+    
+    <lastmod>2016-03-18T23:59:58.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/12/apply-flux-architecture/</loc>
     
-    <lastmod>2016-03-18T14:27:14.000Z</lastmod>
+    <lastmod>2016-03-18T23:59:55.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/17/analyze-app-framework/</loc>
     
-    <lastmod>2016-03-17T15:38:56.000Z</lastmod>
+    <lastmod>2016-03-18T23:59:50.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/14/analyze-app-battery/</loc>
     
-    <lastmod>2016-03-17T07:41:11.000Z</lastmod>
+    <lastmod>2016-03-18T23:59:45.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/16/use-retrofit-first/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/18/apply-droid-plugin/</loc>
     
-    <lastmod>2016-03-16T13:55:54.000Z</lastmod>
+    <lastmod>2016-03-18T23:58:26.000Z</lastmod>
     
   </url>
   
@@ -51,72 +114,9 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/16/use-dagger-first/</loc>
-    
-    <lastmod>2016-03-15T23:44:16.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/kotlin-extends-point/</loc>
-    
-    <lastmod>2016-03-15T13:51:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/kotlin-first/</loc>
-    
-    <lastmod>2016-03-15T13:51:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/improve-gradle-speed/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/14/use-leak-canary-check-memory/</loc>
     
     <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/use-mat-analyze-memory/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/manage-gradle-lib-version/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/svg-path-animation/</loc>
-    
-    <lastmod>2016-03-15T01:29:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/replace-svg-image/</loc>
-    
-    <lastmod>2016-03-15T01:29:35.000Z</lastmod>
     
   </url>
   
