@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-19T02:01:55.000Z</updated>
+  <updated>2016-03-19T02:06:12.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>使用 Rx 同步并缓存网络数据</title>
     <link href="http://www.wangchenlong.org/2016/03/19/rx-network-cache/"/>
     <id>http://www.wangchenlong.org/2016/03/19/rx-network-cache/</id>
     <published>2016-03-19T01:50:00.000Z</published>
-    <updated>2016-03-19T02:01:55.000Z</updated>
+    <updated>2016-03-19T02:06:12.000Z</updated>
     
     <content type="html">&lt;p&gt;RxJava&amp;#x662F;&amp;#x54CD;&amp;#x5E94;&amp;#x5F0F;&amp;#x7F16;&amp;#x7A0B;, &amp;#x5728;&amp;#x5F02;&amp;#x6B65;&amp;#x5904;&amp;#x7406;&amp;#x7F51;&amp;#x7EDC;&amp;#x6570;&amp;#x636E;&amp;#x65F6;, &amp;#x4F7F;&amp;#x7528;&amp;#x5E7F;&amp;#x6CDB;. &amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;&amp;#x4E00;&amp;#x4E9B;Rx&amp;#x7684;&amp;#x7279;&amp;#x6027;, &amp;#x4F18;&amp;#x96C5;&amp;#x5730;&amp;#x7F13;&amp;#x5B58;&amp;#x7F51;&amp;#x7EDC;&amp;#x6570;&amp;#x636E;.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -68,6 +68,10 @@
     
     
       <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
+    
+      <category term="Rx" scheme="http://www.wangchenlong.org/tags/Rx/"/>
+    
+      <category term="网络" scheme="http://www.wangchenlong.org/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -402,9 +406,9 @@
     
       <category term="架构" scheme="http://www.wangchenlong.org/tags/%E6%9E%B6%E6%9E%84/"/>
     
-      <category term="Retrofit" scheme="http://www.wangchenlong.org/tags/Retrofit/"/>
-    
       <category term="网络" scheme="http://www.wangchenlong.org/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="Retrofit" scheme="http://www.wangchenlong.org/tags/Retrofit/"/>
     
   </entry>
   
