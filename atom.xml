@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-20T23:53:03.000Z</updated>
+  <updated>2016-03-20T23:54:03.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>使用 CircularReveal 动画设计页面扩展效果</title>
+    <title>使用 CircularReveal 动画实现页面扩展效果</title>
     <link href="http://www.wangchenlong.org/2016/03/21/1603212-anim-circular-reveal/"/>
     <id>http://www.wangchenlong.org/2016/03/21/1603212-anim-circular-reveal/</id>
     <published>2016-03-20T23:45:00.000Z</published>
-    <updated>2016-03-20T23:53:03.000Z</updated>
+    <updated>2016-03-20T23:54:03.000Z</updated>
     
     <content type="html">&lt;p&gt;Android&amp;#x7684;Material Design&amp;#x8BBE;&amp;#x8BA1;&amp;#x7406;&amp;#x5FF5;, &amp;#x5E26;&amp;#x6765;&amp;#x5F88;&amp;#x591A;&amp;#x7EDA;&amp;#x4E3D;&amp;#x7684;&amp;#x52A8;&amp;#x753B;&amp;#x6548;&amp;#x679C;. &amp;#x5728;&amp;#x9875;&amp;#x9762;&amp;#x5207;&amp;#x6362;&amp;#x4E2D;, &amp;#x6700;&amp;#x5E38;&amp;#x7528;&amp;#x7684;&amp;#x5C31;&amp;#x662F;&lt;strong&gt;SharedElementTransition&lt;/strong&gt;, &amp;#x901A;&amp;#x8FC7;&amp;#x8BBE;&amp;#x7F6E;&amp;#x63A7;&amp;#x4EF6;&amp;#x7684;&amp;#x53D8;&amp;#x6362;&amp;#x65B9;&amp;#x5F0F;, &amp;#x5728;&amp;#x8FDB;&amp;#x5165;&amp;#x65F6;&amp;#x628A;&amp;#x63A7;&amp;#x4EF6;&amp;#x53D8;&amp;#x6362;&amp;#x4E3A;&amp;#x9875;&amp;#x9762;, &amp;#x5728;&amp;#x9000;&amp;#x51FA;&amp;#x65F6;, &amp;#x628A;&amp;#x9875;&amp;#x9762;&amp;#x53D8;&amp;#x6362;&amp;#x4E3A;&amp;#x63A7;&amp;#x4EF6;, &amp;#x540C;&amp;#x65F6;, &amp;#x53EF;&amp;#x4EE5;&amp;#x8BBE;&amp;#x7F6E;&amp;#x63A7;&amp;#x4EF6;&amp;#x79FB;&amp;#x52A8;&amp;#x7684;&amp;#x8F68;&amp;#x8FF9;. &amp;#x8FD9;&amp;#x6837;&amp;#x7684;&amp;#x63A7;&amp;#x4EF6;, &amp;#x53EF;&amp;#x4EE5;&amp;#x5E94;&amp;#x7528;&amp;#x4E8E;&lt;strong&gt;&amp;#x6D88;&amp;#x606F;&amp;#x901A;&amp;#x77E5;&lt;/strong&gt;, &amp;#x6216;&amp;#x8005;&lt;strong&gt;&amp;#x5E7F;&amp;#x544A;&amp;#x663E;&amp;#x793A;&lt;/strong&gt;, &amp;#x63D0;&amp;#x4F9B;&amp;#x975E;&amp;#x5E38;&amp;#x597D;&amp;#x7684;&amp;#x7528;&amp;#x6237;&amp;#x4F53;&amp;#x9A8C;. &amp;#x90A3;&amp;#x4E48;&amp;#x662F;&amp;#x5982;&amp;#x4F55;&amp;#x5B9E;&amp;#x73B0;&amp;#x7684;&amp;#x5462;?&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
