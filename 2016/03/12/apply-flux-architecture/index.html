@@ -568,7 +568,7 @@
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
-          
+
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
@@ -655,18 +655,21 @@
         
         
 
-        <div class="links-of-author motion-element">
+        
+        <div class="links-of-blogroll motion-element">
           
-            <p class="site-author-name">Links</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.chunyuyisheng.com/" target="_blank">春雨医生</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.chunyuyisheng.com/pedometer" target="_blank">计步器</a>
-              </span>
-            
+            <div class="links-of-blogroll-title">Links</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chunyuyisheng.com/" target="_blank">春雨医生</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chunyuyisheng.com/pedometer" target="_blank">计步器</a>
+                </li>
+              
+            </ul>
           
         </div>
 
@@ -945,7 +948,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
