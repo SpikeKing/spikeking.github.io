@@ -2,86 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/20/160320-manage-permission/</loc>
-    
-    <lastmod>2016-03-20T10:51:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/20/160320-implement-update-app/</loc>
     
-    <lastmod>2016-03-20T10:46:58.000Z</lastmod>
+    <lastmod>2016-03-20T23:30:31.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/20/160320-implement-video-timeline/</loc>
     
-    <lastmod>2016-03-20T10:44:45.000Z</lastmod>
+    <lastmod>2016-03-20T23:30:23.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/20/160320-implement-webview-goto-app/</loc>
     
-    <lastmod>2016-03-20T10:44:05.000Z</lastmod>
+    <lastmod>2016-03-20T23:30:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/reverse-analyze-apk/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/20/160320-manage-permission/</loc>
     
-    <lastmod>2016-03-20T09:07:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/rx-network-cache/</loc>
-    
-    <lastmod>2016-03-20T09:07:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/rxandroid-async/</loc>
-    
-    <lastmod>2016-03-20T09:07:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/18/apply-droid-plugin/</loc>
-    
-    <lastmod>2016-03-20T09:07:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/17/analyze-app-framework/</loc>
-    
-    <lastmod>2016-03-20T09:07:14.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/20/160320-rxbinding-react-event/</loc>
-    
-    <lastmod>2016-03-20T09:07:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/20/160320-rxjava-first/</loc>
-    
-    <lastmod>2016-03-20T09:04:42.000Z</lastmod>
+    <lastmod>2016-03-20T23:30:05.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/20/160320-rx-continue-update/</loc>
     
-    <lastmod>2016-03-20T09:04:19.000Z</lastmod>
+    <lastmod>2016-03-20T23:29:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/20/160320-rxbinding-react-event/</loc>
+    
+    <lastmod>2016-03-20T23:29:43.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/20/160320-rxjava-first/</loc>
+    
+    <lastmod>2016-03-20T23:29:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/17/analyze-app-framework/</loc>
+    
+    <lastmod>2016-03-20T23:29:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/18/apply-droid-plugin/</loc>
+    
+    <lastmod>2016-03-20T23:29:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/19/reverse-analyze-apk/</loc>
+    
+    <lastmod>2016-03-20T23:28:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/19/rx-network-cache/</loc>
+    
+    <lastmod>2016-03-20T23:28:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/19/rxandroid-async/</loc>
+    
+    <lastmod>2016-03-20T23:28:17.000Z</lastmod>
     
   </url>
   
