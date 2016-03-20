@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/reverse-analyze-apk/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/20/160320-implement-webview-goto-app/</loc>
     
-    <lastmod>2016-03-20T09:07:57.000Z</lastmod>
+    <lastmod>2016-03-20T09:44:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/20/160320-implement-update-app/</loc>
+    
+    <lastmod>2016-03-20T09:37:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/20/160320-implement-video-timeline/</loc>
+    
+    <lastmod>2016-03-20T09:30:15.000Z</lastmod>
     
   </url>
   
@@ -17,6 +31,13 @@
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/19/rxandroid-async/</loc>
+    
+    <lastmod>2016-03-20T09:07:57.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/19/reverse-analyze-apk/</loc>
     
     <lastmod>2016-03-20T09:07:57.000Z</lastmod>
     
