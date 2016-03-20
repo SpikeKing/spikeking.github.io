@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/19/rx-network-cache/</loc>
+    
+    <lastmod>2016-03-20T01:05:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/20/160320-rxjava-first/</loc>
     
     <lastmod>2016-03-20T01:03:16.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://www.wangchenlong.org/2016/03/19/rxandroid-async/</loc>
     
     <lastmod>2016-03-20T00:57:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/rx-network-cache/</loc>
-    
-    <lastmod>2016-03-20T00:57:40.000Z</lastmod>
     
   </url>
   
