@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/20/160320-manage-permission/</loc>
+    
+    <lastmod>2016-03-20T10:51:51.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/20/160320-implement-update-app/</loc>
     
     <lastmod>2016-03-20T10:46:58.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://www.wangchenlong.org/2016/03/20/160320-implement-webview-goto-app/</loc>
     
     <lastmod>2016-03-20T10:44:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/20/160320-manage-permission/</loc>
-    
-    <lastmod>2016-03-20T10:43:36.000Z</lastmod>
     
   </url>
   

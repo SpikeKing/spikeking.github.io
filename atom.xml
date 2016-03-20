@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-20T10:43:36.000Z</updated>
+  <updated>2016-03-20T10:51:51.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.wangchenlong.org/2016/03/20/160320-manage-permission/"/>
     <id>http://www.wangchenlong.org/2016/03/20/160320-manage-permission/</id>
     <published>2016-03-20T09:47:00.000Z</published>
-    <updated>2016-03-20T10:43:36.000Z</updated>
+    <updated>2016-03-20T10:51:51.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;Android 6.0&lt;/strong&gt;&amp;#x7248;&amp;#x672C;(Api 23)&amp;#x63A8;&amp;#x51FA;&amp;#x4E86;&amp;#x5F88;&amp;#x591A;&amp;#x65B0;&amp;#x7684;&amp;#x7279;&amp;#x6027;, &amp;#x5927;&amp;#x5E45;&amp;#x63D0;&amp;#x5347;&amp;#x4E86;&amp;#x7528;&amp;#x6237;&amp;#x4F53;&amp;#x9A8C;, &amp;#x540C;&amp;#x65F6;&amp;#x4E5F;&amp;#x4E3A;&amp;#x7A0B;&amp;#x5E8F;&amp;#x5458;&amp;#x5E26;&amp;#x6765;&amp;#x65B0;&amp;#x7684;&amp;#x8D1F;&amp;#x62C5;. &lt;strong&gt;&amp;#x52A8;&amp;#x6001;&amp;#x6743;&amp;#x9650;&amp;#x7BA1;&amp;#x7406;&lt;/strong&gt;&amp;#x5C31;&amp;#x662F;&amp;#x8FD9;&amp;#x6837;, &amp;#x4E00;&amp;#x65B9;&amp;#x9762;&amp;#x8BA9;&amp;#x7528;&amp;#x6237;&amp;#x66F4;&amp;#x52A0;&amp;#x5BB9;&amp;#x6613;&amp;#x7684;&amp;#x63A7;&amp;#x5236;&amp;#x81EA;&amp;#x5DF1;&amp;#x7684;&amp;#x9690;&amp;#x79C1;, &amp;#x4E00;&amp;#x65B9;&amp;#x9762;&amp;#x9700;&amp;#x8981;&amp;#x91CD;&amp;#x65B0;&amp;#x9002;&amp;#x914D;&amp;#x5E94;&amp;#x7528;&amp;#x6743;&amp;#x9650;. &amp;#x65F6;&amp;#x4EE3;&amp;#x603B;&amp;#x662F;&amp;#x4E0D;&amp;#x65AD;&amp;#x53D1;&amp;#x5C55;, &amp;#x7A0B;&amp;#x5E8F;&amp;#x603B;&amp;#x662F;&amp;#x4EE5;&amp;#x4EBA;&amp;#x4E3A;&amp;#x672C;, &amp;#x8BA9;&amp;#x6211;&amp;#x4EEC;&amp;#x4E3A;&amp;#x5E94;&amp;#x7528;&amp;#x6DFB;&amp;#x52A0;&amp;#x52A8;&amp;#x6001;&amp;#x6743;&amp;#x9650;&amp;#x7BA1;&amp;#x7406;&amp;#x5427;! &amp;#x8FD9;&amp;#x91CC;&amp;#x63D0;&amp;#x4F9B;&amp;#x4E86;&amp;#x4E00;&amp;#x4E2A;&amp;#x975E;&amp;#x5E38;&amp;#x4E0D;&amp;#x9519;&amp;#x7684;&amp;#x89E3;&amp;#x51B3;&amp;#x65B9;&amp;#x6848;, &amp;#x63D0;&amp;#x4F9B;&amp;#x6E90;&amp;#x7801;, &amp;#x9879;&amp;#x76EE;&amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;#x63A5;&amp;#x4F7F;&amp;#x7528;.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -82,7 +82,7 @@
     
       <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
     
-      <category term="6" scheme="http://www.wangchenlong.org/tags/6/"/>
+      <category term="权限" scheme="http://www.wangchenlong.org/tags/%E6%9D%83%E9%99%90/"/>
     
   </entry>
   
