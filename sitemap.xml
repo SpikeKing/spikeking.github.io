@@ -4,7 +4,147 @@
   <url>
     <loc>http://www.wangchenlong.org/2016/03/21/1603/213-implement-flip-card/</loc>
     
-    <lastmod>2016-03-21T13:08:31.000Z</lastmod>
+    <lastmod>2016-03-21T13:40:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/20/1603/206-rxbinding-react-event/</loc>
+    
+    <lastmod>2016-03-21T13:40:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
+    
+    <lastmod>2016-03-21T13:39:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/17/1602/analyze-app-framework/</loc>
+    
+    <lastmod>2016-03-21T13:38:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/16/1602/use-retrofit-first/</loc>
+    
+    <lastmod>2016-03-21T13:37:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/14/1602/use-mat-analyze-memory/</loc>
+    
+    <lastmod>2016-03-21T13:37:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/14/1602/use-leak-canary-check-memory/</loc>
+    
+    <lastmod>2016-03-21T13:36:43.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/16/1602/use-dagger-first/</loc>
+    
+    <lastmod>2016-03-21T13:36:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/13/1602/use-dagger-espresso-test-network/</loc>
+    
+    <lastmod>2016-03-21T13:36:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/19/1602/rxandroid-async/</loc>
+    
+    <lastmod>2016-03-21T13:36:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/19/1602/rx-network-cache/</loc>
+    
+    <lastmod>2016-03-21T13:35:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/19/1602/reverse-analyze-apk/</loc>
+    
+    <lastmod>2016-03-21T13:35:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/replace-svg-image/</loc>
+    
+    <lastmod>2016-03-21T13:35:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/manage-gradle-lib-version/</loc>
+    
+    <lastmod>2016-03-21T13:35:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/</loc>
+    
+    <lastmod>2016-03-21T13:35:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
+    
+    <lastmod>2016-03-21T13:34:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/14/1602/improve-gradle-speed/</loc>
+    
+    <lastmod>2016-03-21T13:34:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/14/1602/analyze-app-battery/</loc>
+    
+    <lastmod>2016-03-21T13:34:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/12/1602/get-app-cert-and-package/</loc>
+    
+    <lastmod>2016-03-21T13:34:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/12/1602/apply-flux-architecture/</loc>
+    
+    <lastmod>2016-03-21T13:34:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/18/1602/apply-droid-plugin/</loc>
+    
+    <lastmod>2016-03-21T13:33:56.000Z</lastmod>
     
   </url>
   
@@ -26,13 +166,6 @@
     <loc>http://www.wangchenlong.org/2016/03/20/1603/207-rxjava-first/</loc>
     
     <lastmod>2016-03-21T13:08:22.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/20/1603/206-rxbinding-react-event/</loc>
-    
-    <lastmod>2016-03-21T13:08:16.000Z</lastmod>
     
   </url>
   
@@ -72,142 +205,9 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/17/1602/analyze-app-framework/</loc>
-    
-    <lastmod>2016-03-20T23:29:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/18/1602/apply-droid-plugin/</loc>
-    
-    <lastmod>2016-03-20T23:29:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/1602/reverse-analyze-apk/</loc>
-    
-    <lastmod>2016-03-20T23:28:47.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/1602/rx-network-cache/</loc>
-    
-    <lastmod>2016-03-20T23:28:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/1602/rxandroid-async/</loc>
-    
-    <lastmod>2016-03-20T23:28:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/16/1602/use-retrofit-first/</loc>
-    
-    <lastmod>2016-03-19T00:00:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/1602/use-mat-analyze-memory/</loc>
-    
-    <lastmod>2016-03-19T00:00:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/16/1602/use-dagger-first/</loc>
-    
-    <lastmod>2016-03-19T00:00:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/13/1602/use-dagger-espresso-test-network/</loc>
-    
-    <lastmod>2016-03-19T00:00:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
-    
-    <lastmod>2016-03-19T00:00:22.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/replace-svg-image/</loc>
-    
-    <lastmod>2016-03-19T00:00:18.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/manage-gradle-lib-version/</loc>
-    
-    <lastmod>2016-03-19T00:00:14.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/</loc>
-    
-    <lastmod>2016-03-19T00:00:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
-    
-    <lastmod>2016-03-19T00:00:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/1602/improve-gradle-speed/</loc>
-    
-    <lastmod>2016-03-19T00:00:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/12/1602/get-app-cert-and-package/</loc>
-    
-    <lastmod>2016-03-18T23:59:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/12/1602/apply-flux-architecture/</loc>
-    
-    <lastmod>2016-03-18T23:59:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/1602/analyze-app-battery/</loc>
-    
-    <lastmod>2016-03-18T23:59:45.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/f371aa4f032e4227a41f8c894b0b3542.html</loc>
     
     <lastmod>2016-03-16T10:13:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/14/1602/use-leak-canary-check-memory/</loc>
-    
-    <lastmod>2016-03-15T01:31:10.000Z</lastmod>
     
   </url>
   
