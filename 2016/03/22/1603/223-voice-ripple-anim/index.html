@@ -1,0 +1,1087 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="HM6XdT4pJXR7fFksvo3DvFAKVgeFg4ZUwh3iOGW8LHU" />
+
+
+
+
+  <meta name="baidu-site-verification" content="MPhG1F0aKe" />
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,动画," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mystra" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web-icon.png?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x5728;&amp;#x4E00;&amp;#x4E9B;&amp;#x97F3;&amp;#x4E50;&amp;#x7C7B;&amp;#x5E94;&amp;#x7528;&amp;#x4E2D;, &amp;#x7ECF;&amp;#x5E38;&amp;#x4F1A;&amp;#x5C55;&amp;#x793A;&amp;#x968F;&amp;#x7740;&amp;#x8282;&amp;#x594F;&amp;#x4E0A;&amp;#x4E0B;&amp;#x8D77;&amp;#x4F0F;&amp;#x7684;&amp;#x6CE2;&amp;#x7EB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="绘制声音频率的波纹动画效果">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/03/22/1603/223-voice-ripple-anim/index.html">
+<meta property="og:site_name" content="Mystra">
+<meta property="og:description" content="&amp;#x5728;&amp;#x4E00;&amp;#x4E9B;&amp;#x97F3;&amp;#x4E50;&amp;#x7C7B;&amp;#x5E94;&amp;#x7528;&amp;#x4E2D;, &amp;#x7ECF;&amp;#x5E38;&amp;#x4F1A;&amp;#x5C55;&amp;#x793A;&amp;#x968F;&amp;#x7740;&amp;#x8282;&amp;#x594F;&amp;#x4E0A;&amp;#x4E0B;&amp;#x8D77;&amp;#x4F0F;&amp;#x7684;&amp;#x6CE2;&amp;#x7EB">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/22/1603/223-voice-ripple-anim/voice-logo.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/22/1603/223-voice-ripple-anim/voice-demo.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/22/1603/223-voice-ripple-anim/voice-anim.gif">
+<meta property="og:image" content="http://7xrsre.com1.z0.glb.clouddn.com/spike-ad-girl-socks-11.jpg">
+<meta property="og:updated_time" content="2016-03-21T22:50:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="绘制声音频率的波纹动画效果">
+<meta name="twitter:description" content="&amp;#x5728;&amp;#x4E00;&amp;#x4E9B;&amp;#x97F3;&amp;#x4E50;&amp;#x7C7B;&amp;#x5E94;&amp;#x7528;&amp;#x4E2D;, &amp;#x7ECF;&amp;#x5E38;&amp;#x4F1A;&amp;#x5C55;&amp;#x793A;&amp;#x968F;&amp;#x7740;&amp;#x8282;&amp;#x594F;&amp;#x4E0A;&amp;#x4E0B;&amp;#x8D77;&amp;#x4F0F;&amp;#x7684;&amp;#x6CE2;&amp;#x7EB">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/03/22/1603/223-voice-ripple-anim/voice-logo.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6261011353935283000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 绘制声音频率的波纹动画效果 | Mystra </title>
+
+  <meta name="domain_verify" content="pmrgi33nmfuw4ir2ej3wc3thmnugk3tmn5xgoltpojtselbcm52wszbchirgmmzxgfqwcndggaztezjugizdoyjugftdqyzyhe2gemdcgm2timrcfqrhi2lnmvjwc5tfei5dcnbvhaytemztguydsnbypu">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-75037561-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f66791a2795ca9e84e2dc2c4d23fd05e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s6.cnzz.com/stat.php?id=1257956872&web_id=1257956872" type="text/javascript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <!--移动悬浮广告(阿里妈妈)-->
+
+  <!--移动底部-->
+
+  <!--底部弹窗广告-->
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mystra</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Love magic for itself!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'iv4HMbTagDPHwpSnKxxR','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                绘制声音频率的波纹动画效果
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-22T06:43:00+08:00" content="2016-03-22">
+              2016-03-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/22/1603/223-voice-ripple-anim/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/22/1603/223-voice-ripple-anim/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/03/22/1603/223-voice-ripple-anim/" class="leancloud_visitors" data-flag-title="绘制声音频率的波纹动画效果">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x5728;&#x4E00;&#x4E9B;&#x97F3;&#x4E50;&#x7C7B;&#x5E94;&#x7528;&#x4E2D;, &#x7ECF;&#x5E38;&#x4F1A;&#x5C55;&#x793A;&#x968F;&#x7740;&#x8282;&#x594F;&#x4E0A;&#x4E0B;&#x8D77;&#x4F0F;&#x7684;&#x6CE2;&#x7EB9;&#x4FE1;&#x606F;, &#x8FD9;&#x4E9B;&#x6CE2;&#x7EB9;&#x5F62;&#x8C61;&#x5730;&#x4F20;&#x8FBE;&#x4E86;&#x58F0;&#x97F3;&#x4FE1;&#x606F;, &#x53EF;&#x4EE5;&#x63D0;&#x5347;&#x7528;&#x6237;&#x4F53;&#x9A8C;, &#x90A3;&#x4E48;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#x5462;? &#x53EF;&#x4EE5;&#x4F7F;&#x7528;Visualizer&#x7C7B;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x64AD;&#x653E;&#x7684;&#x58F0;&#x97F3;&#x4FE1;&#x606F;, &#x5E76;&#x7ED8;&#x5236;&#x5728;&#x753B;&#x5E03;&#x4E0A;, &#x4F7F;&#x7528;&#x6CE2;&#x7EB9;&#x5C55;&#x793A;&#x5373;&#x53EF;. &#x6211;&#x6765;&#x8BB2;&#x89E3;&#x4E00;&#x4E0B;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;.</p>
+<a id="more"></a>
+<blockquote>
+<p>&#x66F4;&#x591A;: <a href="http://www.wangchenlong.org/">http://www.wangchenlong.org/</a></p>
+</blockquote>
+<p><img src="/2016/03/22/1603/223-voice-ripple-anim/voice-logo.png" alt="Music"></p>
+<p>&#x4E3B;&#x8981;<br>(1) Visualizer&#x7C7B;&#x63D0;&#x53D6;&#x6CE2;&#x7EB9;&#x4FE1;&#x606F;&#x7684;&#x65B9;&#x5F0F;.<br>(2) &#x5E94;&#x7528;&#x52A8;&#x6001;&#x6743;&#x9650;&#x7BA1;&#x7406;&#x7684;&#x65B9;&#x6CD5;.<br>(3) &#x5206;&#x79BB;&#x81EA;&#x5B9A;&#x4E49;&#x89C6;&#x56FE;&#x7684;&#x5C55;&#x793A;&#x548C;&#x903B;&#x8F91;.</p>
+<p>&#x672C;&#x6587;&#x6E90;&#x7801;&#x7684;GitHub<a href="https://github.com/SpikeKing/wcl-visualizer-demo" target="_blank" rel="external">&#x4E0B;&#x8F7D;&#x5730;&#x5740;</a></p>
+<hr>
+<h1 id="&#x57FA;&#x7840;&#x51C6;&#x5907;"><a href="#&#x57FA;&#x7840;&#x51C6;&#x5907;" class="headerlink" title="&#x57FA;&#x7840;&#x51C6;&#x5907;"></a>&#x57FA;&#x7840;&#x51C6;&#x5907;</h1><p>Android 6.0&#x5F15;&#x5165;&#x52A8;&#x6001;&#x6743;&#x9650;&#x7BA1;&#x7406;, &#x5728;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x4E2D;, &#x4F1A;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x7684;&#x97F3;&#x9891;&#x4FE1;&#x606F;, &#x56E0;&#x6B64;&#x628A;&#x6743;&#x9650;&#x7BA1;&#x7406;&#x5F15;&#x5165;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;, <a href="http://www.jianshu.com/p/dbe4d37731e6" target="_blank" rel="external">&#x53C2;&#x8003;</a>. Gradle&#x914D;&#x7F6E;&#x5F15;&#x5165;&#x4E86;Lambda&#x8868;&#x8FBE;&#x5F0F;, <a href="http://www.jianshu.com/p/4b659c7754aa" target="_blank" rel="external">&#x53C2;&#x8003;</a>.</p>
+<p>&#x9875;&#x9762;&#x5E03;&#x5C40;, &#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6CE2;&#x7EB9;&#x89C6;&#x56FE;&#x63A7;&#x4EF6;.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--&#x6CE2;&#x7EB9;&#x89C6;&#x56FE;--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">me.chunyu.spike.wcl_visualizer_demo.visualizers.WaveformView</span></span><br><span class="line">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/main_wv_waveform&quot;</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>&#x6548;&#x679C;<br><img src="/2016/03/22/1603/223-voice-ripple-anim/voice-demo.png" alt="&#x6CE2;&#x7EB9;"></p>
+<hr>
+<h1 id="&#x9996;&#x9875;&#x903B;&#x8F91;"><a href="#&#x9996;&#x9875;&#x903B;&#x8F91;" class="headerlink" title="&#x9996;&#x9875;&#x903B;&#x8F91;"></a>&#x9996;&#x9875;&#x903B;&#x8F91;</h1><p>&#x6DFB;&#x52A0;&#x52A8;&#x6001;&#x6743;&#x9650;&#x7BA1;&#x7406;, &#x5728;&#x542F;&#x52A8;&#x9875;&#x9762;&#x65F6;, &#x83B7;&#x53D6;&#x5E94;&#x7528;&#x6240;&#x9700;&#x7684;&#x97F3;&#x9891;&#x6743;&#x9650;.<br><strong>RendererFactory</strong>&#x5DE5;&#x5382;&#x7C7B;&#x521B;&#x5EFA;&#x6CE2;&#x7EB9;&#x7684;&#x7ED8;&#x5236;&#x7C7B;SimpleWaveformRender.<br><strong>startVisualiser</strong>&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x64AD;&#x653E;&#x97F3;&#x4E50;&#x7684;&#x97F3;&#x9891;&#x4FE1;&#x606F;.<br>&#x6CE8;&#x610F;&#x9875;&#x9762;&#x5173;&#x95ED;, &#x5728;onPause&#x65F6;, &#x91CA;&#x653E;Visualiser&#x7C7B;.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> CAPTURE_SIZE = <span class="number">256</span>; <span class="comment">// &#x83B7;&#x53D6;&#x8FD9;&#x4E9B;&#x6570;&#x636E;, &#x7528;&#x4E8E;&#x663E;&#x793A;</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> REQUEST_CODE = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x6743;&#x9650;</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String[] PERMISSIONS = <span class="keyword">new</span> String[]{</span><br><span class="line">            Manifest.permission.RECORD_AUDIO,</span><br><span class="line">            Manifest.permission.MODIFY_AUDIO_SETTINGS</span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bind</span>(R.id.main_wv_waveform) WaveformView mWvWaveform; <span class="comment">// &#x6CE2;&#x7EB9;&#x89C6;&#x56FE;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Visualizer mVisualizer; <span class="comment">// &#x97F3;&#x9891;&#x53EF;&#x89C6;&#x5316;&#x7C7B;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        RendererFactory rendererFactory = <span class="keyword">new</span> RendererFactory();</span><br><span class="line">        mWvWaveform.setRenderer(rendererFactory.createSimpleWaveformRender(ContextCompat.getColor(<span class="keyword">this</span>, R.color.colorPrimary), Color.WHITE));</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onResume();</span><br><span class="line"></span><br><span class="line">        PermissionsChecker checker = <span class="keyword">new</span> PermissionsChecker(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (checker.lakesPermissions(PERMISSIONS)) {</span><br><span class="line">            PermissionsActivity.startActivityForResult(<span class="keyword">this</span>, REQUEST_CODE, PERMISSIONS);</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            startVisualiser();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onActivityResult(requestCode, resultCode, data);</span><br><span class="line">        <span class="keyword">if</span> (requestCode == REQUEST_CODE &amp;&amp; resultCode == PermissionsActivity.PERMISSIONS_DENIED) {</span><br><span class="line">            finish();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x8BBE;&#x7F6E;&#x97F3;&#x9891;&#x7EBF;</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">startVisualiser</span><span class="params">()</span> </span>{</span><br><span class="line">        mVisualizer = <span class="keyword">new</span> Visualizer(<span class="number">0</span>); <span class="comment">// &#x521D;&#x59CB;&#x5316;</span></span><br><span class="line">        mVisualizer.setDataCaptureListener(<span class="keyword">new</span> Visualizer.OnDataCaptureListener() {</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onWaveFormDataCapture</span><span class="params">(Visualizer visualizer, <span class="keyword">byte</span>[] waveform, <span class="keyword">int</span> samplingRate)</span> </span>{</span><br><span class="line">                <span class="keyword">if</span> (mWvWaveform != <span class="keyword">null</span>) {</span><br><span class="line">                    mWvWaveform.setWaveform(waveform);</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFftDataCapture</span><span class="params">(Visualizer visualizer, <span class="keyword">byte</span>[] fft, <span class="keyword">int</span> samplingRate)</span> </span>{</span><br><span class="line"></span><br><span class="line">            }</span><br><span class="line">        }, Visualizer.getMaxCaptureRate(), <span class="keyword">true</span>, <span class="keyword">false</span>);</span><br><span class="line">        mVisualizer.setCaptureSize(CAPTURE_SIZE);</span><br><span class="line">        mVisualizer.setEnabled(<span class="keyword">true</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x91CA;&#x653E;</span></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">if</span> (mVisualizer != <span class="keyword">null</span>) {</span><br><span class="line">            mVisualizer.setEnabled(<span class="keyword">false</span>);</span><br><span class="line">            mVisualizer.release();</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">super</span>.onPause();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Visualizer&#x7C7B;</strong><br>new Visualizer(0), &#x521D;&#x59CB;&#x5316;; setCaptureSize, &#x83B7;&#x53D6;&#x6CE2;&#x7EB9;&#x6570;&#x91CF;; setEnabled, &#x542F;&#x52A8;&#x76D1;&#x542C;;<br>setDataCaptureListener, &#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x56DE;&#x8C03;, &#x4F7F;&#x7528;WaveFormData&#x6216;FftData; &#x7B2C;&#x4E8C;&#x4E2A;&#x662F;&#x66F4;&#x65B0;&#x7387;; &#x7B2C;&#x4E09;&#x4E2A;&#x662F;&#x5224;&#x65AD;&#x4F7F;&#x7528;WaveFormData; &#x7B2C;&#x56DB;&#x4E2A;&#x662F;&#x5224;&#x65AD;&#x4F7F;&#x7528;FftData, &#x7B2C;&#x4E09;\&#x56DB;&#x4E2A;&#x5747;&#x4E0E;&#x56DE;&#x8C03;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x6709;&#x5173;.</p>
+</blockquote>
+<hr>
+<h1 id="&#x6CE2;&#x7EB9;&#x89C6;&#x56FE;"><a href="#&#x6CE2;&#x7EB9;&#x89C6;&#x56FE;" class="headerlink" title="&#x6CE2;&#x7EB9;&#x89C6;&#x56FE;"></a>&#x6CE2;&#x7EB9;&#x89C6;&#x56FE;</h1><p>&#x9875;&#x9762;&#x6846;&#x67B6;, &#x5206;&#x79BB;&#x663E;&#x793A;&#x548C;&#x903B;&#x8F91;, &#x4F7F;&#x7528;&#x63A5;&#x53E3;&#x6E32;&#x67D3;, &#x8F93;&#x5165;&#x753B;&#x5E03;Canvas&#x548C;&#x6CE2;&#x7EB9;Waveform.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * &#x97F3;&#x9891;&#x6CE2;&#x7EB9;&#x89C6;&#x56FE;</span><br><span class="line"> * &lt;p&gt;</span><br><span class="line"> * Created by wangchenlong on 16/2/11.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WaveformView</span> <span class="keyword">extends</span> <span class="title">View</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> WaveformRenderer mRenderer; <span class="comment">// &#x7ED8;&#x5236;&#x7C7B;</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">byte</span>[] mWaveform; <span class="comment">// &#x6CE2;&#x7EB9;&#x5F62;&#x72B6;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WaveformView</span><span class="params">(Context context)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>(context);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WaveformView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>(context, attrs);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WaveformView</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>(context, attrs, defStyleAttr);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@TargetApi</span>(<span class="number">21</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WaveformView</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr, <span class="keyword">int</span> defStyleRes)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>(context, attrs, defStyleAttr, defStyleRes);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRenderer</span><span class="params">(WaveformRenderer renderer)</span> </span>{</span><br><span class="line">        mRenderer = renderer;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setWaveform</span><span class="params">(<span class="keyword">byte</span>[] waveform)</span> </span>{</span><br><span class="line">        mWaveform = Arrays.copyOf(waveform, waveform.length); <span class="comment">// &#x6570;&#x7EC4;&#x590D;&#x5236;</span></span><br><span class="line">        invalidate(); <span class="comment">// &#x8BBE;&#x7F6E;&#x6CE2;&#x7EB9;&#x4E4B;&#x540E;, &#x9700;&#x8981;&#x91CD;&#x7ED8;</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onDraw(canvas);</span><br><span class="line">        <span class="keyword">if</span> (mRenderer != <span class="keyword">null</span>) {</span><br><span class="line">            mRenderer.render(canvas, mWaveform);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>&#x6570;&#x7EC4;&#x590D;&#x5236;Arrays.copyOf(), &#x5728;&#x8BBE;&#x7F6E;&#x6CE2;&#x7EB9;&#x540E;&#x91CD;&#x7ED8;&#x9875;&#x9762;invalidate().</p>
+</blockquote>
+<hr>
+<h1 id="&#x6CE2;&#x7EB9;&#x903B;&#x8F91;"><a href="#&#x6CE2;&#x7EB9;&#x903B;&#x8F91;" class="headerlink" title="&#x6CE2;&#x7EB9;&#x903B;&#x8F91;"></a>&#x6CE2;&#x7EB9;&#x903B;&#x8F91;</h1><p>&#x6838;&#x5FC3;&#x90E8;&#x5206;renderWaveform, &#x6E32;&#x67D3;&#x6CE2;&#x7EB9;.<br>&#x628A;&#x9875;&#x9762;&#x5206;&#x4E3A;&#x7F51;&#x683C;&#x6837;&#x5F0F;, &#x6839;&#x636E;&#x6CE2;&#x7EB9;&#x503C;, &#x7ED8;&#x5236;&#x66F2;&#x7EBF;; &#x6CA1;&#x6709;&#x6CE2;&#x7EB9;, &#x7ED8;&#x5236;&#x5C45;&#x4E2D;&#x6C34;&#x5E73;&#x76F4;&#x7EBF;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * &#x6CE2;&#x7EB9;&#x6E32;&#x67D3;&#x903B;&#x8F91;</span><br><span class="line"> * &lt;p&gt;</span><br><span class="line"> * Created by wangchenlong on 16/2/12.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleWaveformRenderer</span> <span class="keyword">implements</span> <span class="title">WaveformRenderer</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> Y_FACTOR = <span class="number">0xFF</span>; <span class="comment">// 2&#x7684;8&#x6B21;&#x65B9; = 256</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">float</span> HALF_FACTOR = <span class="number">0.5f</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ColorInt</span> <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> mBackgroundColor;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Paint mForegroundPaint;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Path mWaveformPath;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SimpleWaveformRenderer</span><span class="params">(@ColorInt <span class="keyword">int</span> backgroundColor, Paint foregroundPaint, Path waveformPath)</span> </span>{</span><br><span class="line">        mBackgroundColor = backgroundColor;</span><br><span class="line">        mForegroundPaint = foregroundPaint;</span><br><span class="line">        mWaveformPath = waveformPath;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SimpleWaveformRenderer <span class="title">newInstance</span><span class="params">(@ColorInt <span class="keyword">int</span> backgroundColor, @ColorInt <span class="keyword">int</span> foregroundColour)</span> </span>{</span><br><span class="line">        Paint paint = <span class="keyword">new</span> Paint();</span><br><span class="line">        paint.setColor(foregroundColour);</span><br><span class="line">        paint.setAntiAlias(<span class="keyword">true</span>); <span class="comment">// &#x6297;&#x952F;&#x9F7F;</span></span><br><span class="line">        paint.setStrokeWidth(<span class="number">8.0f</span>); <span class="comment">// &#x8BBE;&#x7F6E;&#x5BBD;&#x5EA6;</span></span><br><span class="line">        paint.setStyle(Paint.Style.STROKE); <span class="comment">// &#x586B;&#x5145;</span></span><br><span class="line"></span><br><span class="line">        Path waveformPath = <span class="keyword">new</span> Path();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SimpleWaveformRenderer(backgroundColor, paint, waveformPath);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">render</span><span class="params">(Canvas canvas, <span class="keyword">byte</span>[] waveform)</span> </span>{</span><br><span class="line">        canvas.drawColor(mBackgroundColor);</span><br><span class="line">        <span class="keyword">float</span> width = canvas.getWidth();</span><br><span class="line">        <span class="keyword">float</span> height = canvas.getHeight();</span><br><span class="line"></span><br><span class="line">        mWaveformPath.reset();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// &#x6CA1;&#x6709;&#x6570;&#x636E;</span></span><br><span class="line">        <span class="keyword">if</span> (waveform != <span class="keyword">null</span>) {</span><br><span class="line">            <span class="comment">// &#x7ED8;&#x5236;&#x6CE2;&#x5F62;</span></span><br><span class="line">            renderWaveform(waveform, width, height);</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            <span class="comment">// &#x7ED8;&#x5236;&#x76F4;&#x7EBF;</span></span><br><span class="line">            renderBlank(width, height);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        canvas.drawPath(mWaveformPath, mForegroundPaint);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">renderWaveform</span><span class="params">(<span class="keyword">byte</span>[] waveform, <span class="keyword">float</span> width, <span class="keyword">float</span> height)</span> </span>{</span><br><span class="line">        <span class="keyword">float</span> xIncrement = width / (<span class="keyword">float</span>) (waveform.length); <span class="comment">// &#x6C34;&#x5E73;&#x5757;&#x6570;</span></span><br><span class="line">        <span class="keyword">float</span> yIncrement = height / Y_FACTOR; <span class="comment">// &#x7AD6;&#x76F4;&#x5757;&#x6570;</span></span><br><span class="line">        <span class="keyword">int</span> halfHeight = (<span class="keyword">int</span>) (height * HALF_FACTOR); <span class="comment">// &#x5C45;&#x4E2D;&#x4F4D;&#x7F6E;</span></span><br><span class="line">        mWaveformPath.moveTo(<span class="number">0</span>, halfHeight);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; waveform.length; ++i) {</span><br><span class="line">            <span class="keyword">float</span> yPosition = waveform[i] &gt; <span class="number">0</span> ?</span><br><span class="line">                    height - (yIncrement * waveform[i]) : -(yIncrement * waveform[i]);</span><br><span class="line">            mWaveformPath.lineTo(xIncrement * i, yPosition);</span><br><span class="line">        }</span><br><span class="line">        mWaveformPath.lineTo(width, halfHeight); <span class="comment">// &#x6700;&#x540E;&#x7684;&#x70B9;, &#x6C34;&#x5E73;&#x5C45;&#x4E2D;</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x5C45;&#x4E2D;&#x753B;&#x4E00;&#x6761;&#x76F4;&#x7EBF;</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">renderBlank</span><span class="params">(<span class="keyword">float</span> width, <span class="keyword">float</span> height)</span> </span>{</span><br><span class="line">        <span class="keyword">int</span> y = (<span class="keyword">int</span>) (height * HALF_FACTOR);</span><br><span class="line">        mWaveformPath.moveTo(<span class="number">0</span>, y);</span><br><span class="line">        mWaveformPath.lineTo(width, y);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>&#x7ED8;&#x5236;&#x79FB;&#x52A8;moveTo, &#x7ED8;&#x5236;&#x76F4;&#x7EBF;lineTo.</p>
+</blockquote>
+<hr>
+<p>&#x6548;&#x679C;<br><img src="/2016/03/22/1603/223-voice-ripple-anim/voice-anim.gif" alt="&#x52A8;&#x753B;"></p>
+<p>&#x901A;&#x8FC7;&#x7ED8;&#x5236;&#x6CE2;&#x7EB9;, &#x53EF;&#x4EE5;&#x7C7B;&#x4F3C;&#x5730;&#x7ED8;&#x5236;&#x4E00;&#x4E9B;&#x8FDE;&#x7EED;&#x6570;&#x636E;, &#x66F4;&#x52A0;&#x76F4;&#x89C2;&#x5730;&#x5C55;&#x793A;, &#x63D0;&#x5347;&#x7528;&#x6237;&#x4F53;&#x9A8C;.</p>
+<p><a href="https://blog.stylingandroid.com" target="_blank" rel="external">&#x53C2;&#x8003;</a></p>
+<p>That&#x2019;s all! Enjoy it!</p>
+<hr>
+<p><strong>&#x751F;&#x6D3B;</strong></p>
+<blockquote>
+<p>&#x6709;&#x6280;&#x672F;&#x53C8;&#x8981;&#x6709;&#x751F;&#x6D3B;, &#x7F8E;&#x8BA9;&#x751F;&#x6D3B;&#x66F4;&#x7CBE;&#x5F69;!</p>
+</blockquote>
+<p><a href="http://s.click.taobao.com/t?e=m%3D2%26s%3DbQqEGtEPMj4cQipKwQzePOeEDrYVVa64K7Vc7tFgwiFRAdhuF14FMSWezvoDS%2BLYJ1gyddu7kN%2BD18qGwYGwMucFZRTbL%2Fvo%2BIoZChn2najN9dt%2FjNhJlNObIo0vIHz3FvZkjmY02UCDrpn5AJHivHEqY%2Bakgpmw" target="_blank" rel="external"><img src="http://7xrsre.com1.z0.glb.clouddn.com/spike-ad-girl-socks-11.jpg" alt="&#x4E1D;&#x889C;"></a></p>
+<p>&#x5973;&#x751F;, &#x8BA9;&#x81EA;&#x5DF1;&#x66F4;&#x804C;&#x4E1A;&#x53D7;&#x6B22;&#x8FCE;! &#x7537;&#x751F;, &#x9001;&#x7ED9;&#x5FC3;&#x4E2D;&#x5973;&#x795E;&#x6216;&#x672A;&#x6765;&#x5973;&#x53CB;! <a href="http://s.click.taobao.com/t?e=m%3D2%26s%3DbQqEGtEPMj4cQipKwQzePOeEDrYVVa64K7Vc7tFgwiFRAdhuF14FMSWezvoDS%2BLYJ1gyddu7kN%2BD18qGwYGwMucFZRTbL%2Fvo%2BIoZChn2najN9dt%2FjNhJlNObIo0vIHz3FvZkjmY02UCDrpn5AJHivHEqY%2Bakgpmw" target="_blank" rel="external">&#x597D;&#x7269;</a></p>
+<hr>
+<blockquote>
+<p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/03/22/223-voice-ripple-anim/">http://www.wangchenlong.org/2016/03/22/223-voice-ripple-anim/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://weibo.com/u/2852941392" target="_blank" rel="external">&#x5FAE;&#x535A;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>, <a href="https://slides.com/spikeking" target="_blank" rel="external">Slides</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
+</blockquote>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/动画/" rel="tag">#动画</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/22/1603/222-snowflake-anim/" rel="next" title="实现漫天飞雪的动画效果">
+                <i class="fa fa-chevron-left"></i> 实现漫天飞雪的动画效果
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/22/1603/224-star-explode-anim/" rel="prev" title="使用属性动画实现星光四射的动画效果">
+                使用属性动画实现星光四射的动画效果 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/22/1603/223-voice-ripple-anim/"
+     data-title="绘制声音频率的波纹动画效果"
+     data-content=""
+     data-url="http://www.wangchenlong.org/2016/03/22/1603/223-voice-ripple-anim/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+            <div align="center" style="margin: 20px 0px 0px 0px">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- 文章底部 -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:336px;height:280px"
+                   data-ad-client="ca-pub-9201665894952799"
+                   data-ad-slot="7302087069"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+          </div>
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/22/1603/223-voice-ripple-anim/"
+           data-title="绘制声音频率的波纹动画效果" data-url="http://www.wangchenlong.org/2016/03/22/1603/223-voice-ripple-anim/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="C.L. Wang" />
+          <p class="site-author-name" itemprop="name">C.L. Wang</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/SpikeKing" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 简书
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2852941392" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> 微博
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/caroline_wendy" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> CSDN
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 掘金
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://slides.com/spikeking" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Slides
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">Links</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chunyuyisheng.com/" target="_blank">春雨医生</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chunyuyisheng.com/pedometer" target="_blank">计步器</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础准备"><span class="nav-number">1.</span> <span class="nav-text">基础准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#首页逻辑"><span class="nav-number">2.</span> <span class="nav-text">首页逻辑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#波纹视图"><span class="nav-number">3.</span> <span class="nav-text">波纹视图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#波纹逻辑"><span class="nav-number">4.</span> <span class="nav-text">波纹逻辑</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+      <!-- 侧栏广告 -->
+      <div align="center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- 侧栏底部 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:160px;height:600px"
+             data-ad-client="ca-pub-9201665894952799"
+             data-ad-slot="8220417066"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">C.L. Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"spikeking"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("24qpuQFXa0w8ead8gg6Rxxhc-gzGzoHsz", "O8vfKJtVanuyjh9NabH91ig7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>
