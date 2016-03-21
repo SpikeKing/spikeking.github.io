@@ -1,0 +1,1082 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="HM6XdT4pJXR7fFksvo3DvFAKVgeFg4ZUwh3iOGW8LHU" />
+
+
+
+
+  <meta name="baidu-site-verification" content="MPhG1F0aKe" />
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,私钥,签名,MD5,SHA1,SHA256,包名," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mystra" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web-icon.png?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="Android&amp;#x5E94;&amp;#x7528;&amp;#x5728;&amp;#x4F7F;&amp;#x7528;&amp;#x7B2C;&amp;#x4E09;&amp;#x65B9;&amp;#x7684;&amp;#x5E93;&amp;#x65F6;, &amp;#x53EF;&amp;#x80FD;&amp;#x9700;&amp;#x8981;&amp;#x7533;&amp;#x8BF7;&amp;#x5BC6;&amp;#x94A5;, &amp;#x8868;&amp;#x660E;&amp;#x5E94;&amp;#x7528;&amp;#x8E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="提取应用的签名和包名">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/03/12/1602/get-app-cert-and-package/index.html">
+<meta property="og:site_name" content="Mystra">
+<meta property="og:description" content="Android&amp;#x5E94;&amp;#x7528;&amp;#x5728;&amp;#x4F7F;&amp;#x7528;&amp;#x7B2C;&amp;#x4E09;&amp;#x65B9;&amp;#x7684;&amp;#x5E93;&amp;#x65F6;, &amp;#x53EF;&amp;#x80FD;&amp;#x9700;&amp;#x8981;&amp;#x7533;&amp;#x8BF7;&amp;#x5BC6;&amp;#x94A5;, &amp;#x8868;&amp;#x660E;&amp;#x5E94;&amp;#x7528;&amp;#x8E">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/12/1602/get-app-cert-and-package/fingerprint.jpg">
+<meta property="og:updated_time" content="2016-03-18T23:59:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="提取应用的签名和包名">
+<meta name="twitter:description" content="Android&amp;#x5E94;&amp;#x7528;&amp;#x5728;&amp;#x4F7F;&amp;#x7528;&amp;#x7B2C;&amp;#x4E09;&amp;#x65B9;&amp;#x7684;&amp;#x5E93;&amp;#x65F6;, &amp;#x53EF;&amp;#x80FD;&amp;#x9700;&amp;#x8981;&amp;#x7533;&amp;#x8BF7;&amp;#x5BC6;&amp;#x94A5;, &amp;#x8868;&amp;#x660E;&amp;#x5E94;&amp;#x7528;&amp;#x8E">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/03/12/1602/get-app-cert-and-package/fingerprint.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6261011353935283000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 提取应用的签名和包名 | Mystra </title>
+
+  <meta name="domain_verify" content="pmrgi33nmfuw4ir2ej3wc3thmnugk3tmn5xgoltpojtselbcm52wszbchirgmmzxgfqwcndggaztezjugizdoyjugftdqyzyhe2gemdcgm2timrcfqrhi2lnmvjwc5tfei5dcnbvhaytemztguydsnbypu">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-75037561-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f66791a2795ca9e84e2dc2c4d23fd05e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s6.cnzz.com/stat.php?id=1257956872&web_id=1257956872" type="text/javascript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <!--移动悬浮广告(阿里妈妈)-->
+
+  <!--移动底部-->
+
+  <!--底部弹窗广告-->
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mystra</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Love magic for itself!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'iv4HMbTagDPHwpSnKxxR','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                提取应用的签名和包名
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-12T18:20:07+08:00" content="2016-03-12">
+              2016-03-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/12/1602/get-app-cert-and-package/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/12/1602/get-app-cert-and-package/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/03/12/1602/get-app-cert-and-package/" class="leancloud_visitors" data-flag-title="提取应用的签名和包名">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Android&#x5E94;&#x7528;&#x5728;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x5E93;&#x65F6;, &#x53EF;&#x80FD;&#x9700;&#x8981;<strong>&#x7533;&#x8BF7;&#x5BC6;&#x94A5;</strong>, &#x8868;&#x660E;&#x5E94;&#x7528;&#x8EAB;&#x4EFD;, &#x5982;&#x9AD8;&#x5FB7;&#x5B9A;&#x4F4D;SDK&#x7B49;. <strong>&#x5E94;&#x7528;&#x7B7E;&#x540D;(printcert)</strong>&#x662F;&#x516C;&#x5F00;&#x7684;, &#x53EA;&#x8981;&#x4E0B;&#x8F7D;&#x5230;Apk&#x5305;, &#x5C31;&#x53EF;&#x4EE5;&#x516C;&#x5F00;&#x63D0;&#x53D6;. &#x7B7E;&#x540D;&#x4E2D;&#x5305;&#x542B;<strong>MD5</strong>, <strong>SHA1</strong>, <strong>SHA256</strong>. <strong>&#x5E94;&#x7528;&#x552F;&#x4E00;&#x6027;</strong>&#x5C31;&#x662F;&#x8868;&#x73B0;&#x4E3A;<strong>&#x7B7E;&#x540D;+&#x5305;&#x540D;</strong>, &#x5C31;&#x50CF;&#x4EBA;&#x7684;&#x6307;&#x7EB9;&#x4E00;&#x6837;&#x91CD;&#x8981;, &#x662F;&#x786E;&#x5B9A;&#x5E94;&#x7528;&#x5C5E;&#x6027;&#x7684;&#x91CD;&#x8981;&#x4FE1;&#x606F;, &#x4E5F;&#x662F;<strong>&#x5E94;&#x7528;&#x5546;&#x5E97;</strong>&#x68C0;&#x6D4B;&#x76D7;&#x7248;&#x5E94;&#x7528;&#x7684;&#x9014;&#x5F84;. </p>
+<p>&#x672C;&#x6587;&#x8BB2;&#x89E3;&#x5982;&#x4F55;&#x63D0;&#x53D6;&#x5E94;&#x7528;&#x7684;<strong>&#x7B7E;&#x540D;&#x548C;&#x5305;&#x540D;</strong>.</p>
+<a id="more"></a>
+<blockquote>
+<p>&#x66F4;&#x591A;: <a href="http://www.wangchenlong.org/">http://www.wangchenlong.org/</a></p>
+</blockquote>
+<hr>
+<p><img src="/2016/03/12/1602/get-app-cert-and-package/fingerprint.jpg" alt="&#x6307;&#x7EB9;"></p>
+<h1 id="&#x7B7E;&#x540D;"><a href="#&#x7B7E;&#x540D;" class="headerlink" title="&#x7B7E;&#x540D;"></a>&#x7B7E;&#x540D;</h1><p>&#x83B7;&#x53D6;&#x7B7E;&#x540D;&#x5305;&#x542B;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;:<br><strong>(1) Keystore</strong><br><strong>&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x7B7E;&#x540D;</strong>: &#x5B58;&#x653E;&#x4F4D;&#x7F6E;: <code>~/.android/debug.keystore</code>.<br>&#x65E5;&#x5E38;&#x6D4B;&#x8BD5;&#x5E94;&#x7528;&#x7684;&#x7B7E;&#x540D;, &#x5747;&#x6765;&#x81EA;&#x4E8E;&#x6B64;, &#x63D0;&#x53D6;&#x5BC6;&#x94A5;.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -list -v -keystore debug.keystore</span><br></pre></td></tr></table></figure></p>
+<p>&#x8F93;&#x5165;&#x9ED8;&#x8BA4;&#x5BC6;&#x94A5;&#x5E93;&#x53E3;&#x4EE4;: <strong>android</strong><br>&#x5373;&#x53EF;&#x663E;&#x793A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x8BC1;&#x4E66;&#x6307;&#x7EB9;:</span><br><span class="line">	 MD5: 97:0B:1C:...</span><br><span class="line">	 SHA1: 47:DF:70:...</span><br><span class="line">	 SHA256: 83:F9:04:...</span><br><span class="line">	 &#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#x540D;&#x79F0;: SHA256withRSA</span><br><span class="line">	 &#x7248;&#x672C;: 3</span><br></pre></td></tr></table></figure></p>
+<p><strong>&#x81EA;&#x5B9A;&#x4E49;&#x7B7E;&#x540D;</strong>: &#x8FDB;&#x5165;&#x5230;&#x5B58;&#x653E;keystore&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x4F7F;&#x7528;&#x547D;&#x4EE4;:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -list -v -keystore [xxx] -keypass [xxx]</span><br></pre></td></tr></table></figure></p>
+<p>&#x663E;&#x793A;&#x9ED8;&#x8BA4;&#x7B7E;&#x540D;&#x7C7B;&#x4F3C;&#x7684;&#x6548;&#x679C;.</p>
+<p><strong>(2) RSA</strong><br>&#x5DF2;&#x7ECF;&#x7F16;&#x8BD1;&#x6210;Apk&#x7684;&#x5305;, &#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;Keystore, &#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x5728;RSA&#x4E2D;&#x83B7;&#x53D6;&#x7B7E;&#x540D;.<br>&#x4FEE;&#x6539;Apk&#x5305;&#x7684;&#x540E;&#x7F00;&#x540D;, &#x4ECE;&#x201D;.apk&#x201D;&#x53D8;&#x4E3A;&#x201D;<strong>.zip</strong>&#x201C;, &#x89E3;&#x538B;&#x7F29;.<br>&#x8FDB;&#x5165;<strong>META-INF</strong>&#x6587;&#x4EF6;&#x5939;, &#x5373;<code>cd META-INF</code>.<br>&#x4F7F;&#x7528;&#x547D;&#x4EE4;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -printcert -file CERT.RSA</span><br></pre></td></tr></table></figure></p>
+<p>&#x5373;&#x53EF;, &#x663E;&#x793A;<strong>Apk&#x7684;&#x7B7E;&#x540D;</strong>.</p>
+<p>&#x83B7;&#x53D6;<strong>MD5</strong>, <strong>SHA1</strong>, <strong>SHA256</strong>.</p>
+<hr>
+<h1 id="&#x5305;&#x540D;"><a href="#&#x5305;&#x540D;" class="headerlink" title="&#x5305;&#x540D;"></a>&#x5305;&#x540D;</h1><p>&#x67E5;&#x770B;&#x5305;&#x540D;&#x5C31;&#x4E00;&#x884C;&#x547D;&#x4EE4;, &#x663E;&#x793A;Apk&#x7684;&#x4FE1;&#x606F;.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aapt dump badging [xxx.apk]</span><br></pre></td></tr></table></figure></p>
+<p>&#x8F93;&#x51FA;, <strong>package: name</strong>, &#x5373;&#x5305;&#x540D;.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">package: name=&apos;xxx.xxx.xxxxx&apos; </span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p><strong>&#x6CE8;:</strong> &#x4E5F;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x672C;&#x5730;&#x5305;&#x540D;, &#x5339;&#x914D;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x5BC6;&#x5319;.<br>&#x4FEE;&#x6539;&#x5E94;&#x7528;<strong>&#x5305;&#x540D;</strong>&#x7684;&#x65B9;&#x6CD5;, &#x5728;<strong>build.gradle</strong>&#x4E2D;, &#x6DFB;&#x52A0;<strong>applicationId</strong>, &#x5373;<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">android {</span><br><span class="line">    defaultConfig {</span><br><span class="line">        applicationId <span class="string">&quot;com.amap.location.demo&quot;</span></span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>&#x4FEE;&#x6539;&#x5305;&#x540D;&#x4E3A;<strong>com.amap.location.demo</strong>.</p>
+</blockquote>
+<p>&#x672A;&#x6DFB;&#x52A0;gradle&#x7684;&#x53C2;&#x6570;, &#x9ED8;&#x8BA4;&#x4F4D;&#x7F6E;&#x662F;<strong>AndroidManifest.xml</strong>,<br>&#x5176;&#x4E2D;manifest&#x7684;package&#x5C5E;&#x6027;, &#x8868;&#x793A;&#x5305;&#x540D;, &#x5373;<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">package</span>=<span class="string">&quot;wangchenlong.chunyu.me.wcl_amap_demo&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>build.gradle</strong>&#x7684;&#x5305;&#x540D;&#x5C5E;&#x6027;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E;<strong>manifest</strong>, &#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x4E5F;&#x662F;&#x4E00;&#x6837;.</p>
+</blockquote>
+<hr>
+<p>&#x5728;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x5E73;&#x53F0;&#x8F93;&#x5165;&#x7B7E;&#x540D;&#x548C;&#x5305;&#x540D;, &#x5C31;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x552F;&#x4E00;&#x5BC6;&#x94A5;, &#x653E;&#x5230;&#x7A0B;&#x5E8F;&#x4E2D;, &#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5E93;&#x4E86;. </p>
+<blockquote>
+<p><strong>&#x7B7E;&#x540D;+&#x5305;&#x540D;</strong>, &#x8868;&#x660E;Apk&#x7684;&#x552F;&#x4E00;&#x8EAB;&#x4EFD;, &#x9632;&#x6B62;&#x76D7;&#x7248;&#x4EFF;&#x5192;&#x7684;Apk&#x51FA;&#x73B0;, &#x662F;Android&#x7684;&#x5B89;&#x5168;&#x673A;&#x5236;.</p>
+</blockquote>
+<p><strong>PS:</strong> &#x516C;&#x53F8;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;, &#x9700;&#x8981;&#x7533;&#x8BF7;&#x552F;&#x4E00;&#x7684;&#x8D26;&#x53F7;, &#x7EDF;&#x4E00;&#x7BA1;&#x7406;; &#x4F5C;&#x4E3A;&#x5F00;&#x53D1;&#x8005;, &#x5728;&#x6D4B;&#x8BD5;&#x65F6;, &#x4E5F;&#x9700;&#x8981;&#x7533;&#x8BF7;&#x4E00;&#x4E9B;&#x6D4B;&#x8BD5;Key, &#x52A0;&#x5FEB;&#x5F00;&#x53D1;&#x901F;&#x5EA6;. </p>
+<p>OK, that&#x2019;s all! Enjoy it.</p>
+<blockquote>
+<p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/">http://www.wangchenlong.org/2016/03/12/get-app-cert-and-package/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://weibo.com/u/2852941392" target="_blank" rel="external">&#x5FAE;&#x535A;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>, <a href="https://slides.com/spikeking" target="_blank" rel="external">Slides</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
+</blockquote>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/私钥/" rel="tag">#私钥</a>
+          
+            <a href="/tags/签名/" rel="tag">#签名</a>
+          
+            <a href="/tags/MD5/" rel="tag">#MD5</a>
+          
+            <a href="/tags/SHA1/" rel="tag">#SHA1</a>
+          
+            <a href="/tags/SHA256/" rel="tag">#SHA256</a>
+          
+            <a href="/tags/包名/" rel="tag">#包名</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/12/1602/apply-flux-architecture/" rel="prev" title="实践移动端的 Flux 架构">
+                实践移动端的 Flux 架构 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/12/1602/get-app-cert-and-package/"
+     data-title="提取应用的签名和包名"
+     data-content=""
+     data-url="http://www.wangchenlong.org/2016/03/12/1602/get-app-cert-and-package/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+            <div align="center" style="margin: 20px 0px 0px 0px">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- 文章底部 -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:336px;height:280px"
+                   data-ad-client="ca-pub-9201665894952799"
+                   data-ad-slot="7302087069"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+          </div>
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/12/1602/get-app-cert-and-package/"
+           data-title="提取应用的签名和包名" data-url="http://www.wangchenlong.org/2016/03/12/1602/get-app-cert-and-package/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="C.L. Wang" />
+          <p class="site-author-name" itemprop="name">C.L. Wang</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/SpikeKing" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 简书
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2852941392" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> 微博
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/caroline_wendy" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> CSDN
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 掘金
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://slides.com/spikeking" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Slides
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">Links</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chunyuyisheng.com/" target="_blank">春雨医生</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chunyuyisheng.com/pedometer" target="_blank">计步器</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#签名"><span class="nav-number">1.</span> <span class="nav-text">签名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包名"><span class="nav-number">2.</span> <span class="nav-text">包名</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+      <!-- 侧栏广告 -->
+      <div align="center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- 侧栏底部 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:160px;height:600px"
+             data-ad-client="ca-pub-9201665894952799"
+             data-ad-slot="8220417066"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">C.L. Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"spikeking"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("24qpuQFXa0w8ead8gg6Rxxhc-gzGzoHsz", "O8vfKJtVanuyjh9NabH91ig7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>

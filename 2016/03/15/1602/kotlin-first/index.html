@@ -1,0 +1,1094 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="HM6XdT4pJXR7fFksvo3DvFAKVgeFg4ZUwh3iOGW8LHU" />
+
+
+
+
+  <meta name="baidu-site-verification" content="MPhG1F0aKe" />
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,Kotlin," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mystra" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web-icon.png?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="Kotlin&amp;#x662F;&amp;#x57FA;&amp;#x4E8E;JVM&amp;#x7684;&amp;#x7F16;&amp;#x7A0B;&amp;#x8BED;&amp;#x8A00;, &amp;#x7531;JetBrains&amp;#x516C;&amp;#x53F8;&amp;#x5F00;&amp;#x53D1;, &amp;#x76EE;&amp;#x524D;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5F00;&amp;#x6E90;.IntelliJ IDEA, PyCharm, A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kotlin(1) - 初探与集成 Android 项目">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/index.html">
+<meta property="og:site_name" content="Mystra">
+<meta property="og:description" content="Kotlin&amp;#x662F;&amp;#x57FA;&amp;#x4E8E;JVM&amp;#x7684;&amp;#x7F16;&amp;#x7A0B;&amp;#x8BED;&amp;#x8A00;, &amp;#x7531;JetBrains&amp;#x516C;&amp;#x53F8;&amp;#x5F00;&amp;#x53D1;, &amp;#x76EE;&amp;#x524D;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5F00;&amp;#x6E90;.IntelliJ IDEA, PyCharm, A">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/kotlin-logo.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/kotlin-plugin.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/kotlin-convert.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/kotlin-show.png">
+<meta property="og:updated_time" content="2016-03-19T00:00:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kotlin(1) - 初探与集成 Android 项目">
+<meta name="twitter:description" content="Kotlin&amp;#x662F;&amp;#x57FA;&amp;#x4E8E;JVM&amp;#x7684;&amp;#x7F16;&amp;#x7A0B;&amp;#x8BED;&amp;#x8A00;, &amp;#x7531;JetBrains&amp;#x516C;&amp;#x53F8;&amp;#x5F00;&amp;#x53D1;, &amp;#x76EE;&amp;#x524D;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5F00;&amp;#x6E90;.IntelliJ IDEA, PyCharm, A">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/kotlin-logo.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6261011353935283000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Kotlin(1) - 初探与集成 Android 项目 | Mystra </title>
+
+  <meta name="domain_verify" content="pmrgi33nmfuw4ir2ej3wc3thmnugk3tmn5xgoltpojtselbcm52wszbchirgmmzxgfqwcndggaztezjugizdoyjugftdqyzyhe2gemdcgm2timrcfqrhi2lnmvjwc5tfei5dcnbvhaytemztguydsnbypu">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-75037561-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f66791a2795ca9e84e2dc2c4d23fd05e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s6.cnzz.com/stat.php?id=1257956872&web_id=1257956872" type="text/javascript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <!--移动悬浮广告(阿里妈妈)-->
+
+  <!--移动底部-->
+
+  <!--底部弹窗广告-->
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mystra</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Love magic for itself!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'iv4HMbTagDPHwpSnKxxR','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Kotlin(1) - 初探与集成 Android 项目
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-15T09:35:00+08:00" content="2016-03-15">
+              2016-03-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/15/1602/kotlin-first/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/15/1602/kotlin-first/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/03/15/1602/kotlin-first/" class="leancloud_visitors" data-flag-title="Kotlin(1) - 初探与集成 Android 项目">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://kotlinlang.org/" target="_blank" rel="external">Kotlin</a>&#x662F;&#x57FA;&#x4E8E;JVM&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;, &#x7531;JetBrains&#x516C;&#x53F8;&#x5F00;&#x53D1;, &#x76EE;&#x524D;&#x5DF2;&#x7ECF;<a href="https://github.com/JetBrains/kotlin" target="_blank" rel="external">&#x5F00;&#x6E90;</a>.<br>IntelliJ IDEA, PyCharm, Android Studio&#x7B49;IDE, &#x5C31;&#x662F;&#x51FA;&#x81EA;&#x4E8E;JetBrains&#x516C;&#x53F8;.</p>
+<p>Kotlin&#x4ECB;&#x7ECD;:<br><em>Statically typed programming language for the JVM, Android and the browser. 100% interoperable with Java&#x2122;</em></p>
+<blockquote>
+<p>&#x7528;&#x4E8E;JVM, Android, &#x7F51;&#x9875;&#x7B49;&#x7684;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;, &#x5B8C;&#x5168;&#x517C;&#x5BB9;Java.</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>&#x66F4;&#x591A;: <a href="http://www.wangchenlong.org/">http://www.wangchenlong.org/</a></p>
+</blockquote>
+<p><img src="/2016/03/15/1602/kotlin-first/kotlin-logo.png" alt="Kotlin"></p>
+<p>Kotlin&#x4F5C;&#x4E3A;Android&#x793E;&#x533A;&#x5F53;&#x524D;&#x6BD4;&#x8F83;&#x70ED;&#x7684;&#x8BA8;&#x8BBA;&#x5185;&#x5BB9;, &#x5DF2;&#x7ECF;&#x53D1;&#x5E03;&#x4E86;<strong>1.0.0-rc&#x7248;&#x672C;</strong>, &#x5E76;&#x4E14;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E9B;Google&#x5F00;&#x53D1;&#x8005;&#x7684;&#x5173;&#x6CE8;, &#x6BD5;&#x7ADF;Android Studio&#x662F;&#x57FA;&#x4E8E;JetBrains&#x7684;&#x6846;&#x67B6;. Java&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8F6C;&#x6362;&#x4E3A;Kotlin&#x6587;&#x4EF6;,  &#x4E24;&#x8005;&#x5177;&#x6709;&#x975E;&#x5E38;&#x5F3A;&#x7684;&#x4E92;&#x64CD;&#x4F5C;&#x6027;. </p>
+<p>&#x66F4;&#x591A;&#x5173;&#x4E8E;Kotlin 1.0-rc&#x7684;&#x4ECB;&#x7ECD;, <a href="http://blog.jetbrains.com/kotlin/2016/02/kotlin-1-0-released-pragmatic-language-for-jvm-and-android/" target="_blank" rel="external">&#x53C2;&#x8003;</a>.</p>
+<p>Kotlin&#x5185;&#x5BB9;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x90E8;&#x5206;:<br>&#x57FA;&#x7840;<a href="http://www.wangchenlong.org/2016/03/15/kotlin-first/">&#x53C2;&#x8003;</a>: <strong>&#x521D;&#x63A2;&#x4E0E;&#x96C6;&#x6210;Android&#x9879;&#x76EE;</strong><br>&#x6269;&#x5C55;<a href="http://www.wangchenlong.org/2016/03/15/kotlin-extends-point/">&#x53C2;&#x8003;</a>: <strong>&#x4F18;&#x96C5;&#x5730;&#x6269;&#x5C55;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;</strong></p>
+<p>Talk is cheap, show you the code. &#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x5982;&#x4F55;&#x5728;&#x5DF2;&#x6709;Android&#x9879;&#x76EE;&#x4E2D;&#x96C6;&#x6210;Kotlin.</p>
+<p>&#x672C;&#x6587;&#x793A;&#x4F8B;&#x7684;Github<a href="https://github.com/SpikeKing/wcl-kotlin-demo" target="_blank" rel="external">&#x4E0B;&#x8F7D;&#x5730;&#x5740;</a></p>
+<hr>
+<h1 id="&#x914D;&#x7F6E;&#x9879;&#x76EE;"><a href="#&#x914D;&#x7F6E;&#x9879;&#x76EE;" class="headerlink" title="&#x914D;&#x7F6E;&#x9879;&#x76EE;"></a>&#x914D;&#x7F6E;&#x9879;&#x76EE;</h1><p>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;Android&#x9879;&#x76EE;.<br>&#x9879;&#x76EE;gradle:<br>&#x6DFB;&#x52A0;Kotlin&#x7684;&#x7248;&#x672C;&#x53F7;, &#x4F7F;&#x7528;&#x6700;&#x65B0;&#x7684;<strong>1.0.0-rc</strong>, &#x4FDD;&#x6301;&#x7248;&#x672C;&#x4E00;&#x81F4;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">buildscript</span> {</span><br><span class="line">    ext.kotlin_version = <span class="string">&quot;1.0.0-rc-1036&quot;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x6A21;&#x5757;gradle:<br>&#x6DFB;&#x52A0;&#x7C7B;&#x7684;&#x8DEF;&#x5F84;, <strong>&#x5FC5;&#x987B;</strong>&#x5728;&#x6A21;&#x5757;&#x4E2D;&#x6DFB;&#x52A0;, &#x56E0;&#x4E3A;<strong>kotlin-android-extensions</strong>&#x63D2;&#x4EF6;&#x4F1A;&#x4F7F;&#x7528;&#x4F9D;&#x8D56;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">buildscript</span> {</span><br><span class="line">    <span class="keyword">repositories</span> {</span><br><span class="line">        jcenter()</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">dependencies</span> {</span><br><span class="line">        <span class="keyword">classpath</span> <span class="string">&quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot;</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x6DFB;&#x52A0;Kotlin&#x652F;&#x6301;Android&#x7684;&#x63D2;&#x4EF6;<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">&apos;kotlin-android&apos;</span></span><br><span class="line">apply plugin: <span class="string">&apos;kotlin-android-extensions&apos;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>kotlin-android&#x7528;&#x4E8E;&#x7F16;&#x8BD1;Android&#x4EE3;&#x7801;, kotlin-android-extensions&#x7528;&#x4E8E;&#x6269;&#x5C55;&#x7ED1;&#x5B9A;&#x5173;&#x7CFB;.</p>
+</blockquote>
+<p>&#x6DFB;&#x52A0;Java&#x7684;&#x7F16;&#x8BD1;&#x8DEF;&#x5F84;, &#x5728;main&#x4E2D;&#x521B;&#x5EFA;kotlin&#x6587;&#x4EF6;&#x5939;, &#x7528;&#x4E8E;&#x5B58;&#x653E;kotlin&#x4EE3;&#x7801;(&#x5EFA;&#x8BAE;).<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sourceSets</span> {</span><br><span class="line">    main.java.srcDirs += <span class="string">&apos;src/main/kotlin&apos;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x6DFB;&#x52A0;maven&#x7684;&#x4F9D;&#x8D56;.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">dependencies</span> {</span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version&quot;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x5B8C;&#x6574;&#x7684;&#x652F;&#x6301;Kotlin&#x7684;&#x6A21;&#x5757;build.gradle.<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">buildscript</span> {</span><br><span class="line">    <span class="keyword">repositories</span> {</span><br><span class="line">        jcenter()</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">dependencies</span> {</span><br><span class="line">        <span class="keyword">classpath</span> <span class="string">&quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot;</span></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">apply plugin: <span class="string">&apos;com.android.application&apos;</span></span><br><span class="line">apply plugin: <span class="string">&apos;kotlin-android&apos;</span></span><br><span class="line">apply plugin: <span class="string">&apos;kotlin-android-extensions&apos;</span></span><br><span class="line"></span><br><span class="line">android {</span><br><span class="line">    compileSdkVersion <span class="number">23</span></span><br><span class="line">    buildToolsVersion <span class="string">&quot;23.0.2&quot;</span></span><br><span class="line"></span><br><span class="line">    defaultConfig {</span><br><span class="line">        applicationId <span class="string">&quot;me.chunyu.spike.wcl_kotlin_demo&quot;</span></span><br><span class="line">        minSdkVersion <span class="number">14</span></span><br><span class="line">        targetSdkVersion <span class="number">23</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">&quot;1.0&quot;</span></span><br><span class="line">    }</span><br><span class="line">    buildTypes {</span><br><span class="line">        release {</span><br><span class="line">            minifyEnabled <span class="keyword">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">&apos;proguard-android.txt&apos;</span>), <span class="string">&apos;proguard-rules.pro&apos;</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">sourceSets</span> {</span><br><span class="line">        main.java.srcDirs += <span class="string">&apos;src/main/kotlin&apos;</span></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> {</span><br><span class="line">    <span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">&apos;libs&apos;</span>, <span class="keyword">include</span>: [<span class="string">&apos;*.jar&apos;</span>])</span><br><span class="line">    testCompile <span class="string">&apos;junit:junit:4.12&apos;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&apos;com.android.support:appcompat-v7:23.1.1&apos;</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">&quot;org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version&quot;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="&#x5B89;&#x88C5;&#x63D2;&#x4EF6;"><a href="#&#x5B89;&#x88C5;&#x63D2;&#x4EF6;" class="headerlink" title="&#x5B89;&#x88C5;&#x63D2;&#x4EF6;"></a>&#x5B89;&#x88C5;&#x63D2;&#x4EF6;</h1><p>Android Studio&#x7684;Kotlin&#x63D2;&#x4EF6;, &#x7528;&#x4E8E;&#x652F;&#x6301;Kotlin&#x7684;&#x8BED;&#x8A00;&#x7279;&#x6027;.<br>&#x9009;&#x62E9;: Preferences -&gt; Plugins -&gt; Install JetBrains plugin -&gt; kotlin.</p>
+<p><img src="/2016/03/15/1602/kotlin-first/kotlin-plugin.png" alt="Plugin"></p>
+<blockquote>
+<p>&#x53EA;&#x9700;&#x8981;&#x5B89;&#x88C5;Kotlin&#x5373;&#x53EF;, &#x56E0;&#x4E3A;Kotlin Extensions&#x5DF2;&#x7ECF;&#x5305;&#x542B;&#x5728;Kotlin&#x4E2D;&#x4E86;.</p>
+</blockquote>
+<hr>
+<h1 id="&#x8F6C;&#x6362;&#x4EE3;&#x7801;"><a href="#&#x8F6C;&#x6362;&#x4EE3;&#x7801;" class="headerlink" title="&#x8F6C;&#x6362;&#x4EE3;&#x7801;"></a>&#x8F6C;&#x6362;&#x4EE3;&#x7801;</h1><p>&#x9009;&#x4E2D;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x7684;Java&#x6587;&#x4EF6;, &#x5982;<strong>MainActivity.java</strong>,<br>&#x4F7F;&#x7528;Command+Shift+A, &#x542F;&#x52A8;Action, &#x8F93;&#x5165;Convert, &#x627E;&#x5230;&#x547D;&#x4EE4;, &#x5373;&#x53EF;&#x8F6C;&#x6362;, &#x5982;<br><img src="/2016/03/15/1602/kotlin-first/kotlin-convert.png" alt="Convert"></p>
+<p>&#x6216;<br>&#x9009;&#x62E9;Code -&gt; Convert Java File to Kotlin File, &#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5FEB;&#x6377;&#x952E;.</p>
+<p>&#x628A;.kt&#x7684;&#x6587;&#x4EF6;&#x526A;&#x5207;&#x5230;kotlin&#x6587;&#x4EF6;&#x5939;&#x4E0B;, &#x5373;&#x53EF;&#x4F7F;&#x7528;.</p>
+<blockquote>
+<p>&#x63A8;&#x8350;Kotlin&#x6587;&#x4EF6;&#x548C;Java&#x6587;&#x4EF6;&#x5206;&#x5F00;&#x5B58;&#x653E;, &#x4E0D;&#x8FC7;&#x653E;&#x5728;&#x4E00;&#x8D77;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;.</p>
+</blockquote>
+<hr>
+<h1 id="&#x6DFB;&#x52A0;&#x8D44;&#x6E90;"><a href="#&#x6DFB;&#x52A0;&#x8D44;&#x6E90;" class="headerlink" title="&#x6DFB;&#x52A0;&#x8D44;&#x6E90;"></a>&#x6DFB;&#x52A0;&#x8D44;&#x6E90;</h1><p>Kotlin&#x7684;&#x4EE3;&#x7801;&#x975E;&#x5E38;&#x7B80;&#x6D01;, &#x8BBE;&#x7F6E;&#x5C5E;&#x6027;&#x4E5F;&#x6BD4;&#x8F83;&#x65B9;&#x4FBF;.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import android.support.v7.app.AppCompatActivity</span><br><span class="line">import android.os.Bundle</span><br><span class="line">import kotlinx.android.synthetic.main.activity_main.*</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Kotlin&#x7684;&#x4E3B;&#x7C7B;, &#x6DFB;&#x52A0;&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;.</span><br><span class="line"> */</span><br><span class="line">class MainActivity : AppCompatActivity() {</span><br><span class="line">    override fun onCreate(savedInstanceState: Bundle?) {</span><br><span class="line">        super.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.activity_main)</span><br><span class="line">        main_tv_message.text = &quot;Hello Kotlin&quot;</span><br><span class="line">        main_tv_message.textSize = 20.0f</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>id&#x662F;main_tv_message&#x7684;TextView, &#x8BBE;&#x7F6E;text&#x4E3A;&#x201D;Hello Kotlin&#x201D;.<br>&#x4EE3;&#x7801;&#x98CE;&#x683C;&#x4E0E;Python&#x7B49;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;, &#x5BB9;&#x6613;&#x7F16;&#x5199;.</p>
+</blockquote>
+<hr>
+<p>&#x663E;&#x793A;</p>
+<p><img src="/2016/03/15/1602/kotlin-first/kotlin-show.png" alt="&#x6548;&#x679C;"></p>
+<p><a href="https://kotlinlang.org/docs/tutorials/" target="_blank" rel="external">&#x5B98;&#x65B9;</a>&#x63D0;&#x4F9B;&#x4E86;&#x5173;&#x4E8E;Kotlin&#x6BD4;&#x8F83;&#x4E30;&#x5BCC;&#x7684;&#x8BB2;&#x89E3;, &#x5927;&#x5BB6;&#x4E5F;&#x53EF;&#x4EE5;&#x9605;&#x8BFB;&#x6E90;&#x7801;. Just for fun.</p>
+<p>OK, that&#x2019;s all! Enjoy it!</p>
+<blockquote>
+<p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/03/15/kotlin-first/">http://www.wangchenlong.org/2016/03/15/kotlin-first/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://weibo.com/u/2852941392" target="_blank" rel="external">&#x5FAE;&#x535A;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>, <a href="https://slides.com/spikeking" target="_blank" rel="external">Slides</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
+</blockquote>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/Kotlin/" rel="tag">#Kotlin</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/15/1602/svg-path-animation/" rel="next" title="Vectors时代(2) - 图像的路径动画">
+                <i class="fa fa-chevron-left"></i> Vectors时代(2) - 图像的路径动画
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/15/1602/kotlin-extends-point/" rel="prev" title="Kotlin(2) - 优雅地扩展类的方法和属性">
+                Kotlin(2) - 优雅地扩展类的方法和属性 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/15/1602/kotlin-first/"
+     data-title="Kotlin(1) - 初探与集成 Android 项目"
+     data-content=""
+     data-url="http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+            <div align="center" style="margin: 20px 0px 0px 0px">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- 文章底部 -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:336px;height:280px"
+                   data-ad-client="ca-pub-9201665894952799"
+                   data-ad-slot="7302087069"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+          </div>
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/15/1602/kotlin-first/"
+           data-title="Kotlin(1) - 初探与集成 Android 项目" data-url="http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="C.L. Wang" />
+          <p class="site-author-name" itemprop="name">C.L. Wang</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/SpikeKing" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 简书
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2852941392" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> 微博
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/caroline_wendy" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> CSDN
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 掘金
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://slides.com/spikeking" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Slides
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">Links</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chunyuyisheng.com/" target="_blank">春雨医生</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chunyuyisheng.com/pedometer" target="_blank">计步器</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置项目"><span class="nav-number">1.</span> <span class="nav-text">配置项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装插件"><span class="nav-number">2.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#转换代码"><span class="nav-number">3.</span> <span class="nav-text">转换代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加资源"><span class="nav-number">4.</span> <span class="nav-text">添加资源</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+      <!-- 侧栏广告 -->
+      <div align="center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- 侧栏底部 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:160px;height:600px"
+             data-ad-client="ca-pub-9201665894952799"
+             data-ad-slot="8220417066"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">C.L. Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"spikeking"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("24qpuQFXa0w8ead8gg6Rxxhc-gzGzoHsz", "O8vfKJtVanuyjh9NabH91ig7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>
