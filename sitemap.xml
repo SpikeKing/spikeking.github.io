@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/22/1603/225-face-detect/</loc>
+    
+    <lastmod>2016-03-22T00:33:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/22/1603/226-recycler-view-first/</loc>
     
     <lastmod>2016-03-22T00:32:17.000Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://www.wangchenlong.org/2016/03/22/1603/224-star-explode-anim/</loc>
     
     <lastmod>2016-03-22T00:26:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/22/1603/225-face-detect/</loc>
-    
-    <lastmod>2016-03-22T00:26:27.000Z</lastmod>
     
   </url>
   
