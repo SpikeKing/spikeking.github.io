@@ -1,0 +1,1092 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="HM6XdT4pJXR7fFksvo3DvFAKVgeFg4ZUwh3iOGW8LHU" />
+
+
+
+
+  <meta name="baidu-site-verification" content="MPhG1F0aKe" />
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,控件," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mystra" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web-icon.png?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="RecyclerView&amp;#x76F8;&amp;#x6BD4;&amp;#x4E8E;ListView, &amp;#x5728;&amp;#x56DE;&amp;#x6536;&amp;#x91CD;&amp;#x7528;&amp;#x65F6;&amp;#x66F4;&amp;#x5177;&amp;#x6709;&amp;#x7075;&amp;#x6D3B;&amp;#x6027;, &amp;#x4E5F;&amp;#x5C31;&amp;#x662F;&amp;#x4F4E;&amp;#x8026;&amp;#x5408;, &amp;#x5E7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用RecyclerView控件实现瀑布流">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/03/22/1603/226-recycler-view-first/index.html">
+<meta property="og:site_name" content="Mystra">
+<meta property="og:description" content="RecyclerView&amp;#x76F8;&amp;#x6BD4;&amp;#x4E8E;ListView, &amp;#x5728;&amp;#x56DE;&amp;#x6536;&amp;#x91CD;&amp;#x7528;&amp;#x65F6;&amp;#x66F4;&amp;#x5177;&amp;#x6709;&amp;#x7075;&amp;#x6D3B;&amp;#x6027;, &amp;#x4E5F;&amp;#x5C31;&amp;#x662F;&amp;#x4F4E;&amp;#x8026;&amp;#x5408;, &amp;#x5E7">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/03/22/1603/226-recycler-view-first/recycler-demo.png">
+<meta property="og:image" content="http://7xrsre.com1.z0.glb.clouddn.com/spike-ad-girl-socks-6.jpg">
+<meta property="og:updated_time" content="2016-03-22T00:26:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用RecyclerView控件实现瀑布流">
+<meta name="twitter:description" content="RecyclerView&amp;#x76F8;&amp;#x6BD4;&amp;#x4E8E;ListView, &amp;#x5728;&amp;#x56DE;&amp;#x6536;&amp;#x91CD;&amp;#x7528;&amp;#x65F6;&amp;#x66F4;&amp;#x5177;&amp;#x6709;&amp;#x7075;&amp;#x6D3B;&amp;#x6027;, &amp;#x4E5F;&amp;#x5C31;&amp;#x662F;&amp;#x4F4E;&amp;#x8026;&amp;#x5408;, &amp;#x5E7">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/03/22/1603/226-recycler-view-first/recycler-demo.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6261011353935283000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 使用RecyclerView控件实现瀑布流 | Mystra </title>
+
+  <meta name="domain_verify" content="pmrgi33nmfuw4ir2ej3wc3thmnugk3tmn5xgoltpojtselbcm52wszbchirgmmzxgfqwcndggaztezjugizdoyjugftdqyzyhe2gemdcgm2timrcfqrhi2lnmvjwc5tfei5dcnbvhaytemztguydsnbypu">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-75037561-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f66791a2795ca9e84e2dc2c4d23fd05e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s6.cnzz.com/stat.php?id=1257956872&web_id=1257956872" type="text/javascript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <!--移动悬浮广告(阿里妈妈)-->
+
+  <!--移动底部-->
+
+  <!--底部弹窗广告-->
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mystra</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Love magic for itself!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'iv4HMbTagDPHwpSnKxxR','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用RecyclerView控件实现瀑布流
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-22T08:14:00+08:00" content="2016-03-22">
+              2016-03-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/22/1603/226-recycler-view-first/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/22/1603/226-recycler-view-first/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/03/22/1603/226-recycler-view-first/" class="leancloud_visitors" data-flag-title="使用RecyclerView控件实现瀑布流">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>RecyclerView&#x76F8;&#x6BD4;&#x4E8E;ListView, &#x5728;&#x56DE;&#x6536;&#x91CD;&#x7528;&#x65F6;&#x66F4;&#x5177;&#x6709;&#x7075;&#x6D3B;&#x6027;, &#x4E5F;&#x5C31;&#x662F;&#x4F4E;&#x8026;&#x5408;, &#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x4E86;&#x6269;&#x5C55;. &#x52A0;&#x8F7D;&#x591A;&#x4E2A;&#x89C6;&#x56FE;&#x65F6;, &#x5E94;&#x8BE5;&#x591A;&#x7528;RecyclerView&#x4EE3;&#x66FF;ListView.</p>
+<a id="more"></a>
+<blockquote>
+<p>&#x66F4;&#x591A;: <a href="http://www.wangchenlong.org/">http://www.wangchenlong.org/</a></p>
+</blockquote>
+<p>&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x8FD9;&#x4E1C;&#x897F;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x7528;? &#x6BD4;&#x5982;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x7011;&#x5E03;&#x6D41;&#x7684;&#x89C6;&#x56FE;.<br><img src="/2016/03/22/1603/226-recycler-view-first/recycler-demo.png" alt="&#x7011;&#x5E03;&#x6D41;"></p>
+<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x4ECE;&#x4E00;&#x4E2A;HelloWorld&#x5199;&#x8D77;, &#x770B;&#x770B;&#x5982;&#x4F55;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;RecyclerView.</p>
+<hr>
+<h1 id="&#x4F9D;&#x8D56;"><a href="#&#x4F9D;&#x8D56;" class="headerlink" title="&#x4F9D;&#x8D56;"></a>&#x4F9D;&#x8D56;</h1><p>Gradle&#x914D;&#x7F6E;, &#x6DFB;&#x52A0;RecyclerView&#x5E93;&#x7684;&#x4F9D;&#x8D56;.</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">&apos;com.android.support:recyclerview-v7:+&apos;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="&#x5E03;&#x5C40;"><a href="#&#x5E03;&#x5C40;" class="headerlink" title="&#x5E03;&#x5C40;"></a>&#x5E03;&#x5C40;</h1><p>&#x5E03;&#x5C40;&#x6587;&#x4EF6;<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.RecyclerView</span></span><br><span class="line">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/test_recycler_view&quot;</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="&#x4EE3;&#x7801;"><a href="#&#x4EE3;&#x7801;" class="headerlink" title="&#x4EE3;&#x7801;"></a>&#x4EE3;&#x7801;</h1><p>LayoutManager: &#x7BA1;&#x7406;RecyclerView&#x7684;&#x7ED3;&#x6784;.<br>Adapter: &#x5904;&#x7406;&#x6BCF;&#x4E2A;Item&#x7684;&#x663E;&#x793A;.<br>ItemDecoration: &#x6DFB;&#x52A0;&#x6BCF;&#x4E2A;Item&#x7684;&#x88C5;&#x9970;.<br>ItemAnimator: &#x8D1F;&#x8D23;&#x6DFB;&#x52A0;\&#x79FB;&#x9664;\&#x91CD;&#x6392;&#x5E8F;&#x65F6;&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;.</p>
+<blockquote>
+<p>LayoutManager\Adapter&#x662F;&#x5FC5;&#x987B;, ItemDecoration\ItemAnimator&#x662F;&#x53EF;&#x9009;.</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * &#x521D;&#x59CB;&#x5316;RecyclerView</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@param</span> recyclerView &#x4E3B;&#x63A7;&#x4EF6;</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initRecyclerView</span><span class="params">(RecyclerView recyclerView)</span> </span>{</span><br><span class="line">    recyclerView.setHasFixedSize(<span class="keyword">true</span>); <span class="comment">// &#x8BBE;&#x7F6E;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;</span></span><br><span class="line">    initRecyclerLayoutManager(recyclerView); <span class="comment">// &#x521D;&#x59CB;&#x5316;&#x5E03;&#x5C40;</span></span><br><span class="line">    initRecyclerAdapter(recyclerView); <span class="comment">// &#x521D;&#x59CB;&#x5316;&#x9002;&#x914D;&#x5668;</span></span><br><span class="line">    initItemDecoration(recyclerView); <span class="comment">// &#x521D;&#x59CB;&#x5316;&#x88C5;&#x9970;</span></span><br><span class="line">    initItemAnimator(recyclerView); <span class="comment">// &#x521D;&#x59CB;&#x5316;&#x52A8;&#x753B;&#x6548;&#x679C;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="LayoutManager"><a href="#LayoutManager" class="headerlink" title="LayoutManager"></a>LayoutManager</h1><p>&#x7BA1;&#x7406;RecyclerView&#x7684;&#x5E03;&#x5C40;&#x7ED3;&#x6784;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initRecyclerLayoutManager</span><span class="params">(RecyclerView recyclerView)</span> </span>{</span><br><span class="line">    <span class="comment">// &#x9519;&#x5217;&#x7F51;&#x683C;&#x5E03;&#x5C40;</span></span><br><span class="line">    recyclerView.setLayoutManager(<span class="keyword">new</span> StaggeredGridLayoutManager(<span class="number">4</span>,</span><br><span class="line">            StaggeredGridLayoutManager.VERTICAL));</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p> &#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;LayoutManager, &#x7011;&#x5E03;&#x6D41;&#x4F7F;&#x7528;&#x9519;&#x5217;&#x7F51;&#x683C;&#x5E03;&#x5C40;.</p>
+</blockquote>
+<hr>
+<h1 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter"></a>Adapter</h1><p>&#x9002;&#x914D;&#x5668;, &#x5904;&#x7406;RecyclerView&#x7684;Item&#x4E8B;&#x52A1;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initRecyclerAdapter</span><span class="params">(RecyclerView recyclerView)</span> </span>{</span><br><span class="line">    mAdapter = <span class="keyword">new</span> MyAdapter(getData());</span><br><span class="line">    recyclerView.setAdapter(mAdapter);</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x5BF9;&#x4E8E;Adapter, &#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C55;&#x5F00;&#x6765;&#x8BF4;, &#x5148;&#x770B;&#x770B;&#x7C7B;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAdapter</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">Adapter</span>&lt;<span class="title">MyViewHolder</span>&gt; </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> List&lt;DataModel&gt; mDataModels;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Integer&gt; mHeights;</span><br><span class="line"></span><br><span class="line">    MyAdapter(List&lt;DataModel&gt; dataModels) {</span><br><span class="line">        <span class="keyword">if</span> (dataModels == <span class="keyword">null</span>) {</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">&quot;DataModel must not be null&quot;</span>);</span><br><span class="line">        }</span><br><span class="line">        mDataModels = dataModels;</span><br><span class="line">        mHeights = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> MyViewHolder <span class="title">onCreateViewHolder</span><span class="params">(ViewGroup parent, <span class="keyword">int</span> viewType)</span> </span>{</span><br><span class="line">        View itemView = LayoutInflater.from(parent.getContext())</span><br><span class="line">                .inflate(R.layout.item_recycler_view, parent, <span class="keyword">false</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MyViewHolder(itemView);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBindViewHolder</span><span class="params">(MyViewHolder holder, <span class="keyword">int</span> position)</span> </span>{</span><br><span class="line">        DataModel dataModel = mDataModels.get(position);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// &#x968F;&#x673A;&#x9AD8;&#x5EA6;, &#x6A21;&#x62DF;&#x7011;&#x5E03;&#x6548;&#x679C;.</span></span><br><span class="line">        <span class="keyword">if</span> (mHeights.size() &lt;= position) {</span><br><span class="line">            mHeights.add((<span class="keyword">int</span>) (<span class="number">100</span> + Math.random() * <span class="number">300</span>));</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        ViewGroup.LayoutParams lp = holder.getTvLabel().getLayoutParams();</span><br><span class="line">        lp.height = mHeights.get(position);</span><br><span class="line"></span><br><span class="line">        holder.getTvLabel().setLayoutParams(lp);</span><br><span class="line"></span><br><span class="line">        holder.getTvLabel().setText(dataModel.getLabel());</span><br><span class="line">        holder.getTvDateTime().setText(<span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd&quot;</span>, Locale.ENGLISH)</span><br><span class="line">                .format(dataModel.getDateTime()));</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getItemCount</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> mDataModels.size();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addData</span><span class="params">(<span class="keyword">int</span> position)</span> </span>{</span><br><span class="line">        DataModel model = <span class="keyword">new</span> DataModel();</span><br><span class="line">        model.setDateTime(getBeforeDay(<span class="keyword">new</span> Date(), position));</span><br><span class="line">        model.setLabel(<span class="string">&quot;No. &quot;</span> + (<span class="keyword">int</span>) (<span class="keyword">new</span> Random().nextDouble() * <span class="number">20.0f</span>));</span><br><span class="line"></span><br><span class="line">        mDataModels.add(position, model);</span><br><span class="line">        notifyItemInserted(position);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeData</span><span class="params">(<span class="keyword">int</span> position)</span> </span>{</span><br><span class="line">        mDataModels.remove(position);</span><br><span class="line">        notifyItemRemoved(position);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * &#x83B7;&#x53D6;&#x65E5;&#x671F;&#x7684;&#x524D;&#x4E00;&#x5929;</span><br><span class="line">     *</span><br><span class="line">     * <span class="doctag">@param</span> date &#x65E5;&#x671F;</span><br><span class="line">     * <span class="doctag">@param</span> i    &#x504F;&#x79BB;</span><br><span class="line">     * <span class="doctag">@return</span> &#x65B0;&#x7684;&#x65E5;&#x671F;</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Date <span class="title">getBeforeDay</span><span class="params">(Date date, <span class="keyword">int</span> i)</span> </span>{</span><br><span class="line">        Calendar calendar = Calendar.getInstance();</span><br><span class="line">        calendar.setTime(date);</span><br><span class="line">        calendar.add(Calendar.DAY_OF_YEAR, i * (-<span class="number">1</span>));</span><br><span class="line">        <span class="keyword">return</span> calendar.getTime();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>onCreateViewHolder&#x521B;&#x5EFA;ViewHolder.<br>onBindViewHolder&#x7ED1;&#x5B9A;&#x6BCF;&#x4E00;&#x9879;&#x6570;&#x636E;.<br>getItemCount&#x8FD4;&#x56DE;&#x5217;&#x8868;&#x957F;&#x5EA6;.</p>
+<p>RecyclerView&#x5F3A;&#x5236;&#x4F7F;&#x7528;ViewHolder.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyViewHolder</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">ViewHolder</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> TextView mTvLabel; <span class="comment">// &#x6807;&#x7B7E;</span></span><br><span class="line">    <span class="keyword">private</span> TextView mTvDateTime; <span class="comment">// &#x65E5;&#x671F;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyViewHolder</span><span class="params">(View itemView)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>(itemView);</span><br><span class="line">        mTvLabel = (TextView) itemView.findViewById(R.id.item_text);</span><br><span class="line">        mTvDateTime = (TextView) itemView.findViewById(R.id.item_date);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TextView <span class="title">getTvLabel</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> mTvLabel;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TextView <span class="title">getTvDateTime</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> mTvDateTime;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>&#x5728;onCreateViewHolder&#x65B9;&#x6CD5;, &#x521B;&#x5EFA;&#x7C7B;; &#x5728;onBindViewHolder&#x65B9;&#x6CD5;, &#x7ED1;&#x5B9A;&#x6570;&#x636E;.</p>
+</blockquote>
+<p>DataModel<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataModel</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String mLabel;</span><br><span class="line">    <span class="keyword">private</span> Date mDateTime;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLabel</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> mLabel;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLabel</span><span class="params">(String label)</span> </span>{</span><br><span class="line">        mLabel = label;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Date <span class="title">getDateTime</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> mDateTime;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDateTime</span><span class="params">(Date dateTime)</span> </span>{</span><br><span class="line">        mDateTime = dateTime;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<h1 id="ItemDecoration"><a href="#ItemDecoration" class="headerlink" title="ItemDecoration"></a>ItemDecoration</h1><p>&#x9879;&#x7684;&#x88C5;&#x9970;, &#x6BD4;&#x5982;ListView&#x4E2D;&#x7684;&#x5206;&#x5272;&#x7EBF;, &#x5728;&#x672C;&#x4F8B;&#x4E2D;, &#x5DE6;&#x53F3;&#x4E24;&#x6761;&#x7C89;&#x7EBF;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initItemDecoration</span><span class="params">(RecyclerView recyclerView)</span> </span>{</span><br><span class="line">    recyclerView.addItemDecoration(<span class="keyword">new</span> MyItemDecoration(<span class="keyword">this</span>));</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>ItemDecoration,  &#x6CE8;&#x610F;parent&#x548C;child&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyItemDecoration</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">ItemDecoration</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span>[] ATTRS = <span class="keyword">new</span> <span class="keyword">int</span>[]{android.R.attr.listDivider};</span><br><span class="line">    <span class="keyword">private</span> Drawable mDivider;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyItemDecoration</span><span class="params">(Context context)</span> </span>{</span><br><span class="line">        <span class="keyword">final</span> TypedArray array = context.obtainStyledAttributes(ATTRS);</span><br><span class="line">        mDivider = array.getDrawable(<span class="number">0</span>);</span><br><span class="line">        array.recycle();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas c, RecyclerView parent, State state)</span> </span>{</span><br><span class="line">        drawHorizontal(c, parent);</span><br><span class="line">        drawVertical(c, parent);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x6C34;&#x5E73;&#x7EBF;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drawHorizontal</span><span class="params">(Canvas c, RecyclerView parent)</span> </span>{</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> childCount = parent.getChildCount();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// &#x5728;&#x6BCF;&#x4E00;&#x4E2A;&#x5B50;&#x63A7;&#x4EF6;&#x7684;&#x5E95;&#x90E8;&#x753B;&#x7EBF;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; childCount; i++) {</span><br><span class="line">            <span class="keyword">final</span> View child = parent.getChildAt(i);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> left = child.getLeft() + child.getPaddingLeft();</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> right = child.getWidth() + child.getLeft() - child.getPaddingRight();</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> top = child.getBottom() - mDivider.getIntrinsicHeight() - child.getPaddingBottom();</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> bottom = top + mDivider.getIntrinsicHeight();</span><br><span class="line">            mDivider.setBounds(left, top, right, bottom);</span><br><span class="line">            mDivider.draw(c);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x7AD6;&#x76F4;&#x7EBF;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drawVertical</span><span class="params">(Canvas c, RecyclerView parent)</span> </span>{</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> childCount = parent.getChildCount();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// &#x5728;&#x6BCF;&#x4E00;&#x4E2A;&#x5B50;&#x63A7;&#x4EF6;&#x7684;&#x53F3;&#x4FA7;&#x753B;&#x7EBF;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; childCount; i++) {</span><br><span class="line">            <span class="keyword">final</span> View child = parent.getChildAt(i);</span><br><span class="line">            <span class="keyword">int</span> right = child.getRight() - child.getPaddingRight();</span><br><span class="line">            <span class="keyword">int</span> left = right - mDivider.getIntrinsicWidth();</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> top = child.getTop() + child.getPaddingTop();</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> bottom = child.getTop() + child.getHeight() - child.getPaddingBottom();</span><br><span class="line"></span><br><span class="line">            mDivider.setBounds(left, top, right, bottom);</span><br><span class="line">            mDivider.draw(c);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Item&#x4E4B;&#x95F4;&#x7684;&#x7559;&#x767D;</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getItemOffsets</span><span class="params">(Rect outRect, View view, RecyclerView parent, State state)</span> </span>{</span><br><span class="line">        outRect.set(<span class="number">0</span>, <span class="number">0</span>, mDivider.getIntrinsicWidth(), mDivider.getIntrinsicHeight());</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x672C;&#x4F8B;&#x91CD;&#x5199;&#x4E86;listDivider<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">&quot;AppTheme&quot;</span> <span class="attr">parent</span>=<span class="string">&quot;Theme.AppCompat.Light.DarkActionBar&quot;</span>&gt;</span><span class="xml"></span><br><span class="line">	...</span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">&quot;android:listDivider&quot;</span>&gt;</span>@drawable/divider_bg<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">shape</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="line">       <span class="attr">android:shape</span>=<span class="string">&quot;rectangle&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">&quot;#ff00ff&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;4dp&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">size</span> <span class="attr">android:width</span>=<span class="string">&quot;4dp&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="ItemAnimator"><a href="#ItemAnimator" class="headerlink" title="ItemAnimator"></a>ItemAnimator</h1><p>&#x52A8;&#x753B;&#x6548;&#x679C;&#x6BD4;&#x8F83;&#x590D;&#x6742;, &#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x52A8;&#x753B;. &#x5982;&#x8981;&#x5B9A;&#x5236;&#x7684;&#x8BDD;, &#x7EE7;&#x627F;DefaultItemAnimator; &#x5982;&#x8BBE;&#x7F6E;null, &#x5219;&#x4E0D;&#x663E;&#x793A;&#x4EFB;&#x4F55;&#x52A8;&#x753B;.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line">    private void initItemAnimator(RecyclerView recyclerView) {</span><br><span class="line">        recyclerView.setItemAnimator(new DefaultItemAnimator()); // &#x9ED8;&#x8BA4;&#x52A8;&#x753B;</span><br><span class="line">    }</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"># &#x6700;&#x7EC8;</span><br><span class="line">&#x6700;&#x7EC8;&#x7684;&#x4EE3;&#x7801;&#x903B;&#x8F91;</span><br><span class="line">```java</span><br><span class="line">public class MainActivity extends AppCompatActivity {</span><br><span class="line"></span><br><span class="line">    private MyAdapter mAdapter;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) {</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);</span><br><span class="line">        setSupportActionBar(toolbar);</span><br><span class="line"></span><br><span class="line">        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);</span><br><span class="line">        fab.setOnClickListener(new View.OnClickListener() {</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(View view) {</span><br><span class="line">                Snackbar.make(view, &quot;Replace with your own action&quot;, Snackbar.LENGTH_LONG)</span><br><span class="line">                        .setAction(&quot;Action&quot;, null).show();</span><br><span class="line">            }</span><br><span class="line">        });</span><br><span class="line"></span><br><span class="line">        // &#x521D;&#x59CB;&#x5316;RecyclerView</span><br><span class="line">        initRecyclerView((RecyclerView) findViewById(R.id.test_recycler_view));</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * &#x521D;&#x59CB;&#x5316;RecyclerView</span><br><span class="line">     *</span><br><span class="line">     * @param recyclerView &#x4E3B;&#x63A7;&#x4EF6;</span><br><span class="line">     */</span><br><span class="line">    private void initRecyclerView(RecyclerView recyclerView) {</span><br><span class="line">        recyclerView.setHasFixedSize(true); // &#x8BBE;&#x7F6E;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;</span><br><span class="line">        initRecyclerLayoutManager(recyclerView); // &#x521D;&#x59CB;&#x5316;LayoutManager</span><br><span class="line">        initRecyclerAdapter(recyclerView); // &#x521D;&#x59CB;&#x5316;Adapter</span><br><span class="line">        initItemDecoration(recyclerView); // &#x521D;&#x59CB;&#x5316;&#x8FB9;&#x754C;&#x88C5;&#x9970;</span><br><span class="line">        initItemAnimator(recyclerView); // &#x521D;&#x59CB;&#x5316;&#x52A8;&#x753B;&#x6548;&#x679C;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * &#x521D;&#x59CB;&#x5316;RecyclerView&#x7684;LayoutManager</span><br><span class="line">     *</span><br><span class="line">     * @param recyclerView &#x4E3B;&#x63A7;&#x4EF6;</span><br><span class="line">     */</span><br><span class="line">    private void initRecyclerLayoutManager(RecyclerView recyclerView) {</span><br><span class="line">        // &#x9519;&#x5217;&#x7F51;&#x683C;&#x5E03;&#x5C40;</span><br><span class="line">        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(4,</span><br><span class="line">                StaggeredGridLayoutManager.VERTICAL));</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * &#x521D;&#x59CB;&#x5316;RecyclerView&#x7684;Adapter</span><br><span class="line">     *</span><br><span class="line">     * @param recyclerView &#x4E3B;&#x63A7;&#x4EF6;</span><br><span class="line">     */</span><br><span class="line">    private void initRecyclerAdapter(RecyclerView recyclerView) {</span><br><span class="line">        mAdapter = new MyAdapter(getData());</span><br><span class="line">        recyclerView.setAdapter(mAdapter);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * &#x521D;&#x59CB;&#x5316;RecyclerView&#x7684;(ItemDecoration)&#x9879;&#x76EE;&#x88C5;&#x9970;</span><br><span class="line">     *</span><br><span class="line">     * @param recyclerView &#x4E3B;&#x63A7;&#x4EF6;</span><br><span class="line">     */</span><br><span class="line">    private void initItemDecoration(RecyclerView recyclerView) {</span><br><span class="line">        recyclerView.addItemDecoration(new MyItemDecoration(this));</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * &#x521D;&#x59CB;&#x5316;RecyclerView&#x7684;(ItemAnimator)&#x9879;&#x76EE;&#x52A8;&#x753B;</span><br><span class="line">     *</span><br><span class="line">     * @param recyclerView &#x4E3B;&#x63A7;&#x4EF6;</span><br><span class="line">     */</span><br><span class="line">    private void initItemAnimator(RecyclerView recyclerView) {</span><br><span class="line">        recyclerView.setItemAnimator(new DefaultItemAnimator()); // &#x9ED8;&#x8BA4;&#x52A8;&#x753B;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * &#x6A21;&#x62DF;&#x7684;&#x6570;&#x636E;</span><br><span class="line">     *</span><br><span class="line">     * @return &#x6570;&#x636E;</span><br><span class="line">     */</span><br><span class="line">    private ArrayList&lt;DataModel&gt; getData() {</span><br><span class="line">        int count = 57;</span><br><span class="line">        ArrayList&lt;DataModel&gt; data = new ArrayList&lt;&gt;();</span><br><span class="line">        for (int i = 0; i &lt; count; i++) {</span><br><span class="line">            DataModel model = new DataModel();</span><br><span class="line"></span><br><span class="line">            model.setDateTime(getBeforeDay(new Date(), i));</span><br><span class="line">            model.setLabel(&quot;No. &quot; + i);</span><br><span class="line"></span><br><span class="line">            data.add(model);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        return data;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * &#x83B7;&#x53D6;&#x65E5;&#x671F;&#x7684;&#x524D;&#x4E00;&#x5929;</span><br><span class="line">     *</span><br><span class="line">     * @param date &#x65E5;&#x671F;</span><br><span class="line">     * @param i    &#x504F;&#x79BB;</span><br><span class="line">     * @return &#x65B0;&#x7684;&#x65E5;&#x671F;</span><br><span class="line">     */</span><br><span class="line">    private static Date getBeforeDay(Date date, int i) {</span><br><span class="line">        Calendar calendar = Calendar.getInstance();</span><br><span class="line">        calendar.setTime(date);</span><br><span class="line">        calendar.add(Calendar.DAY_OF_YEAR, i * (-1));</span><br><span class="line">        return calendar.getTime();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean onCreateOptionsMenu(Menu menu) {</span><br><span class="line">        // Inflate the menu; this adds items to the action bar if it is present.</span><br><span class="line">        getMenuInflater().inflate(R.menu.menu_main, menu);</span><br><span class="line">        return true;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean onOptionsItemSelected(MenuItem item) {</span><br><span class="line">        // Handle action bar item clicks here. The action bar will</span><br><span class="line">        // automatically handle clicks on the Home/Up button, so long</span><br><span class="line">        // as you specify a parent activity in AndroidManifest.xml.</span><br><span class="line">        int id = item.getItemId();</span><br><span class="line"></span><br><span class="line">        switch (item.getItemId()) {</span><br><span class="line">            case R.id.id_action_add:</span><br><span class="line">                mAdapter.addData(1);</span><br><span class="line">                break;</span><br><span class="line">            case R.id.id_action_delete:</span><br><span class="line">                mAdapter.removeData(1);</span><br><span class="line">                break;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        //noinspection SimplifiableIfStatement</span><br><span class="line">        if (id == R.id.action_settings) {</span><br><span class="line">            return true;</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        return super.onOptionsItemSelected(item);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>&#x4E3A;&#x4E86;&#x6D4B;&#x8BD5;&#x52A8;&#x753B;, Menu&#x989D;&#x5916;&#x6DFB;&#x52A0;&#x4E24;&#x4E2A;&#x6309;&#x94AE;.</p>
+</blockquote>
+<hr>
+<p>RecyclerView&#x7684;&#x57FA;&#x672C;&#x8981;&#x70B9;&#x5C31;&#x662F;&#x8FD9;&#x4E9B;&#x4E86;.</p>
+<p>OK, that&#x2019;s all! Enjoy it!</p>
+<hr>
+<p><strong>&#x751F;&#x6D3B;</strong></p>
+<blockquote>
+<p>&#x6709;&#x6280;&#x672F;&#x53C8;&#x8981;&#x6709;&#x751F;&#x6D3B;, &#x7F8E;&#x8BA9;&#x751F;&#x6D3B;&#x66F4;&#x7CBE;&#x5F69;!</p>
+</blockquote>
+<p><a href="http://s.click.taobao.com/t?e=m%3D2%26s%3D095YJZQ1%2BQUcQipKwQzePOeEDrYVVa64K7Vc7tFgwiHjf2vlNIV67sL74TtmOEyS6EFRCN7EKmx1lK%2FY7wPaoHeQQxhDmA6IAe67oaxDEWp4DvOxtwmul3Iwqzx5RfB%2Byogwp%2Fp0ZrHz07Zdf9LZNcYMXU3NNCg%2F&amp;pvid=12_117.73.144.43_332_1458433143248" target="_blank" rel="external"><img src="http://7xrsre.com1.z0.glb.clouddn.com/spike-ad-girl-socks-6.jpg" alt="&#x4E1D;&#x889C;"></a></p>
+<p>&#x5973;&#x751F;, &#x8BA9;&#x81EA;&#x5DF1;&#x66F4;&#x804C;&#x4E1A;&#x53D7;&#x6B22;&#x8FCE;! <a href="http://s.click.taobao.com/t?e=m%3D2%26s%3D095YJZQ1%2BQUcQipKwQzePOeEDrYVVa64K7Vc7tFgwiHjf2vlNIV67sL74TtmOEyS6EFRCN7EKmx1lK%2FY7wPaoHeQQxhDmA6IAe67oaxDEWp4DvOxtwmul3Iwqzx5RfB%2Byogwp%2Fp0ZrHz07Zdf9LZNcYMXU3NNCg%2F&amp;pvid=12_117.73.144.43_332_1458433143248" target="_blank" rel="external">&#x597D;&#x7269;</a></p>
+<hr>
+<blockquote>
+<p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/03/22/1603/226-recycler-view-first/">http://www.wangchenlong.org/2016/03/22/1603/226-recycler-view-first/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://weibo.com/u/2852941392" target="_blank" rel="external">&#x5FAE;&#x535A;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>, <a href="https://slides.com/spikeking" target="_blank" rel="external">Slides</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
+</blockquote>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/控件/" rel="tag">#控件</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/22/1603/225-face-detect/" rel="next" title="实现检测人脸功能的控件">
+                <i class="fa fa-chevron-left"></i> 实现检测人脸功能的控件
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/22/1603/226-recycler-view-first/"
+     data-title="使用RecyclerView控件实现瀑布流"
+     data-content=""
+     data-url="http://www.wangchenlong.org/2016/03/22/1603/226-recycler-view-first/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+            <div align="center" style="margin: 20px 0px 0px 0px">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- 文章底部 -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:336px;height:280px"
+                   data-ad-client="ca-pub-9201665894952799"
+                   data-ad-slot="7302087069"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+          </div>
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/22/1603/226-recycler-view-first/"
+           data-title="使用RecyclerView控件实现瀑布流" data-url="http://www.wangchenlong.org/2016/03/22/1603/226-recycler-view-first/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="C.L. Wang" />
+          <p class="site-author-name" itemprop="name">C.L. Wang</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/SpikeKing" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 简书
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2852941392" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> 微博
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/caroline_wendy" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> CSDN
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 掘金
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://slides.com/spikeking" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Slides
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">Links</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chunyuyisheng.com/" target="_blank">春雨医生</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.chunyuyisheng.com/pedometer" target="_blank">计步器</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖"><span class="nav-number">1.</span> <span class="nav-text">依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#布局"><span class="nav-number">2.</span> <span class="nav-text">布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LayoutManager"><span class="nav-number">4.</span> <span class="nav-text">LayoutManager</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Adapter"><span class="nav-number">5.</span> <span class="nav-text">Adapter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ItemDecoration"><span class="nav-number">6.</span> <span class="nav-text">ItemDecoration</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ItemAnimator"><span class="nav-number">7.</span> <span class="nav-text">ItemAnimator</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+      <!-- 侧栏广告 -->
+      <div align="center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- 侧栏底部 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:160px;height:600px"
+             data-ad-client="ca-pub-9201665894952799"
+             data-ad-slot="8220417066"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">C.L. Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"spikeking"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("24qpuQFXa0w8ead8gg6Rxxhc-gzGzoHsz", "O8vfKJtVanuyjh9NabH91ig7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>
