@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-23T10:53:46.000Z</updated>
+  <updated>2016-03-23T10:55:32.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://www.wangchenlong.org/2016/03/23/1603/233-fragment-tabhost-first/"/>
     <id>http://www.wangchenlong.org/2016/03/23/1603/233-fragment-tabhost-first/</id>
     <published>2016-03-23T10:44:00.000Z</published>
-    <updated>2016-03-23T10:53:46.000Z</updated>
+    <updated>2016-03-23T10:55:32.000Z</updated>
     
-    <content type="html">&lt;p&gt;FragmentTabHost&amp;#x4F5C;&amp;#x4E3A;Android4.0&amp;#x7248;&amp;#x672C;&amp;#x7684;&amp;#x63A7;&amp;#x4EF6;, &amp;#x5DF2;&amp;#x7ECF;&amp;#x88AB;&amp;#x9879;&amp;#x76EE;&amp;#x5E7F;&amp;#x6CDB;&amp;#x4F7F;&amp;#x7528;, 5.0&amp;#x7248;&amp;#x672C;&amp;#x53C8;&amp;#x63A8;&amp;#x51FA;TabLayout+ViewPager&amp;#x663E;&amp;#x793A;&amp;#x591A;&amp;#x9875;. &amp;#x4F5C;&amp;#x4E3A;4.0&amp;#x7684;&amp;#x91CD;&amp;#x8981;&amp;#x9996;&amp;#x9875;&amp;#x67B6;&amp;#x6784;&amp;#x65B9;&amp;#x5F0F;, FragmentTabHost&amp;#x88AB;&amp;#x5E7F;&amp;#x6CDB;&amp;#x5730;&amp;#x5E94;&amp;#x7528;. &amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;FragmentTabHost&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x53CA;&amp;#x4F18;&amp;#x5316;&amp;#x65B9;&amp;#x5F0F;.&lt;/p&gt;
+    <content type="html">&lt;p&gt;FragmentTabHost&amp;#x4F5C;&amp;#x4E3A;Android4.0&amp;#x7248;&amp;#x672C;&amp;#x7684;&amp;#x63A7;&amp;#x4EF6;, &amp;#x5DF2;&amp;#x7ECF;&amp;#x88AB;&amp;#x9879;&amp;#x76EE;&amp;#x5E7F;&amp;#x6CDB;&amp;#x4F7F;&amp;#x7528;, 5.0&amp;#x7248;&amp;#x672C;&amp;#x53C8;&amp;#x63A8;&amp;#x51FA; &lt;strong&gt;TabLayout + ViewPager&lt;/strong&gt; &amp;#x663E;&amp;#x793A;&amp;#x591A;&amp;#x9875;. &amp;#x4F5C;&amp;#x4E3A;4.0&amp;#x7684;&amp;#x91CD;&amp;#x8981;&amp;#x9996;&amp;#x9875;&amp;#x67B6;&amp;#x6784;&amp;#x65B9;&amp;#x5F0F;, FragmentTabHost&amp;#x88AB;&amp;#x5E7F;&amp;#x6CDB;&amp;#x5730;&amp;#x5E94;&amp;#x7528;. &amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;FragmentTabHost&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x53CA;&amp;#x4F18;&amp;#x5316;&amp;#x65B9;&amp;#x5F0F;.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;#x66F4;&amp;#x591A;: &lt;a href=&quot;http://www.wangchenlong.org/&quot;&gt;http://www.wangchenlong.org/&lt;/a&gt;&lt;/p&gt;
@@ -63,7 +63,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;FragmentTabHost&amp;#x4F5C;&amp;#x4E3A;Android4.0&amp;#x7248;&amp;#x672C;&amp;#x7684;&amp;#x63A7;&amp;#x4EF6;, &amp;#x5DF2;&amp;#x7ECF;&amp;#x88AB;&amp;#x9879;&amp;#x76EE;&amp;#x5E7F;&amp;#x6CDB;&amp;#x4F7F;&amp;#x7528;, 5.0&amp;#x7248;&amp;#x672C;&amp;#x53C8;&amp;#x63A8;&amp;#x51FA;TabLayout+ViewPager&amp;#x663E;&amp;#x793A;&amp;#x591A;&amp;#x9875;. &amp;#x4F5C;&amp;#x4E3A;4.0&amp;#x7684;&amp;#x91CD;&amp;#x8981;&amp;#x9996;&amp;#x9875;&amp;#x67B6;&amp;#x6784;&amp;#x65B9;&amp;#x5F0F;, FragmentTabHost&amp;#x88AB;&amp;#x5E7F;&amp;#x6CDB;&amp;#x5730;&amp;#x5E94;&amp;#x7528;. &amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;FragmentTabHost&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x53CA;&amp;#x4F18;&amp;#x5316;&amp;#x65B9;&amp;#x5F0F;.&lt;/p&gt;
+      &lt;p&gt;FragmentTabHost&amp;#x4F5C;&amp;#x4E3A;Android4.0&amp;#x7248;&amp;#x672C;&amp;#x7684;&amp;#x63A7;&amp;#x4EF6;, &amp;#x5DF2;&amp;#x7ECF;&amp;#x88AB;&amp;#x9879;&amp;#x76EE;&amp;#x5E7F;&amp;#x6CDB;&amp;#x4F7F;&amp;#x7528;, 5.0&amp;#x7248;&amp;#x672C;&amp;#x53C8;&amp;#x63A8;&amp;#x51FA; &lt;strong&gt;TabLayout + ViewPager&lt;/strong&gt; &amp;#x663E;&amp;#x793A;&amp;#x591A;&amp;#x9875;. &amp;#x4F5C;&amp;#x4E3A;4.0&amp;#x7684;&amp;#x91CD;&amp;#x8981;&amp;#x9996;&amp;#x9875;&amp;#x67B6;&amp;#x6784;&amp;#x65B9;&amp;#x5F0F;, FragmentTabHost&amp;#x88AB;&amp;#x5E7F;&amp;#x6CDB;&amp;#x5730;&amp;#x5E94;&amp;#x7528;. &amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;FragmentTabHost&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x53CA;&amp;#x4F18;&amp;#x5316;&amp;#x65B9;&amp;#x5F0F;.&lt;/p&gt;
     
     </summary>
     
