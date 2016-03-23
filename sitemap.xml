@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/13/1602/use-dagger-espresso-test-network/</loc>
+    
+    <lastmod>2016-03-23T02:41:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/22/1603/232-fragment-shared-element/</loc>
     
     <lastmod>2016-03-22T22:34:31.000Z</lastmod>
@@ -51,7 +58,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/21/1603/211-show-password-reveal/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/19/1602/reverse-analyze-apk/</loc>
     
     <lastmod>2016-03-22T02:32:30.000Z</lastmod>
     
@@ -65,7 +72,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/1602/reverse-analyze-apk/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/19/1602/rx-network-cache/</loc>
     
     <lastmod>2016-03-22T02:32:30.000Z</lastmod>
     
@@ -79,14 +86,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/1602/rx-network-cache/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/21/1603/211-show-password-reveal/</loc>
     
     <lastmod>2016-03-22T02:32:30.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/21/1603/212-anim-circular-reveal/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/20/1603/204-manage-permission/</loc>
     
     <lastmod>2016-03-22T02:32:30.000Z</lastmod>
     
@@ -100,7 +107,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/20/1603/204-manage-permission/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/21/1603/212-anim-circular-reveal/</loc>
     
     <lastmod>2016-03-22T02:32:30.000Z</lastmod>
     
@@ -121,14 +128,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/20/1603/203-implement-webview-goto-app/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/18/1602/apply-droid-plugin/</loc>
     
     <lastmod>2016-03-22T02:32:30.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/18/1602/apply-droid-plugin/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/20/1603/203-implement-webview-goto-app/</loc>
     
     <lastmod>2016-03-22T02:32:30.000Z</lastmod>
     
@@ -215,13 +222,6 @@
     <loc>http://www.wangchenlong.org/2016/03/16/1602/use-dagger-first/</loc>
     
     <lastmod>2016-03-21T13:36:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/13/1602/use-dagger-espresso-test-network/</loc>
-    
-    <lastmod>2016-03-21T13:36:29.000Z</lastmod>
     
   </url>
   
