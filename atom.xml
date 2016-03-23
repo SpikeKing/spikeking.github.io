@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-23T12:58:27.000Z</updated>
+  <updated>2016-03-23T12:59:13.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Android Tips (2)</title>
     <link href="http://www.wangchenlong.org/2016/03/23/tips/1603/232-android-tips-2/"/>
     <id>http://www.wangchenlong.org/2016/03/23/tips/1603/232-android-tips-2/</id>
     <published>2016-03-23T12:58:00.000Z</published>
-    <updated>2016-03-23T12:58:27.000Z</updated>
+    <updated>2016-03-23T12:59:13.000Z</updated>
     
     <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;blockquote&gt;
@@ -40,10 +40,12 @@
     
     </summary>
     
-      <category term="Android" scheme="http://www.wangchenlong.org/categories/Android/"/>
+      <category term="Tips" scheme="http://www.wangchenlong.org/categories/Tips/"/>
     
     
       <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
+    
+      <category term="Tips" scheme="http://www.wangchenlong.org/tags/Tips/"/>
     
   </entry>
   
