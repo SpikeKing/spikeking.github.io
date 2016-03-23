@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/23/tips/1603/231-android-tips-1/</loc>
+    
+    <lastmod>2016-03-23T12:54:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/replace-svg-image/</loc>
+    
+    <lastmod>2016-03-23T12:44:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
+    
+    <lastmod>2016-03-23T12:44:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
+    
+    <lastmod>2016-03-23T12:44:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/</loc>
+    
+    <lastmod>2016-03-23T12:44:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/23/1603/235-activity-lifecycle/</loc>
     
     <lastmod>2016-03-23T12:41:02.000Z</lastmod>
@@ -142,13 +177,6 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/18/1602/apply-droid-plugin/</loc>
-    
-    <lastmod>2016-03-22T02:32:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/19/1602/rx-network-cache/</loc>
     
     <lastmod>2016-03-22T02:32:30.000Z</lastmod>
@@ -157,6 +185,13 @@
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/19/1602/rxandroid-async/</loc>
+    
+    <lastmod>2016-03-22T02:32:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/18/1602/apply-droid-plugin/</loc>
     
     <lastmod>2016-03-22T02:32:30.000Z</lastmod>
     
@@ -212,13 +247,6 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
-    
-    <lastmod>2016-03-21T13:39:18.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/16/1602/use-retrofit-first/</loc>
     
     <lastmod>2016-03-21T13:37:37.000Z</lastmod>
@@ -247,30 +275,9 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/replace-svg-image/</loc>
-    
-    <lastmod>2016-03-21T13:35:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/15/1602/manage-gradle-lib-version/</loc>
     
     <lastmod>2016-03-21T13:35:14.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/</loc>
-    
-    <lastmod>2016-03-21T13:35:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
-    
-    <lastmod>2016-03-21T13:34:52.000Z</lastmod>
     
   </url>
   
