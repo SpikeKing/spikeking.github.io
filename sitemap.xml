@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/23/tips/1603/233-android-tips-3/</loc>
+    
+    <lastmod>2016-03-24T02:34:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/24/tips/1603/241-android-tips-4/</loc>
+    
+    <lastmod>2016-03-24T02:34:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/23/tips/1603/232-android-tips-2/</loc>
+    
+    <lastmod>2016-03-24T02:34:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/24/tips/1603/242-android-tips-5/</loc>
+    
+    <lastmod>2016-03-24T02:34:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/23/tips/1603/231-android-tips-1/</loc>
+    
+    <lastmod>2016-03-24T02:34:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/23/1603/235-activity-lifecycle/</loc>
     
     <lastmod>2016-03-24T01:00:53.000Z</lastmod>
@@ -121,27 +156,6 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/23/tips/1603/233-android-tips-3/</loc>
-    
-    <lastmod>2016-03-23T14:17:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/23/tips/1603/231-android-tips-1/</loc>
-    
-    <lastmod>2016-03-23T14:12:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/23/tips/1603/232-android-tips-2/</loc>
-    
-    <lastmod>2016-03-23T14:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/15/1602/replace-svg-image/</loc>
     
     <lastmod>2016-03-23T12:44:59.000Z</lastmod>
@@ -149,14 +163,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/</loc>
     
     <lastmod>2016-03-23T12:44:59.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
     
     <lastmod>2016-03-23T12:44:59.000Z</lastmod>
     
@@ -205,13 +219,6 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/22/1603/228-coordinator-layout-first/</loc>
-    
-    <lastmod>2016-03-22T13:57:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/22/1603/226-recycler-view-first/</loc>
     
     <lastmod>2016-03-22T13:57:36.000Z</lastmod>
@@ -220,6 +227,13 @@
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/22/1603/227-app-bar-first/</loc>
+    
+    <lastmod>2016-03-22T13:57:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/22/1603/228-coordinator-layout-first/</loc>
     
     <lastmod>2016-03-22T13:57:36.000Z</lastmod>
     
