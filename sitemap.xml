@@ -156,7 +156,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
     
     <lastmod>2016-03-23T12:44:59.000Z</lastmod>
     
@@ -170,7 +170,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
     
     <lastmod>2016-03-23T12:44:59.000Z</lastmod>
     
@@ -219,13 +219,6 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/22/1603/228-coordinator-layout-first/</loc>
-    
-    <lastmod>2016-03-22T13:57:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/22/1603/226-recycler-view-first/</loc>
     
     <lastmod>2016-03-22T13:57:36.000Z</lastmod>
@@ -234,6 +227,13 @@
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/22/1603/227-app-bar-first/</loc>
+    
+    <lastmod>2016-03-22T13:57:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/22/1603/228-coordinator-layout-first/</loc>
     
     <lastmod>2016-03-22T13:57:36.000Z</lastmod>
     
