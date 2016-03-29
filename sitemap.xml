@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/20/1603/201-implement-update-app/</loc>
+    
+    <lastmod>2016-03-29T14:04:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/22/1603/232-fragment-shared-element/</loc>
     
     <lastmod>2016-03-29T01:56:11.000Z</lastmod>
@@ -121,13 +128,6 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/23/tips/1603/232-android-tips-2/</loc>
-    
-    <lastmod>2016-03-24T12:53:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/02/24/tips/1603/241-android-tips-4/</loc>
     
     <lastmod>2016-03-24T12:53:59.000Z</lastmod>
@@ -135,7 +135,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/24/tips/1603/242-android-tips-5/</loc>
+    <loc>http://www.wangchenlong.org/2016/02/23/tips/1603/231-android-tips-1/</loc>
+    
+    <lastmod>2016-03-24T12:53:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/02/23/tips/1603/232-android-tips-2/</loc>
     
     <lastmod>2016-03-24T12:53:59.000Z</lastmod>
     
@@ -149,7 +156,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/23/tips/1603/231-android-tips-1/</loc>
+    <loc>http://www.wangchenlong.org/2016/02/24/tips/1603/242-android-tips-5/</loc>
     
     <lastmod>2016-03-24T12:53:59.000Z</lastmod>
     
@@ -205,13 +212,6 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/20/1603/201-implement-update-app/</loc>
-    
-    <lastmod>2016-03-24T00:59:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/19/1602/reverse-analyze-apk/</loc>
     
     <lastmod>2016-03-24T00:59:35.000Z</lastmod>
@@ -247,7 +247,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/replace-svg-image/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
     
     <lastmod>2016-03-23T12:44:59.000Z</lastmod>
     
@@ -261,7 +261,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/replace-svg-image/</loc>
     
     <lastmod>2016-03-23T12:44:59.000Z</lastmod>
     
