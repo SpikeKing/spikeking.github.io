@@ -100,14 +100,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/23/1603/234-activity-launch-mode/</loc>
+    <loc>http://www.wangchenlong.org/2016/02/23/1603/235-activity-lifecycle/</loc>
     
     <lastmod>2016-03-24T12:56:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/23/1603/235-activity-lifecycle/</loc>
+    <loc>http://www.wangchenlong.org/2016/02/23/1603/234-activity-launch-mode/</loc>
     
     <lastmod>2016-03-24T12:56:41.000Z</lastmod>
     
@@ -121,14 +121,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/24/tips/1603/242-android-tips-5/</loc>
+    <loc>http://www.wangchenlong.org/2016/02/23/tips/1603/231-android-tips-1/</loc>
     
     <lastmod>2016-03-24T12:53:59.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/23/tips/1603/231-android-tips-1/</loc>
+    <loc>http://www.wangchenlong.org/2016/02/24/tips/1603/242-android-tips-5/</loc>
     
     <lastmod>2016-03-24T12:53:59.000Z</lastmod>
     
@@ -247,20 +247,6 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
-    
-    <lastmod>2016-03-23T12:44:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/</loc>
-    
-    <lastmod>2016-03-23T12:44:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/15/1602/replace-svg-image/</loc>
     
     <lastmod>2016-03-23T12:44:59.000Z</lastmod>
@@ -268,7 +254,21 @@
   </url>
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
+    
+    <lastmod>2016-03-23T12:44:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
+    
+    <lastmod>2016-03-23T12:44:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-first/</loc>
     
     <lastmod>2016-03-23T12:44:59.000Z</lastmod>
     
