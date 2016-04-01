@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-03-29T14:10:06.000Z</updated>
+  <updated>2016-04-01T15:19:13.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.wangchenlong.org/2016/03/28/1603/281-rx-max-threads/"/>
     <id>http://www.wangchenlong.org/2016/03/28/1603/281-rx-max-threads/</id>
     <published>2016-03-28T14:01:00.000Z</published>
-    <updated>2016-03-29T14:10:06.000Z</updated>
+    <updated>2016-04-01T15:19:13.000Z</updated>
     
     <content type="html">&lt;p&gt;&amp;#x968F;&amp;#x7740;&amp;#x624B;&amp;#x673A;&amp;#x7684;&amp;#x53D1;&amp;#x5C55;, &amp;#x5176;&amp;#x6027;&amp;#x80FD;&amp;#x5DF2;&amp;#x7ECF;&amp;#x4E0E;&amp;#x7535;&amp;#x8111;&amp;#x8D8A;&amp;#x6765;&amp;#x8D8A;&amp;#x63A5;&amp;#x8FD1;, &amp;#x4E5F;&amp;#x4F1A;&amp;#x6709;&amp;#x4E00;&amp;#x4E9B;&amp;#x590D;&amp;#x6742;&amp;#x8017;&amp;#x65F6;&amp;#x7684;&amp;#x5E76;&amp;#x884C;&amp;#x4EFB;&amp;#x52A1;&amp;#x9700;&amp;#x8981;&amp;#x5904;&amp;#x7406;, &amp;#x5BF9;&amp;#x4E8E;&amp;#x5F02;&amp;#x6B65;&amp;#x4E0E;&amp;#x5E76;&amp;#x884C;, &lt;a href=&quot;http://www.wangchenlong.org/2016/03/20/1603/207-rxjava-first/&quot;&gt;RxAndroid&lt;/a&gt;&amp;#x662F;&amp;#x6211;&amp;#x4EEC;&amp;#x7684;&amp;#x6700;&amp;#x4F73;&amp;#x9009;&amp;#x62E9;. &amp;#x90A3;&amp;#x4E48;&amp;#x8BA9;&amp;#x6211;&amp;#x6765;&amp;#x4F7F;&amp;#x7528;&amp;#x5B9E;&amp;#x4F8B;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E00;&amp;#x4E0B;&amp;#x5427;.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -993,9 +993,9 @@
     
       <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
     
-      <category term="动画" scheme="http://www.wangchenlong.org/tags/%E5%8A%A8%E7%94%BB/"/>
-    
       <category term="CircularReveal" scheme="http://www.wangchenlong.org/tags/CircularReveal/"/>
+    
+      <category term="动画" scheme="http://www.wangchenlong.org/tags/%E5%8A%A8%E7%94%BB/"/>
     
   </entry>
   
