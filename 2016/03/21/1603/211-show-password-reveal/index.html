@@ -68,7 +68,7 @@
 <meta property="og:image" content="http://www.wangchenlong.org/2016/03/21/1603/211-show-password-reveal/password-logo.png">
 <meta property="og:image" content="http://www.wangchenlong.org/2016/03/21/1603/211-show-password-reveal/password-input.png">
 <meta property="og:image" content="http://www.wangchenlong.org/2016/03/21/1603/211-show-password-reveal/password-anim.png">
-<meta property="og:updated_time" content="2016-03-29T14:10:06.000Z">
+<meta property="og:updated_time" content="2016-04-07T06:15:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在密码输入框中添加显示明文功能">
 <meta name="twitter:description" content="&amp;#x5728;&amp;#x4F7F;&amp;#x7528;App&amp;#x7684;&amp;#x65F6;&amp;#x5019;, &amp;#x9996;&amp;#x6B21;&amp;#x90FD;&amp;#x9700;&amp;#x8981;&amp;#x8F93;&amp;#x5165;&amp;#x5BC6;&amp;#x7801;. &amp;#x6709;&amp;#x4E9B;&amp;#x4EBA;&amp;#x4E3A;&amp;#x4E86;&amp;#x5B89;&amp;#x5168;&amp;#x6027;, &amp;#x5BC6">
@@ -390,6 +390,12 @@
 </blockquote>
       
     </div>
+    
+    <div>
+      
+        
+      
+    </div>
 
     <div>
       
@@ -527,7 +533,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">49</span>
+              <span class="site-state-item-count">50</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -535,7 +541,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -544,7 +550,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -567,40 +573,45 @@
               <span class="links-of-author-item">
                 <a href="https://github.com/SpikeKing" target="_blank">
                   
-                    <i class="fa fa-github"></i> GitHub
+                    <i class="fa fa-github"></i>
                   
+                  GitHub
                 </a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank">
                   
-                    <i class="fa fa-globe"></i> 简书
+                    <i class="fa fa-globe"></i>
                   
+                  简书
                 </a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="http://weibo.com/u/2852941392" target="_blank">
                   
-                    <i class="fa fa-weibo"></i> 微博
+                    <i class="fa fa-weibo"></i>
                   
+                  微博
                 </a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="http://blog.csdn.net/caroline_wendy" target="_blank">
                   
-                    <i class="fa fa-globe"></i> CSDN
+                    <i class="fa fa-globe"></i>
                   
+                  CSDN
                 </a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank">
                   
-                    <i class="fa fa-globe"></i> 掘金
+                    <i class="fa fa-globe"></i>
                   
+                  掘金
                 </a>
               </span>
             
@@ -632,9 +643,6 @@
 
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
           <div class="post-toc">
             
               
@@ -642,9 +650,6 @@
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#布局样式"><span class="nav-number">1.</span> <span class="nav-text">布局样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提示图标"><span class="nav-number">2.</span> <span class="nav-text">提示图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#监听事件"><span class="nav-number">3.</span> <span class="nav-text">监听事件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#保存状态"><span class="nav-number">4.</span> <span class="nav-text">保存状态</span></a></li></ol></div>
             
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
           </div>
         </section>
       
@@ -752,165 +757,8 @@
 
 
   
-  
-<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    NexT.motion.middleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          NexT.utils.displaySidebar();
-        }
-      }
-    };
-  });
-</script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
 
 
 
