@@ -164,7 +164,7 @@
     <link href="http://www.wangchenlong.org/2016/04/07/1604/071-rn-uiexplorer/"/>
     <id>http://www.wangchenlong.org/2016/04/07/1604/071-rn-uiexplorer/</id>
     <published>2016-04-07T06:20:00.000Z</published>
-    <updated>2016-04-07T06:39:05.000Z</updated>
+    <updated>2016-04-12T22:53:17.000Z</updated>
     
     <content type="html">&lt;p&gt;&amp;#x4F7F;&amp;#x7528; React Native &amp;#x6846;&amp;#x67B6;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;&amp;#x76F8;&amp;#x540C;&amp;#x7684;&amp;#x4EE3;&amp;#x7801;&amp;#x7F16;&amp;#x5199;&amp;#x4E0D;&amp;#x540C;&amp;#x5E73;&amp;#x53F0;&amp;#x7684;&amp;#x5E94;&amp;#x7528;. &amp;#x5728;&amp;#x5B66;&amp;#x4E60;&amp;#x8FC7;&amp;#x7A0B;&amp;#x4E2D;, &amp;#x65E2;&amp;#x4F1A;&amp;#x517C;&amp;#x987E;&amp;#x8001;&amp;#x670B;&amp;#x53CB; &lt;code&gt;Android&lt;/code&gt; , &amp;#x6709;&amp;#x8981;&amp;#x719F;&amp;#x6089;&amp;#x65B0;&amp;#x670B;&amp;#x53CB; &lt;code&gt;iOS&lt;/code&gt; . &amp;#x672C;&amp;#x6587;&amp;#x4E3B;&amp;#x8981;&amp;#x4ECB;&amp;#x7ECD;&amp;#x8FD0;&amp;#x884C; RN &amp;#x7684;&amp;#x9ED8;&amp;#x8BA4;&amp;#x5DE5;&amp;#x7A0B; UIExplorer .&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -173,7 +173,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;&amp;#x5DE5;&amp;#x4F5C;&amp;#x73AF;&amp;#x5883;&amp;#x662F; &lt;code&gt;Mac&lt;/code&gt; + &lt;code&gt;VPN&lt;/code&gt; + &lt;code&gt;Android Studio&lt;/code&gt; + &lt;code&gt;Xcode&lt;/code&gt; + &lt;code&gt;PyCharm&lt;/code&gt; + &lt;code&gt;&amp;#x534E;&amp;#x4E3A;P8(Android 5.0)&lt;/code&gt; + &lt;code&gt;iPhone 6S &amp;#x6A21;&amp;#x62DF;&amp;#x5668;&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&amp;#x65F6;&amp;#x95F4;: 2016&amp;#x5E74;4&amp;#x6708;6&amp;#x65E5;, &lt;code&gt;React Native&lt;/code&gt; &amp;#x6700;&amp;#x65B0;&amp;#x7248;, &amp;#x8BA9;&amp;#x6211;&amp;#x4EEC;&amp;#x5F00;&amp;#x59CB;&amp;#x5427;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xsdo5.com1.z0.glb.clouddn.com/160406-rn-first-logo.png&quot; alt=&quot;React Native&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/04/07/1604/071-rn-uiexplorer/rn-first-logo.png&quot; alt=&quot;React Native&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;#x524D;&amp;#x7F6E;&amp;#x7684;&amp;#x73AF;&amp;#x5883;&amp;#x914D;&amp;#x7F6E;, &amp;#x53C2;&amp;#x8003; ReactNative &amp;#x5B98;&amp;#x7F51;&amp;#x7684; &lt;a href=&quot;https://facebook.github.io/react-native/docs/getting-started.html#requirements&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Requirements&lt;/a&gt; . &amp;#x9700;&amp;#x8981;&amp;#x5B89;&amp;#x88C5;&amp;#x4E00;&amp;#x4E9B;&amp;#x5DE5;&amp;#x5177;. &amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;&amp;#x5728;&amp;#x542F;&amp;#x52A8;&amp;#x9879;&amp;#x76EE;&amp;#x65F6;, &amp;#x5BB9;&amp;#x6613;&amp;#x5BFC;&amp;#x81F4;&amp;#x7684;&amp;#x4E00;&amp;#x4E9B;&amp;#x95EE;&amp;#x9898;.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -187,7 +187,7 @@
 &lt;p&gt;&amp;#x53EF;&amp;#x80FD;&amp;#x9700;&amp;#x8981;&amp;#x4E0B;&amp;#x8F7D; &lt;code&gt;gradle&lt;/code&gt; , &amp;#x5927;&amp;#x5C0F;&amp;#x7EA6;100M+, &amp;#x6BD4;&amp;#x8F83;&amp;#x6162;, &amp;#x8010;&amp;#x5FC3;&amp;#x7B49;&amp;#x5F85;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&amp;#x6784;&amp;#x5EFA;&amp;#x5B8C;&amp;#x6210;&amp;#x4E4B;&amp;#x540E;, RN &amp;#x7684; App &amp;#x5DF2;&amp;#x7ECF;&amp;#x6210;&amp;#x529F;&amp;#x5B89;&amp;#x88C5;&amp;#x5230;&amp;#x624B;&amp;#x673A;&amp;#x4E2D;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xsdo5.com1.z0.glb.clouddn.com/160406-rn-first-android.png&quot; alt=&quot;Android&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/04/07/1604/071-rn-uiexplorer/rn-first-android.png&quot; alt=&quot;Android&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;&amp;#x5E38;&amp;#x89C1;&amp;#x9519;&amp;#x8BEF;&quot;&gt;&lt;a href=&quot;#&amp;#x5E38;&amp;#x89C1;&amp;#x9519;&amp;#x8BEF;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x5E38;&amp;#x89C1;&amp;#x9519;&amp;#x8BEF;&quot;&gt;&lt;/a&gt;&amp;#x5E38;&amp;#x89C1;&amp;#x9519;&amp;#x8BEF;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&amp;#x4E0B;&amp;#x8F7D;&amp;#x5931;&amp;#x8D25;&lt;/strong&gt;: &amp;#x9700;&amp;#x8981;&amp;#x5220;&amp;#x9664;&amp;#x6587;&amp;#x4EF6;, &amp;#x91CD;&amp;#x65B0;&amp;#x4E0B;&amp;#x8F7D;&amp;#x5373;&amp;#x53EF;, &amp;#x5982;:&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Could not expand ZIP &lt;span class=&quot;string&quot;&gt;&amp;apos;/Users/wangchenlong/Exercises/ReactNative/react-native/ReactAndroid/build/downloads/boost_1_57_0.zip&amp;apos;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;&amp;#x5220;&amp;#x9664;&amp;#x5373;&amp;#x53EF;&lt;/p&gt;
@@ -216,7 +216,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;&amp;#x542F;&amp;#x52A8;&amp;#x670D;&amp;#x52A1;&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xsdo5.com1.z0.glb.clouddn.com/160406-rn-first-server.jpg&quot; alt=&quot;Server&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/04/07/1604/071-rn-uiexplorer/rn-first-server.jpg&quot; alt=&quot;Server&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&amp;#x6643;&amp;#x52A8;&lt;/strong&gt; Android &amp;#x624B;&amp;#x673A;, &amp;#x5373;&amp;#x8FDB;&amp;#x5165;&amp;#x83DC;&amp;#x5355;&amp;#x9875;&amp;#x9762;, &amp;#x9009;&amp;#x62E9; &lt;code&gt;Reload JS&lt;/code&gt; &amp;#x9879;, &amp;#x91CD;&amp;#x65B0;&amp;#x52A0;&amp;#x8F7D;&amp;#x9875;&amp;#x9762;&amp;#x5373;&amp;#x53EF;&amp;#x663E;&amp;#x793A;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;OK, Android &amp;#x9879;&amp;#x76EE;&amp;#x52A0;&amp;#x8F7D;&amp;#x6210;&amp;#x529F;!&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;&amp;#x4FEE;&amp;#x6539;&amp;#x4E0B;&amp;#x8F7D;&amp;#x6E90;&quot;&gt;&lt;a href=&quot;#&amp;#x4FEE;&amp;#x6539;&amp;#x4E0B;&amp;#x8F7D;&amp;#x6E90;&quot; class=&quot;headerlink&quot; title=&quot;&amp;#x4FEE;&amp;#x6539;&amp;#x4E0B;&amp;#x8F7D;&amp;#x6E90;&quot;&gt;&lt;/a&gt;&amp;#x4FEE;&amp;#x6539;&amp;#x4E0B;&amp;#x8F7D;&amp;#x6E90;&lt;/h2&gt;&lt;p&gt;&amp;#x4F7F;&amp;#x7528;&amp;#x6DD8;&amp;#x5B9D;&amp;#x7684; &lt;code&gt;NPM&lt;/code&gt; &amp;#x4E0B;&amp;#x8F7D;&amp;#x6E90;, &amp;#x53EF;&amp;#x4EE5;&amp;#x52A0;&amp;#x5FEB;&amp;#x4E0B;&amp;#x8F7D;&amp;#x901F;&amp;#x5EA6;.&lt;/p&gt;
@@ -227,7 +227,7 @@
 &lt;h1 id=&quot;iOS&amp;#x914D;&amp;#x7F6E;&quot;&gt;&lt;a href=&quot;#iOS&amp;#x914D;&amp;#x7F6E;&quot; class=&quot;headerlink&quot; title=&quot;iOS&amp;#x914D;&amp;#x7F6E;&quot;&gt;&lt;/a&gt;iOS&amp;#x914D;&amp;#x7F6E;&lt;/h1&gt;&lt;p&gt;&amp;#x76F8;&amp;#x6BD4;&amp;#x4E8E; Android &amp;#x914D;&amp;#x7F6E;&amp;#x7684;&amp;#x590D;&amp;#x6742;&amp;#x6027;, iOS &amp;#x914D;&amp;#x7F6E;&amp;#x6BD4;&amp;#x8F83;&amp;#x7B80;&amp;#x5355;. &amp;#x9700;&amp;#x8981;&amp;#x5347;&amp;#x7EA7; &lt;code&gt;Xcode&lt;/code&gt; &amp;#x7684;&amp;#x6700;&amp;#x65B0;&amp;#x7248;&amp;#x672C;.&lt;/p&gt;
 &lt;p&gt;&amp;#x5728; Xcode &amp;#x4E2D;, &amp;#x542F;&amp;#x52A8; &lt;code&gt;UIExplorer&lt;/code&gt; &amp;#x9879;&amp;#x76EE;&amp;#x4E2D;&amp;#x7684;&lt;code&gt;UIExplorer.xcodeproj&lt;/code&gt;&amp;#x5373;&amp;#x53EF;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&amp;#x4E0D;&amp;#x8981;&amp;#x5173;&amp;#x95ED;&amp;#x670D;&amp;#x52A1;&lt;/strong&gt;, &amp;#x8FD0;&amp;#x884C;&amp;#x9879;&amp;#x76EE;, &amp;#x4F1A;&amp;#x81EA;&amp;#x52A8;&amp;#x52A0;&amp;#x8F7D;&amp;#x6570;&amp;#x636E;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xsdo5.com1.z0.glb.clouddn.com/160406-rn-first-ios.png&quot; alt=&quot;iOS&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/04/07/1604/071-rn-uiexplorer/rn-first-ios.png&quot; alt=&quot;iOS&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;Android &amp;#x548C; iOS &amp;#x7684;&amp;#x914D;&amp;#x7F6E;&amp;#x90FD;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B8C;&amp;#x6210;, &amp;#x90FD;&amp;#x53EF;&amp;#x4EE5;&amp;#x8FD0;&amp;#x884C;&amp;#x81EA;&amp;#x5E26; Demo - &lt;code&gt;UIExplorer&lt;/code&gt; .&lt;/p&gt;
 &lt;p&gt;&amp;#x8BA9;&amp;#x6211;&amp;#x4EEC;&amp;#x7EE7;&amp;#x7EED;&amp;#x5B66;&amp;#x4E60;&amp;#x65B0;&amp;#x7684;&amp;#x77E5;&amp;#x8BC6;&amp;#x5427;, &amp;#x8FD0;&amp;#x884C; &lt;code&gt;Hello World&lt;/code&gt; &amp;#x662F;&amp;#x6210;&amp;#x529F;&amp;#x7684;&amp;#x4E00;&amp;#x534A;.&lt;/p&gt;
@@ -1230,9 +1230,9 @@
     
       <category term="Android" scheme="http://www.wangchenlong.org/tags/Android/"/>
     
-      <category term="CircularReveal" scheme="http://www.wangchenlong.org/tags/CircularReveal/"/>
-    
       <category term="动画" scheme="http://www.wangchenlong.org/tags/%E5%8A%A8%E7%94%BB/"/>
+    
+      <category term="CircularReveal" scheme="http://www.wangchenlong.org/tags/CircularReveal/"/>
     
   </entry>
   
