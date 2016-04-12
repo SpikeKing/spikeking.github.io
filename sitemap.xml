@@ -4,7 +4,7 @@
   <url>
     <loc>http://www.wangchenlong.org/2016/04/12/1604/121-rn-property-demo/</loc>
     
-    <lastmod>2016-04-12T13:28:25.000Z</lastmod>
+    <lastmod>2016-04-12T14:55:20.000Z</lastmod>
     
   </url>
   
@@ -23,49 +23,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/21/1603/211-show-password-reveal/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/12/1602/apply-flux-architecture/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/21/1603/213-implement-flip-card/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/28/1603/281-rx-max-threads/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/replace-svg-image/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/23/1603/233-fragment-tabhost-first/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/20/1603/204-manage-permission/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -79,28 +37,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/1602/rxandroid-async/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/13/1602/use-dagger-espresso-test-network/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/16/1602/use-dagger-first/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -121,6 +58,13 @@
   </url>
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/replace-svg-image/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/22/1603/224-star-explode-anim/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
@@ -128,7 +72,56 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/20/1603/201-implement-update-app/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/22/1603/223-voice-ripple-anim/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/19/1602/rxandroid-async/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/16/1602/use-dagger-first/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/13/1602/use-dagger-espresso-test-network/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/22/1603/222-snowflake-anim/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/21/1603/213-implement-flip-card/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/28/1603/281-rx-max-threads/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -142,6 +135,13 @@
   </url>
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/20/1603/201-implement-update-app/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/20/1603/203-implement-webview-goto-app/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
@@ -149,7 +149,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/20/1603/204-manage-permission/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/12/1602/apply-flux-architecture/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -170,7 +170,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/22/1603/223-voice-ripple-anim/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/21/1603/211-show-password-reveal/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/22/1603/222-snowflake-anim/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/23/1603/233-fragment-tabhost-first/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -226,14 +226,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/23/1603/235-activity-lifecycle/</loc>
+    <loc>http://www.wangchenlong.org/2016/02/23/1603/234-activity-launch-mode/</loc>
     
     <lastmod>2016-03-24T12:56:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/23/1603/234-activity-launch-mode/</loc>
+    <loc>http://www.wangchenlong.org/2016/02/23/1603/235-activity-lifecycle/</loc>
     
     <lastmod>2016-03-24T12:56:41.000Z</lastmod>
     
@@ -261,14 +261,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/24/tips/1603/241-android-tips-4/</loc>
+    <loc>http://www.wangchenlong.org/2016/02/23/tips/1603/233-android-tips-3/</loc>
     
     <lastmod>2016-03-24T12:53:59.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/23/tips/1603/233-android-tips-3/</loc>
+    <loc>http://www.wangchenlong.org/2016/02/24/tips/1603/241-android-tips-4/</loc>
     
     <lastmod>2016-03-24T12:53:59.000Z</lastmod>
     
