@@ -66,7 +66,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="经验," />
+  <meta name="keywords" content="ReactNative," />
 
 
 
@@ -84,18 +84,19 @@
 
 
 
-<meta name="description" content="&amp;#x6B63;&amp;#x5F0F;&amp;#x63D0;&amp;#x4EA4;&amp;#x5DE5;&amp;#x4F5C;, &amp;#x5C31;&amp;#x610F;&amp;#x5473;&amp;#x7740;&amp;#x5199;&amp;#x7684;&amp;#x4EE3;&amp;#x7801;&amp;#x5F52;&amp;#x6863;, &amp;#x4F1A;&amp;#x5F71;&amp;#x54CD;&amp;#x5176;&amp;#x4ED6;&amp;#x5171;&amp;#x540C;&amp;#x5F00;&amp;#x5">
+<meta name="description" content="ES6, &amp;#x5373;ECMAScript6, JavaScript&amp;#x7684;&amp;#x65B0;&amp;#x6807;&amp;#x51C6;, &amp;#x4E66;&amp;#x5199;&amp;#x66F4;&amp;#x52A0;&amp;#x89C4;&amp;#x8303;, &amp;#x4EE3;&amp;#x7801;&amp;#x66F4;&amp;#x52A0;&amp;#x4F18;&amp;#x96C5;. React Native&amp;#x63A8;&amp;#x8350;&amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在正式提交测试前的代码检查">
-<meta property="og:url" content="http://www.wangchenlong.org/2016/04/16/1604/161-check-code/index.html">
+<meta property="og:title" content="React Native 的 ES6 类写法与未定义错误">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/04/26/1604/261-rn-es6-class/index.html">
 <meta property="og:site_name" content="Mystra">
-<meta property="og:description" content="&amp;#x6B63;&amp;#x5F0F;&amp;#x63D0;&amp;#x4EA4;&amp;#x5DE5;&amp;#x4F5C;, &amp;#x5C31;&amp;#x610F;&amp;#x5473;&amp;#x7740;&amp;#x5199;&amp;#x7684;&amp;#x4EE3;&amp;#x7801;&amp;#x5F52;&amp;#x6863;, &amp;#x4F1A;&amp;#x5F71;&amp;#x54CD;&amp;#x5176;&amp;#x4ED6;&amp;#x5171;&amp;#x540C;&amp;#x5F00;&amp;#x5">
-<meta property="og:image" content="http://www.wangchenlong.org/2016/04/16/1604/161-check-code/check-code-logo.png">
-<meta property="og:updated_time" content="2016-04-16T03:40:45.000Z">
+<meta property="og:description" content="ES6, &amp;#x5373;ECMAScript6, JavaScript&amp;#x7684;&amp;#x65B0;&amp;#x6807;&amp;#x51C6;, &amp;#x4E66;&amp;#x5199;&amp;#x66F4;&amp;#x52A0;&amp;#x89C4;&amp;#x8303;, &amp;#x4EE3;&amp;#x7801;&amp;#x66F4;&amp;#x52A0;&amp;#x4F18;&amp;#x96C5;. React Native&amp;#x63A8;&amp;#x8350;&amp;#">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/04/26/1604/261-rn-es6-class/rn-es6-class-logo.jpg">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/04/26/1604/261-rn-es6-class/rn-es6-class-error.png">
+<meta property="og:updated_time" content="2016-04-26T08:11:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在正式提交测试前的代码检查">
-<meta name="twitter:description" content="&amp;#x6B63;&amp;#x5F0F;&amp;#x63D0;&amp;#x4EA4;&amp;#x5DE5;&amp;#x4F5C;, &amp;#x5C31;&amp;#x610F;&amp;#x5473;&amp;#x7740;&amp;#x5199;&amp;#x7684;&amp;#x4EE3;&amp;#x7801;&amp;#x5F52;&amp;#x6863;, &amp;#x4F1A;&amp;#x5F71;&amp;#x54CD;&amp;#x5176;&amp;#x4ED6;&amp;#x5171;&amp;#x540C;&amp;#x5F00;&amp;#x5">
-<meta name="twitter:image" content="http://www.wangchenlong.org/2016/04/16/1604/161-check-code/check-code-logo.png">
+<meta name="twitter:title" content="React Native 的 ES6 类写法与未定义错误">
+<meta name="twitter:description" content="ES6, &amp;#x5373;ECMAScript6, JavaScript&amp;#x7684;&amp;#x65B0;&amp;#x6807;&amp;#x51C6;, &amp;#x4E66;&amp;#x5199;&amp;#x66F4;&amp;#x52A0;&amp;#x89C4;&amp;#x8303;, &amp;#x4EE3;&amp;#x7801;&amp;#x66F4;&amp;#x52A0;&amp;#x4F18;&amp;#x96C5;. React Native&amp;#x63A8;&amp;#x8350;&amp;#">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/04/26/1604/261-rn-es6-class/rn-es6-class-logo.jpg">
 
 
 
@@ -113,7 +114,7 @@
   };
 </script>
 
-  <title> 在正式提交测试前的代码检查 | Mystra </title>
+  <title> React Native 的 ES6 类写法与未定义错误 | Mystra </title>
 
   <meta name="domain_verify" content="pmrgi33nmfuw4ir2ej3wc3thmnugk3tmn5xgoltpojtselbcm52wszbchirgmmzxgfqwcndggaztezjugizdoyjugftdqyzyhe2gemdcgm2timrcfqrhi2lnmvjwc5tfei5dcnbvhaytemztguydsnbypu">
 
@@ -302,7 +303,7 @@
             
             
               
-                在正式提交测试前的代码检查
+                React Native 的 ES6 类写法与未定义错误
               
             
           </h1>
@@ -314,8 +315,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-16T11:37:00+08:00" content="2016-04-16">
-              2016-04-16
+            <time itemprop="dateCreated" datetime="2016-04-26T16:07:00+08:00" content="2016-04-26">
+              2016-04-26
             </time>
           </span>
 
@@ -328,8 +329,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/经验/" itemprop="url" rel="index">
-                    <span itemprop="name">经验</span>
+                  <a href="/categories/ReactNative/" itemprop="url" rel="index">
+                    <span itemprop="name">ReactNative</span>
                   </a>
                 </span>
 
@@ -344,8 +345,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/16/1604/161-check-code/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/16/1604/161-check-code/" itemprop="commentsCount"></span>
+                <a href="/2016/04/26/1604/261-rn-es6-class/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/26/1604/261-rn-es6-class/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -355,7 +356,7 @@
 
           
           
-             <span id="/2016/04/16/1604/161-check-code/" class="leancloud_visitors" data-flag-title="在正式提交测试前的代码检查">
+             <span id="/2016/04/26/1604/261-rn-es6-class/" class="leancloud_visitors" data-flag-title="React Native 的 ES6 类写法与未定义错误">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -377,43 +378,41 @@
       
 
       
-        <p>&#x6B63;&#x5F0F;&#x63D0;&#x4EA4;&#x5DE5;&#x4F5C;, &#x5C31;&#x610F;&#x5473;&#x7740;&#x5199;&#x7684;&#x4EE3;&#x7801;&#x5F52;&#x6863;, &#x4F1A;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x5171;&#x540C;&#x5F00;&#x53D1;&#x8005;, &#x4E5F;&#x4F1A;&#x5F71;&#x54CD;&#x9879;&#x76EE;, &#x56E0;&#x6B64;, &#x6709;&#x4E9B;&#x4E1C;&#x897F;&#x5C31;&#x5FC5;&#x987B;&#x8981;&#x68C0;&#x67E5;, &#x4E0D;&#x8981;&#x51ED;&#x7740;&#x76F4;&#x89C9;&#x53BB;&#x505A;. &#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x4F18;&#x79C0;&#x7684;&#x7A0B;&#x5E8F;&#x5458;, &#x6700;&#x91CD;&#x8981;&#x7684;&#x5C31;&#x662F;&#x4ED4;&#x7EC6;, &#x5F53;&#x7136;&#x4E5F;&#x4F1A;&#x9002;&#x7528;&#x4E8E;&#x5404;&#x884C;&#x5404;&#x4E1A;.</p>
+        <p><strong>ES6</strong>, &#x5373;ECMAScript6, JavaScript&#x7684;&#x65B0;&#x6807;&#x51C6;, &#x4E66;&#x5199;&#x66F4;&#x52A0;&#x89C4;&#x8303;, &#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x4F18;&#x96C5;. React Native&#x63A8;&#x8350;&#x4F7F;&#x7528;ES6&#x7684;&#x7C7B;&#x5199;&#x6CD5;&#x4EE3;&#x66FF;&#x4F20;&#x7EDF;&#x7684;&#x6A21;&#x5757;, &#x5373;&#x4F7F;&#x7528;<code>extends React.Component</code>&#x4EE3;&#x66FF;<code>React.createClass</code>. &#x672C;&#x6587;&#x4ECB;&#x7ECD;&#x5728;ReactNative&#x4E2D;ES6&#x7684;&#x5199;&#x6CD5;, &#x4E0E;&#x4F20;&#x7EDF;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;, &#x5E76;&#x89E3;&#x51B3;<strong>&#x672A;&#x5B9A;&#x4E49;(undefined)</strong>&#x9519;&#x8BEF;. </p>
 <a id="more"></a>
 <blockquote>
 <p>&#x66F4;&#x591A;: <a href="http://www.wangchenlong.org/">http://www.wangchenlong.org/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;GitHub: <a href="https://github.com/SpikeKing" target="_blank" rel="external">https://github.com/SpikeKing</a></p>
 </blockquote>
-<p><img src="/2016/04/16/1604/161-check-code/check-code-logo.png" alt="Coding"></p>
+<p><img src="/2016/04/26/1604/261-rn-es6-class/rn-es6-class-logo.jpg" alt="Logo"></p>
+<blockquote>
+<p>&#x5728;ES6&#x4E2D;, &#x4E00;&#x5B9A;&#x8981;&#x6CE8;&#x610F;<strong>this</strong>&#x7684;&#x4F7F;&#x7528;, &#x5426;&#x5219;<code>undefined is not an object</code>.</p>
+</blockquote>
 <hr>
-<h2 id="&#x529F;&#x80FD;"><a href="#&#x529F;&#x80FD;" class="headerlink" title="&#x529F;&#x80FD;"></a>&#x529F;&#x80FD;</h2><ol>
-<li><p>&#x68C0;&#x6D4B;<strong>&#x529F;&#x80FD;&#x5217;&#x8868;</strong>. &#x786E;&#x4FDD;&#x6240;&#x6709;&#x529F;&#x80FD;&#x90FD;&#x5DF2;&#x7ECF;&#x5F00;&#x53D1;, &#x6D4B;&#x8BD5;&#x5168;&#x90E8;<strong>&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;</strong>&#x901A;&#x8FC7;.</p>
-</li>
-<li><p>&#x68C0;&#x6D4B;<strong>&#x5B58;&#x50A8;&#x7C7B;&#x529F;&#x80FD;</strong>. &#x5728;<code>&#x7248;&#x672C;&#x66F4;&#x65B0;</code>&#x65F6;, &#x9700;&#x8981;&#x786E;&#x4FDD;&#x6570;&#x636E;&#x8FDE;&#x7EED;. &#x4E24;&#x79CD;&#x60C5;&#x51B5;, &#x9AD8;&#x7248;&#x672C;&#x8986;&#x76D6;&#x4F4E;&#x7248;&#x672C;, &#x91CD;&#x65B0;&#x751F;&#x6210;&#x9AD8;&#x7248;&#x672C;; &#x5728;<code>&#x5220;&#x9664;&#x9996;&#x9009;&#x9879;</code>&#x6216;<code>&#x6E05;&#x9664;&#x7F13;&#x5B58;</code>&#x65F6;, &#x786E;&#x4FDD;&#x6570;&#x636E;&#x72B6;&#x6001;&#x6B63;&#x786E;, &#x4E0D;&#x4F1A;&#x9020;&#x6210;&#x5F02;&#x5E38;.</p>
-</li>
-<li><p><code>Proguard</code>. &#x5BF9;&#x4E8E;&#x5F15;&#x5165;<strong>&#x7B2C;&#x4E09;&#x65B9;&#x5F00;&#x6E90;&#x5E93;</strong>&#x65F6;, &#x8981;&#x6CE8;&#x610F;&#x6B63;&#x786E;&#x8BBE;&#x7F6E;Proguard, &#x901A;&#x8FC7;&#x751F;&#x6210;<strong>&#x7EBF;&#x4E0A;(Release)&#x5305;</strong>, &#x9A8C;&#x8BC1;Proguard&#x7684;&#x6B63;&#x786E;&#x6027;.</p>
-</li>
-</ol>
-<h2 id="&#x4EE3;&#x7801;"><a href="#&#x4EE3;&#x7801;" class="headerlink" title="&#x4EE3;&#x7801;"></a>&#x4EE3;&#x7801;</h2><ol>
-<li><p><strong>&#x7A7A;&#x6307;&#x9488;</strong>: <code>Null Pointer</code>, &#x6700;&#x5173;&#x952E;. &#x7EDD;&#x5927;&#x591A;&#x6570;&#x5D29;&#x6E83;&#x7684;&#x5143;&#x51F6;, &#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x6392;&#x67E5;, &#x4EE5;&#x65B9;&#x6CD5;&#x4E3A;&#x5355;&#x4F4D;, &#x4ED4;&#x7EC6;&#x68C0;&#x67E5;&#x5165;&#x53E3;&#x53C2;&#x6570;&#x548C;&#x79C1;&#x6709;&#x53D8;&#x91CF;, &#x786E;&#x4FDD;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x7A7A;&#x6307;&#x9488;. &#x8FD9;&#x4E5F;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x8981;&#x628A;&#x6240;&#x6709;&#x53D8;&#x91CF;&#x90FD;&#x5199;&#x6210;&#x79C1;&#x6709;&#x53D8;&#x91CF;&#x7684;&#x539F;&#x56E0;&#x4E4B;&#x4E00;, <code>&#x5C01;&#x88C5;</code>&#x4E5F;&#x662F;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x4E09;&#x5927;&#x7279;&#x6027;, &#x786E;&#x4FDD;&#x79C1;&#x6709;&#x53D8;&#x91CF;&#x7684;&#x7CBE;&#x7B80;. </p>
-</li>
-<li><p><strong>Lint</strong>: &#x5982;&#x679C;&#x8FD8;&#x4E0D;&#x77E5;&#x9053;&#x6216;&#x8005;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x8FC7;<code>Lint</code>, &#x90A3;&#x4E48;&#x4EE3;&#x7801;&#x4E00;&#x5B9A;&#x4E0D;&#x4F18;&#x96C5;. &#x5728;<code>Android Studio</code>&#x4E2D;Lint&#x7684;&#x4F4D;&#x7F6E;: <code>Analyze -&gt; Inspect Code...</code>. &#x4F7F;&#x7528;Lint&#x4F18;&#x5316;&#x4EE3;&#x7801;, &#x6709;&#x4E9B;&#x662F;&#x53EF;&#x8BFB;&#x6027;&#x7684;, &#x6709;&#x4E9B;&#x662F;&#x6027;&#x80FD;&#x7684;, &#x6709;&#x4E9B;&#x662F;&#x5C01;&#x88C5;&#x7684;. &#x786E;&#x4FDD;&#x6240;&#x6709;&#x7684;&#x95EE;&#x9898;&#x90FD;&#x5DF2;&#x77E5;&#x6653;, &#x4F46;<strong>&#x4E0D;&#x8981;&#x7167;&#x642C;&#x5168;&#x505A;</strong>, &#x53EA;&#x9009;&#x62E9;&#x9700;&#x8981;&#x6539;&#x7684;&#x5730;&#x65B9;.</p>
-</li>
-<li><p><strong>&#x6CE8;&#x91CA;</strong>: &#x4E3A;&#x81EA;&#x5DF1;&#x4E5F;&#x4E3A;&#x4ED6;&#x4EBA;. &#x4E3A;&#x8001;&#x53BB;&#x7684;&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;, &#x4EE5;&#x9632;&#x6B62;&#x7A81;&#x7136;&#x7684;&#x8BB0;&#x5FC6;&#x7A7A;&#x767D;. &#x4E3A;&#x4ED6;&#x4EBA;&#x5199;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;, &#x8BA9;&#x522B;&#x4EBA;&#x66F4;&#x52A0;&#x7406;&#x89E3;&#x4F60;. &#x5982;&#x679C;&#x662F;&#x81EA;&#x5DF1;&#x7684;&#x9879;&#x76EE;, &#x786E;&#x4FDD;&#x6DFB;&#x52A0;<code>Readme</code>, &#x589E;&#x52A0;&#x9879;&#x76EE;&#x7684;&#x53EF;&#x8BFB;&#x6027;, &#x6CA1;&#x6709;<code>Readme</code>&#x7684;&#x9879;&#x76EE;, &#x4E00;&#x6587;&#x4E0D;&#x503C;.</p>
-</li>
-</ol>
-<h2 id="&#x5206;&#x652F;"><a href="#&#x5206;&#x652F;" class="headerlink" title="&#x5206;&#x652F;"></a>&#x5206;&#x652F;</h2><ol>
-<li><p><strong>&#x6C38;&#x8FDC;</strong>&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x5206;&#x652F;&#x4E0A;&#x5F00;&#x53D1;&#x81EA;&#x5DF1;&#x7684;&#x529F;&#x80FD;. </p>
-</li>
-<li><p>&#x5728;&#x5408;&#x5E76;&#x65F6;, &#x628A;<code>&#x4E3B;&#x5206;&#x652F;</code>&#x5408;&#x5E76;&#x5230;<code>&#x81EA;&#x5DF1;&#x7684;&#x5206;&#x652F;</code>, &#x5904;&#x7406;&#x51B2;&#x7A81;(Conflict). &#x5B8C;&#x6210;&#x540E;, &#x628A;&#x81EA;&#x5DF1;&#x7684;&#x5206;&#x652F;&#x518D;&#x5408;&#x5E76;&#x5230;&#x4E3B;&#x5206;&#x652F;, <strong>&#x6CE8;&#x610F;&#x987A;&#x5E8F;</strong>. </p>
-</li>
-<li><p>&#x5728;&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x65F6;, &#x9700;&#x8981;&#x5408;&#x5E76;<strong>&#x524D;&#x7F6E;&#x5206;&#x652F;</strong>, &#x786E;&#x4FDD;&#x4EE5;&#x524D;&#x7248;&#x672C;&#x7684;&#x529F;&#x80FD;&#x5DF2;&#x7ECF;&#x52A0;&#x5165;.</p>
-</li>
-</ol>
+<h1 id="&#x6A21;&#x5757;&#x5B9A;&#x4E49;"><a href="#&#x6A21;&#x5757;&#x5B9A;&#x4E49;" class="headerlink" title="&#x6A21;&#x5757;&#x5B9A;&#x4E49;"></a>&#x6A21;&#x5757;&#x5B9A;&#x4E49;</h1><p>&#x5728;ES6&#x4E2D;, RN&#x6A21;&#x5757;&#x4F7F;&#x7528;<code>class</code>&#x5F62;&#x5F0F;, &#x4EE3;&#x66FF;<code>var</code>&#x5F62;&#x5F0F;, &#x4F7F;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x89C4;&#x8303;.&#x65E7;&#x7684;&#x5199;&#x6CD5;, &#x65B9;&#x6CD5;&#x6216;&#x53D8;&#x91CF;&#x4F7F;&#x7528;<strong>&#x9017;&#x53F7;(&#x201C;,&#x201D;)</strong>&#x95F4;&#x9694;.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Feed = React.createClass({});</span><br></pre></td></tr></table></figure>
+<p>ES6&#x7684;&#x5199;&#x6CD5;, &#x65B9;&#x6CD5;&#x6216;&#x53D8;&#x91CF;&#x7ED3;&#x675F;&#x4F7F;&#x7528;<strong>&#x5206;&#x53F7;(&#x201C;;&#x201D;)</strong>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Feed</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{}</span><br></pre></td></tr></table></figure>
+<h1 id="&#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;"><a href="#&#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;" class="headerlink" title="&#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;"></a>&#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;</h1><p>&#x5728;ES6&#x4E2D;, &#x4F7F;&#x7528;<code>class</code>&#x7C7B;&#x7684;&#x5F62;&#x5F0F;, &#x56E0;&#x6B64;&#x521D;&#x59CB;&#x5316;&#x5728;<strong>&#x6784;&#x9020;&#x5668;(constructor)</strong>&#x4E2D;&#x8FDB;&#x8FDB;&#x884C;. &#x65E7;&#x7684;&#x5199;&#x6CD5;, &#x4F7F;&#x7528;<code>getInitialState</code>, &#x4F7F;&#x7528;<code>return</code>&#x8FD4;&#x56DE;&#x72B6;&#x6001;.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Feed = React.createClass({</span><br><span class="line">  getInitialState() {</span><br><span class="line">    <span class="keyword">return</span> {</span><br><span class="line">      dataSource: <span class="keyword">new</span> ListView.DataSource({</span><br><span class="line">        rowHasChanged: (row1, row2) =&gt; row1 !== row2</span><br><span class="line">      }),</span><br><span class="line">      loaded: <span class="literal">false</span>,</span><br><span class="line">      isAnimating: <span class="literal">true</span>,</span><br><span class="line">      isRefreshing: <span class="literal">false</span></span><br><span class="line">    };</span><br><span class="line">  }</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+<p>ES6&#x7684;&#x5199;&#x6CD5;, &#x4F7F;&#x7528;<code>constructor</code>&#x6784;&#x9020;&#x5668;, &#x76F4;&#x63A5;&#x8BBE;&#x7F6E;<code>state</code>&#x72B6;&#x6001;.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Feed</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</span><br><span class="line">  <span class="keyword">constructor</span>(props) {</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = {</span><br><span class="line">      dataSource: <span class="keyword">new</span> ListView.DataSource({</span><br><span class="line">        rowHasChanged: (row1, row2) =&gt; row1 !== row2</span><br><span class="line">      }),</span><br><span class="line">      loaded: <span class="literal">false</span>,</span><br><span class="line">      isAnimating: <span class="literal">true</span>,</span><br><span class="line">      isRefreshing: <span class="literal">false</span></span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h1 id="this&#x7ED1;&#x5B9A;"><a href="#this&#x7ED1;&#x5B9A;" class="headerlink" title="this&#x7ED1;&#x5B9A;"></a>this&#x7ED1;&#x5B9A;</h1><p>&#x5728;ES6&#x4E2D;, &#x6CE8;&#x610F;<strong>this</strong>&#x7684;&#x4F5C;&#x7528;&#x57DF;, &#x7531;&#x4E8E;&#x4F7F;&#x7528;&#x7C7B;&#x7684;&#x5199;&#x6CD5;, &#x6240;&#x4EE5;<strong>this</strong>&#x4EC5;&#x4EC5;&#x6307;&#x4EE3;&#x5F53;&#x524D;&#x7684;&#x7C7B;, &#x5BF9;&#x4E8E;&#x5185;&#x90E8;&#x7C7B;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x6307;&#x5B9A;<strong>this</strong>, &#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x53EF;&#x4EE5;&#x4EFB;&#x9009;. &#x65E7;&#x7684;&#x65B9;&#x5F0F;&#x76F4;&#x63A5;&#x5199;, &#x4F7F;&#x7528;&#x4F20;&#x9012;&#x7684;<code>props</code>&#x5C5E;&#x6027;.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Feed = React.createClass({</span><br><span class="line">  <span class="comment">// &#x76F4;&#x63A5;&#x4F7F;&#x7528;this.props&#x5C5E;&#x6027;</span></span><br><span class="line">  renderStories(story) {</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">Story</span> <span class="attr">story</span>=<span class="string">{story}</span> <span class="attr">navigator</span>=<span class="string">{this.props.navigator}</span>&gt;</span><span class="tag">&lt;/<span class="name">Story</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  render() {</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">ListView</span></span><br><span class="line">        <span class="attr">testID</span>=<span class="string">{&quot;Feed</span> <span class="attr">Screen</span>&quot;}</span><br><span class="line">        <span class="attr">dataSource</span>=<span class="string">{this.state.dataSource}</span></span><br><span class="line">        <span class="attr">renderRow</span>=<span class="string">{this.renderStories}</span></span><br><span class="line">        <span class="attr">...</span>/&gt;</span></span><br><span class="line">    )</span><br><span class="line">  }</span><br><span class="line">});</span></span><br></pre></td></tr></table></figure>
+<p>ES6&#x7684;&#x5199;&#x6CD5;. &#x5728;&#x5185;&#x90E8;&#x7C7B;&#x4E2D;, &#x9700;&#x8981;&#x91CD;&#x65B0;&#x7ED1;&#x5B9A;this. &#x4E09;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;: &#x6784;&#x9020;&#x65F6;, &#x8C03;&#x7528;&#x65F6;, &#x4F7F;&#x7528;&#x65F6;.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Feed</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</span><br><span class="line">  <span class="comment">// &#x6784;&#x9020;&#x5668;&#x76F4;&#x63A5;&#x7ED1;&#x5B9A;&#x65B9;&#x6CD5;.</span></span><br><span class="line">  <span class="keyword">constructor</span>(props) {</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.renderStories = <span class="keyword">this</span>.renderStories.bind(<span class="keyword">this</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Feed</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</span><br><span class="line">  <span class="comment">// &#x8C03;&#x7528;&#x65F6;, &#x7ED1;&#x5B9A;this.</span></span><br><span class="line">  render() {</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">ListView</span></span><br><span class="line">        <span class="attr">testID</span>=<span class="string">{&quot;Feed</span> <span class="attr">Screen</span>&quot;}</span><br><span class="line">        <span class="attr">dataSource</span>=<span class="string">{this.state.dataSource}</span></span><br><span class="line">        <span class="attr">renderRow</span>=<span class="string">{(story)</span> =&gt;</span> this.renderStories(story)}</span><br><span class="line">        .../&gt;</span><br><span class="line">    )</span><br><span class="line">  }</span><br><span class="line">}</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Feed</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{</span><br><span class="line">  <span class="comment">// &#x4F7F;&#x7528;&#x65F6;, &#x7ED1;&#x5B9A;this</span></span><br><span class="line">  render() {</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">ListView</span></span><br><span class="line">        <span class="attr">testID</span>=<span class="string">{&quot;Feed</span> <span class="attr">Screen</span>&quot;}</span><br><span class="line">        <span class="attr">dataSource</span>=<span class="string">{this.state.dataSource}</span></span><br><span class="line">        <span class="attr">renderRow</span>=<span class="string">{this.renderStories.bind(this)}</span></span><br><span class="line">        <span class="attr">...</span>/&gt;</span></span><br><span class="line">    )</span><br><span class="line">  }</span><br><span class="line">}</span></span><br></pre></td></tr></table></figure>
+<p>&#x6CE8;&#x610F;&#x7ED1;&#x5B9A;this&#x5931;&#x8D25;, &#x4F1A;&#x53D1;&#x751F;&#x672A;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;, &#x5373;<code>undefined is not an object</code>.</p>
+<p><strong>&#x9519;&#x8BEF;&#x4FE1;&#x606F;</strong></p>
+<p><img src="/2016/04/26/1604/261-rn-es6-class/rn-es6-class-error.png" alt="&#x5D29;&#x6E83;"></p>
 <hr>
-<p>&#x5F00;&#x53D1;&#x56E2;&#x961F;&#x9879;&#x76EE;&#x9700;&#x8981;&#x4E25;&#x8C28;, &#x4EE3;&#x7801;&#x5199;&#x7684;&#x4E0D;&#x6F02;&#x4EAE;&#x53EF;&#x4EE5;, &#x53EA;&#x8981;&#x662F;&#x4F60;&#x7684;&#x6781;&#x9650;&#x5C31;&#x597D;. &#x5584;&#x5F85;&#x4F60;&#x7684;&#x9879;&#x76EE;, &#x5584;&#x5F85;&#x4F60;&#x7684;&#x5DE5;&#x4F5C;, &#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x4F18;&#x96C5;&#x7684;&#x7A0B;&#x5E8F;&#x5458;, &#x4E0E;&#x541B;&#x5171;&#x52C9;.</p>
+<p><strong>React Native</strong>&#x63A8;&#x8350;&#x4F7F;&#x7528;ES6&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x8303;&#x5F00;&#x53D1;, &#x56E0;&#x6B64;&#x5728;&#x5F00;&#x53D1;&#x4E2D;, &#x6211;&#x4EEC;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;ES6. &#x4F7F;&#x7528;&#x7C7B;&#x7684;&#x5F62;&#x5F0F;, &#x5BF9;&#x4E8E;&#x7F16;&#x8F91;&#x5668;&#x66F4;&#x52A0;&#x53CB;&#x597D;, &#x4E5F;&#x66F4;&#x5BB9;&#x6613;&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x7D22;&#x5F15;, &#x65B9;&#x4FBF;&#x7F16;&#x7A0B;.</p>
+<p>&#x611F;&#x8C22;&#x6211;&#x7684;&#x670B;&#x53CB;<strong>&#x524D;&#x7AEF;&#x5927;&#x795E;@&#x5DE6;&#x5927;&#x5E08;</strong>&#x7684;&#x6307;&#x5BFC;!</p>
+<p>&#x53E6;&#x5916;<a href="https://toddmotto.com/react-create-class-versus-component/" target="_blank" rel="external">&#x53C2;&#x8003;</a></p>
 <p>OK, that&#x2019;s all! Enjoy it!</p>
 <hr>
 <blockquote>
-<p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/04/16/1604/161-check-code/">http://www.wangchenlong.org/2016/04/16/1604/161-check-code/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://weibo.com/u/2852941392" target="_blank" rel="external">&#x5FAE;&#x535A;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
+<p>&#x539F;&#x59CB;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/04/26/1604/261-rn-es6-class/">http://www.wangchenlong.org/2016/04/26/1604/261-rn-es6-class/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
 </blockquote>
       
     </div>
@@ -434,7 +433,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/经验/" rel="tag">#经验</a>
+            <a href="/tags/ReactNative/" rel="tag">#ReactNative</a>
           
         </div>
       
@@ -443,17 +442,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/12/1604/121-rn-property-demo/" rel="next" title="React Native 实例 - 房产搜索App">
-                <i class="fa fa-chevron-left"></i> React Native 实例 - 房产搜索App
+              <a href="/2016/04/24/1604/241-rn-jing-game/" rel="next" title="React Native 实例 - 网格游戏">
+                <i class="fa fa-chevron-left"></i> React Native 实例 - 网格游戏
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/19/1604/191-rn-navigator/" rel="prev" title="React Native 的 Navigator 组件使用方式">
-                React Native 的 Navigator 组件使用方式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -468,10 +463,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/16/1604/161-check-code/"
-     data-title="在正式提交测试前的代码检查"
+        <div class="ds-share flat" data-thread-key="2016/04/26/1604/261-rn-es6-class/"
+     data-title="React Native 的 ES6 类写法与未定义错误"
      data-content=""
-     data-url="http://www.wangchenlong.org/2016/04/16/1604/161-check-code/">
+     data-url="http://www.wangchenlong.org/2016/04/26/1604/261-rn-es6-class/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -502,8 +497,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/16/1604/161-check-code/"
-           data-title="在正式提交测试前的代码检查" data-url="http://www.wangchenlong.org/2016/04/16/1604/161-check-code/">
+      <div class="ds-thread" data-thread-key="2016/04/26/1604/261-rn-es6-class/"
+           data-title="React Native 的 ES6 类写法与未定义错误" data-url="http://www.wangchenlong.org/2016/04/26/1604/261-rn-es6-class/">
       </div>
     
   </div>
@@ -659,7 +654,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#功能"><span class="nav-number">1.</span> <span class="nav-text">功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支"><span class="nav-number">3.</span> <span class="nav-text">分支</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模块定义"><span class="nav-number">1.</span> <span class="nav-text">模块定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化状态"><span class="nav-number">2.</span> <span class="nav-text">初始化状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this绑定"><span class="nav-number">3.</span> <span class="nav-text">this绑定</span></a></li></ol></div>
             
           </div>
         </section>
