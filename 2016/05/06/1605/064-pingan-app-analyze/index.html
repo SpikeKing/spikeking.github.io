@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="&amp;#x5728;Android&amp;#x7CFB;&amp;#x7EDF;&amp;#x4E2D;, &amp;#x8FDB;&amp;#x7A0B;&amp;#x975E;&amp;#x5E38;&amp;#x91CD;&amp;#x8981;, &amp;#x9664;&amp;#x4E86;&amp;#x4E3B;&amp;#x8FDB;&amp;#x7A0B;&amp;#x8FD0;&amp;#x884C;App, &amp;#x6211;&amp;#x4EEC;&amp;#x8FD8;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;">
+<meta name="description" content="&amp;#x5E73;&amp;#x5B89;&amp;#x597D;&amp;#x533B;&amp;#x751F;&amp;#x4F5C;&amp;#x4E3A;&amp;#x5E73;&amp;#x5B89;&amp;#x65D7;&amp;#x4E0B;&amp;#x7684;&amp;#x79FB;&amp;#x52A8;&amp;#x533B;&amp;#x7597;&amp;#x5E94;&amp;#x7528;, &amp;#x53D7;&amp;#x5230;&amp;#x5E73;&amp;#x5B89;&amp;#x96C6;&amp;#x56E2;&amp;#x768">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于 Android 进程的简介">
-<meta property="og:url" content="http://www.wangchenlong.org/2016/05/06/1605/061-android-process-concept/index.html">
+<meta property="og:title" content="平安好医生技术栈的分析">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/05/06/1605/064-pingan-app-analyze/index.html">
 <meta property="og:site_name" content="Mystra">
-<meta property="og:description" content="&amp;#x5728;Android&amp;#x7CFB;&amp;#x7EDF;&amp;#x4E2D;, &amp;#x8FDB;&amp;#x7A0B;&amp;#x975E;&amp;#x5E38;&amp;#x91CD;&amp;#x8981;, &amp;#x9664;&amp;#x4E86;&amp;#x4E3B;&amp;#x8FDB;&amp;#x7A0B;&amp;#x8FD0;&amp;#x884C;App, &amp;#x6211;&amp;#x4EEC;&amp;#x8FD8;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;">
-<meta property="og:image" content="http://www.wangchenlong.org/2016/05/06/1605/061-android-process-concept/process-concept-logo.jpg">
-<meta property="og:updated_time" content="2016-05-06T09:33:56.000Z">
+<meta property="og:description" content="&amp;#x5E73;&amp;#x5B89;&amp;#x597D;&amp;#x533B;&amp;#x751F;&amp;#x4F5C;&amp;#x4E3A;&amp;#x5E73;&amp;#x5B89;&amp;#x65D7;&amp;#x4E0B;&amp;#x7684;&amp;#x79FB;&amp;#x52A8;&amp;#x533B;&amp;#x7597;&amp;#x5E94;&amp;#x7528;, &amp;#x53D7;&amp;#x5230;&amp;#x5E73;&amp;#x5B89;&amp;#x96C6;&amp;#x56E2;&amp;#x768">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/05/06/1605/064-pingan-app-analyze/pingan-logo.png">
+<meta property="og:updated_time" content="2016-05-06T09:55:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于 Android 进程的简介">
-<meta name="twitter:description" content="&amp;#x5728;Android&amp;#x7CFB;&amp;#x7EDF;&amp;#x4E2D;, &amp;#x8FDB;&amp;#x7A0B;&amp;#x975E;&amp;#x5E38;&amp;#x91CD;&amp;#x8981;, &amp;#x9664;&amp;#x4E86;&amp;#x4E3B;&amp;#x8FDB;&amp;#x7A0B;&amp;#x8FD0;&amp;#x884C;App, &amp;#x6211;&amp;#x4EEC;&amp;#x8FD8;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;">
-<meta name="twitter:image" content="http://www.wangchenlong.org/2016/05/06/1605/061-android-process-concept/process-concept-logo.jpg">
+<meta name="twitter:title" content="平安好医生技术栈的分析">
+<meta name="twitter:description" content="&amp;#x5E73;&amp;#x5B89;&amp;#x597D;&amp;#x533B;&amp;#x751F;&amp;#x4F5C;&amp;#x4E3A;&amp;#x5E73;&amp;#x5B89;&amp;#x65D7;&amp;#x4E0B;&amp;#x7684;&amp;#x79FB;&amp;#x52A8;&amp;#x533B;&amp;#x7597;&amp;#x5E94;&amp;#x7528;, &amp;#x53D7;&amp;#x5230;&amp;#x5E73;&amp;#x5B89;&amp;#x96C6;&amp;#x56E2;&amp;#x768">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/05/06/1605/064-pingan-app-analyze/pingan-logo.png">
 
 
 
@@ -113,7 +113,7 @@
   };
 </script>
 
-  <title> 关于 Android 进程的简介 | Mystra </title>
+  <title> 平安好医生技术栈的分析 | Mystra </title>
 
   <meta name="domain_verify" content="pmrgi33nmfuw4ir2ej3wc3thmnugk3tmn5xgoltpojtselbcm52wszbchirgmmzxgfqwcndggaztezjugizdoyjugftdqyzyhe2gemdcgm2timrcfqrhi2lnmvjwc5tfei5dcnbvhaytemztguydsnbypu">
 
@@ -302,7 +302,7 @@
             
             
               
-                关于 Android 进程的简介
+                平安好医生技术栈的分析
               
             
           </h1>
@@ -314,7 +314,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-06T17:06:00+08:00" content="2016-05-06">
+            <time itemprop="dateCreated" datetime="2016-05-06T17:50:00+08:00" content="2016-05-06">
               2016-05-06
             </time>
           </span>
@@ -344,8 +344,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/06/1605/061-android-process-concept/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/06/1605/061-android-process-concept/" itemprop="commentsCount"></span>
+                <a href="/2016/05/06/1605/064-pingan-app-analyze/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/06/1605/064-pingan-app-analyze/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -355,7 +355,7 @@
 
           
           
-             <span id="/2016/05/06/1605/061-android-process-concept/" class="leancloud_visitors" data-flag-title="关于 Android 进程的简介">
+             <span id="/2016/05/06/1605/064-pingan-app-analyze/" class="leancloud_visitors" data-flag-title="平安好医生技术栈的分析">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -377,37 +377,57 @@
       
 
       
-        <p>&#x5728;Android&#x7CFB;&#x7EDF;&#x4E2D;, &#x8FDB;&#x7A0B;&#x975E;&#x5E38;&#x91CD;&#x8981;, &#x9664;&#x4E86;<strong>&#x4E3B;&#x8FDB;&#x7A0B;</strong>&#x8FD0;&#x884C;App, &#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<strong>&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;</strong>&#x5904;&#x7406;&#x72EC;&#x7ACB;&#x4EFB;&#x52A1;.</p>
+        <p><strong>&#x5E73;&#x5B89;&#x597D;&#x533B;&#x751F;</strong>&#x4F5C;&#x4E3A;&#x5E73;&#x5B89;&#x65D7;&#x4E0B;&#x7684;&#x79FB;&#x52A8;&#x533B;&#x7597;&#x5E94;&#x7528;, &#x53D7;&#x5230;&#x5E73;&#x5B89;&#x96C6;&#x56E2;&#x7684;&#x5F88;&#x5927;&#x91CD;&#x89C6;, &#x975E;&#x5E38;&#x4E0D;&#x9519;. &#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x8FD9;&#x6B3E;&#x5E94;&#x7528;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x6280;&#x672F;&#x5427;, &#x591A;&#x5B66;&#x4E60;&#x591A;&#x8FDB;&#x6B65;. &#x5927;&#x5BB6;&#x5728;&#x6587;&#x4E2D;&#x83B7;&#x53D6;&#x9700;&#x8981;&#x5B66;&#x4E60;&#x7684;&#x5185;&#x5BB9;&#x5427;.</p>
+<p>&#x7248;&#x672C;: <code>personaldoc_PCGW_V_3.1.2_30102.apk</code></p>
 <a id="more"></a>
 <blockquote>
 <p>&#x66F4;&#x591A;: <a href="http://www.wangchenlong.org/">http://www.wangchenlong.org/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;GitHub: <a href="https://github.com/SpikeKing" target="_blank" rel="external">https://github.com/SpikeKing</a></p>
 </blockquote>
-<p>&#x8FDB;&#x7A0B;, &#x5373;Process. &#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;, &#x5373;IPC(Inter-Process Communication). </p>
-<p><img src="/2016/05/06/1605/061-android-process-concept/process-concept-logo.jpg" alt="Process"></p>
-<p>&#x5728;Android&#x4E2D;, &#x4F7F;&#x7528;&#x591A;&#x8FDB;&#x7A0B;&#x53EA;&#x6709;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;, &#x5728;AndroidManifest&#x4E2D;, &#x4E3A;&#x56DB;&#x5927;&#x7EC4;&#x4EF6;(Activity, Service, Receiver, ContentProvider)&#x6307;&#x5B9A;<code>android:process</code>&#x5C5E;&#x6027;.</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">service</span></span><br><span class="line">    <span class="attr">android:name</span>=<span class="string">&quot;.PedometerCounterService&quot;</span></span><br><span class="line">    <span class="attr">android:exported</span>=<span class="string">&quot;false&quot;</span></span><br><span class="line">    <span class="attr">android:process</span>=<span class="string">&quot;:cy_pedometer_set&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><code>exported=&quot;false&quot;</code>&#x8868;&#x793A;&#x53EA;&#x4E0E;&#x672C;&#x5E94;&#x7528;&#x5185;&#x7684;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;, &#x5373;&#x5305;&#x540D;&#x76F8;&#x540C;.</p>
-</blockquote>
-<p>&#x9ED8;&#x8BA4;&#x8FDB;&#x7A0B;&#x7684;&#x8FDB;&#x7A0B;&#x540D;&#x662F;<strong>&#x5305;&#x540D;</strong>.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x279C;  ~ adb shell ps | grep wangchenlong.chunyu.me.android_pedometer_<span class="built_in">set</span></span><br><span class="line">u0_a354   28490 410   2259024 80272 ffffffff 00000000 S wangchenlong.chunyu.me.android_pedometer_<span class="built_in">set</span></span><br><span class="line">u0_a354   28515 410   2191112 60080 ffffffff 00000000 S wangchenlong.chunyu.me.android_pedometer_<span class="built_in">set</span>:cy_pedometer_<span class="built_in">set</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>&#x8FDB;&#x7A0B;ID&#x662F;<code>28490</code>&#x548C;<code>28515</code>. &#x7236;&#x8FDB;&#x7A0B;ID&#x662F;<code>410</code>. <code>ps -help</code>&#x663E;&#x793A;&#x6807;&#x9898;.</p>
-</blockquote>
-<p>&#x4F7F;&#x7528;<code>&quot;:&quot;</code>&#x8868;&#x793A;<strong>&#x79C1;&#x6709;&#x8FDB;&#x7A0B;</strong>, &#x5176;&#x4ED6;&#x7EC4;&#x4EF6;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;; &#x4F7F;&#x7528;&#x5168;&#x79F0;&#x8868;&#x793A;<strong>&#x5168;&#x5C40;&#x8FDB;&#x7A0B;</strong>, &#x5176;&#x4ED6;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>ShareUID</code>&#x5171;&#x4EAB;&#x8FDB;&#x7A0B;.</p>
-<p>&#x591A;&#x8FDB;&#x7A0B;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x5185;&#x5B58;&#x5171;&#x4EAB;&#x6570;&#x636E;. &#x53EF;&#x4EE5;&#x901A;&#x8FC7;<strong>Intent</strong>&#x4F20;&#x9012;&#x6570;&#x636E;.</p>
-<p>&#x4E0D;&#x540C;&#x8FDB;&#x7A0B;&#x7684;&#x7EC4;&#x4EF6;&#x4F1A;&#x62E5;&#x6709;&#x72EC;&#x7ACB;&#x7684;<strong>&#x865A;&#x62DF;&#x673A;</strong>, <strong>Application</strong>, <strong>&#x5185;&#x5B58;&#x7A7A;&#x95F4;</strong>.</p>
-<blockquote>
-<p>&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;, Application&#x4F1A;&#x521B;&#x5EFA;&#x591A;&#x6B21;.</p>
-</blockquote>
-<p><code>Serializable</code>&#x548C;<code>Parcelable</code>&#x63A5;&#x53E3;&#x5904;&#x7406;&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;&#x8FC7;&#x7A0B;. &#x4F7F;&#x7528;<code>ObjectOutputStream</code>&#x548C;<code>ObjectInputStream</code>&#x5904;&#x7406;&#x5BF9;&#x8C61;&#x7684;<code>Serializable</code>&#x5E8F;&#x5217;&#x5316;&#x4E0E;&#x53CD;&#x5E8F;&#x5217;&#x5316;.</p>
-<blockquote>
-<p>Intent&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>Serializable</code>&#x548C;<code>Parcelable</code>&#x63A5;&#x53E3;&#x4F20;&#x9012;&#x590D;&#x6742;&#x5BF9;&#x8C61;&#x6570;&#x636E;, &#x53C2;&#x4E0E;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;.</p>
-</blockquote>
+<p><img src="/2016/05/06/1605/064-pingan-app-analyze/pingan-logo.png" alt="Logo"></p>
+<hr>
+<h2 id="&#x67B6;&#x6784;"><a href="#&#x67B6;&#x6784;" class="headerlink" title="&#x67B6;&#x6784;"></a>&#x67B6;&#x6784;</h2><p><strong>Apk</strong>: 18.5M, &#x5305;&#x540D;&#x662F;<code>com.pingan.papd</code>.</p>
+<p><strong>Android SDK</strong>: &#x6784;&#x5EFA;&#x7248;&#x672C;19, &#x6700;&#x4F4E;&#x7248;&#x672C;14.</p>
+<p><strong>MultiDex</strong>: &#x4F7F;&#x7528;&#x4E24;&#x4E2A;Dex.</p>
+<p><strong><a href="https://www.jpush.cn/" target="_blank" rel="external">Jpush</a></strong>: <strong>&#x6781;&#x5149;&#x63A8;&#x9001;</strong>. &#x5E73;&#x5B89;&#x662F;&#x6781;&#x5149;&#x63A8;&#x9001;(Jpush)&#x7684;&#x7C89;&#x4E1D; :), &#x5927;&#x91CF;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x7684;&#x4EA7;&#x54C1;. &#x670D;&#x52A1;: <code>AlarmReceiver</code>, <code>DownloadService</code>, <code>PushReceiver</code>, <code>DaemonService</code>. &#x540C;&#x65F6;, &#x81EA;&#x5F00;&#x53D1;&#x7684;<code>RegistrationIdReceiver</code>&#x63A5;&#x6536;&#x5668;&#x4E5F;&#x63A5;&#x6536;&#x5927;&#x91CF;Jpush&#x7684;&#x5E7F;&#x64AD;. Jush&#x7684;Key&#x662F;<code>da3f70705b4069f269f15398</code>, &#x6E20;&#x9053;: <code>PAJK</code>, &#x5373;&#x5E73;&#x5B89;&#x5065;&#x5EB7;.</p>
+<p><strong>&#x767E;&#x5EA6;LBS</strong> &amp; <strong>&#x9AD8;&#x5FB7;&#x5B9A;&#x4F4D;</strong>.</p>
+<p><strong><a href="https://github.com/singwhatiwanna/dynamic-load-apk" target="_blank" rel="external">&#x52A8;&#x6001;&#x52A0;&#x8F7D;DL</a></strong>: &#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x65B9;&#x6848;DL, &#x767E;&#x5EA6;&#x7684;&#x4EFB;&#x7389;&#x521A;&#x5F00;&#x53D1;.</p>
+<p><strong>&#x5C0F;&#x7C73;&#x63A8;&#x9001;(mipush)</strong>: &#x4F7F;&#x7528;&#x7684;&#x7C7B;<code>XMPushService</code>, <code>PushMessageHandler</code>, <code>MessageHandleService</code>, <code>PingReceiver</code>.</p>
+<p><strong>&#x53CB;&#x76DF;&#x7EDF;&#x8BA1;(umeng)</strong>.</p>
+<p><strong>SQLite&#x7684;So</strong>: libsecsqlite3.so, xUtils(ORM)&#x4F7F;&#x7528;.</p>
+<hr>
+<h2 id="&#x4EE3;&#x7801;"><a href="#&#x4EE3;&#x7801;" class="headerlink" title="&#x4EE3;&#x7801;"></a>&#x4EE3;&#x7801;</h2><h3 id="com"><a href="#com" class="headerlink" title="com"></a>com</h3><p><strong>xiaomi</strong>: &#x5C0F;&#x7C73;&#x63A8;&#x9001;;</p>
+<p><strong><a href="https://github.com/singwhatiwanna/dynamic-load-apk" target="_blank" rel="external">ryg</a></strong>: <strong>&#x52A8;&#x6001;&#x52A0;&#x8F7D;DL</strong>, &#x767E;&#x5EA6;&#x4EFB;&#x7389;&#x521A;&#x7684;&#x5E93;, &#x975E;&#x5E38;&#x68D2;&#x7684;&#x5E93;.</p>
+<p><strong><a href="https://github.com/square/otto" target="_blank" rel="external">squareup</a></strong>: <strong>Otto</strong>&#x662F;&#x4E00;&#x79CD;EventBus.</p>
+<p><strong>pajk, pingan</strong>: &#x5E73;&#x5B89;&#x5065;&#x5EB7;, &#x5E73;&#x5B89;, &#x81EA;&#x6709;&#x4EE3;&#x7801;.</p>
+<p><strong><a href="https://www.talkingdata.com/" target="_blank" rel="external">talkingdata</a></strong>: <strong>TalkingData</strong>&#x6570;&#x636E;&#x7EDF;&#x8BA1;&#x670D;&#x52A1;, &#x7C7B;&#x4F3C;&#x4E8E;&#x542C;&#x4E91;, &#x5E73;&#x5B89;&#x5B9A;&#x5236;.</p>
+<p><strong>samsung</strong>: &#x4E09;&#x661F;&#x7684;<strong>SHealth</strong>&#x5E93;.</p>
+<p><strong><a href="https://github.com/emilsjolander/StickyListHeaders" target="_blank" rel="external">se.emilsjolander.StickyListHeaders</a></strong>: <strong>StickyListHeaders</strong>&#x662F;&#x56FA;&#x5B9A;&#x9876;&#x90E8;&#x6EDA;&#x52A8;&#x5217;&#x8868;&#x7684;&#x5F00;&#x6E90;&#x5E93;, 3k+&#x7684;Star, &#x975E;&#x5E38;&#x6709;&#x540D;.</p>
+<p><strong><a href="https://cordova.apache.org/" target="_blank" rel="external">paf.cordova</a></strong>: <strong>Cordova</strong>&#x6DF7;&#x5408;&#x7F16;&#x7A0B;, &#x7C7B;&#x4F3C;&#x4E8E;RN.</p>
+<p><strong>autonavi.aps</strong>: &#x9AD8;&#x5FB7;&#x7684;&#x81EA;&#x52A8;&#x5BFC;&#x822A;.</p>
+<p><strong><a href="https://github.com/wyouflf/xUtils" target="_blank" rel="external">lidroid.xutils</a></strong>: <strong>xUtils</strong>&#x662F;SQLite&#x7684;ORM, &#x7B80;&#x5316;&#x7F16;&#x5199;, &#x4E0E;Sugar&#x7C7B;&#x4F3C;.</p>
+<p><strong><a href="https://github.com/alibaba/fastjson/wiki" target="_blank" rel="external">alibaba.fastjson</a></strong>: <strong>FastJson</strong>&#x662F;&#x963F;&#x91CC;&#x5DF4;&#x5DF4;&#x7684;Json&#x89E3;&#x6790;&#x5E93;, FastJson.</p>
+<p><strong>google.gson</strong>: Google&#x7684;Gson&#x5E93;.</p>
+<p><strong>tencent</strong>: &#x817E;&#x8BAF;&#x7684;SNS&#x5E93;&#x96C6;&#x5408;.</p>
+<p><strong><a href="https://github.com/biokys/cropimage" target="_blank" rel="external">eu.janmuller</a></strong>: <strong>CropImage</strong>&#x662F;&#x56FE;&#x7247;&#x526A;&#x88C1;&#x7684;&#x5F00;&#x6E90;&#x5E93;, 400+Stars.</p>
+<p><strong>pafu</strong>: &#x5E73;&#x5B89;&#x7684;&#x516C;&#x5171;&#x5E93;, &#x5DE5;&#x5177;&#x548C;&#x6E20;&#x9053;&#x7BA1;&#x7406;, &#x4F7F;&#x7528;&#x65B9;&#x4FBF;.</p>
+<p><strong>amap.api</strong>: &#x9AD8;&#x5FB7;&#x5B9A;&#x4F4D;.</p>
+<p><strong>sina</strong>: &#x65B0;&#x6D6A;&#x5FAE;&#x535A;.</p>
+<p><strong><a href="https://www.talkingdata.com/" target="_blank" rel="external">tendcloud</a></strong>: TalkingData&#x6570;&#x636E;&#x7EDF;&#x8BA1;&#x5E93;, &#x7C7B;&#x4F3C;&#x542C;&#x4E91;.</p>
+<p><strong><a href="https://www.1qianbao.com/" target="_blank" rel="external">paic.zhifu</a></strong>: <strong>&#x58F9;&#x94B1;&#x5305;</strong>, &#x5E73;&#x5B89;&#x7684;&#x652F;&#x4ED8;&#x5E73;&#x53F0;.</p>
+<h3 id="&#x5176;&#x4ED6;"><a href="#&#x5176;&#x4ED6;" class="headerlink" title="&#x5176;&#x4ED6;"></a>&#x5176;&#x4ED6;</h3><p><strong><a href="https://github.com/greenrobot/EventBus" target="_blank" rel="external">de.greenrobot</a></strong>: GreenRobot&#x7684;<strong>EventBus</strong>;</p>
+<p><strong><a href="https://github.com/noties/Scrollable" target="_blank" rel="external">ru.noties.scrollable</a></strong>: <strong>Scrollable</strong>&#x662F;&#x6EDA;&#x52A8;&#x63A7;&#x4EF6;&#x5E93;.</p>
+<p><strong>org.apache.cordova</strong>: <strong>Cordova</strong>&#x6DF7;&#x5408;&#x7F16;&#x7A0B;.</p>
+<p><strong><a href="http://xjanker.github.io/akita/" target="_blank" rel="external">org.akita</a></strong>: <strong>Akita</strong>&#x662F;Android&#x7684;&#x5FEB;&#x901F;&#x5F00;&#x53D1;&#x5E93;, &#x4E00;&#x5BB6;&#x516C;&#x53F8;&#x7684;&#x4EA7;&#x54C1;, &#x975E;&#x5E38;&#x6709;&#x610F;&#x601D;.</p>
+<p><strong><a href="https://www.jivesoftware.com/products/jive-n/" target="_blank" rel="external">org.jivesoftware</a></strong>: <strong>Jivesoftware</strong>&#x662F;&#x534F;&#x540C;&#x5DE5;&#x4F5C;&#x7684;&#x5E93;, &#x4E5F;&#x662F;&#x4E00;&#x5BB6;&#x516C;&#x53F8;&#x7684;&#x4EA7;&#x54C1;.</p>
+<p><strong><a href="https://www.jpush.cn/" target="_blank" rel="external">cn.jpush</a></strong>: <strong>&#x6781;&#x5149;&#x63A8;&#x9001;</strong>, &#x5E73;&#x5B89;&#x5065;&#x5EB7;&#x975E;&#x5E38;&#x559C;&#x6B22;, &#x8FD8;&#x505A;&#x4E86;&#x5B9A;&#x5236;!</p>
+<p><strong><a href="https://github.com/koral--/android-gif-drawable" target="_blank" rel="external">pl.droidsonroids.gif</a></strong>: &#x4F7F;&#x7528;<strong>Gif</strong>&#x56FE;&#x7247;&#x7684;&#x5E93;.</p>
+<hr>
+<h2 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h2><p>&#x5E73;&#x5B89;&#x597D;&#x533B;&#x751F;&#x7684;&#x4F53;&#x79EF;&#x76F8;&#x5BF9;&#x8F83;&#x5927;, &#x5347;&#x7EA7;Android&#x7684;SDK&#x6BD4;&#x8F83;&#x6162;, &#x6240;&#x4EE5;&#x53EA;&#x4F7F;&#x7528;Api19&#x7248;&#x672C;. &#x4F7F;&#x7528;&#x51E0;&#x4E2A;&#x4E3B;&#x6D41;&#x7684;&#x5F00;&#x6E90;&#x5E93;, &#x52A0;&#x5FEB;&#x8FED;&#x4EE3;&#x901F;&#x5EA6;. &#x6DF7;&#x5408;&#x7F16;&#x7A0B;(Cordova)&#x548C;&#x52A8;&#x6001;&#x52A0;&#x8F7D;(DL)&#x5747;&#x6709;&#x5305;&#x542B;. &#x6211;&#x6BD4;&#x8F83;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x5C31;&#x662F;<strong><a href="https://www.jpush.cn/" target="_blank" rel="external">&#x6781;&#x5149;&#x63A8;&#x9001;(JPush)</a></strong>, <strong><a href="http://xjanker.github.io/akita/" target="_blank" rel="external">Akita</a></strong>. &#x5176;&#x4ED6;&#x7684;&#x5F00;&#x6E90;&#x5E93;&#x90FD;&#x6BD4;&#x8F83;&#x5927;&#x4F17;, &#x5C31;&#x4E0D;&#x591A;&#x4ECB;&#x7ECD;&#x4E86;, &#x60F3;&#x4E86;&#x89E3;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x9605;&#x8BFB;&#x76F8;&#x5173;GitHub&#x6216;&#x5B98;&#x7F51;.</p>
+<p>&#x672C;&#x6587;&#x4EC5;&#x505A;&#x4E3A;&#x6280;&#x672F;&#x5B66;&#x4E60;&#x4F7F;&#x7528;.</p>
 <p>OK, that&#x2019;s all! Enjoy it!</p>
 <hr>
 <blockquote>
-<p>&#x6700;&#x521D;&#x53D1;&#x5E03;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/05/06/1605/061-android-process-concept/">http://www.wangchenlong.org/2016/05/06/1605/061-android-process-concept/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
+<p>&#x6700;&#x521D;&#x53D1;&#x5E03;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/05/06/1605/064-pingan-app-analyze/">http://www.wangchenlong.org/2016/05/06/1605/064-pingan-app-analyze/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
 </blockquote>
       
     </div>
@@ -437,17 +457,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/26/1604/261-rn-es6-class/" rel="next" title="React Native 的 ES6 类写法与未定义错误">
-                <i class="fa fa-chevron-left"></i> React Native 的 ES6 类写法与未定义错误
+              <a href="/2016/05/06/1605/063-clinic-idea/" rel="next" title="关于春雨线下诊所的创意策划">
+                <i class="fa fa-chevron-left"></i> 关于春雨线下诊所的创意策划
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/06/1605/062-become-better-programmer/" rel="prev" title="如何成为一名高级程序员">
-                如何成为一名高级程序员 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -462,10 +478,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/06/1605/061-android-process-concept/"
-     data-title="关于 Android 进程的简介"
+        <div class="ds-share flat" data-thread-key="2016/05/06/1605/064-pingan-app-analyze/"
+     data-title="平安好医生技术栈的分析"
      data-content=""
-     data-url="http://www.wangchenlong.org/2016/05/06/1605/061-android-process-concept/">
+     data-url="http://www.wangchenlong.org/2016/05/06/1605/064-pingan-app-analyze/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -496,8 +512,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/06/1605/061-android-process-concept/"
-           data-title="关于 Android 进程的简介" data-url="http://www.wangchenlong.org/2016/05/06/1605/061-android-process-concept/">
+      <div class="ds-thread" data-thread-key="2016/05/06/1605/064-pingan-app-analyze/"
+           data-title="平安好医生技术栈的分析" data-url="http://www.wangchenlong.org/2016/05/06/1605/064-pingan-app-analyze/">
       </div>
     
   </div>
@@ -653,7 +669,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构"><span class="nav-number">1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#com"><span class="nav-number">2.1.</span> <span class="nav-text">com</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">2.2.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
         </section>
