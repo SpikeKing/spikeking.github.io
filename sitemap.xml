@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/05/06/1605/062-become-better-programmer/</loc>
+    
+    <lastmod>2016-05-07T04:20:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/05/07/1605/072-serial-object/</loc>
     
     <lastmod>2016-05-07T04:15:33.000Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://www.wangchenlong.org/2016/05/06/1605/061-android-process-concept/</loc>
     
     <lastmod>2016-05-06T09:33:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/05/06/1605/062-become-better-programmer/</loc>
-    
-    <lastmod>2016-05-06T09:26:33.000Z</lastmod>
     
   </url>
   
@@ -170,7 +170,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/22/1603/224-star-explode-anim/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/20/1603/206-rxbinding-react-event/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -184,7 +184,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/18/1602/apply-droid-plugin/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/22/1603/224-star-explode-anim/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -198,35 +198,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/12/1602/apply-flux-architecture/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/22/1603/222-snowflake-anim/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/1602/rxandroid-async/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/22/1603/223-voice-ripple-anim/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/20/1603/206-rxbinding-react-event/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/18/1602/apply-droid-plugin/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -240,21 +212,28 @@
   </url>
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/22/1603/222-snowflake-anim/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/22/1603/223-voice-ripple-anim/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/19/1602/rxandroid-async/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/13/1602/use-dagger-espresso-test-network/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/22/1603/228-coordinator-layout-first/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/16/1602/use-dagger-first/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -268,7 +247,28 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/23/1603/233-fragment-tabhost-first/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/16/1602/use-dagger-first/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/12/1602/apply-flux-architecture/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/replace-svg-image/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/22/1603/228-coordinator-layout-first/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -282,7 +282,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/replace-svg-image/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/23/1603/233-fragment-tabhost-first/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
