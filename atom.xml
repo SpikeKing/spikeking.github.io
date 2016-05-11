@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wangchenlong.org/"/>
-  <updated>2016-05-07T04:15:33.000Z</updated>
+  <updated>2016-05-11T02:20:21.000Z</updated>
   <id>http://www.wangchenlong.org/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Intent或持久化存储处理复杂对象</title>
+    <title>Intent 或持久化存储处理复杂对象</title>
     <link href="http://www.wangchenlong.org/2016/05/07/1605/072-serial-object/"/>
     <id>http://www.wangchenlong.org/2016/05/07/1605/072-serial-object/</id>
     <published>2016-05-07T04:12:00.000Z</published>
-    <updated>2016-05-07T04:15:33.000Z</updated>
+    <updated>2016-05-11T02:20:21.000Z</updated>
     
     <content type="html">&lt;p&gt;&amp;#x5728;&amp;#x8FDB;&amp;#x7A0B;&amp;#x6216;&amp;#x9875;&amp;#x9762;&amp;#x901A;&amp;#x4FE1;&amp;#x65F6;&amp;#x9700;&amp;#x8981;&amp;#x4F7F;&amp;#x7528;Intent&amp;#x4F20;&amp;#x9012;&amp;#x6570;&amp;#x636E;; &amp;#x5728;&amp;#x5BF9;&amp;#x8C61;&amp;#x6301;&amp;#x4E45;&amp;#x5316;&amp;#x65F6;&amp;#x9700;&amp;#x8981;&amp;#x5B58;&amp;#x50A8;&amp;#x6570;&amp;#x636E;. &amp;#x5BF9;&amp;#x4E8E;&amp;#x590D;&amp;#x6742;&amp;#x7684;&amp;#x5BF9;&amp;#x8C61;, &amp;#x8FDB;&amp;#x884C;&amp;#x5E8F;&amp;#x5217;&amp;#x5316;&amp;#x624D;&amp;#x53EF;&amp;#x4F20;&amp;#x9012;&amp;#x6216;&amp;#x5B58;&amp;#x50A8;, &amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;&lt;code&gt;Java&amp;#x7684;Serializable&lt;/code&gt;&amp;#x65B9;&amp;#x5F0F;&amp;#x6216;&lt;code&gt;Android&amp;#x7684;Parcelable&lt;/code&gt;&amp;#x65B9;&amp;#x5F0F;. &amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;&lt;strong&gt;Serializable&lt;/strong&gt;&amp;#x548C;&lt;strong&gt;Parcelable&lt;/strong&gt;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#x65B9;&amp;#x5F0F;, &amp;#x542B;&amp;#x6709;Demo.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
