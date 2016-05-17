@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/05/17/1605/171-android-messenger/</loc>
+    
+    <lastmod>2016-05-17T09:58:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/02/25/tips/1605/072-android-tips-7/</loc>
     
     <lastmod>2016-05-12T06:28:58.000Z</lastmod>
@@ -58,6 +65,13 @@
   </url>
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/02/23/tips/1603/233-android-tips-3/</loc>
+    
+    <lastmod>2016-05-07T05:59:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/02/23/tips/1603/232-android-tips-2/</loc>
     
     <lastmod>2016-05-07T05:59:19.000Z</lastmod>
@@ -66,13 +80,6 @@
   
   <url>
     <loc>http://www.wangchenlong.org/2016/02/23/tips/1603/231-android-tips-1/</loc>
-    
-    <lastmod>2016-05-07T05:59:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/02/23/tips/1603/233-android-tips-3/</loc>
     
     <lastmod>2016-05-07T05:59:19.000Z</lastmod>
     
@@ -205,13 +212,6 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/20/1603/205-rx-continue-update/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/20/1603/206-rxbinding-react-event/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
@@ -219,7 +219,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/18/1602/apply-droid-plugin/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/20/1603/205-rx-continue-update/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -233,6 +233,13 @@
   </url>
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/18/1602/apply-droid-plugin/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/21/1603/212-anim-circular-reveal/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
@@ -240,14 +247,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/12/1602/apply-flux-architecture/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/12/1602/apply-flux-architecture/</loc>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/kotlin-extends-point/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -268,42 +275,7 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/03/19/1602/rxandroid-async/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wangchenlong.org/2016/03/22/1603/224-star-explode-anim/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/13/1602/use-dagger-espresso-test-network/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/22/1603/228-coordinator-layout-first/</loc>
-    
-    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wangchenlong.org/2016/03/16/1602/use-dagger-first/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -317,7 +289,35 @@
   </url>
   
   <url>
+    <loc>http://www.wangchenlong.org/2016/03/19/1602/rxandroid-async/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/15/1602/svg-path-animation/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wangchenlong.org/2016/03/22/1603/232-fragment-shared-element/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/22/1603/228-coordinator-layout-first/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/13/1602/use-dagger-espresso-test-network/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -339,6 +339,13 @@
   
   <url>
     <loc>http://www.wangchenlong.org/2016/03/28/1603/281-rx-max-threads/</loc>
+    
+    <lastmod>2016-04-07T06:15:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wangchenlong.org/2016/03/16/1602/use-dagger-first/</loc>
     
     <lastmod>2016-04-07T06:15:35.000Z</lastmod>
     
@@ -373,14 +380,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/23/1603/235-activity-lifecycle/</loc>
+    <loc>http://www.wangchenlong.org/2016/02/23/1603/234-activity-launch-mode/</loc>
     
     <lastmod>2016-03-24T12:56:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wangchenlong.org/2016/02/23/1603/234-activity-launch-mode/</loc>
+    <loc>http://www.wangchenlong.org/2016/02/23/1603/235-activity-lifecycle/</loc>
     
     <lastmod>2016-03-24T12:56:41.000Z</lastmod>
     
