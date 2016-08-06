@@ -1,0 +1,958 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="HM6XdT4pJXR7fFksvo3DvFAKVgeFg4ZUwh3iOGW8LHU" />
+
+
+
+
+  <meta name="baidu-site-verification" content="MPhG1F0aKe" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,Tips," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mystra" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web-icon.png?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x4ECB;&amp;#x7ECD;&amp;#x5173;&amp;#x4E8E;Android&amp;#x7684;&amp;#x4E00;&amp;#x4E9B;&amp;#x6709;&amp;#x8DA3;&amp;#x7684;&amp;#x5C0F;&amp;#x77E5;&amp;#x8BC6;&amp;#x70B9;. &amp;#x672C;&amp;#x6587;&amp;#x662F;&amp;#x7B2C;&amp;#x516D;&amp;#x7BC7;, &amp;#x6B22;&amp;#x8FCE;&amp;#x9605;&amp;#x8B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Tips 6">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/02/25/tips/1605/071-android-tips-6/index.html">
+<meta property="og:site_name" content="Mystra">
+<meta property="og:description" content="&amp;#x4ECB;&amp;#x7ECD;&amp;#x5173;&amp;#x4E8E;Android&amp;#x7684;&amp;#x4E00;&amp;#x4E9B;&amp;#x6709;&amp;#x8DA3;&amp;#x7684;&amp;#x5C0F;&amp;#x77E5;&amp;#x8BC6;&amp;#x70B9;. &amp;#x672C;&amp;#x6587;&amp;#x662F;&amp;#x7B2C;&amp;#x516D;&amp;#x7BC7;, &amp;#x6B22;&amp;#x8FCE;&amp;#x9605;&amp;#x8B">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/02/25/tips/1605/071-android-tips-6/android-tips.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/02/25/tips/1605/071-android-tips-6/view-pos.png">
+<meta property="og:updated_time" content="2016-08-06T03:33:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Tips 6">
+<meta name="twitter:description" content="&amp;#x4ECB;&amp;#x7ECD;&amp;#x5173;&amp;#x4E8E;Android&amp;#x7684;&amp;#x4E00;&amp;#x4E9B;&amp;#x6709;&amp;#x8DA3;&amp;#x7684;&amp;#x5C0F;&amp;#x77E5;&amp;#x8BC6;&amp;#x70B9;. &amp;#x672C;&amp;#x6587;&amp;#x662F;&amp;#x7B2C;&amp;#x516D;&amp;#x7BC7;, &amp;#x6B22;&amp;#x8FCE;&amp;#x9605;&amp;#x8B">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/02/25/tips/1605/071-android-tips-6/android-tips.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 6261011353935283000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.wangchenlong.org/2016/02/25/tips/1605/071-android-tips-6/"/>
+
+  <title> Android Tips 6 | Mystra </title>
+
+  <meta name="domain_verify" content="pmrgi33nmfuw4ir2ej3wc3thmnugk3tmn5xgoltpojtselbcm52wszbchirgmmzxgfqwcndggaztezjugizdoyjugftdqyzyhe2gemdcgm2timrcfqrhi2lnmvjwc5tfei5dcnbvhaytemztguydsnbypu">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f66791a2795ca9e84e2dc2c4d23fd05e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!--移动悬浮广告(阿里妈妈)-->
+
+  <!--移动底部-->
+
+  <!--底部弹窗广告-->
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mystra</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Love magic for itself!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'bF4ncxDk7HYwzEWDSBRJ','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android Tips 6
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-25T13:47:00+08:00" content="2016-02-25">
+              2016-02-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tips/" itemprop="url" rel="index">
+                    <span itemprop="name">Tips</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/25/tips/1605/071-android-tips-6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/25/tips/1605/071-android-tips-6/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/02/25/tips/1605/071-android-tips-6/" class="leancloud_visitors" data-flag-title="Android Tips 6">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x4ECB;&#x7ECD;&#x5173;&#x4E8E;Android&#x7684;&#x4E00;&#x4E9B;&#x6709;&#x8DA3;&#x7684;&#x5C0F;&#x77E5;&#x8BC6;&#x70B9;. &#x672C;&#x6587;&#x662F;&#x7B2C;&#x516D;&#x7BC7;, &#x6B22;&#x8FCE;&#x9605;&#x8BFB;.</p>
+<a id="more"></a>
+<blockquote>
+<p>&#x66F4;&#x591A;: <a href="http://www.wangchenlong.org/">http://www.wangchenlong.org/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;GitHub: <a href="https://github.com/SpikeKing" target="_blank" rel="external">https://github.com/SpikeKing</a></p>
+</blockquote>
+<p><img src="/2016/02/25/tips/1605/071-android-tips-6/android-tips.png" alt="Android"></p>
+<p>&#x7CFB;&#x5217;<br><a href="http://www.wangchenlong.org/2016/02/23/tips/1603/231-android-tips-1/">&#x7B2C;&#x4E00;&#x7BC7;</a>, <a href="http://www.wangchenlong.org/2016/02/23/tips/1603/232-android-tips-2/">&#x7B2C;&#x4E8C;&#x7BC7;</a>, <a href="http://www.wangchenlong.org/2016/02/23/tips/1603/233-android-tips-3/">&#x7B2C;&#x4E09;&#x7BC7;</a>, <a href="http://www.wangchenlong.org/2016/02/24/tips/1603/241-android-tips-4/">&#x7B2C;&#x56DB;&#x7BC7;</a>, <a href="http://www.wangchenlong.org/2016/02/24/tips/1603/242-android-tips-5/">&#x7B2C;&#x4E94;&#x7BC7;</a>, <a href="http://www.wangchenlong.org/2016/02/25/tips/1605/071-android-tips-6/">&#x7B2C;&#x516D;&#x7BC7;</a>.</p>
+<hr>
+<h1 id="&#x63A7;&#x4EF6;&#x4F4D;&#x7F6E;"><a href="#&#x63A7;&#x4EF6;&#x4F4D;&#x7F6E;" class="headerlink" title="&#x63A7;&#x4EF6;&#x4F4D;&#x7F6E;"></a>&#x63A7;&#x4EF6;&#x4F4D;&#x7F6E;</h1><p>&#x83B7;&#x53D6;&#x63A7;&#x4EF6;&#x56DB;&#x4E2A;&#x89D2;&#x7684;&#x4F4D;&#x7F6E;.</p>
+<p><img src="/2016/02/25/tips/1605/071-android-tips-6/view-pos.png" alt="Android"></p>
+<p>&#x4EE3;&#x7801;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PointF <span class="title">getTopLeftCorner</span><span class="params">(View view)</span> </span>{</span><br><span class="line">    <span class="keyword">float</span> src[] = <span class="keyword">new</span> <span class="keyword">float</span>[<span class="number">8</span>];</span><br><span class="line">    <span class="keyword">float</span>[] dst = <span class="keyword">new</span> <span class="keyword">float</span>[]{<span class="number">0</span>, <span class="number">0</span>, view.getWidth(), <span class="number">0</span>, <span class="number">0</span>, view.getHeight(), view.getWidth(), view.getHeight()};</span><br><span class="line">    view.getMatrix().mapPoints(src, dst);</span><br><span class="line">    PointF cornerPoint = <span class="keyword">new</span> PointF(view.getX() + src[<span class="number">0</span>], view.getY() + src[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> cornerPoint;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PointF <span class="title">getTopRightCorner</span><span class="params">(View view)</span> </span>{</span><br><span class="line">    <span class="keyword">float</span> src[] = <span class="keyword">new</span> <span class="keyword">float</span>[<span class="number">8</span>];</span><br><span class="line">    <span class="keyword">float</span>[] dst = <span class="keyword">new</span> <span class="keyword">float</span>[]{<span class="number">0</span>, <span class="number">0</span>, view.getWidth(), <span class="number">0</span>, <span class="number">0</span>, view.getHeight(), view.getWidth(), view.getHeight()};</span><br><span class="line">    view.getMatrix().mapPoints(src, dst);</span><br><span class="line">    PointF cornerPoint = <span class="keyword">new</span> PointF(view.getX() + src[<span class="number">2</span>], view.getY() + src[<span class="number">3</span>]);</span><br><span class="line">    <span class="keyword">return</span> cornerPoint;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PointF <span class="title">getBottomLeftCorner</span><span class="params">(View view)</span> </span>{</span><br><span class="line">    <span class="keyword">float</span> src[] = <span class="keyword">new</span> <span class="keyword">float</span>[<span class="number">8</span>];</span><br><span class="line">    <span class="keyword">float</span>[] dst = <span class="keyword">new</span> <span class="keyword">float</span>[]{<span class="number">0</span>, <span class="number">0</span>, view.getWidth(), <span class="number">0</span>, <span class="number">0</span>, view.getHeight(), view.getWidth(), view.getHeight()};</span><br><span class="line">    view.getMatrix().mapPoints(src, dst);</span><br><span class="line">    PointF cornerPoint = <span class="keyword">new</span> PointF(view.getX() + src[<span class="number">4</span>], view.getY() + src[<span class="number">5</span>]);</span><br><span class="line">    <span class="keyword">return</span> cornerPoint;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PointF <span class="title">getBottomRightCorner</span><span class="params">(View view)</span> </span>{</span><br><span class="line">    <span class="keyword">float</span> src[] = <span class="keyword">new</span> <span class="keyword">float</span>[<span class="number">8</span>];</span><br><span class="line">    <span class="keyword">float</span>[] dst = <span class="keyword">new</span> <span class="keyword">float</span>[]{<span class="number">0</span>, <span class="number">0</span>, view.getWidth(), <span class="number">0</span>, <span class="number">0</span>, view.getHeight(), view.getWidth(), view.getHeight()};</span><br><span class="line">    view.getMatrix().mapPoints(src, dst);</span><br><span class="line">    PointF cornerPoint = <span class="keyword">new</span> PointF(view.getX() + src[<span class="number">6</span>], view.getY() + src[<span class="number">7</span>]);</span><br><span class="line">    <span class="keyword">return</span> cornerPoint;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="&#x5F02;&#x5E38;Error-216-Apostrophe-not-preceded-by-&#x2026;"><a href="#&#x5F02;&#x5E38;Error-216-Apostrophe-not-preceded-by-&#x2026;" class="headerlink" title="&#x5F02;&#x5E38;Error:(216) Apostrophe not preceded by &#x2026;"></a>&#x5F02;&#x5E38;Error:(216) Apostrophe not preceded by &#x2026;</h1><p>&#x539F;&#x56E0;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x5305;&#x542B;&#x5355;&#x5F15;&#x53F7;(<strong>&#x2018;</strong>), &#x5BFC;&#x81F4;, &#x6DFB;&#x52A0;&#x8F6C;&#x4E49;&#x7B26;&#x53F7;&#x5373;&#x53EF;.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">&quot;hello_kotlin&quot;</span>&gt;</span>Hello Kotlin, I\&apos;m Spike! <span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://stackoverflow.com/questions/15705647/apostrophe-not-preceded-by" target="_blank" rel="external">&#x53C2;&#x8003;</a></p>
+<hr>
+<h1 id="Editable&#x548C;String&#x7684;&#x8F6C;&#x6362;"><a href="#Editable&#x548C;String&#x7684;&#x8F6C;&#x6362;" class="headerlink" title="Editable&#x548C;String&#x7684;&#x8F6C;&#x6362;"></a>Editable&#x548C;String&#x7684;&#x8F6C;&#x6362;</h1><p>Editable&#x662F;EditText&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x683C;&#x5F0F;. &#x4E0E;String&#x53EF;&#x4EE5;&#x76F8;&#x4E92;&#x8F6C;&#x6362;.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Editable editable = <span class="keyword">new</span> SpannableStringBuilder(<span class="string">&quot;Pass a string here&quot;</span>);</span><br><span class="line">String str = editable.toString();</span><br></pre></td></tr></table></figure>
+<p><a href="http://stackoverflow.com/questions/13352531/android-how-can-i-convert-a-string-to-a-editable" target="_blank" rel="external">&#x53C2;&#x8003;</a></p>
+<hr>
+<h1 id="&#x8BBE;&#x7F6E;WRAP-CONTENT&#x548C;VERTICAL"><a href="#&#x8BBE;&#x7F6E;WRAP-CONTENT&#x548C;VERTICAL" class="headerlink" title="&#x8BBE;&#x7F6E;WRAP_CONTENT&#x548C;VERTICAL"></a>&#x8BBE;&#x7F6E;WRAP_CONTENT&#x548C;VERTICAL</h1><p>&#x5728;Kotlin&#x4E2D;, &#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x6269;&#x5C55;&#x65F6;, &#x9700;&#x8981;&#x8BB0;&#x4F4F;&#x7C7B;.<br>WRAP_CONTENT&#x5C5E;&#x4E8E;LayoutParams, VERTICAL&#x5C5E;&#x4E8E;LinearLayout.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> android.widget.LinearLayout.LayoutParams</span><br><span class="line"><span class="keyword">import</span> android.widget.LinearLayout</span><br><span class="line"></span><br><span class="line">layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)</span><br><span class="line">orientation = LinearLayout.VERTICAL</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="&#x5220;&#x9664;Commit"><a href="#&#x5220;&#x9664;Commit" class="headerlink" title="&#x5220;&#x9664;Commit"></a>&#x5220;&#x9664;Commit</h1><p>&#x5220;&#x9664;&#x672C;&#x5730;&#x7684;Commit, &#x4F7F;&#x7528;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD~1</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HEAD~1&#x8868;&#x793A;&#x524D;1&#x4E2A;, &#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x8BBE;&#x7F6E;&#x6570;&#x5B57;.</p>
+</blockquote>
+<p><a href="http://stackoverflow.com/questions/1338728/delete-commits-from-a-branch-in-git" target="_blank" rel="external">&#x53C2;&#x8003;</a></p>
+<hr>
+<h1 id="&#x6807;&#x51C6;&#x7684;gitignore"><a href="#&#x6807;&#x51C6;&#x7684;gitignore" class="headerlink" title="&#x6807;&#x51C6;&#x7684;gitignore"></a>&#x6807;&#x51C6;&#x7684;gitignore</h1><p>&#x8FD9;&#x662F;&#x6807;&#x51C6;&#x7684;gitignore, &#x9ED8;&#x8BA4;&#x9879;&#x76EE;&#x4F1A;&#x751F;&#x6210;, &#x65E7;&#x7684;&#x9879;&#x76EE;&#x53EF;&#x80FD;&#x6CA1;&#x6709;, &#x9700;&#x8981;&#x8865;&#x5145;.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*.iml</span><br><span class="line">.gradle</span><br><span class="line">/local.properties</span><br><span class="line">/.idea/workspace.xml</span><br><span class="line">/.idea/libraries</span><br><span class="line">.DS_Store</span><br><span class="line">/build</span><br><span class="line">/captures</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="String&#x8F6C;&#x6362;16&#x8FDB;&#x5236;"><a href="#String&#x8F6C;&#x6362;16&#x8FDB;&#x5236;" class="headerlink" title="String&#x8F6C;&#x6362;16&#x8FDB;&#x5236;"></a>String&#x8F6C;&#x6362;16&#x8FDB;&#x5236;</h1><p>DeviceID&#x53EF;&#x80FD;&#x662F;&#x5B57;&#x6BCD;, &#x4F1A;&#x5BFC;&#x81F4;&#x89E3;&#x6790;&#x5931;&#x8D25;, &#x89E3;&#x6790;&#x524D;&#x9700;&#x8981;&#x8F6C;&#x6362;String&#x4E3A;16&#x8FDB;&#x5236;&#x6570;.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// String&#x8F6C;&#x6362;40&#x4F4D;16&#x8FDB;&#x5236;, &#x9632;&#x6B62;DeviceID&#x662F;&#x5B57;&#x6BCD;, @Thx &#x79CB;&#x723D;&amp;&#x5EB7;&#x5EB7;</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toHex</span><span class="params">(String arg)</span> </span>{</span><br><span class="line">    <span class="keyword">if</span> (!TextUtils.isEmpty(arg)) {</span><br><span class="line">    	<span class="keyword">return</span> String.format(<span class="string">&quot;%040x&quot;</span>, <span class="keyword">new</span> BigInteger(<span class="number">1</span>, arg.getBytes(<span class="comment">/*YOUR_CHARSET?*/</span>)));</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<hr>
+<p>That&#x2019;s all! Enjoy it!</p>
+<hr>
+<blockquote>
+<p>&#x6700;&#x521D;&#x53D1;&#x5E03;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/02/25/tips/1605/071-android-tips-6/">http://www.wangchenlong.org/2016/02/25/tips/1605/071-android-tips-6/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
+</blockquote>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/Tips/" rel="tag">#Tips</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/24/tips/1603/242-android-tips-5/" rel="next" title="Android Tips 5">
+                <i class="fa fa-chevron-left"></i> Android Tips 5
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/25/tips/1605/072-android-tips-7/" rel="prev" title="Android Tips 7">
+                Android Tips 7 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/02/25/tips/1605/071-android-tips-6/"
+     data-title="Android Tips 6"
+     data-content=""
+     data-url="http://www.wangchenlong.org/2016/02/25/tips/1605/071-android-tips-6/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+            <!-- 文章底部广告, 唯品会 -->
+            <div align="center" style="margin: 20px 0px 0px 0px">
+              <iframe src="http://api.union.vip.com/image?mark=hFK,hFK,hFl&schemecode=ooboelhi&adcode=&ucode=reuqtq0m&chan=&width=436&height=210" width="436" height="210"  scrolling="no" frameborder="0"></iframe>
+            </div>
+          </div>
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/25/tips/1605/071-android-tips-6/"
+           data-title="Android Tips 6" data-url="http://www.wangchenlong.org/2016/02/25/tips/1605/071-android-tips-6/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="C.L. Wang" />
+          <p class="site-author-name" itemprop="name">C.L. Wang</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">66</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/SpikeKing" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2852941392" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/caroline_wendy" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  CSDN
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" title="掘金">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  掘金
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tom555cat.com/" title="仝磊鸣的博客" target="_blank">仝磊鸣的博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#控件位置"><span class="nav-number">1.</span> <span class="nav-text">控件位置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常Error-216-Apostrophe-not-preceded-by-…"><span class="nav-number">2.</span> <span class="nav-text">异常Error:(216) Apostrophe not preceded by …</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Editable和String的转换"><span class="nav-number">3.</span> <span class="nav-text">Editable和String的转换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置WRAP-CONTENT和VERTICAL"><span class="nav-number">4.</span> <span class="nav-text">设置WRAP_CONTENT和VERTICAL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除Commit"><span class="nav-number">5.</span> <span class="nav-text">删除Commit</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标准的gitignore"><span class="nav-number">6.</span> <span class="nav-text">标准的gitignore</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String转换16进制"><span class="nav-number">7.</span> <span class="nav-text">String转换16进制</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+      <!-- 侧栏广告 -->
+      <div align="center">
+      </div>
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">C.L. Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"spikeking"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("24qpuQFXa0w8ead8gg6Rxxhc-gzGzoHsz", "O8vfKJtVanuyjh9NabH91ig7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
