@@ -1,0 +1,965 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="HM6XdT4pJXR7fFksvo3DvFAKVgeFg4ZUwh3iOGW8LHU" />
+
+
+
+
+  <meta name="baidu-site-verification" content="MPhG1F0aKe" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,ContentProvider," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mystra" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web-icon.png?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="ContentProvider&amp;#x4E3B;&amp;#x8981;&amp;#x5E94;&amp;#x7528;&amp;#x4E8E;&amp;#x8FDB;&amp;#x7A0B;&amp;#x95F4;&amp;#x6570;&amp;#x636E;&amp;#x5171;&amp;#x4EAB;. &amp;#x5BF9;&amp;#x4E8E;&amp;#x5E94;&amp;#x7528;&amp;#x800C;&amp;#x8A00;, &amp;#x591A;&amp;#x8FDB;&amp;#x7A0B;&amp;#x5E76;&amp;#x4E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用ContentProvider跨进程共享数据">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/08/07/1608/072-share-data-by-cp/index.html">
+<meta property="og:site_name" content="Mystra">
+<meta property="og:description" content="ContentProvider&amp;#x4E3B;&amp;#x8981;&amp;#x5E94;&amp;#x7528;&amp;#x4E8E;&amp;#x8FDB;&amp;#x7A0B;&amp;#x95F4;&amp;#x6570;&amp;#x636E;&amp;#x5171;&amp;#x4EAB;. &amp;#x5BF9;&amp;#x4E8E;&amp;#x5E94;&amp;#x7528;&amp;#x800C;&amp;#x8A00;, &amp;#x591A;&amp;#x8FDB;&amp;#x7A0B;&amp;#x5E76;&amp;#x4E">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/08/07/1608/072-share-data-by-cp/cp-logo.jpg">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/08/07/1608/072-share-data-by-cp/cp-demo.gif">
+<meta property="og:updated_time" content="2016-08-07T01:13:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用ContentProvider跨进程共享数据">
+<meta name="twitter:description" content="ContentProvider&amp;#x4E3B;&amp;#x8981;&amp;#x5E94;&amp;#x7528;&amp;#x4E8E;&amp;#x8FDB;&amp;#x7A0B;&amp;#x95F4;&amp;#x6570;&amp;#x636E;&amp;#x5171;&amp;#x4EAB;. &amp;#x5BF9;&amp;#x4E8E;&amp;#x5E94;&amp;#x7528;&amp;#x800C;&amp;#x8A00;, &amp;#x591A;&amp;#x8FDB;&amp;#x7A0B;&amp;#x5E76;&amp;#x4E">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/08/07/1608/072-share-data-by-cp/cp-logo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 6261011353935283000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.wangchenlong.org/2016/08/07/1608/072-share-data-by-cp/"/>
+
+  <title> 使用ContentProvider跨进程共享数据 | Mystra </title>
+
+  <meta name="domain_verify" content="pmrgi33nmfuw4ir2ej3wc3thmnugk3tmn5xgoltpojtselbcm52wszbchirgmmzxgfqwcndggaztezjugizdoyjugftdqyzyhe2gemdcgm2timrcfqrhi2lnmvjwc5tfei5dcnbvhaytemztguydsnbypu">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f66791a2795ca9e84e2dc2c4d23fd05e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!--移动悬浮广告(阿里妈妈)-->
+
+  <!--移动底部-->
+
+  <!--底部弹窗广告-->
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mystra</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Love magic for itself!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'bF4ncxDk7HYwzEWDSBRJ','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用ContentProvider跨进程共享数据
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-07T09:10:00+08:00" content="2016-08-07">
+              2016-08-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/07/1608/072-share-data-by-cp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/07/1608/072-share-data-by-cp/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/07/1608/072-share-data-by-cp/" class="leancloud_visitors" data-flag-title="使用ContentProvider跨进程共享数据">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>ContentProvider</strong>&#x4E3B;&#x8981;&#x5E94;&#x7528;&#x4E8E;&#x8FDB;&#x7A0B;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;. &#x5BF9;&#x4E8E;&#x5E94;&#x7528;&#x800C;&#x8A00;, &#x591A;&#x8FDB;&#x7A0B;&#x5E76;&#x4E0D;&#x4F1A;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;, &#x56E0;&#x800C;&#x8F83;&#x5C11;&#x4F7F;&#x7528;ContentProvider, &#x662F;&#x6700;&#x4E0D;&#x5E38;&#x89C1;&#x7684;&#x56DB;&#x5927;&#x7EC4;&#x4EF6;(Activity, Service, BroadcastReceiver, ContentProvider). &#x4F46;&#x662F;&#x5176;&#x4F18;&#x5F02;&#x7684;&#x6027;&#x80FD;&#x4E0E;&#x4FBF;&#x6377;, &#x5BF9;&#x4E8E;&#x591A;&#x5E94;&#x7528;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x800C;&#x8A00;, &#x975E;&#x5E38;&#x91CD;&#x8981;, &#x6BD4;&#x5982;&#x5171;&#x4EAB;&#x540C;&#x4E00;&#x4EFD;&#x8BA1;&#x6B65;&#x6570;&#x636E;&#x7B49;. &#x5F00;&#x53D1;&#x8005;&#x53EA;&#x6709;&#x638C;&#x63E1;&#x591A;&#x79CD;&#x6280;&#x80FD;, &#x624D;&#x80FD;&#x5728;&#x5F00;&#x53D1;&#x4E2D;&#x6E38;&#x5203;&#x6709;&#x4F59;, &#x7528;&#x6700;&#x4F18;&#x7684;&#x65B9;&#x5F0F;&#x5B8C;&#x6210;&#x9879;&#x76EE;, &#x63D0;&#x5347;&#x5E94;&#x7528;&#x6027;&#x80FD;, &#x95F4;&#x63A5;&#x63D0;&#x9AD8;&#x7528;&#x6237;&#x4F53;&#x9A8C;. &#x672C;&#x6587;&#x501F;&#x7528;Demo, &#x8BB2;&#x89E3;ContentProvider&#x5171;&#x4EAB;&#x6570;&#x636E;&#x7684;&#x8981;&#x70B9;.</p>
+<p><img src="/2016/08/07/1608/072-share-data-by-cp/cp-logo.jpg" alt="Logo"></p>
+<a id="more"></a>
+<blockquote>
+<p>&#x66F4;&#x591A;: <a href="http://www.wangchenlong.org/">http://www.wangchenlong.org/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;GitHub: <a href="https://github.com/SpikeKing" target="_blank" rel="external">https://github.com/SpikeKing</a></p>
+</blockquote>
+<p>&#x672C;&#x6587;&#x6E90;&#x7801;&#x7684;GitHub<a href="https://github.com/SpikeKing/ContentProviderDemo" target="_blank" rel="external">&#x4E0B;&#x8F7D;&#x5730;&#x5740;</a></p>
+<hr>
+<h2 id="SQLite"><a href="#SQLite" class="headerlink" title="SQLite"></a>SQLite</h2><p>ContentProvider&#x9700;&#x8981;&#x5A92;&#x4ECB;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x5B58;&#x50A8;, &#x6700;&#x5E38;&#x7528;&#x7684;&#x5C31;&#x662F;SQLite&#x6570;&#x636E;&#x5E93;. </p>
+<p>SQLite&#x6570;&#x636E;&#x5E93;&#x7EE7;&#x627F;<code>SQLiteOpenHelper</code>&#x7C7B;, &#x63D0;&#x4F9B;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;, &#x8868;&#x540D;, &#x7248;&#x672C;. &#x5728;onCreate&#x65B9;&#x6CD5;&#x4E2D;, &#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x8868;, &#x6DFB;&#x52A0;&#x5B57;&#x6BB5;.</p>
+<p>&#x672C;&#x793A;&#x4F8B;&#x4F7F;&#x7528;&#x4E24;&#x5F20;&#x8868;, &#x4E66;&#x7C4D;&#x548C;&#x7528;&#x6237;.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DbOpenHelper</span> <span class="keyword">extends</span> <span class="title">SQLiteOpenHelper</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String DB_NAME = <span class="string">&quot;book_provider.db&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String BOOK_TABLE_NAME = <span class="string">&quot;book&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String USER_TABLE_NAME = <span class="string">&quot;user&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DB_VERSION = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String CREATE_BOOK_TABLE = <span class="string">&quot;CREATE TABLE IF NOT EXISTS &quot;</span></span><br><span class="line">            + BOOK_TABLE_NAME + <span class="string">&quot;(_id INTEGER PRIMARY KEY, name TEXT)&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String CREATE_USER_TABLE = <span class="string">&quot;CREATE TABLE IF NOT EXISTS &quot;</span></span><br><span class="line">            + USER_TABLE_NAME + <span class="string">&quot;(_id INTEGER PRIMARY KEY, name TEXT, sex INT)&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DbOpenHelper</span><span class="params">(Context context)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>(context, DB_NAME, <span class="keyword">null</span>, DB_VERSION);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(SQLiteDatabase db)</span> </span>{</span><br><span class="line">        db.execSQL(CREATE_BOOK_TABLE);</span><br><span class="line">        db.execSQL(CREATE_USER_TABLE);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(SQLiteDatabase db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>{</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;&#x7684;&#x60C5;&#x51B5;&#x8F83;&#x5C11;, &#x4E5F;&#x6BD4;&#x8F83;&#x590D;&#x6742;, &#x63A8;&#x8350;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x7ECF;&#x5178;ORM&#x6570;&#x636E;&#x5E93;, &#x5982;<a href="https://github.com/satyan/sugar" target="_blank" rel="external">Sugar</a>&#x7B49;, &#x7B80;&#x5316;&#x7BA1;&#x7406;. ORM, &#x5373;&#x5BF9;&#x8C61;&#x5173;&#x7CFB;&#x6620;&#x5C04;.</p>
+</blockquote>
+<hr>
+<h2 id="ContentProvider"><a href="#ContentProvider" class="headerlink" title="ContentProvider"></a>ContentProvider</h2><p>ContentProvider&#x63D0;&#x4F9B;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x7684;&#x63A5;&#x53E3;, CRUD&#x589E;&#x5220;&#x6539;&#x67E5;. &#x5728;onCreate&#x4E2D;, &#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;&#x5E93;, &#x5E76;&#x6DFB;&#x52A0;&#x6570;&#x636E;.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onCreate</span><span class="params">()</span> </span>{</span><br><span class="line">    showLogs(<span class="string">&quot;onCreate &#x5F53;&#x524D;&#x7EBF;&#x7A0B;: &quot;</span> + Thread.currentThread().getName());</span><br><span class="line">    mContext = getContext();</span><br><span class="line"></span><br><span class="line">    initProviderData(); <span class="comment">// &#x521D;&#x59CB;&#x5316;Provider&#x6570;&#x636E;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initProviderData</span><span class="params">()</span> </span>{</span><br><span class="line">    mDb = <span class="keyword">new</span> DbOpenHelper(mContext).getWritableDatabase();</span><br><span class="line">    mDb.execSQL(<span class="string">&quot;delete from &quot;</span> + DbOpenHelper.BOOK_TABLE_NAME);</span><br><span class="line">    mDb.execSQL(<span class="string">&quot;delete from &quot;</span> + DbOpenHelper.USER_TABLE_NAME);</span><br><span class="line">    mDb.execSQL(<span class="string">&quot;insert into book values(3,&apos;Android&apos;);&quot;</span>);</span><br><span class="line">    mDb.execSQL(<span class="string">&quot;insert into book values(4, &apos;iOS&apos;);&quot;</span>);</span><br><span class="line">    mDb.execSQL(<span class="string">&quot;insert into book values(5, &apos;HTML5&apos;);&quot;</span>);</span><br><span class="line">    mDb.execSQL(<span class="string">&quot;insert into user values(1, &apos;Spike&apos;, 1);&quot;</span>);</span><br><span class="line">    mDb.execSQL(<span class="string">&quot;insert into user values(2, &apos;Wang&apos;, 0);&quot;</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>CRUD&#x7684;&#x53C2;&#x6570;&#x662F;Uri, &#x6570;&#x636E;&#x5E93;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8868;&#x540D;, &#x4E3A;&#x4E86;&#x4FBF;&#x4E8E;&#x4ECE;Uri&#x6620;&#x5C04;&#x5230;&#x8868;&#x540D;, &#x4F7F;&#x7528;&#x5173;&#x7CFB;&#x8F6C;&#x6362;.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">getTableName</span><span class="params">(Uri uri)</span> </span>{</span><br><span class="line">    String tableName = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">switch</span> (sUriMatcher.match(uri)) {</span><br><span class="line">        <span class="keyword">case</span> BOOK_URI_CODE:</span><br><span class="line">            tableName = DbOpenHelper.BOOK_TABLE_NAME;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> USER_URI_CODE:</span><br><span class="line">            tableName = DbOpenHelper.USER_TABLE_NAME;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> tableName;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x6DFB;&#x52A0;&#x6570;&#x636E;<code>insert</code>, &#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x5185;&#x5BB9;&#x6539;&#x53D8;&#x7684;&#x76D1;&#x542C;, &#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;, &#x5E7F;&#x64AD;&#x66F4;&#x65B0;, &#x5373;<code>notifyChange</code>.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Nullable</span> <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> Uri <span class="title">insert</span><span class="params">(Uri uri, ContentValues values)</span> </span>{</span><br><span class="line">    showLogs(<span class="string">&quot;insert&quot;</span>);</span><br><span class="line">    String table = getTableName(uri);</span><br><span class="line">    <span class="keyword">if</span> (TextUtils.isEmpty(table)) {</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">&quot;Unsupported URI: &quot;</span> + uri);</span><br><span class="line">    }</span><br><span class="line">    mDb.insert(table, <span class="keyword">null</span>, values);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x63D2;&#x5165;&#x6570;&#x636E;&#x540E;&#x901A;&#x77E5;&#x6539;&#x53D8;</span></span><br><span class="line">    mContext.getContentResolver().notifyChange(uri, <span class="keyword">null</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x5220;&#x9664;&#x6570;&#x636E;<code>delete</code>, &#x8FD4;&#x56DE;&#x5220;&#x9664;&#x6570;&#x636E;&#x7684;&#x6570;&#x91CF;, &#x5927;&#x4E8E;0&#x5373;&#x5220;&#x9664;&#x6210;&#x529F;.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">delete</span><span class="params">(Uri uri, String selection, String[] selectionArgs)</span> </span>{</span><br><span class="line">    showLogs(<span class="string">&quot;delete&quot;</span>);</span><br><span class="line"></span><br><span class="line">    String table = getTableName(uri);</span><br><span class="line">    <span class="keyword">if</span> (TextUtils.isEmpty(table)) {</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">&quot;Unsupported URI: &quot;</span> + uri);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">int</span> count = mDb.delete(table, selection, selectionArgs);</span><br><span class="line">    <span class="keyword">if</span> (count &gt; <span class="number">0</span>) {</span><br><span class="line">        mContext.getContentResolver().notifyChange(uri, <span class="keyword">null</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> count; <span class="comment">// &#x8FD4;&#x56DE;&#x5220;&#x9664;&#x7684;&#x51FD;&#x6570;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x4FEE;&#x6539;&#x6570;&#x636E;<code>update</code>, &#x4E0E;&#x5220;&#x9664;&#x7C7B;&#x4F3C;, &#x8FD4;&#x56DE;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x7684;&#x6570;&#x91CF;.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">update</span><span class="params">(Uri uri, ContentValues values, String selection, String[] selectionArgs)</span> </span>{</span><br><span class="line">    showLogs(<span class="string">&quot;update&quot;</span>);</span><br><span class="line"></span><br><span class="line">    String table = getTableName(uri);</span><br><span class="line">    <span class="keyword">if</span> (TextUtils.isEmpty(table)) {</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">&quot;Unsupported URI: &quot;</span> + uri);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">int</span> row = mDb.update(table, values, selection, selectionArgs);</span><br><span class="line">    <span class="keyword">if</span> (row &gt; <span class="number">0</span>) {</span><br><span class="line">        mContext.getContentResolver().notifyChange(uri, <span class="keyword">null</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> row; <span class="comment">// &#x8FD4;&#x56DE;&#x66F4;&#x65B0;&#x7684;&#x884C;&#x6570;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x67E5;&#x8BE2;&#x6570;&#x636E;<code>query</code>, &#x8FD4;&#x56DE;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6E38;&#x6807;, &#x5904;&#x7406;&#x6570;&#x636E;.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Nullable</span> <span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Cursor <span class="title">query</span><span class="params">(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)</span> </span>{</span><br><span class="line">    showLogs(<span class="string">&quot;query &#x5F53;&#x524D;&#x7EBF;&#x7A0B;: &quot;</span> + Thread.currentThread().getName());</span><br><span class="line">    String tableName = getTableName(uri);</span><br><span class="line">    <span class="keyword">if</span> (TextUtils.isEmpty(tableName)) {</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">&quot;Unsupported URI: &quot;</span> + uri);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> mDb.query(tableName, projection, selection, selectionArgs, <span class="keyword">null</span>, <span class="keyword">null</span>, sortOrder, <span class="keyword">null</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>&#x6CE8;&#x610F;Uri&#x548C;&#x8868;&#x540D;&#x7684;&#x8F6C;&#x6362;&#x53EF;&#x80FD;&#x4E3A;&#x7A7A;, &#x4F7F;&#x7528;<code>TextUtils.isEmpty</code>&#x5224;&#x7A7A;.</p>
+</blockquote>
+<hr>
+<h2 id="&#x5171;&#x4EAB;&#x6570;&#x636E;"><a href="#&#x5171;&#x4EAB;&#x6570;&#x636E;" class="headerlink" title="&#x5171;&#x4EAB;&#x6570;&#x636E;"></a>&#x5171;&#x4EAB;&#x6570;&#x636E;</h2><p>&#x4F7F;&#x7528;ContentProvider&#x7684;&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;, &#x6A21;&#x62DF;&#x8FDB;&#x7A0B;&#x95F4;&#x5171;&#x4EAB;&#x6570;&#x636E;.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">provider</span></span><br><span class="line">    <span class="attr">android:name</span>=<span class="string">&quot;.BookProvider&quot;</span></span><br><span class="line">    <span class="attr">android:authorities</span>=<span class="string">&quot;org.wangchenlong.book.provider&quot;</span></span><br><span class="line">    <span class="attr">android:permission</span>=<span class="string">&quot;org.wangchenlong.BOOK_PROVIDER&quot;</span></span><br><span class="line">    <span class="attr">android:process</span>=<span class="string">&quot;:provider&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>&#x5728;AndroidManifest&#x4E2D;, &#x628A;Provider&#x6CE8;&#x518C;&#x5728;<code>:provider</code>&#x8FDB;&#x7A0B;&#x4E2D;, &#x4E0E;&#x4E3B;&#x8FDB;&#x7A0B;&#x5206;&#x79BB;.</p>
+</blockquote>
+<p>&#x6DFB;&#x52A0;&#x6570;&#x636E;, &#x901A;&#x8FC7;Uri&#x627E;&#x5230;ContentProvider, &#x4F7F;&#x7528;<code>ContentResolver</code>&#x7684;<code>insert</code>&#x65B9;&#x6CD5;, &#x6DFB;&#x52A0;<code>ContentValues</code>&#x6570;&#x636E;. </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addBooks</span><span class="params">(View view)</span> </span>{</span><br><span class="line">    Uri bookUri = BookProvider.BOOK_CONTENT_URI;</span><br><span class="line">    ContentValues values = <span class="keyword">new</span> ContentValues();</span><br><span class="line">    values.put(<span class="string">&quot;_id&quot;</span>, <span class="number">6</span>);</span><br><span class="line">    values.put(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;&#x4FE1;&#x4EF0;&#x4E0A;&#x5E1D;&quot;</span>);</span><br><span class="line">    getContentResolver().insert(bookUri, values);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x67E5;&#x8BE2;&#x6570;&#x636E;<code>query</code>, &#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x7C7B;&#x4F3C;, &#x89E3;&#x6790;&#x51FA;Cursor, &#x901A;&#x8FC7;&#x79FB;&#x52A8;Cursor, &#x627E;&#x5230;&#x6240;&#x6709;&#x5339;&#x914D;&#x7684;&#x7ED3;&#x679C;.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showBooks</span><span class="params">(View view)</span> </span>{</span><br><span class="line">    String content = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    Uri bookUri = BookProvider.BOOK_CONTENT_URI;</span><br><span class="line">    Cursor bookCursor = getContentResolver().query(bookUri, <span class="keyword">new</span> String[]{<span class="string">&quot;_id&quot;</span>, <span class="string">&quot;name&quot;</span>}, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">    <span class="keyword">if</span> (bookCursor != <span class="keyword">null</span>) {</span><br><span class="line">        <span class="keyword">while</span> (bookCursor.moveToNext()) {</span><br><span class="line">            Book book = <span class="keyword">new</span> Book();</span><br><span class="line">            book.bookId = bookCursor.getInt(<span class="number">0</span>);</span><br><span class="line">            book.bookName = bookCursor.getString(<span class="number">1</span>);</span><br><span class="line">            content += book.toString() + <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">            Log.e(TAG, <span class="string">&quot;query book: &quot;</span> + book.toString());</span><br><span class="line">            mTvShowBooks.setText(content);</span><br><span class="line">        }</span><br><span class="line">        bookCursor.close();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<hr>
+<p>&#x6548;&#x679C;</p>
+<p><img src="/2016/08/07/1608/072-share-data-by-cp/cp-demo.gif" alt="&#x6548;&#x679C;"></p>
+<p>ContentProvider&#x5C01;&#x88C5;&#x4E86;&#x8DE8;&#x8FDB;&#x7A0B;&#x5171;&#x4EAB;&#x7684;&#x903B;&#x8F91;, &#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;Uri&#x5373;&#x53EF;&#x8BBF;&#x95EE;&#x6570;&#x636E;, &#x4F7F;&#x7528;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x975E;&#x5E38;&#x4FBF;&#x6377;, &#x9700;&#x8981;&#x638C;&#x63E1;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;.</p>
+<p>OK, that&#x2019;s all! Enjoy it!</p>
+<blockquote>
+<p>&#x6B22;&#x8FCE;&#x6253;&#x8D4F;, &#x4E3A;&#x77E5;&#x8BC6;&#x7684;&#x4EF7;&#x503C;&#x4E70;&#x5355;, &#x4E3A;&#x63D0;&#x5347;&#x56FD;&#x5185;&#x6280;&#x672F;&#x6C34;&#x5E73;&#x505A;&#x4E00;&#x4EFD;&#x8D21;&#x732E;. &#x820D;&#x5F97;&#x820D;&#x5F97;, &#x6709;&#x820D;&#x624D;&#x6709;&#x5F97;.</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>&#x6700;&#x521D;&#x53D1;&#x5E03;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/08/07/1608/072-share-data-by-cp/">http://www.wangchenlong.org/2016/08/07/1608/072-share-data-by-cp/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
+</blockquote>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/ContentProvider/" rel="tag">#ContentProvider</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/07/1608/071-communication-by-aidl/" rel="next" title="Android使用AIDL实现跨进程通信">
+                <i class="fa fa-chevron-left"></i> Android使用AIDL实现跨进程通信
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/08/07/1608/072-share-data-by-cp/"
+     data-title="使用ContentProvider跨进程共享数据"
+     data-content=""
+     data-url="http://www.wangchenlong.org/2016/08/07/1608/072-share-data-by-cp/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+            <!-- 文章底部广告, 唯品会 -->
+            <div align="center" style="margin: 20px 0px 0px 0px">
+              <iframe src="http://api.union.vip.com/image?mark=hFK,hFK,hFl&schemecode=ooboelhi&adcode=&ucode=reuqtq0m&chan=&width=436&height=210" width="436" height="210"  scrolling="no" frameborder="0"></iframe>
+            </div>
+          </div>
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/07/1608/072-share-data-by-cp/"
+           data-title="使用ContentProvider跨进程共享数据" data-url="http://www.wangchenlong.org/2016/08/07/1608/072-share-data-by-cp/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="C.L. Wang" />
+          <p class="site-author-name" itemprop="name">C.L. Wang</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">68</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/SpikeKing" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2852941392" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/caroline_wendy" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  CSDN
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" title="掘金">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  掘金
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tom555cat.com/" title="仝磊鸣的博客" target="_blank">仝磊鸣的博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLite"><span class="nav-number">1.</span> <span class="nav-text">SQLite</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ContentProvider"><span class="nav-number">2.</span> <span class="nav-text">ContentProvider</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共享数据"><span class="nav-number">3.</span> <span class="nav-text">共享数据</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+      <!-- 侧栏广告 -->
+      <div align="center">
+      </div>
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">C.L. Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"spikeking"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("24qpuQFXa0w8ead8gg6Rxxhc-gzGzoHsz", "O8vfKJtVanuyjh9NabH91ig7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
