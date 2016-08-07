@@ -1,0 +1,967 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="HM6XdT4pJXR7fFksvo3DvFAKVgeFg4ZUwh3iOGW8LHU" />
+
+
+
+
+  <meta name="baidu-site-verification" content="MPhG1F0aKe" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,ConstraintLayout," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Mystra" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/web-icon.png?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="ConstraintLayout(&amp;#x7EA6;&amp;#x675F;&amp;#x5E03;&amp;#x5C40;), &amp;#x662F;2016&amp;#x5E74;Google I/O&amp;#x6700;&amp;#x65B0;&amp;#x63A8;&amp;#x51FA;&amp;#x7684;Android&amp;#x5E03;&amp;#x5C40;, &amp;#x76EE;&amp;#x524D;&amp;#x8FD8;&amp;#x5728;&amp;#x5B8C;&amp;#x5584;&amp;#x96">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ConstraintLayout 约束布局的概念与使用">
+<meta property="og:url" content="http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/index.html">
+<meta property="og:site_name" content="Mystra">
+<meta property="og:description" content="ConstraintLayout(&amp;#x7EA6;&amp;#x675F;&amp;#x5E03;&amp;#x5C40;), &amp;#x662F;2016&amp;#x5E74;Google I/O&amp;#x6700;&amp;#x65B0;&amp;#x63A8;&amp;#x51FA;&amp;#x7684;Android&amp;#x5E03;&amp;#x5C40;, &amp;#x76EE;&amp;#x524D;&amp;#x8FD8;&amp;#x5728;&amp;#x5B8C;&amp;#x5584;&amp;#x96">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/cl-logo.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/cl-base.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/cl-bias.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/cl-guide.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/cl-measure.png">
+<meta property="og:image" content="http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/cl-ratio.png">
+<meta property="og:updated_time" content="2016-08-07T01:55:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ConstraintLayout 约束布局的概念与使用">
+<meta name="twitter:description" content="ConstraintLayout(&amp;#x7EA6;&amp;#x675F;&amp;#x5E03;&amp;#x5C40;), &amp;#x662F;2016&amp;#x5E74;Google I/O&amp;#x6700;&amp;#x65B0;&amp;#x63A8;&amp;#x51FA;&amp;#x7684;Android&amp;#x5E03;&amp;#x5C40;, &amp;#x76EE;&amp;#x524D;&amp;#x8FD8;&amp;#x5728;&amp;#x5B8C;&amp;#x5584;&amp;#x96">
+<meta name="twitter:image" content="http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/cl-logo.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 6261011353935283000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/"/>
+
+  <title> ConstraintLayout 约束布局的概念与使用 | Mystra </title>
+
+  <meta name="domain_verify" content="pmrgi33nmfuw4ir2ej3wc3thmnugk3tmn5xgoltpojtselbcm52wszbchirgmmzxgfqwcndggaztezjugizdoyjugftdqyzyhe2gemdcgm2timrcfqrhi2lnmvjwc5tfei5dcnbvhaytemztguydsnbypu">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f66791a2795ca9e84e2dc2c4d23fd05e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!--移动悬浮广告(阿里妈妈)-->
+
+  <!--移动底部-->
+
+  <!--底部弹窗广告-->
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mystra</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Love magic for itself!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'bF4ncxDk7HYwzEWDSBRJ','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ConstraintLayout 约束布局的概念与使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-07T09:45:00+08:00" content="2016-08-07">
+              2016-08-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/07/1608/077-constraint-layout-concept/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/07/1608/077-constraint-layout-concept/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/07/1608/077-constraint-layout-concept/" class="leancloud_visitors" data-flag-title="ConstraintLayout 约束布局的概念与使用">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>ConstraintLayout(&#x7EA6;&#x675F;&#x5E03;&#x5C40;)</strong>, &#x662F;2016&#x5E74;<code>Google I/O</code>&#x6700;&#x65B0;&#x63A8;&#x51FA;&#x7684;Android&#x5E03;&#x5C40;, &#x76EE;&#x524D;&#x8FD8;&#x5728;&#x5B8C;&#x5584;&#x9636;&#x6BB5;. &#x4ECE;&#x63A8;&#x51FA;&#x7684;&#x529B;&#x5EA6;&#x800C;&#x8A00;, &#x5E94;&#x8BE5;&#x4F1A;&#x6210;&#x4E3A;&#x4E3B;&#x6D41;&#x5E03;&#x5C40;&#x6837;&#x5F0F;. &#x5728;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684;<code>Android Studio</code>&#x4E2D;, ConstraintLayout&#x5DF2;&#x7ECF;&#x6210;&#x4E3A;&#x9ED8;&#x8BA4;&#x5E03;&#x5C40;. </p>
+<a id="more"></a>
+<blockquote>
+<p>&#x66F4;&#x591A;: <a href="http://www.wangchenlong.org/">http://www.wangchenlong.org/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;GitHub: <a href="https://github.com/SpikeKing" target="_blank" rel="external">https://github.com/SpikeKing</a></p>
+</blockquote>
+<p><img src="/2016/08/07/1608/077-constraint-layout-concept/cl-logo.png" alt="Constraint Layout"></p>
+<blockquote>
+<p>&#x4F7F;&#x7528;ConstraintLayout&#x5E03;&#x5C40;&#x7684;&#x6700;&#x65B0;&#x7248;&#x672C;<code>1.0.0-alpha4</code>, &#x9700;&#x8981;&#x4E0B;&#x8F7D;&#x6700;&#x65B0;Canary&#x7248;&#x672C;&#x7684;<code>Android Studio</code>, <a href="https://sites.google.com/a/android.com/tools/download/studio/builds/2-2-preview-6" target="_blank" rel="external">&#x4E0B;&#x8F7D;&#x5730;&#x5740;</a>.</p>
+</blockquote>
+<p>ConstraintLayout&#x4F5C;&#x4E3A;&#x975E;&#x7ED1;&#x5B9A;(Unbundled)&#x7684;&#x652F;&#x6301;&#x5E93;, &#x547D;&#x540D;&#x7A7A;&#x95F4;&#x662F;<code>app:</code>, &#x6765;&#x81EA;&#x4E8E;&#x672C;&#x5730;&#x5305;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;. &#x672C;&#x6587;&#x4ECB;&#x7ECD;<code>ConstraintLayout</code>&#x5E03;&#x5C40;&#x7684;&#x5E38;&#x89C1;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;.</p>
+<p>&#x672C;&#x6587;&#x6E90;&#x7801;&#x7684;GitHub<a href="https://github.com/SpikeKing/ConstraintLayoutDemo" target="_blank" rel="external">&#x4E0B;&#x8F7D;&#x5730;&#x5740;</a></p>
+<h1 id="&#x6982;&#x5FF5;"><a href="#&#x6982;&#x5FF5;" class="headerlink" title="&#x6982;&#x5FF5;"></a>&#x6982;&#x5FF5;</h1><p>ConstraintLayout&#x7EA6;&#x675F;&#x5E03;&#x5C40;&#x7684;&#x542B;&#x4E49;: &#x6839;&#x636E;&#x5E03;&#x5C40;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x6216;&#x89C6;&#x56FE;, &#x786E;&#x5B9A;View&#x5728;&#x5C4F;&#x5E55;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;. &#x5305;&#x542B;&#x4E09;&#x4E2A;&#x91CD;&#x8981;&#x4FE1;&#x606F;, &#x6839;&#x636E;&#x5176;&#x4ED6;&#x89C6;&#x56FE;&#x8BBE;&#x7F6E;&#x4F4D;&#x7F6E;, &#x6839;&#x636E;&#x7236;&#x5BB9;&#x5668;&#x8BBE;&#x7F6E;&#x4F4D;&#x7F6E;, &#x6839;&#x636E;&#x57FA;&#x51C6;&#x7EBF;&#x8BBE;&#x7F6E;&#x4F4D;&#x7F6E;.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layout_constraint[&#x672C;&#x6E90;]_[&#x76EE;&#x6807;]=&quot;[&#x76EE;&#x6807;ID]&quot;</span><br></pre></td></tr></table></figure>
+<p>&#x4F8B;&#x5982;: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app:layout_constraintBottom_toBottomOf=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br></pre></td></tr></table></figure>
+<p>&#x7EA6;&#x675F;<code>&#x5F53;&#x524D;View&#x7684;&#x5E95;&#x90E8;</code>&#x81F3;<code>&#x76EE;&#x6807;View&#x7684;&#x5E95;&#x90E8;</code>, &#x76EE;&#x6807;View&#x662F;constraintLayout. &#x8868;&#x660E;, &#x628A;&#x5F53;&#x524D;View&#x653E;&#x7F6E;&#x5230;constraintLayout(&#x7236;&#x5BB9;&#x5668;)&#x7684;&#x5E95;&#x90E8;, &#x5E76;&#x4E14;&#x5E95;&#x90E8;&#x4E00;&#x81F4;.</p>
+<p>&#x4E3A;&#x4E86;&#x6F14;&#x793A;&#x591A;&#x4E2A;&#x793A;&#x4F8B;, &#x4F7F;&#x7528;&#x590D;&#x7528;&#x7684;Activity&#x9875;&#x9762;. &#x6839;&#x636E;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x6807;&#x9898;&#x548C;&#x5E03;&#x5C40;Id.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LayoutDisplayActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG = LayoutDisplayActivity.class.getSimpleName();</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> String EXTRA_LAYOUT_ID = TAG + <span class="string">&quot;.layoutId&quot;</span>; <span class="comment">// &#x5E03;&#x5C40;ID</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setTitle(getIntent().getStringExtra(Intent.EXTRA_TITLE));</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> layoutId = getIntent().getIntExtra(EXTRA_LAYOUT_ID, <span class="number">0</span>);</span><br><span class="line">        setContentView(layoutId); <span class="comment">// &#x8BBE;&#x7F6E;&#x9875;&#x9762;&#x5E03;&#x5C40;, &#x590D;&#x7528;&#x5E03;&#x5C40;</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x4E3B;&#x9875;&#x9762;&#x4F7F;&#x7528;ListView&#x5C55;&#x793A;&#x591A;&#x4E2A;&#x9879;, &#x6BCF;&#x9879;&#x90FD;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x5E03;&#x5C40;. &#x70B9;&#x51FB;&#x9879;&#x53D1;&#x9001;&#x4E0D;&#x540C;&#x7684;Intent, &#x586B;&#x5145;&#x6240;&#x8981;&#x663E;&#x793A;&#x7684;&#x9875;&#x9762;.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>{</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        ListView list = (ListView) findViewById(R.id.activity_main);</span><br><span class="line">        ArrayAdapter&lt;String&gt; adapter = <span class="keyword">new</span> ArrayAdapter&lt;&gt;(<span class="keyword">this</span>,</span><br><span class="line">                android.R.layout.simple_list_item_1, LIST_ITEMS);</span><br><span class="line">        list.setAdapter(adapter);</span><br><span class="line">        list.setOnItemClickListener(<span class="keyword">new</span> AdapterView.OnItemClickListener() {</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; adapterView, View view, <span class="keyword">int</span> i, <span class="keyword">long</span> l)</span> </span>{</span><br><span class="line">                <span class="comment">// &#x590D;&#x7528;&#x663E;&#x793A;&#x5E03;&#x5C40;</span></span><br><span class="line">                Intent intent = <span class="keyword">new</span> Intent(MainActivity.<span class="keyword">this</span>, LayoutDisplayActivity.class);</span><br><span class="line">                intent.putExtra(Intent.EXTRA_TITLE, LIST_ITEMS[i]); <span class="comment">// &#x6807;&#x9898;</span></span><br><span class="line">                intent.putExtra(LayoutDisplayActivity.EXTRA_LAYOUT_ID, LAYOUT_IDS[i]); <span class="comment">// &#x5E03;&#x5C40;Id</span></span><br><span class="line">                startActivity(intent);</span><br><span class="line">            }</span><br><span class="line">        });</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h1 id="&#x57FA;&#x7840;"><a href="#&#x57FA;&#x7840;" class="headerlink" title="&#x57FA;&#x7840;"></a>&#x57FA;&#x7840;</h1><p>ConstraintLayout&#x5E03;&#x5C40;&#x6700;&#x57FA;&#x672C;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;, &#x5C31;&#x662F;&#x76F4;&#x63A5;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;. <code>&#x53D6;&#x6D88;</code>&#x6309;&#x94AE;&#x7684;&#x5E95;&#x90E8;&#x5BF9;&#x9F50;<code>constraintLayout(&#x7236;&#x5BB9;&#x5668;)</code>&#x7684;&#x5E95;&#x90E8;, &#x5DE6;&#x4FA7;&#x5BF9;&#x9F50;&#x7236;&#x5BB9;&#x5668;&#x7684;&#x5DE6;&#x4FA7;. <code>&#x4E0B;&#x4E00;&#x6B65;</code>&#x6309;&#x94AE;&#x7684;&#x5E95;&#x90E8;&#x5BF9;&#x9F50;&#x7236;&#x5BB9;&#x5668;&#x7684;&#x5E95;&#x90E8;, &#x800C;&#x5DE6;&#x4FA7;&#x5BF9;&#x9F50;<code>&#x53D6;&#x6D88;</code>&#x6309;&#x94AE;&#x7684;&#x53F3;&#x4FA7;. &#x5E76;&#x4E14;&#x6BCF;&#x4E2A;&#x6309;&#x94AE;&#x8FB9;&#x7F18;&#x6709;Margin&#x7A7A;&#x9699;.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">android.support.constraint.ConstraintLayout</span></span><br><span class="line">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">    <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="line">    <span class="attr">xmlns:app</span>=<span class="string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">&quot;@+id/cancel_button&quot;</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:layout_marginBottom</span>=<span class="string">&quot;16dp&quot;</span></span><br><span class="line">        <span class="attr">android:layout_marginStart</span>=<span class="string">&quot;16dp&quot;</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">&quot;&#x53D6;&#x6D88;&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;@id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintStart_toStartOf</span>=<span class="string">&quot;@id/constraintLayout&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">&quot;@+id/next_button&quot;</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:layout_marginBottom</span>=<span class="string">&quot;16dp&quot;</span></span><br><span class="line">        <span class="attr">android:layout_marginStart</span>=<span class="string">&quot;16dp&quot;</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">&quot;&#x4E0B;&#x4E00;&#x6B65;&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;@id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintStart_toEndOf</span>=<span class="string">&quot;@id/cancel_button&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">android.support.constraint.ConstraintLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>ConstraintLayout&#x7684;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;, &#x6700;&#x91CD;&#x8981;&#x7684;&#x5C31;&#x662F;&#x7406;&#x89E3;&#x5C5E;&#x6027;&#x7684;&#x8868;&#x793A;&#x542B;&#x4E49;.</p>
+</blockquote>
+<p><img src="/2016/08/07/1608/077-constraint-layout-concept/cl-base.png" alt="Base"></p>
+<h1 id="&#x6BD4;&#x4F8B;"><a href="#&#x6BD4;&#x4F8B;" class="headerlink" title="&#x6BD4;&#x4F8B;"></a>&#x6BD4;&#x4F8B;</h1><p>ConstraintLayout&#x5E03;&#x5C40;&#x9664;&#x4E86;&#x5BF9;&#x9F50;&#x5C5E;&#x6027;, &#x8FD8;&#x6709;&#x91CD;&#x8981;&#x7684;&#x6BD4;&#x4F8B;&#x5C5E;&#x6027;. <code>&#x4E2D;&#x5FC3;(Center)</code>&#x6309;&#x94AE;&#x9700;&#x8981;&#x628A;&#x5168;&#x90E8;&#x8FB9;&#x754C;&#x4E0E;<code>constraintLayout(&#x7236;&#x5BB9;&#x5668;)</code>&#x8FB9;&#x754C;&#x5BF9;&#x9F50;, &#x5219;&#x4E3A;&#x5C45;&#x4E2D;. &#x540C;&#x65F6;&#x8FD8;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x6C34;&#x5E73;&#x4E0E;&#x7AD6;&#x76F4;&#x7684;&#x6BD4;&#x4F8B;, &#x5982;0.25. <code>Bias</code>&#x6309;&#x94AE;&#x8BBE;&#x7F6E;&#x6C34;&#x5E73;&#x4E0E;&#x7AD6;&#x76F4;&#x7684;&#x6BD4;&#x4F8B;&#x662F;0.25, &#x8868;&#x793A;&#x5DE6;&#x4FA7;&#x4E0E;&#x53F3;&#x4FA7;&#x6BD4;&#x4F8B;&#x662F;1:4, &#x4E0A;&#x90E8;&#x4E0E;&#x4E0B;&#x90E8;&#x7684;&#x6BD4;&#x4F8B;&#x662F;1:4.</p>
+<p><code>constraintHorizontal_bias</code>&#x8BBE;&#x7F6E;&#x6C34;&#x5E73;&#x6BD4;&#x4F8B;, <code>constraintVertical_bias</code>&#x8BBE;&#x7F6E;&#x7AD6;&#x76F4;&#x6BD4;&#x4F8B;. </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">android.support.constraint.ConstraintLayout</span></span><br><span class="line">    <span class="attr">xmlns:tools</span>=<span class="string">&quot;http://schemas.android.com/tools&quot;</span></span><br><span class="line">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">    <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="line">    <span class="attr">xmlns:app</span>=<span class="string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">&quot;Center&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintEnd_toEndOf</span>=<span class="string">&quot;@id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintStart_toStartOf</span>=<span class="string">&quot;@id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">&quot;Bias&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintEnd_toEndOf</span>=<span class="string">&quot;@id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintStart_toStartOf</span>=<span class="string">&quot;@id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintHorizontal_bias</span>=<span class="string">&quot;0.25&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintVertical_bias</span>=<span class="string">&quot;0.25&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">android.support.constraint.ConstraintLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>tools:layout_editor_absoluteX</code>&#x5C5E;&#x6027;&#x5BF9;&#x4E8E;&#x89C6;&#x56FE;&#x8D77;&#x5230;&#x8F85;&#x52A9;&#x4F5C;&#x7528;, &#x7406;&#x89E3;&#x8FB9;&#x754C;&#x7684;&#x771F;&#x5B9E;&#x8DDD;&#x79BB;, &#x70B9;&#x51FB;&#x53EF;&#x89C6;&#x5316;&#x5E03;&#x5C40;&#x4F1A;&#x81EA;&#x52A8;&#x751F;&#x6210;.</p>
+<p><img src="/2016/08/07/1608/077-constraint-layout-concept/cl-bias.png" alt="Bias"></p>
+<h1 id="&#x5F15;&#x5BFC;&#x7EBF;"><a href="#&#x5F15;&#x5BFC;&#x7EBF;" class="headerlink" title="&#x5F15;&#x5BFC;&#x7EBF;"></a>&#x5F15;&#x5BFC;&#x7EBF;</h1><p>ConstraintLayout&#x5E03;&#x5C40;&#x9664;&#x4E86;&#x4E0E;&#x5E03;&#x5C40;&#x5BF9;&#x9F50;&#x4EE5;&#x5916;, &#x8FD8;&#x53EF;&#x4EE5;&#x4E0E;<code>&#x5F15;&#x5BFC;&#x7EBF;(Guideline)</code>&#x5BF9;&#x9F50;. &#x8BBE;&#x7F6E;<code>&#x7AD6;&#x76F4;&#x5F15;&#x5BFC;&#x7EBF;(Guideline)</code>&#x8DDD;&#x79BB;&#x5DE6;&#x4FA7;<code>72dp</code>. &#x6309;&#x94AE;(Button)&#x7684;&#x5DE6;&#x4FA7;&#x90FD;&#x4E0E;&#x5F15;&#x5BFC;&#x7EBF;&#x5BF9;&#x9F50;, &#x4E0A;&#x4E0B;&#x4F7F;&#x7528;&#x6BD4;&#x4F8B;&#x7684;&#x65B9;&#x5F0F;&#x6392;&#x5217;, &#x4E00;&#x4E2A;0.25&#x6BD4;&#x4F8B;, &#x4E00;&#x4E2A;0.75&#x6BD4;&#x4F8B;.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">android.support.constraint.ConstraintLayout</span></span><br><span class="line">    <span class="attr">xmlns:tools</span>=<span class="string">&quot;http://schemas.android.com/tools&quot;</span></span><br><span class="line">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">    <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="line">    <span class="attr">xmlns:app</span>=<span class="string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">android.support.constraint.Guideline</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">&quot;@+id/guideLine&quot;</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:orientation</span>=<span class="string">&quot;vertical&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintGuide_begin</span>=<span class="string">&quot;72dp&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">&quot;Guide Up&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintStart_toStartOf</span>=<span class="string">&quot;@id/guideLine&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintVertical_bias</span>=<span class="string">&quot;0.25&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">&quot;Guide Down&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintStart_toStartOf</span>=<span class="string">&quot;@id/guideLine&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintVertical_bias</span>=<span class="string">&quot;0.75&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">android.support.constraint.ConstraintLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2016/08/07/1608/077-constraint-layout-concept/cl-guide.png" alt="Guide Line"></p>
+<h1 id="&#x89C6;&#x56FE;&#x5C3A;&#x5BF8;"><a href="#&#x89C6;&#x56FE;&#x5C3A;&#x5BF8;" class="headerlink" title="&#x89C6;&#x56FE;&#x5C3A;&#x5BF8;"></a>&#x89C6;&#x56FE;&#x5C3A;&#x5BF8;</h1><p>ConstraintLayout&#x5E03;&#x5C40;&#x4E2D;&#x7684;&#x63A7;&#x4EF6;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x586B;&#x5145;&#x5C3A;&#x5BF8;. &#x63A7;&#x4EF6;&#x628A;&#x5BBD;&#x5EA6;&#x8BBE;&#x7F6E;&#x4E3A;<code>0dp</code>&#x4F1A;&#x81EA;&#x52A8;&#x6839;&#x636E;&#x4F4D;&#x7F6E;&#x8FDB;&#x884C;&#x586B;&#x5145;. &#x5982;<code>Large</code>&#x6309;&#x94AE;, &#x5DE6;&#x4FA7;&#x5BF9;&#x9F50;&#x4E0E;<code>Small</code>&#x6309;&#x94AE;&#x7684;&#x5DE6;&#x4FA7;, &#x53F3;&#x4FA7;&#x5BF9;&#x9F50;&#x4E0E;<code>constraintLayout&#x7236;&#x63A7;&#x4EF6;</code>&#x7684;&#x53F3;&#x4FA7;, &#x5BBD;&#x5EA6;&#x8BBE;&#x7F6E;&#x4E3A;<code>0dp</code>, &#x5B9E;&#x9645;&#x4F1A;&#x586B;&#x5145;&#x5168;&#x90E8;&#x4F4D;&#x7F6E;.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">android.support.constraint.ConstraintLayout</span></span><br><span class="line">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">    <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="line">    <span class="attr">xmlns:app</span>=<span class="string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">&quot;@+id/small&quot;</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">&quot;Small&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintStart_toStartOf</span>=<span class="string">&quot;@id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">&quot;@id/constraintLayout&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">&quot;Large&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;@id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintEnd_toEndOf</span>=<span class="string">&quot;@id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintStart_toEndOf</span>=<span class="string">&quot;@id/small&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">&quot;@id/constraintLayout&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">android.support.constraint.ConstraintLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2016/08/07/1608/077-constraint-layout-concept/cl-measure.png" alt="Measure"></p>
+<h1 id="&#x89C6;&#x56FE;&#x7EB5;&#x6A2A;&#x6BD4;"><a href="#&#x89C6;&#x56FE;&#x7EB5;&#x6A2A;&#x6BD4;" class="headerlink" title="&#x89C6;&#x56FE;&#x7EB5;&#x6A2A;&#x6BD4;"></a>&#x89C6;&#x56FE;&#x7EB5;&#x6A2A;&#x6BD4;</h1><p>ConstraintLayout&#x5E03;&#x5C40;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>constraintDimensionRatio</code>&#x8BBE;&#x7F6E;&#x89C6;&#x56FE;&#x7684;&#x7EB5;&#x6A2A;&#x6BD4;, &#x5219;&#x9700;&#x8981;&#x628A;<code>&#x5BBD;(layout_width)</code>&#x6216;&#x8005;<code>&#x9AD8;(layout_height)</code>&#x8BBE;&#x7F6E;&#x4E3A;0dp, &#x6839;&#x636E;&#x53E6;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x548C;&#x6BD4;&#x4F8B;, &#x8BA1;&#x7B97;&#x5F53;&#x524D;&#x5C5E;&#x6027;, &#x5982;&#x4E24;&#x4E2A;&#x56FE;&#x7247;&#x63A7;&#x4EF6;&#x7684;&#x663E;&#x793A;&#x5927;&#x5C0F;.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">android.support.constraint.ConstraintLayout</span></span><br><span class="line">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">    <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="line">    <span class="attr">xmlns:app</span>=<span class="string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ImageView</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">&quot;200dp&quot;</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">&quot;@color/colorAccent&quot;</span></span><br><span class="line">        <span class="attr">android:src</span>=<span class="string">&quot;@drawable/total_large&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintLeft_toLeftOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintVertical_bias</span>=<span class="string">&quot;0.0&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ImageView</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">&quot;200dp&quot;</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">&quot;@color/colorAccent&quot;</span></span><br><span class="line">        <span class="attr">android:contentDescription</span>=<span class="string">&quot;@null&quot;</span></span><br><span class="line">        <span class="attr">android:src</span>=<span class="string">&quot;@drawable/total_large&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintDimensionRatio</span>=<span class="string">&quot;4:3&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintLeft_toLeftOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span></span><br><span class="line">        <span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">&quot;@+id/constraintLayout&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">android.support.constraint.ConstraintLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2016/08/07/1608/077-constraint-layout-concept/cl-ratio.png" alt="Ratio"></p>
+<hr>
+<p><code>ConstraintLayout</code>&#x7EA6;&#x675F;&#x5E03;&#x5C40;&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x5C31;&#x662F;&#x8FD9;&#x4E9B;, &#x53EF;&#x4EE5;&#x89C2;&#x5BDF;&#x5230;ConstraintLayout&#x5E03;&#x5C40;&#x517C;&#x987E;LinearLayout&#x4E0E;RelativeLayout&#x7684;&#x4F18;&#x70B9;, &#x975E;&#x5E38;&#x9002;&#x5408;&#x6784;&#x5EFA;&#x590D;&#x6742;&#x5E03;&#x5C40;, &#x4F1A;&#x6210;&#x4E3A;Android&#x7684;&#x4E3B;&#x6D41;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;.</p>
+<p>OK, that&#x2019;s all! Enjoy it!</p>
+<hr>
+<blockquote>
+<p>&#x6700;&#x521D;&#x53D1;&#x5E03;&#x5730;&#x5740;:<br><a href="http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/">http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/</a><br>&#x6B22;&#x8FCE;Follow&#x6211;&#x7684;<a href="https://github.com/SpikeKing" target="_blank" rel="external">GitHub</a>, &#x5173;&#x6CE8;&#x6211;&#x7684;<a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" rel="external">&#x7B80;&#x4E66;</a>, <a href="http://blog.csdn.net/caroline_wendy" target="_blank" rel="external">CSDN</a>, <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" rel="external">&#x6398;&#x91D1;</a>.<br>&#x6211;&#x5DF2;&#x59D4;&#x6258;&#x201C;&#x7EF4;&#x6743;&#x9A91;&#x58EB;&#x201D;&#x4E3A;&#x6211;&#x7684;&#x6587;&#x7AE0;&#x8FDB;&#x884C;&#x7EF4;&#x6743;&#x884C;&#x52A8;. &#x672A;&#x7ECF;&#x6388;&#x6743;, &#x7981;&#x6B62;&#x8F6C;&#x8F7D;, &#x6388;&#x6743;&#x6216;&#x5408;&#x4F5C;&#x8BF7;&#x7559;&#x8A00;.</p>
+</blockquote>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/ConstraintLayout/" rel="tag">#ConstraintLayout</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/07/1608/076-bottom-dialog-fragment/" rel="next" title="使用 DialogFragment 实现底部弹窗布局">
+                <i class="fa fa-chevron-left"></i> 使用 DialogFragment 实现底部弹窗布局
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/07/1608/078-loading-slow-lib/" rel="prev" title="在广告的间隔中进行数据加载">
+                在广告的间隔中进行数据加载 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/08/07/1608/077-constraint-layout-concept/"
+     data-title="ConstraintLayout 约束布局的概念与使用"
+     data-content=""
+     data-url="http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+            <!-- 文章底部广告, 唯品会 -->
+            <div align="center" style="margin: 20px 0px 0px 0px">
+              <iframe src="http://api.union.vip.com/image?mark=hFK,hFK,hFl&schemecode=ooboelhi&adcode=&ucode=reuqtq0m&chan=&width=436&height=210" width="436" height="210"  scrolling="no" frameborder="0"></iframe>
+            </div>
+          </div>
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/07/1608/077-constraint-layout-concept/"
+           data-title="ConstraintLayout 约束布局的概念与使用" data-url="http://www.wangchenlong.org/2016/08/07/1608/077-constraint-layout-concept/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="C.L. Wang" />
+          <p class="site-author-name" itemprop="name">C.L. Wang</p>
+          <p class="site-description motion-element" itemprop="description">不忘初心</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">75</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">61</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/SpikeKing" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/e2b4dd6d3eb4/latest_articles" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2852941392" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/caroline_wendy" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  CSDN
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gold.xitu.io/#/user/56de98c2f3609a005442ec58" target="_blank" title="掘金">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  掘金
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tom555cat.com/" title="仝磊鸣的博客" target="_blank">仝磊鸣的博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础"><span class="nav-number">2.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比例"><span class="nav-number">3.</span> <span class="nav-text">比例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引导线"><span class="nav-number">4.</span> <span class="nav-text">引导线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视图尺寸"><span class="nav-number">5.</span> <span class="nav-text">视图尺寸</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视图纵横比"><span class="nav-number">6.</span> <span class="nav-text">视图纵横比</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+      <!-- 侧栏广告 -->
+      <div align="center">
+      </div>
+
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">C.L. Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"spikeking"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("24qpuQFXa0w8ead8gg6Rxxhc-gzGzoHsz", "O8vfKJtVanuyjh9NabH91ig7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
